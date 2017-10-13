@@ -1,9 +1,7 @@
 
-from flask import Flask, render_template, url_for, request, session, redirect, flash, make_response
-from flask.ext.pymongo import PyMongo
-import bcrypt
-from flask_restful import Api, Resource,reqparse
 import requests
+from flask import Flask
+from flask_restful import Api, Resource, reqparse
 
 app = Flask(__name__)
 api = Api(app)
@@ -15,7 +13,7 @@ class BarAPI(Resource):
         parser.add_argument('serviceID', type=str)
         json = parser.parse_args()
         r = requests.get('http://localhost:5002/getParam', params=json)
-        print('i got it!'+json.get('serviceID'))
+        print('i got it! serviceID='+json.get('serviceID'))
         return 'i got it your data is ' + json.get('serviceID')
 
 api.add_resource(BarAPI, '/getParam', endpoint='getParam')
