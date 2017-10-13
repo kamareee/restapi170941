@@ -13,7 +13,7 @@ class BarAPI(Resource):
         parser.add_argument('serviceID', type=str)
         json = parser.parse_args()
         r = requests.get('http://localhost:5002/getParam', params=json)
-        print('i got it! serviceID='+json.get('serviceID'))
+        print('i got serviceID='+json.get('serviceID'))
         return 'i got it your data is ' + json.get('serviceID')
 
 api.add_resource(BarAPI, '/getParam', endpoint='getParam')
