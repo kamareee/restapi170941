@@ -1,9 +1,8 @@
+import urllib
 
-from flask import Flask, render_template, url_for, request, session, redirect, flash, make_response
-from flask.ext.pymongo import PyMongo
-import bcrypt
-from flask_restful import Api, Resource,reqparse
 import requests
+from flask import Flask
+from flask_restful import Api, Resource, reqparse
 
 app = Flask(__name__)
 api = Api(app)
@@ -14,8 +13,17 @@ class BarAPI(Resource):
         parser = reqparse.RequestParser()
         parser.add_argument('serviceID', type=str)
         json = parser.parse_args()
-        print('i got it!'+json.get('serviceID'))
-        return 'i got it your data is ' + json.get('serviceID')
+        serviceID = json.get('serviceID')
+        print('i got it!' + serviceID)
+        payload = {'loginid': serviceID, 'reqParams': ['ADMIN_STATUS','OPER_STATUS','ONT_TX_POWER','ONT_RX_POWER','LASTUPTIME']}
+        # payload = json.dumps(payload)
+        # headers = {'Content-type': 'application/json'}
+        r = requests.post('http://localhost:9001/rest/api/reading', json = payload)#, headers = headers)
+        val = urllib.unquote(r.url).decode('utf8')
+        print(val)
+        print(r.content)
+        return r.content
+        # return 'i got it your data is ' + serviceID
 
 api.add_resource(BarAPI, '/getParam', endpoint='getParam')
 
