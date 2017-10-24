@@ -1,5 +1,3 @@
-import urllib
-
 import requests
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
@@ -19,11 +17,11 @@ class BarAPI(Resource):
         # payload = json.dumps(payload)
         # headers = {'Content-type': 'application/json'}
         r = requests.post('http://localhost:9001/rest/api/reading', json = payload)#, headers = headers)
-        val = urllib.unquote(r.url).decode('utf8')
-        print(val)
-        print(r.content)
+        # val = urllib.unquote(r.url).decode('utf8')
+        # print(val)
+        # print(r.content)
         return r.content
-        # return 'i got it your data is ' + serviceID
+        # return "restapi_south"
 
 api.add_resource(BarAPI, '/getParam', endpoint='getParam')
 

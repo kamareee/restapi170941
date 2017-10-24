@@ -1,0 +1,34 @@
+cd C:\Users\han\restapi170941
+ssh root@10.44.28.64
+cd /home/user/ideas
+To upload,
+pscp -pw Cy83rj@y@ restapi_west.py root@10.44.28.64:/home/user/ideas
+scp restapi_west.py root@10.44.28.64:/home/user/ideas
+
+
+http://10.44.28.64:5000/expert.do?serviceID=afaideen80@unifi
+
+open file,
+vi filename
+close file,
+press :, q, enter
+
+how to run forever
+[
+Run nohup python restapi_west.py &
+
+If you've already started the process, and don't want to kill it and restart under nohup, you can send it to the background, then disown it.
+
+Ctrl+Z (suspend the process)
+
+bg (restart the process in the background
+
+disown %1 (assuming this is job #1, use jobs to determine)
+]
+
+To check PID, eg run,
+lsof -i :5000 or
+netstat -apn | grep ":5000"
+
+kill service, run eg, in this case PID=17484
+kill 17484
