@@ -13,13 +13,14 @@ class BarAPI(Resource):
         json = parser.parse_args()
         serviceID = json.get('serviceID')
         print('i got it!' + serviceID)
-        payload = {'loginid': serviceID, 'reqParams': ['ADMIN_STATUS','OPER_STATUS','ONT_TX_POWER','ONT_RX_POWER','LASTUPTIME']}
+        payload = {'loginId': serviceID, "reqParams": ["ADMIN_STATUS","OPER_STATUS",'ONT_TX_POWER','ONT_RX_POWER','LASTUPTIME']}
+        print(payload)
         # payload = json.dumps(payload)
-        # headers = {'Content-type': 'application/json'}
-        r = requests.post('http://localhost:9001/rest/api/reading', json = payload)#, headers = headers)
+        headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        r = requests.post('http://10.41.56.90:9001/rest/api/reading', json = payload, headers = headers)
         # val = urllib.unquote(r.url).decode('utf8')
         # print(val)
-        # print(r.content)
+        print(r.content)
         return r.content
         # return "restapi_south"
 

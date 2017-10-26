@@ -2,7 +2,7 @@ cd C:\Users\han\restapi170941
 ssh root@10.44.28.64
 cd /home/user/ideas
 To upload,
-pscp -pw Cy83rj@y@ restapi_west.py root@10.44.28.64:/home/user/ideas
+pscp -pw Cy83rj@y@ restapi_south.py root@10.44.28.64:/home/user/ideas
 scp restapi_west.py root@10.44.28.64:/home/user/ideas
 
 
@@ -16,8 +16,9 @@ press :, q, enter
 how to run forever
 [
 Run nohup python restapi_west.py &
-
-If you've already started the process, and don't want to kill it and restart under nohup, you can send it to the background, then disown it.
+test
+If you've already started the process, and don't want to kill it and restart under nohup, 
+you can send it to the background, then disown it.
 
 Ctrl+Z (suspend the process)
 
@@ -32,3 +33,9 @@ netstat -apn | grep ":5000"
 
 kill service, run eg, in this case PID=17484
 kill 17484
+
+Intall remote desktop,
+yum install tigervnc-server
+
+curl,
+curl -i -d '{ "loginId": "afaideen80@unifi", "reqParams":[ "ADMIN_STATUS", "OPER_STATUS", "ONT_TX_POWER", "ONT_RX_POWER", "LASTUPTIME" ] }' -X POST http://10.41.56.90:9001/rest/api/reading --header "Content-Type: application/json" --header "Accept: application/json"
