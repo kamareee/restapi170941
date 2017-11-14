@@ -1,3 +1,5 @@
+For local test run http://localhost:5000/expert.do?serviceID=afaideen80@unifi
+
 cd C:\Users\han\restapi170941
 ssh root@10.44.28.64
 cd /home/user/ideas

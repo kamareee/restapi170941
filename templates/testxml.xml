@@ -1,6 +1,7 @@
 <responseHeader>
 <expert>
 <error></error>
+ <predictedclass>{{predictedclass}}</predictedclass>
 <expertMatrix>1112111111111</expertMatrix>
 <matrixMatched>1112111111111</matrixMatched>
 <summary>{{summary}}</summary>
