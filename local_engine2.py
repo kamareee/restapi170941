@@ -1,9 +1,9 @@
 
 import csv
 import operator
-
 import requests
-from flask import Flask
+import json
+from flask import Flask, jsonify
 from flask_restful import Api, Resource, reqparse
 
 app = Flask(__name__)
@@ -12,10 +12,11 @@ api = Api(app)
 # @app.route('/getParam', methods=['GET'])
 class BarAPI(Resource):
     def get(self):
+
         parser = reqparse.RequestParser()
         parser.add_argument('serviceID', type=str)
-        json = parser.parse_args()
-        r = requests.get('http://localhost:5002/getParam', params=json)
+        myjson = parser.parse_args()
+        r = requests.get('http://localhost:5002/getParam', params=myjson)
 
         # payload = {"data": "0,0,3,2,2,2,2,2,2,2,2,2,2"}
         # headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
@@ -131,8 +132,16 @@ class BarAPI(Resource):
             predictions.append(result)
             print "Predictions: ", predictions
 
-        # return "local_engine2"
-        return r.content + result
+        # s = '{"max":28, "min":18, "custom":[{"id":"12345", "name":"test_pur"}]}'
+        # s = '{"main":[' + s + ']}'
+        # data = json.loads(s)
+
+        s = '{"main":[' + r.content + ']}'
+        data = json.loads(s)
+        param = str('"prediction":') + result
+        data['main'].append(param)
+
+        return str(data)
         # print('i got CONTENT='+r.content)
         # return r.content
         # return "local_engine2"

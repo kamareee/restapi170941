@@ -1,4 +1,5 @@
 import requests
+
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
 
@@ -8,6 +9,7 @@ api = Api(app)
 # @app.route('/getParam', methods=['GET'])
 class BarAPI(Resource):
     def get(self):
+
         parser = reqparse.RequestParser()
         parser.add_argument('serviceID', type=str)
         json = parser.parse_args()
