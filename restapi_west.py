@@ -19,9 +19,10 @@ class BarAPI(Resource):
         # val = urllib.unquote(r.url).decode('utf8')
         # print(val)
         # print(r.text)
+        predictedClass = r.json().get('PredictedClass')
         headers = {'Content-Type': 'text/xml'}
         # return parser.parse_args()
-        return make_response(render_template('testxml.xml', summary='Here is summary part!'+serviceID  + ' Content:' + r.content), 200, headers)
+        return make_response(render_template('testxml.xml', summary='Here is summary part!'+serviceID  + ' Content:' + r.content, predictedclass=predictedClass), 200, headers)
         # return 'you are done 123'
 
 api.add_resource(BarAPI, '/expert.do', endpoint='expert.do')

@@ -3,6 +3,7 @@ import csv
 import operator
 import requests
 import json
+import unicodedata
 from flask import Flask, jsonify
 from flask_restful import Api, Resource, reqparse
 
@@ -17,11 +18,12 @@ class BarAPI(Resource):
         parser.add_argument('serviceID', type=str)
         myjson = parser.parse_args()
         r = requests.get('http://localhost:5002/getParam', params=myjson)
-
-        # payload = {"data": "0,0,3,2,2,2,2,2,2,2,2,2,2"}
-        # headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-        # r1 = requests.post('http://localhost:9001/dataHandler', json = payload, headers = headers)
-        # response = r1.json().get('PredictedClass')
+        print('CONTENT=' + r.content)
+        print type(r.content)
+        # unicodedata.normalize('NFKD', r.content).encode('ascii', 'ignore')
+        # content = r.content.encode('utf-8')
+        # r.content.encode('latin1')
+        # content = r.content.encode('latin1').decode('utf8').encode('utf8')
 
         # Necessary variables declaration
         filename = 'testcat.csv'
@@ -141,7 +143,16 @@ class BarAPI(Resource):
         param = str('"prediction":') + result
         data['main'].append(param)
 
-        return str(data)
+        k = r.json()
+        print "&&&&&&&&&&", k
+        p = k.get('retDesc')
+        print "Found P: ", p
+        k['PredictedClass'] = result
+        print k
+        print "Type K: ", type(k)
+        return jsonify(k)
+
+        # return str(data)
         # print('i got CONTENT='+r.content)
         # return r.content
         # return "local_engine2"

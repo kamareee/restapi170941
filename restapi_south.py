@@ -1,6 +1,6 @@
 import requests
 
-from flask import Flask
+from flask import Flask, jsonify
 from flask_restful import Api, Resource, reqparse
 
 app = Flask(__name__)
@@ -23,8 +23,10 @@ class BarAPI(Resource):
         # r = requests.post('http://10.41.56.90:9001/rest/api/reading', json = payload, headers = headers)
         # val = urllib.unquote(r.url).decode('utf8')
         # print(val)
+
         print(r.content)
-        return r.content
+        return r.json()
+        # return jsonify(r.content)
         # return "restapi_south"
 
 api.add_resource(BarAPI, '/getParam', endpoint='getParam')
