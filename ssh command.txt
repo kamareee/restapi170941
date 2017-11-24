@@ -17,6 +17,10 @@ press :, q, enter
 
 how to run forever
 [
+//ref https://www.tecmint.com/keep-remote-ssh-sessions-running-after-disconnection/
+-Start Screen
+	screen
+
 //check https://stackoverflow.com/questions/2975624/how-to-run-a-python-script-in-the-background-even-after-i-logout-ssh
 Run nohup python restapi_west.py &
 test
@@ -28,6 +32,11 @@ Ctrl+Z (suspend the process)
 bg (restart the process in the background
 
 disown %1 (assuming this is job #1, use jobs to determine)
+
+Repeat above process for all engines - west, local_engine2 and south
+
+-Disattach from screen	
+	-ctrl+a followed by 'd'
 ]
 
 To check PID, eg run,
