@@ -5,8 +5,17 @@ ssh root@10.44.28.64
 cd /home/user/ideas
 To upload,
 pscp -pw Cy83rj@y@ restapi_south.py root@10.44.28.64:/home/user/ideas
+pscp -pw Cy83rj@y@ local_engine2.py root@10.44.28.64:/home/user/ideas
+pscp -pw Cy83rj@y@ restapi_west.py root@10.44.28.64:/home/user/ideas
+pscp -pw Cy83rj@y@ testdata.csv root@10.44.28.64:/home/user/ideas
+then in folder templates, use this
+    pscp -pw Cy83rj@y@ testxml.xml root@10.44.28.64:/home/user/ideas/templates
 scp restapi_west.py root@10.44.28.64:/home/user/ideas
 
+run
+python restapi_south.py
+python local_engine2.py
+python restapi_west.py
 
 http://10.44.28.64:5000/expert.do?serviceID=afaideen80@unifi
 
@@ -46,11 +55,12 @@ netstat -apn | grep ":5000"
 kill service, run eg, in this case PID=17484
 kill 17484
 
-Intall remote desktop,
+Install remote desktop,
 yum install tigervnc-server
 
 curl,
 curl -i -d '{ "loginId": "afaideen80@unifi", "reqParams":[ "ADMIN_STATUS", "OPER_STATUS", "ONT_TX_POWER", "ONT_RX_POWER", "LASTUPTIME" ] }' -X POST http://10.41.56.90:9001/rest/api/reading --header "Content-Type: application/json" --header "Accept: application/json"
+curl -i -d '{"loginId":"afaideen80@unifi","trafficProfile":"true","lineProfile":"true","reqParams":["ADMIN_STATUS","OPER_STATUS","OLT_RX_POWER","OLT_TX_POWER","ONT_TEMP","ONT_VOLTS","ONT_BIAS","RANGING","CPU","MEM","TEMP","BECUP","BECDOWN","UL_RX_POWER","UL_TX_POWER","UL_BIAS","UL_TEMP","UL_VOLTS","CRC_ERROR","BW_IN_UTIL","BW_OUT_UTIL","SERNUM","PWD","ONTID","ONU_FIRMWARE","LASTUPTIME","LASTDOWNTIME","LASTDOWNCAUSE","ONTSTAT","ONTVER","MAINSOFTVERSION","UPSTREAM_SNR","DOWNSTREAM_SNR","UPSTREAM_POWER","DOWNSTREAM_POWER","UPSTREAM_ATTENUATION","DOWNSTREAM_ATTENUATION","UPSTREAM_ATTAINABLERATE","DOWNSTREAM_ATTAINABLERATE","UPSTREAM_ACTUAL_RATE","DOWNSTREAM_ACTUAL_RATE","UPSTREAM_MIN_CONFIG","DOWNSTREAM_MAX_CONFIG","DOWNSTREAM_MIN_CONFIG","DOWNSTREAM_MAX_CONFIG","PPOE","OPTION82","UPTIME","LINK_RETRAIN"]}' -X POST http://10.41.56.90:9001/rest/api/reading  --header "Content-Type: application/json"  --header "Accept: application/json"
 
 curl -i -d '{"loginId":"tajuddin_1572@unifi","trafficProfile":"true","lineProfile":"true","reqParams":["ADMIN_STATUS","OPER_STATUS","OLT_RX_POWER","OLT_TX_POWER","ONT_TEMP","ONT_VOLTS","ONT_BIAS","RANGING","CPU","MEM","TEMP","BECUP","BECDOWN","UL_RX_POWER","UL_TX_POWER","UL_BIAS","UL_TEMP","UL_VOLTS","CRC_ERROR","BW_IN_UTIL","BW_OUT_UTIL","SERNUM","PWD","ONTID","ONU_FIRMWARE","LASTUPTIME","LASTDOWNTIME","LASTDOWNCAUSE","ONTSTAT","ONTVER","MAINSOFTVERSION","UPSTREAM_SNR","DOWNSTREAM_SNR","UPSTREAM_POWER","DOWNSTREAM_POWER","UPSTREAM_ATTENUATION","DOWNSTREAM_ATTENUATION","UPSTREAM_ATTAINABLERATE","DOWNSTREAM_ATTAINABLERATE","UPSTREAM_ACTUAL_RATE","DOWNSTREAM_ACTUAL_RATE","UPSTREAM_MIN_CONFIG","DOWNSTREAM_MAX_CONFIG","DOWNSTREAM_MIN_CONFIG","DOWNSTREAM_MAX_CONFIG","PPOE","OPTION82","UPTIME","LINK_RETRAIN"]}' -X POST http://10.41.56.90:9001/rest/api/reading  --header "Content-Type: application/json"  --header "Accept: application/json"
 

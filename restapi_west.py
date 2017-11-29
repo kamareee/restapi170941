@@ -20,9 +20,20 @@ class BarAPI(Resource):
         # print(val)
         # print(r.text)
         predictedClass = r.json().get('PredictedClass')
+        advisory_action = r.json().get('Action')
+        advisory_summary = r.json().get('Summary')
+        advisory_prompt = r.json().get('Prompt')
+        advisory_inbound = r.json().get('Inbound')
+        advisory_escalation = r.json().get('NextEscalation')
+        expertmatrix = r.json().get('ExpertMatrix')
+        matchedmatrix = r.json().get('MatchMatrix')
         headers = {'Content-Type': 'text/xml'}
         # return parser.parse_args()
-        return make_response(render_template('testxml.xml', summary='Here is summary part!'+serviceID  + ' Content:' + r.content, predictedclass=predictedClass), 200, headers)
+        return make_response(render_template('testxml.xml', summary=advisory_summary, predictedclass=predictedClass,
+                                             action=advisory_action,
+                                             prompt=advisory_prompt, inbound=advisory_inbound,
+                                             nextescalation=advisory_escalation,
+                                             expertmtx=expertmatrix, matchmtx=matchedmatrix), 200, headers)
         # return 'you are done 123'
 
 api.add_resource(BarAPI, '/expert.do', endpoint='expert.do')

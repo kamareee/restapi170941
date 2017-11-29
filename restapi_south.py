@@ -27,8 +27,8 @@ class BarAPI(Resource):
         print(payload)
         # payload = json.dumps(payload)
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-        r = requests.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers)
-        # r = requests.post('http://10.41.56.90:9001/rest/api/reading', json = payload, headers = headers)
+        # r = requests.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers)
+        r = requests.post('http://10.41.56.90:9001/rest/api/reading', json = payload, headers = headers)
         # val = urllib.unquote(r.url).decode('utf8')
         # print(val)
 
