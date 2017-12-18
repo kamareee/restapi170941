@@ -3,6 +3,13 @@ For local test run http://localhost:5000/expert.do?serviceID=afaideen80@unifi
 cd C:\Users\han\restapi170941
 ssh root@10.44.28.64
 cd /home/user/ideas
+
+To check PID, eg run,
+lsof -i :5000 or
+netstat -apn | grep ":5000"
+
+kill service, run eg, in this case PID=17484
+kill 17484
 To upload,
 pscp -pw Cy83rj@y@ restapi_south.py root@10.44.28.64:/home/user/ideas
 pscp -pw Cy83rj@y@ local_engine2.py root@10.44.28.64:/home/user/ideas
@@ -11,6 +18,8 @@ pscp -pw Cy83rj@y@ testdata.csv root@10.44.28.64:/home/user/ideas
 then in folder templates, use this
     pscp -pw Cy83rj@y@ testxml.xml root@10.44.28.64:/home/user/ideas/templates
 scp restapi_west.py root@10.44.28.64:/home/user/ideas
+
+
 
 run
 python restapi_south.py
@@ -48,12 +57,7 @@ Repeat above process for all engines - west, local_engine2 and south
 	-ctrl+a followed by 'd'
 ]
 
-To check PID, eg run,
-lsof -i :5000 or
-netstat -apn | grep ":5000"
 
-kill service, run eg, in this case PID=17484
-kill 17484
 
 Install remote desktop,
 yum install tigervnc-server
