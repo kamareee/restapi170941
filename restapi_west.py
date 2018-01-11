@@ -1,5 +1,6 @@
 
 import requests
+import datetime
 from flask import Flask, render_template, make_response
 # from flask.ext.pymongo import PyMongo
 from flask_restful import Api, Resource, reqparse
@@ -14,6 +15,8 @@ class BarAPI(Resource):
         json = parser.parse_args()
         serviceID = json.get('serviceID')#__getitem__('serviceID')
         # payload = {'serviceID': serviceID}
+        a = datetime.datetime.now()
+        print a
         r = requests.get('http://localhost:5001/getParam',params=json)
         # print(r.url)
         # val = urllib.unquote(r.url).decode('utf8')
@@ -28,9 +31,13 @@ class BarAPI(Resource):
         expertmatrix = r.json().get('ExpertMatrix')
         matchedmatrix = r.json().get('MatchMatrix')
         headers = {'Content-Type': 'text/xml'}
+        b = datetime.datetime.now()
+        delta = b - a
+        print delta
+        t1Respond = int(delta.total_seconds() * 1000) #miliseconds
         # return parser.parse_args()
         return make_response(render_template('testxml.xml', summary=advisory_summary, predictedclass=predictedClass,
-                                             action=advisory_action,
+                                             action=advisory_action, tRespond=t1Respond,
                                              prompt=advisory_prompt, inbound=advisory_inbound,
                                              nextescalation=advisory_escalation,
                                              expertmtx=expertmatrix, matchmtx=matchedmatrix), 200, headers)
