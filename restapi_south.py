@@ -1,4 +1,5 @@
 import requests
+import datetime
 
 from flask import Flask, jsonify
 from flask_restful import Api, Resource, reqparse
@@ -9,7 +10,8 @@ api = Api(app)
 # @app.route('/getParam', methods=['GET'])
 class BarAPI(Resource):
     def get(self):
-
+        a = datetime.datetime.now()
+        print a
         parser = reqparse.RequestParser()
         parser.add_argument('serviceID', type=str)
         json = parser.parse_args()
@@ -31,7 +33,15 @@ class BarAPI(Resource):
         # r = requests.post('http://10.41.56.90:9001/rest/api/reading', json = payload, headers = headers)
         # val = urllib.unquote(r.url).decode('utf8')
         # print(val)
-
+        b = datetime.datetime.now()
+        delta = b - a
+        print delta
+        tSouthRespond = int(delta.total_seconds() * 1000)  # miliseconds
+        data = r.json()#r.content
+        # data = {"list": [{'a': '1'}]}
+        # data['list'].append({'t_SouthRespond':'1'})
+        data['attributes'].append({'tSouthRespond': tSouthRespond})
+        r.content = data
         print(r.content)
         return r.json()
         # return jsonify(r.content)

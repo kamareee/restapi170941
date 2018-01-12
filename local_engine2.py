@@ -12,6 +12,7 @@ import psycopg2
 import psycopg2.extras
 from psycopg2._psycopg import DatabaseError
 import sys
+import datetime
 
 app = Flask(__name__)
 api = Api(app)
@@ -19,6 +20,7 @@ api = Api(app)
 # @app.route('/getParam', methods=['GET'])
 class BarAPI(Resource):
     def get(self):
+        a = datetime.datetime.now()
         parser = reqparse.RequestParser()
         parser.add_argument('serviceID', type=str)
         json = parser.parse_args()
@@ -335,6 +337,10 @@ class BarAPI(Resource):
 
         final_matchMatrix = '???????' + str(matchMatrix)
 
+        b = datetime.datetime.now()
+        delta = b - a
+        print delta
+        tEngineRespond = int(delta.total_seconds() * 1000)  # miliseconds
         # Final data to send to West Api
         final_data = {
             'PredictedClass': str(result),
@@ -344,7 +350,8 @@ class BarAPI(Resource):
             'Prompt': str(prompt),
             'Inbound': str(inbound),
             'Action': str(action),
-            'NextEscalation': str(nextEscalation)
+            'NextEscalation': str(nextEscalation),
+            'tEngineRespond': tEngineRespond
         }
 
         return jsonify(final_data)

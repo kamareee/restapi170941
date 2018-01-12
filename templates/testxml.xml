@@ -10,5 +10,5 @@
 <nextEscalation>{{nextescalation}}</nextEscalation>
 <promptAction>{{action}}</promptAction>
 </expert>
-<responseTime>{{tRespond}}</responseTime>
+<responseTime>Overall={{tRespond}}ms, Engine={{tEngineRespond}}ms </responseTime>
 </responseHeader>
