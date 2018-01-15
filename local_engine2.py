@@ -28,6 +28,11 @@ class BarAPI(Resource):
 
         # Parsing Data to creating testset and inserting to DB
         loginID = r.json().get('custInfo').get('loginId')
+        attributes = r.json().get('attributes')
+        for attr in attributes:
+            print attr
+            tSouthRespond = attr.get('tSouthRespond')
+            print tSouthRespond
         AccessPort = str(r.json().get('custInfo').get('accessPort'))
         temp_prt = AccessPort.split('-')
         tprt = temp_prt[0]
@@ -217,7 +222,7 @@ class BarAPI(Resource):
                         dataset[x][y] = int(2)
                     elif dataset[x][y] == 'Enabled':
                         dataset[x][y] = int(1)
-                    elif dataset[x][y] == 'Disable' or 'Disabled':
+                    elif dataset[x][y] == 'Disable' or dataset[x][y] == 'Disabled':
                         dataset[x][y] = int(2)
                         # dataset[x][y] = float(dataset[x][y])
 
@@ -351,7 +356,8 @@ class BarAPI(Resource):
             'Inbound': str(inbound),
             'Action': str(action),
             'NextEscalation': str(nextEscalation),
-            'tEngineRespond': tEngineRespond
+            'tEngineRespond': tEngineRespond,
+            'tSouthRespond': tSouthRespond
         }
 
         return jsonify(final_data)

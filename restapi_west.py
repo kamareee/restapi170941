@@ -31,6 +31,7 @@ class BarAPI(Resource):
         expertmatrix = r.json().get('ExpertMatrix')
         matchedmatrix = r.json().get('MatchMatrix')
         t2Respond = r.json().get('tEngineRespond')
+        tSouth_Respond = r.json().get('tSouthRespond')
         headers = {'Content-Type': 'text/xml'}
         b = datetime.datetime.now()
         delta = b - a
@@ -38,7 +39,7 @@ class BarAPI(Resource):
         t1Respond = int(delta.total_seconds() * 1000) #miliseconds
         # return parser.parse_args()
         return make_response(render_template('testxml.xml', summary=advisory_summary, predictedclass=predictedClass,
-                                             action=advisory_action, tRespond=t1Respond,tEngineRespond=t2Respond,
+                                             action=advisory_action, tRespond=t1Respond,tEngineRespond=t2Respond,tSouthRespond=tSouth_Respond,
                                              prompt=advisory_prompt, inbound=advisory_inbound,
                                              nextescalation=advisory_escalation,
                                              expertmtx=expertmatrix, matchmtx=matchedmatrix), 200, headers)
