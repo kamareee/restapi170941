@@ -20,12 +20,12 @@ api = Api(app)
 # @app.route('/getParam', methods=['GET'])
 class BarAPI(Resource):
     def get(self):
-        a = datetime.datetime.now()
+
         parser = reqparse.RequestParser()
         parser.add_argument('serviceID', type=str)
         json = parser.parse_args()
         r = requests.get('http://localhost:5002/getParam', params=json)
-
+        a = datetime.datetime.now()
         # Parsing Data to creating testset and inserting to DB
         loginID = r.json().get('custInfo').get('loginId')
         attributes = r.json().get('attributes')
@@ -315,7 +315,6 @@ class BarAPI(Resource):
                          str(dt5), str(dt6), str(result), str(action), str(summary), str(prompt), str(inbound),
                          str(nextEscalation)))
 
-
         except (Exception, psycopg2.DatabaseError) as error:
             print 'Error in IDEAS DB. \n'
             print(error)
@@ -324,6 +323,7 @@ class BarAPI(Resource):
         finally:
             if conn is not None:
                 conn.close()
+            print 'Conn to DB failed'
 
         # Preparing ExpertMatrix and MatchedMatrix for sending data to west api
         expMatrix = ''
