@@ -290,7 +290,7 @@ class BarAPI(Resource):
 
         # Connecting with IDEAS DB to get the 'advisory_output' table data and inserting data into 'ideas_testing_system_integration table'
         try:
-            conn = psycopg2.connect(host="10.44.28.81", database="ideas", user="postgres", password="postgres")
+            conn = psycopg2.connect(host="10.44.28.81", database="ideas", user="kamar", password="kamar")
             conn.set_session(autocommit=True)
             cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
@@ -323,7 +323,6 @@ class BarAPI(Resource):
         finally:
             if conn is not None:
                 conn.close()
-            print 'Conn to DB failed'
 
         # Preparing ExpertMatrix and MatchedMatrix for sending data to west api
         expMatrix = ''
