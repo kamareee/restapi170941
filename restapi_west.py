@@ -10,6 +10,7 @@ api = Api(app)
 
 class BarAPI(Resource):
     def get(self):
+        print 'start'
         parser = reqparse.RequestParser()
         parser.add_argument('serviceID', type=str)
         json = parser.parse_args()
@@ -32,14 +33,16 @@ class BarAPI(Resource):
         matchedmatrix = r.json().get('MatchMatrix')
         t2Respond = r.json().get('tEngineRespond')
         tSouth_Respond = r.json().get('tSouthRespond')
+        tEngine_South_Respond = r.json().get('tEngineSouthRespond')
         headers = {'Content-Type': 'text/xml'}
         b = datetime.datetime.now()
         delta = b - a
         print delta
+        print 'finish'
         t1Respond = int(delta.total_seconds() * 1000) #miliseconds
         # return parser.parse_args()
         return make_response(render_template('testxml.xml', summary=advisory_summary, predictedclass=predictedClass,
-                                             action=advisory_action, tRespond=t1Respond,tEngineRespond=t2Respond,tSouthRespond=tSouth_Respond,
+                                             action=advisory_action, tRespond=t1Respond,tEngineSouthRespond=tEngine_South_Respond,tEngineRespond=t2Respond,tSouthRespond=tSouth_Respond,
                                              prompt=advisory_prompt, inbound=advisory_inbound,
                                              nextescalation=advisory_escalation,
                                              expertmtx=expertmatrix, matchmtx=matchedmatrix), 200, headers)
@@ -52,4 +55,4 @@ if __name__ == '__main__':
     app.secret_key = 'mysecret'
     # app.run('127.0.0.1', 5000, True)
     # app.run(debug=True)
-    app.run('0.0.0.0', 5000, False)
+    app.run('0.0.0.0', 5000, False, threaded=True)

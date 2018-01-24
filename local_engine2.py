@@ -24,8 +24,12 @@ class BarAPI(Resource):
         parser = reqparse.RequestParser()
         parser.add_argument('serviceID', type=str)
         json = parser.parse_args()
+        a1 = datetime.datetime.now()
         r = requests.get('http://localhost:5002/getParam', params=json)
         a = datetime.datetime.now()
+        delta = a - a1;
+        print delta
+        tLinkEngineSouth = int(delta.total_seconds() * 1000)  # miliseconds
         # Parsing Data to creating testset and inserting to DB
         loginID = r.json().get('custInfo').get('loginId')
         attributes = r.json().get('attributes')
@@ -356,7 +360,8 @@ class BarAPI(Resource):
             'Action': str(action),
             'NextEscalation': str(nextEscalation),
             'tEngineRespond': tEngineRespond,
-            'tSouthRespond': tSouthRespond
+            'tSouthRespond': tSouthRespond,
+            'tEngineSouthRespond': tLinkEngineSouth
         }
 
         return jsonify(final_data)
@@ -367,4 +372,4 @@ api.add_resource(BarAPI, '/getParam', endpoint='getParam')
 if __name__ == '__main__':
     app.secret_key = 'mysecret2'
     # app.run('127.0.0.1', 5001, True)
-    app.run('0.0.0.0', 5001, True)
+    app.run('0.0.0.0', 5001, True, threaded=True)
