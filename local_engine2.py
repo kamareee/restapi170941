@@ -26,6 +26,7 @@ class BarAPI(Resource):
         json = parser.parse_args()
         a1 = datetime.datetime.now()
         r = requests.get('http://localhost:5002/getParam', params=json)
+        returnDescription = r.json().get('retDesc')
         a = datetime.datetime.now()
         delta = a - a1;
         print delta
@@ -40,329 +41,348 @@ class BarAPI(Resource):
         AccessPort = str(r.json().get('custInfo').get('accessPort'))
         temp_prt = AccessPort.split('-')
         tprt = temp_prt[0]
-        rec = r.json().get('lineProfiles')
-        pp = rec[0]
-        packageName = pp['siebelProfile']
+        if(returnDescription == 'Success'):
+            rec = r.json().get('lineProfiles')
+            if(rec != None):
+                pp = rec[0]
+                packageName = pp['siebelProfile']
 
-        if tprt[4:6] == 'V1':
-            access_type = 'VDSL'
-        else:
-            access_type = 'FTTH'
 
-        # VLAN209
-        traffic_rec = r.json().get('trafficProfiles')
-        vln1 = traffic_rec[0]
-        vlan209 = vln1['vlan']
-        stat_vlan209 = vln1['isConfigured']
-
-        # VLAN400
-        vln2 = traffic_rec[1]
-        vlan400 = vln2['vlan']
-        stat_vlan400 = vln2['isConfigured']
-
-        # VLAN500
-        vln3 = traffic_rec[2]
-        vlan500 = vln3['vlan']
-        stat_vlan500 = vln3['isConfigured']
-
-        # VLAN600
-        vln4 = traffic_rec[3]
-        vlan600 = vln4['vlan']
-        stat_vlan600 = vln4['isConfigured']
-
-        data = []
-
-        if access_type == 'VDSL':
-            attr_rec = r.json().get('attributes')
-            upstrem_attn = attr_rec[20]['value']
-            upstream_snr = attr_rec[23]['value']
-            downstream_attn = attr_rec[5]['value']
-            downstream_snr = attr_rec[9]['value']
-
-            # vlan209_ccs
-            if bool(stat_vlan209) == True:
-                dt1 = str('Enabled')
+            if tprt[4:6] == 'V1':
+                access_type = 'VDSL'
             else:
-                dt1 = str('Disabled')
+                access_type = 'FTTH'
 
-            # vlan400_vobb
-            if bool(stat_vlan400) == True:
-                dt2 = str('Enabled')
+            # VLAN209
+            traffic_rec = r.json().get('trafficProfiles')
+            if(traffic_rec != None):
+                vln1 = traffic_rec[0]
+                vlan209 = vln1['vlan']
+                stat_vlan209 = vln1['isConfigured']
+
+                # VLAN400
+                vln2 = traffic_rec[1]
+                vlan400 = vln2['vlan']
+                stat_vlan400 = vln2['isConfigured']
+
+                # VLAN500
+                vln3 = traffic_rec[2]
+                vlan500 = vln3['vlan']
+                stat_vlan500 = vln3['isConfigured']
+
+                # VLAN600
+                vln4 = traffic_rec[3]
+                vlan600 = vln4['vlan']
+                stat_vlan600 = vln4['isConfigured']
+
+            data = []
+
+            if access_type == 'VDSL':
+                attr_rec = r.json().get('attributes')
+                upstrem_attn = attr_rec[20]['value']
+                upstream_snr = attr_rec[23]['value']
+                downstream_attn = attr_rec[5]['value']
+                downstream_snr = attr_rec[9]['value']
+
+                # vlan209_ccs
+                if bool(stat_vlan209) == True:
+                    dt1 = str('Enabled')
+                else:
+                    dt1 = str('Disabled')
+
+                # vlan400_vobb
+                if bool(stat_vlan400) == True:
+                    dt2 = str('Enabled')
+                else:
+                    dt2 = str('Disabled')
+
+                # vlan500_hsi
+                if bool(stat_vlan500) == True:
+                    dt3 = str('Enabled')
+                else:
+                    dt3 = str('Disabled')
+
+                # vlan600_iptv
+                if bool(stat_vlan600) == True:
+                    dt4 = str('Enabled')
+                else:
+                    dt4 = str('Disabled')
+
+                # Physical uplink status
+                if upstrem_attn <= 20 or upstrem_attn == None:
+                    if upstream_snr >= 8 or upstream_snr == None:
+                        dt5 = str('Good')
+                    else:
+                        dt5 = str('Bad')
+                else:
+                    dt5 = str('Bad')
+
+                # Physical downlink status
+                if downstream_attn <= 20 or downstream_attn == None:
+                    if downstream_snr >= 8 or downstream_snr == None:
+                        dt6 = str('Good')
+                    else:
+                        dt6 = str('Bad')
+                else:
+                    dt6 = str('Bad')
+
+                data.append(dt1)
+                data.append(dt2)
+                data.append(dt3)
+                data.append(dt4)
+                data.append(dt5)
+                data.append(dt6)
             else:
-                dt2 = str('Disabled')
+                attr_rec = r.json().get('attributes')
+                olt_tx_pr = attr_rec[13]['value']
+                olt_rx_pr = attr_rec[12]['value']
 
-            # vlan500_hsi
-            if bool(stat_vlan500) == True:
-                dt3 = str('Enabled')
-            else:
-                dt3 = str('Disabled')
+                # vlan209_ccs
+                if bool(stat_vlan209) == True:
+                    dt1 = str('Enabled')
+                else:
+                    dt1 = str('Disabled')
 
-            # vlan600_iptv
-            if bool(stat_vlan600) == True:
-                dt4 = str('Enabled')
-            else:
-                dt4 = str('Disabled')
+                # vlan400_vobb
+                if bool(stat_vlan400) == True:
+                    dt2 = str('Enabled')
+                else:
+                    dt2 = str('Disabled')
 
-            # Physical uplink status
-            if upstrem_attn <= 20 or upstrem_attn == None:
-                if upstream_snr >= 8 or upstream_snr == None:
+                # vlan500_hsi
+                if bool(stat_vlan500) == True:
+                    dt3 = str('Enabled')
+                else:
+                    dt3 = str('Disabled')
+
+                # vlan600_iptv
+                if bool(stat_vlan600) == True:
+                    dt4 = str('Enabled')
+                else:
+                    dt4 = str('Disabled')
+
+                # Physical uplink status
+                if olt_tx_pr >= -28:
                     dt5 = str('Good')
                 else:
                     dt5 = str('Bad')
-            else:
-                dt5 = str('Bad')
 
-            # Physical downlink status
-            if downstream_attn <= 20 or downstream_attn == None:
-                if downstream_snr >= 8 or downstream_snr == None:
+                # Physical downlink status
+                if olt_rx_pr >= -28:
                     dt6 = str('Good')
                 else:
                     dt6 = str('Bad')
-            else:
-                dt6 = str('Bad')
 
-            data.append(dt1)
-            data.append(dt2)
-            data.append(dt3)
-            data.append(dt4)
-            data.append(dt5)
-            data.append(dt6)
-        else:
-            attr_rec = r.json().get('attributes')
-            olt_tx_pr = attr_rec[13]['value']
-            olt_rx_pr = attr_rec[12]['value']
+                data.append(dt1)
+                data.append(dt2)
+                data.append(dt3)
+                data.append(dt4)
+                data.append(dt5)
+                data.append(dt6)
 
-            # vlan209_ccs
-            if bool(stat_vlan209) == True:
-                dt1 = str('Enabled')
-            else:
-                dt1 = str('Disabled')
+            # Test Instance
+            testdata = []
 
-            # vlan400_vobb
-            if bool(stat_vlan400) == True:
-                dt2 = str('Enabled')
-            else:
-                dt2 = str('Disabled')
+            for rec in range(len(data)):
 
-            # vlan500_hsi
-            if bool(stat_vlan500) == True:
-                dt3 = str('Enabled')
-            else:
-                dt3 = str('Disabled')
+                if data[rec] == 'Enabled':
+                    testdata.append(int(1))
+                elif data[rec] == 'Disabled':
+                    testdata.append(int(2))
+                elif data[rec] == 'Good':
+                    testdata.append(int(1))
+                elif data[rec] == 'Bad':
+                    testdata.append(int(2))
 
-            # vlan600_iptv
-            if bool(stat_vlan600) == True:
-                dt4 = str('Enabled')
-            else:
-                dt4 = str('Disabled')
+            # Necessary variables declaration
+            filename = 'testnew.csv'
+            trainingSet = []
+            testSet = []
+            predictions = []
 
-            # Physical uplink status
-            if olt_tx_pr >= -28:
-                dt5 = str('Good')
-            else:
-                dt5 = str('Bad')
+            k = 3
 
-            # Physical downlink status
-            if olt_rx_pr >= -28:
-                dt6 = str('Good')
-            else:
-                dt6 = str('Bad')
+            # Reading data from CSV file (This will be read from Database or operating system folder later)
+            with open(filename, 'rb') as csvfile:
+                lines = csv.reader(csvfile)
+                dataset = list(lines)
 
-            data.append(dt1)
-            data.append(dt2)
-            data.append(dt3)
-            data.append(dt4)
-            data.append(dt5)
-            data.append(dt6)
+                # Converting categorical to numerical value
+                for x in range(len(dataset)):
 
-        # Test Instance
-        testdata = []
+                    for y in range(6):
+                        if dataset[x][y] == 'TOS':
+                            dataset[x][y] = int(0)
+                        elif dataset[x][y] == 'Active' or dataset[x][y] == 'ACTIVE':
+                            dataset[x][y] = int(1)
+                        elif dataset[x][y] == 'Online':
+                            dataset[x][y] = int(1)
+                        elif dataset[x][y] == 'Offline':
+                            dataset[x][y] = int(2)
+                        elif dataset[x][y] == 'Captive':
+                            dataset[x][y] = int(3)
+                        elif dataset[x][y] == 'Yes':
+                            dataset[x][y] = int(1)
+                        elif dataset[x][y] == 'No':
+                            dataset[x][y] = int(2)
+                        elif dataset[x][y] == 'Good':
+                            dataset[x][y] = int(1)
+                        elif dataset[x][y] == 'Bad':
+                            dataset[x][y] = int(2)
+                        elif dataset[x][y] == 'Enabled':
+                            dataset[x][y] = int(1)
+                        elif dataset[x][y] == 'Disable' or dataset[x][y] == 'Disabled':
+                            dataset[x][y] = int(2)
+                            # dataset[x][y] = float(dataset[x][y])
 
-        for rec in range(len(data)):
+                    # Preparing training data for KNN
+                    trainingSet.append(dataset[x])
 
-            if data[rec] == 'Enabled':
-                testdata.append(int(1))
-            elif data[rec] == 'Disabled':
-                testdata.append(int(2))
-            elif data[rec] == 'Good':
-                testdata.append(int(1))
-            elif data[rec] == 'Bad':
-                testdata.append(int(2))
+            # Test data parsed from SPANMS (via South API)
+            testSet.append(testdata)
 
-        # Necessary variables declaration
-        filename = 'testnew.csv'
-        trainingSet = []
-        testSet = []
-        predictions = []
+            # Distance calculation function (Hamming distance)
+            def calculateDistance(instance1, instance2, length):
 
-        k = 3
+                distance = 0
+                # distanceEculidean = 0
 
-        # Reading data from CSV file (This will be read from Database or operating system folder later)
-        with open(filename, 'rb') as csvfile:
-            lines = csv.reader(csvfile)
-            dataset = list(lines)
+                #  Calculate hamming distance
+                for x in range(length):
+                    if instance1[x] == instance2[x]:
+                        distance += 0
+                    else:
+                        distance += 1
 
-            # Converting categorical to numerical value
-            for x in range(len(dataset)):
+                return distance
 
-                for y in range(6):
-                    if dataset[x][y] == 'TOS':
-                        dataset[x][y] = int(0)
-                    elif dataset[x][y] == 'Active' or dataset[x][y] == 'ACTIVE':
-                        dataset[x][y] = int(1)
-                    elif dataset[x][y] == 'Online':
-                        dataset[x][y] = int(1)
-                    elif dataset[x][y] == 'Offline':
-                        dataset[x][y] = int(2)
-                    elif dataset[x][y] == 'Captive':
-                        dataset[x][y] = int(3)
-                    elif dataset[x][y] == 'Yes':
-                        dataset[x][y] = int(1)
-                    elif dataset[x][y] == 'No':
-                        dataset[x][y] = int(2)
-                    elif dataset[x][y] == 'Good':
-                        dataset[x][y] = int(1)
-                    elif dataset[x][y] == 'Bad':
-                        dataset[x][y] = int(2)
-                    elif dataset[x][y] == 'Enabled':
-                        dataset[x][y] = int(1)
-                    elif dataset[x][y] == 'Disable' or dataset[x][y] == 'Disabled':
-                        dataset[x][y] = int(2)
-                        # dataset[x][y] = float(dataset[x][y])
+            # Calculating neighbors based on distance
+            def getNeighbors(trainingSet, testInstance, k):
+                distances = []
+                length = len(testInstance)
+                for x in range(len(trainingSet)):
+                    dist = calculateDistance(testInstance, trainingSet[x], length)
+                    distances.append((trainingSet[x], dist))
+                distances.sort(key=operator.itemgetter(1))
+                neighbors = []
 
-                # Preparing training data for KNN
-                trainingSet.append(dataset[x])
+                for x in range(k):
+                    neighbors.append(distances[x][0])
 
-        # Test data parsed from SPANMS (via South API)
-        testSet.append(testdata)
+                return neighbors
 
-        # Distance calculation function (Hamming distance)
-        def calculateDistance(instance1, instance2, length):
+            # Selecting or making decision
 
-            distance = 0
-            # distanceEculidean = 0
+            def getResponse(neighbors):
+                classVotes = {}
 
-            #  Calculate hamming distance
-            for x in range(length):
-                if instance1[x] == instance2[x]:
-                    distance += 0
-                else:
-                    distance += 1
+                for x in range(len(neighbors)):
+                    response = neighbors[x][-1]
 
-            return distance
+                    if response in classVotes:
+                        classVotes[response] += 1
+                    else:
+                        classVotes[response] = 1
+                sortedVotes = sorted(classVotes.iteritems(),
+                                     key=operator.itemgetter(1), reverse=True)
 
-        # Calculating neighbors based on distance
-        def getNeighbors(trainingSet, testInstance, k):
-            distances = []
-            length = len(testInstance)
-            for x in range(len(trainingSet)):
-                dist = calculateDistance(testInstance, trainingSet[x], length)
-                distances.append((trainingSet[x], dist))
-            distances.sort(key=operator.itemgetter(1))
-            neighbors = []
+                return sortedVotes[0][0]
 
-            for x in range(k):
-                neighbors.append(distances[x][0])
+            # Predicting the class
+            for x in range(len(testSet)):
+                neighbors = getNeighbors(trainingSet, testSet[x], k)
+                print "Neighbors: ", neighbors
+                result = getResponse(neighbors)
+                print "Result: ", result
+                predictions.append(result)
+                print "Predictions: ", predictions
 
-            return neighbors
+            # Connecting with IDEAS DB to get the 'advisory_output' table data and inserting data into 'ideas_testing_system_integration table'
+            try:
+                conn = psycopg2.connect(host="10.44.28.81", database="ideas", user="kamar", password="kamar")
+                conn.set_session(autocommit=True)
+                cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
-        # Selecting or making decision
+                advisory_class_qry = "SELECT * FROM advisory_output WHERE advisory_class=%s"
+                cur.execute(advisory_class_qry, (str(result)))
+                advisory_result = cur.fetchone()
 
-        def getResponse(neighbors):
-            classVotes = {}
+                if advisory_result:
+                    action = advisory_result['advisory_system_action']
+                    summary = advisory_result['advisory_summary']
+                    prompt = advisory_result['advisory_prompt']
+                    inbound = advisory_result['advisory_inbound']
+                    nextEscalation = advisory_result['advisory_next_escalation']
 
-            for x in range(len(neighbors)):
-                response = neighbors[x][-1]
+                # Updating IDEAS DB for record keeping
+                update_query = """ INSERT INTO ideas_testing_system_integration (login, access_type, package_name, vlan_209_ccs, vlan400_vobb, vlan500_hsi,
+                      vlan600_iptv, physical_uplink_status, "physical_downlink_status ", "advisory_class ", "advisory_system_action ", "advisory_summary ",
+                      "advisory_prompt ", "advisory_inbound ", "advisory_next_escalation ") VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
 
-                if response in classVotes:
-                    classVotes[response] += 1
-                else:
-                    classVotes[response] = 1
-            sortedVotes = sorted(classVotes.iteritems(),
-                                 key=operator.itemgetter(1), reverse=True)
+                cur.execute(update_query,
+                            (str(loginID), str(access_type), str(packageName), str(dt1), str(dt2), str(dt3), str(dt4),
+                             str(dt5), str(dt6), str(result), str(action), str(summary), str(prompt), str(inbound),
+                             str(nextEscalation)))
 
-            return sortedVotes[0][0]
+            except (Exception, psycopg2.DatabaseError) as error:
+                print 'Error in IDEAS DB. \n'
+                print(error)
+                # sys.exit(1)
 
-        # Predicting the class
-        for x in range(len(testSet)):
-            neighbors = getNeighbors(trainingSet, testSet[x], k)
-            print "Neighbors: ", neighbors
-            result = getResponse(neighbors)
-            print "Result: ", result
-            predictions.append(result)
-            print "Predictions: ", predictions
+            finally:
+                if conn is not None:
+                    conn.close()
 
-        # Connecting with IDEAS DB to get the 'advisory_output' table data and inserting data into 'ideas_testing_system_integration table'
-        try:
-            conn = psycopg2.connect(host="10.44.28.81", database="ideas", user="kamar", password="kamar")
-            conn.set_session(autocommit=True)
-            cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+            # Preparing ExpertMatrix and MatchedMatrix for sending data to west api
+            expMatrix = ''
 
-            advisory_class_qry = "SELECT * FROM advisory_output WHERE advisory_class=%s"
-            cur.execute(advisory_class_qry, (str(result)))
-            advisory_result = cur.fetchone()
+            for i in range(len(testdata)):
+                expMatrix += str(testdata[i])
 
-            if advisory_result:
-                action = advisory_result['advisory_system_action']
-                summary = advisory_result['advisory_summary']
-                prompt = advisory_result['advisory_prompt']
-                inbound = advisory_result['advisory_inbound']
-                nextEscalation = advisory_result['advisory_next_escalation']
+            final_expMatrix = '???????' + str(expMatrix)
 
-            # Updating IDEAS DB for record keeping
-            update_query = """ INSERT INTO ideas_testing_system_integration (login, access_type, package_name, vlan_209_ccs, vlan400_vobb, vlan500_hsi,
-                  vlan600_iptv, physical_uplink_status, "physical_downlink_status ", "advisory_class ", "advisory_system_action ", "advisory_summary ",
-                  "advisory_prompt ", "advisory_inbound ", "advisory_next_escalation ") VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+            res = neighbors[0][0:-1]
 
-            cur.execute(update_query,
-                        (str(loginID), str(access_type), str(packageName), str(dt1), str(dt2), str(dt3), str(dt4),
-                         str(dt5), str(dt6), str(result), str(action), str(summary), str(prompt), str(inbound),
-                         str(nextEscalation)))
+            matchMatrix = ''
 
-        except (Exception, psycopg2.DatabaseError) as error:
-            print 'Error in IDEAS DB. \n'
-            print(error)
-            # sys.exit(1)
+            for i in range(len(res)):
+                matchMatrix += str(res[i])
 
-        finally:
-            if conn is not None:
-                conn.close()
-
-        # Preparing ExpertMatrix and MatchedMatrix for sending data to west api
-        expMatrix = ''
-
-        for i in range(len(testdata)):
-            expMatrix += str(testdata[i])
-
-        final_expMatrix = '???????' + str(expMatrix)
-
-        res = neighbors[0][0:-1]
-
-        matchMatrix = ''
-
-        for i in range(len(res)):
-            matchMatrix += str(res[i])
-
-        final_matchMatrix = '???????' + str(matchMatrix)
+            final_matchMatrix = '???????' + str(matchMatrix)
 
         b = datetime.datetime.now()
         delta = b - a
         print delta
         tEngineRespond = int(delta.total_seconds() * 1000)  # miliseconds
-        # Final data to send to West Api
-        final_data = {
-            'PredictedClass': str(result),
-            'ExpertMatrix': str(final_expMatrix),
-            'MatchMatrix': str(final_matchMatrix),
-            'Summary': str(summary),
-            'Prompt': str(prompt),
-            'Inbound': str(inbound),
-            'Action': str(action),
-            'NextEscalation': str(nextEscalation),
-            'tEngineRespond': tEngineRespond,
-            'tSouthRespond': tSouthRespond,
-            'tEngineSouthRespond': tLinkEngineSouth
-        }
+        if (returnDescription == 'Success'):
+            # Final data to send to West Api
+            final_data = {
+                'PredictedClass': str(result),
+                'ExpertMatrix': str(final_expMatrix),
+                'MatchMatrix': str(final_matchMatrix),
+                'Summary': str(summary),
+                'Prompt': str(prompt),
+                'Inbound': str(inbound),
+                'Action': str(action),
+                'NextEscalation': str(nextEscalation),
+                'tEngineRespond': tEngineRespond,
+                'tSouthRespond': tSouthRespond,
+                'tEngineSouthRespond': tLinkEngineSouth
+            }
+        else:
+            final_data = {
+                'PredictedClass': 'none',
+                'ExpertMatrix': 'none',
+                'MatchMatrix': 'none',
+                'Summary': returnDescription,
+                'Prompt': 'none',
+                'Inbound': 'none',
+                'Action': 'none',
+                'NextEscalation': 'none',
+                'tEngineRespond': tEngineRespond,
+                'tSouthRespond': tSouthRespond,
+                'tEngineSouthRespond': tLinkEngineSouth
+            }
 
         return jsonify(final_data)
 

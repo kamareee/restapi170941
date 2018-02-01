@@ -16,7 +16,7 @@ class BarAPI(Resource):
         parser.add_argument('serviceID', type=str)
         json = parser.parse_args()
         serviceID = json.get('serviceID')
-        print('i got it!' + serviceID)
+        # print('i got it!' + serviceID)
         # payload = {'loginId': serviceID, "reqParams": ["ADMIN_STATUS","OPER_STATUS",'ONT_TX_POWER','ONT_RX_POWER','LASTUPTIME']}
         payload = {"loginId":serviceID,"trafficProfile":"true","lineProfile":"true",
                    "reqParams":["ADMIN_STATUS","OPER_STATUS","OLT_RX_POWER","OLT_TX_POWER","ONT_TEMP","ONT_VOLTS",
@@ -29,8 +29,8 @@ class BarAPI(Resource):
         print(payload)
         # payload = json.dumps(payload)
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-        r = requests.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers)
-        # r = requests.post('http://10.41.56.90:9001/rest/api/reading', json = payload, headers = headers)
+        # r = requests.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers)
+        r = requests.post('http://10.41.56.90:9001/rest/api/reading', json = payload, headers = headers)
         # val = urllib.unquote(r.url).decode('utf8')
         # print(val)
         b = datetime.datetime.now()
