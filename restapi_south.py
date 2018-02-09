@@ -37,13 +37,16 @@ class BarAPI(Resource):
         delta = b - a
         print delta
         tSouthRespond = int(delta.total_seconds() * 1000)  # miliseconds
-        data = r.json()#r.content
-        # data = {"list": [{'a': '1'}]}
-        # data['list'].append({'t_SouthRespond':'1'})
-        data['attributes'].append({'tSouthRespond': tSouthRespond})
-        # r.content = data
-        # print(r.content)
-        print(data)
+        try:
+            data = r.json()#r.content
+            # data = {"list": [{'a': '1'}]}
+            # data['list'].append({'t_SouthRespond':'1'})
+            data['attributes'].append({'tSouthRespond': tSouthRespond})
+            # r.content = data
+            # print(r.content)
+            print(data)
+        except ValueError:
+            data = r.content
         return data
         # return r.json()
         # return jsonify(r.content)

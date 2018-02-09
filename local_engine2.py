@@ -26,7 +26,12 @@ class BarAPI(Resource):
         json = parser.parse_args()
         a1 = datetime.datetime.now()
         r = requests.get('http://localhost:5002/getParam', params=json)
-        returnDescription = r.json().get('retDesc')
+        try:
+            returnDescription = r.json().get('retDesc')
+        except :
+            data = r.content
+            return data
+
         a = datetime.datetime.now()
         delta = a - a1;
         print delta

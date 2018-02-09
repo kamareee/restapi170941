@@ -53,9 +53,9 @@ def reading():
 :"10M","configuredProfileTx":"10M_UP_IPTV","configuredProfileRx":"10M_DOWN_IPTV","isSubscribed":True,"isConfigured":True,"isMissing":False,"isProfileTxMismatch":False,"isProfileRxMismatch":False}]}
 
     error = {"retCode":200,"retDesc":"Error Can't query to EMS/NE","custInfo":{"servicePoint":"HS1025171053","loginId":"afaideen80@unifi","accessPort":"SDG_G026-1/7/4.7","src":"radius"},"attributes":[]}
-    sleep(400)
+    # sleep(400)
     print 'Engine finish...'
-    return jsonify(error)
+    return jsonify(output2)
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret4'

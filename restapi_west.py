@@ -23,17 +23,21 @@ class BarAPI(Resource):
         # val = urllib.unquote(r.url).decode('utf8')
         # print(val)
         # print(r.text)
-        predictedClass = r.json().get('PredictedClass')
-        advisory_action = r.json().get('Action')
-        advisory_summary = r.json().get('Summary')
-        advisory_prompt = r.json().get('Prompt')
-        advisory_inbound = r.json().get('Inbound')
-        advisory_escalation = r.json().get('NextEscalation')
-        expertmatrix = r.json().get('ExpertMatrix')
-        matchedmatrix = r.json().get('MatchMatrix')
-        t2Respond = r.json().get('tEngineRespond')
-        tSouth_Respond = r.json().get('tSouthRespond')
-        tEngine_South_Respond = r.json().get('tEngineSouthRespond')
+
+        try:
+            predictedClass = r.json().get('PredictedClass')
+            advisory_action = r.json().get('Action')
+            advisory_summary = r.json().get('Summary')
+            advisory_prompt = r.json().get('Prompt')
+            advisory_inbound = r.json().get('Inbound')
+            advisory_escalation = r.json().get('NextEscalation')
+            expertmatrix = r.json().get('ExpertMatrix')
+            matchedmatrix = r.json().get('MatchMatrix')
+            t2Respond = r.json().get('tEngineRespond')
+            tSouth_Respond = r.json().get('tSouthRespond')
+            tEngine_South_Respond = r.json().get('tEngineSouthRespond')
+        except:
+            return r.content
         headers = {'Content-Type': 'text/xml'}
         b = datetime.datetime.now()
         delta = b - a

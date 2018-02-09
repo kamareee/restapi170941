@@ -81,3 +81,30 @@ respond:
 ,{"name":"SERNUM","value":"ALCLF9067039"},{"name":"TEMP","value":null},{"name":"UL_BIAS","value":"NotSupport"},{"name":"UL_RX_POWER","value":"NotSupport"},{"name":"UL_TEMP","value":"NotSupport"},{"name":"UL_TX_POWER","value":"NotSupport"},{"name":"UL_VOLTS","value":"NotSupport"}],"lineProfiles":[{"siebelProfile":"UniFi Advance Plus 50Mbps (Thank You Campaign 2017)","lineProfileTx":"n/a","lineProfileRx":"n/a","serviceProfileTx":"NotSupport","serviceProfileRx":"NotSupport"}],"trafficProfiles":[{"objId":"SKT_G003:FLOW-1-1-2-3-15-1-1-3:IS-NR","vlan":"209","siebelProfileTx":null,"siebelProfileRx":null,"configuredProfileTx":"512K_UP","configuredProfileRx":"512K_DOWN","isSubscribed":false,"isConfigured":true,"isMissing":false,"isProfileTxMismatch":false,"isProfileRxMismatch":false},{"objId":"SKT_G003:VOIP-1-1-2-3-15-1:IS-NR","vlan":"400","siebelProfileTx":"256K","siebelProfileRx":"256K","configuredProfileTx":"256K_UP","configuredProfileRx":"256K_DOWN","isSubscribed":true,"isConfigured":true,"isMissing":false,"isProfileTxMismatch":false,"isProfileRxMismatch":false},{"objId":"SKT_G003:FLOW-1-1-2-3-15-1-1-1:IS-NR","vlan":"500","siebelProfileTx":"21M","siebelProfileRx":"55M","configuredProfileTx":"21M_UP","configuredProfileRx":"55M_DOWN","isSubscribed":true,"isConfigured"
 :true,"isMissing":false,"isProfileTxMismatch":false,"isProfileRxMismatch":false},{"objId":"SKT_G003:FLOW-1-1-2-3-15-1-1-2:IS-NR","vlan":"600","siebelProfileTx":"10M","siebelProfileRx"
 :"10M","configuredProfileTx":"10M_UP_IPTV","configuredProfileRx":"10M_DOWN_IPTV","isSubscribed":true,"isConfigured":true,"isMissing":false,"isProfileTxMismatch":false,"isProfileRxMismatch":false}]}
+
+Unifi users,
+
+kwong4564@unifi
+wty5051@unifi
+cheporman88@unifi
+edros@unifi
+notebookplzthemines@unifi
+naniskitchen@unifibiz
+pedramocmd@unifibiz
+vstk_services@unifibiz
+ecosolutions@unifibiz
+auntykels1@unifi
+vstk_services@unifibiz
+samzidul1234@unifi
+utppk@unifibiz
+bltautopart@unifibiz
+harvestcommunity@unifibiz
+syedashwinr@unifibiz
+nic7chunchang@unifi
+mrtejnarayan@unifi
+irwan88810@unifi
+skadijahsb@unifibiz
+asrapkhan53@unifi
+htfarzjune@unifibiz
+2terrence@unifi
+vstk_services@unifibiz
