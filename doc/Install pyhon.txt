@@ -1,0 +1,9 @@
+Edit environment variable in path,
+C:\Python27
+C:\Python27\Scripts
+
+Install packages refer to
+https://packaging.python.org/tutorials/installing-packages/
+
+Install pip refer to,
+https://pip.pypa.io/en/stable/

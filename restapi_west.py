@@ -50,7 +50,7 @@ class BarAPI(Resource):
                                              prompt=advisory_prompt, inbound=advisory_inbound,
                                              nextescalation=advisory_escalation,
                                              expertmtx=expertmatrix, matchmtx=matchedmatrix), 200, headers)
-        # return 'you are done 123'
+
 
 api.add_resource(BarAPI, '/expert.do', endpoint='expert.do')
 api.add_resource(BarAPI, '/getParam', endpoint='getParam')

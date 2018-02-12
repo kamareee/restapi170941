@@ -1,0 +1,5 @@
+SSH is needed to allow connection to server for file udating purposes.
+Find in D:\Software\SSH Windows, or
+download from http://sshwindows.sourceforge.net/download/ then click on 'Binary Installer Releases'
+
+-run setupssh.exe

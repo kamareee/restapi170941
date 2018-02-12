@@ -33,7 +33,7 @@ disown %1
 -Disattach from screen
 	-ctrl+a followed by 'd'
 
-http://10.44.28.64:5000/expert.do?serviceID=afaideen80@unifi
+test http://10.44.28.64:5000/expert.do?serviceID=afaideen80@unifi
 
 open file,
 vi filename
