@@ -63,11 +63,13 @@ Repeat above process for all engines - west, local_engine2 and south
 -Disattach from screen	
 	-ctrl+a followed by 'd'
 ]
-
-
-
 Install remote desktop,
 yum install tigervnc-server
+
+open firewall server centos,
+firewall-cmd --permanent --zone=public --add-port=9001/tcp
+firewall-cmd --permanent --zone=public --add-port=5000-5005/tcp
+firewall-cmd --reload
 
 curl,
 curl -i -d '{ "loginId": "afaideen80@unifi", "reqParams":[ "ADMIN_STATUS", "OPER_STATUS", "ONT_TX_POWER", "ONT_RX_POWER", "LASTUPTIME" ] }' -X POST http://10.41.56.90:9001/rest/api/reading --header "Content-Type: application/json" --header "Accept: application/json"
