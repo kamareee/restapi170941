@@ -26,6 +26,8 @@ class BarAPI(Resource):
         json = parser.parse_args()
         a1 = datetime.datetime.now()
         r = requests.get('http://localhost:5002/getParam', params=json)
+        api2_data = r.json().get('@api2')
+        responseHeader = api2_data.get('responseHeader')
         try:
             returnDescription = r.json().get('retDesc')
         except :
@@ -41,8 +43,9 @@ class BarAPI(Resource):
         attributes = r.json().get('attributes')
         for attr in attributes:
             print attr
-            tSouthRespond = attr.get('tSouthRespond')
-            print tSouthRespond
+            if attr.get('tSouthRespond')!=None :
+                tSouthRespond = attr.get('tSouthRespond')
+                print tSouthRespond
         AccessPort = str(r.json().get('custInfo').get('accessPort'))
         temp_prt = AccessPort.split('-')
         tprt = temp_prt[0]
@@ -51,7 +54,6 @@ class BarAPI(Resource):
             if(rec != None):
                 pp = rec[0]
                 packageName = pp['siebelProfile']
-
 
             if tprt[4:6] == 'V1':
                 access_type = 'VDSL'
