@@ -43,19 +43,12 @@ class BarAPI(Resource):
         try:
             data = r.json()#r.content
             data2 = r2.json()
-            # data = {"list": [{'a': '1'}]}
-            # data['list'].append({'t_SouthRespond':'1'})
             data['attributes'].append({'tSouthRespond': tSouthRespond})
             data['@api2'] = data2
-            # r.content = data
-            # print(r.content)
             print(data)
         except ValueError:
             data = r.content
         return data
-        # return r.json()
-        # return jsonify(r.content)
-        # return "restapi_south"
 
 api.add_resource(BarAPI, '/getParam', endpoint='getParam')
 
