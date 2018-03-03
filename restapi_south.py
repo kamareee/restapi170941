@@ -1,8 +1,10 @@
 import requests
 import datetime
 
+from concurrent.futures import TimeoutError
 from flask import Flask, jsonify
 from flask_restful import Api, Resource, reqparse
+from requests import ConnectionError, Timeout, HTTPError
 from requests_futures.sessions import FuturesSession
 
 app = Flask(__name__)
@@ -31,10 +33,20 @@ class BarAPI(Resource):
         # r = requests.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers)
         # r = requests.post('http://10.41.56.90:9001/rest/api/reading', json = payload, headers = headers)
         session = FuturesSession()
-        api_one = session.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers)
+        api_one = session.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers, timeout=120)
         api_two = session.get('http://10.45.196.65/IDEAS/ideas.do?serviceID=' + serviceID)
-        r = api_one.result()
-        r2 = api_two.result()
+        try:
+            r = api_one.result()
+            r2 = api_two.result()
+        except ConnectionError as e:
+            print(e.message)
+            return str(e.message)
+        except Timeout as e:
+            print(e.message)
+            return str(e.message)
+        except HTTPError as e:
+            print(e.message)
+            return str(e.message)
 
         b = datetime.datetime.now()
         delta = b - a

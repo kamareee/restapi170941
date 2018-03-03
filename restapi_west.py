@@ -37,7 +37,8 @@ class BarAPI(Resource):
             tSouth_Respond = r.json().get('tSouthRespond')
             tEngine_South_Respond = r.json().get('tEngineSouthRespond')
         except:
-            return r.content
+            data = r.content
+            return data
         headers = {'Content-Type': 'text/xml'}
         b = datetime.datetime.now()
         delta = b - a

@@ -26,9 +26,10 @@ class BarAPI(Resource):
         json = parser.parse_args()
         a1 = datetime.datetime.now()
         r = requests.get('http://localhost:5002/getParam', params=json)
-        api2_data = r.json().get('@api2')
-        responseHeader = api2_data.get('responseHeader')
         try:
+            api2_data = r.json().get('@api2')
+            responseHeader = api2_data.get('responseHeader')
+
             returnDescription = r.json().get('retDesc')
         except :
             data = r.content
