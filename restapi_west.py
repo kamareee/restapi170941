@@ -4,6 +4,7 @@ import datetime
 from flask import Flask, render_template, make_response
 # from flask.ext.pymongo import PyMongo
 from flask_restful import Api, Resource, reqparse
+from requests import Timeout, ConnectionError, HTTPError
 
 app = Flask(__name__)
 api = Api(app)
@@ -18,11 +19,20 @@ class BarAPI(Resource):
         # payload = {'serviceID': serviceID}
         a = datetime.datetime.now()
         print a
-        r = requests.get('http://localhost:5001/getParam',params=json)
-        # print(r.url)
-        # val = urllib.unquote(r.url).decode('utf8')
-        # print(val)
-        # print(r.text)
+        try:
+            r = requests.get('http://localhost:5001/getParam',params=json,timeout=120)
+        except Timeout:
+            print ("Timeout Error:")
+            return "Timeout Error:"
+        except HTTPError:
+            print ("HTTPError Error:")
+            return "HTTPError Error:"
+        except ConnectionError:
+            print ("ConnectionError Error:")
+            return "ConnectionError Error:"
+
+        if r.content.__contains__("Error"):
+            return r.content
 
         try:
             predictedClass = r.json().get('PredictedClass')

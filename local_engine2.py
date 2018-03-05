@@ -25,11 +25,21 @@ class BarAPI(Resource):
         parser.add_argument('serviceID', type=str)
         json = parser.parse_args()
         a1 = datetime.datetime.now()
-        r = requests.get('http://localhost:5002/getParam', params=json)
+        try:
+            r = requests.get('http://localhost:5002/getParam', params=json)
+        except Timeout:
+            print ("Timeout Error:")
+            return "Timeout Error:"
+        except HTTPError:
+            print ("HTTPError Error:")
+            return "HTTPError Error:"
+        except ConnectionError:
+            print ("ConnectionError Error:")
+            return "ConnectionError Error:"
+
         try:
             api2_data = r.json().get('@api2')
             responseHeader = api2_data.get('responseHeader')
-
             returnDescription = r.json().get('retDesc')
         except :
             data = r.content
@@ -50,7 +60,7 @@ class BarAPI(Resource):
         AccessPort = str(r.json().get('custInfo').get('accessPort'))
         temp_prt = AccessPort.split('-')
         tprt = temp_prt[0]
-        if(returnDescription == 'Success'):
+        if returnDescription == 'Success':
             rec = r.json().get('lineProfiles')
             if(rec != None):
                 pp = rec[0]
@@ -358,11 +368,10 @@ class BarAPI(Resource):
 
             final_matchMatrix = '???????' + str(matchMatrix)
 
-        b = datetime.datetime.now()
-        delta = b - a
-        print delta
-        tEngineRespond = int(delta.total_seconds() * 1000)  # miliseconds
-        if (returnDescription == 'Success'):
+            b = datetime.datetime.now()
+            delta = b - a
+            print delta
+            tEngineRespond = int(delta.total_seconds() * 1000)  # miliseconds
             # Final data to send to West Api
             final_data = {
                 'PredictedClass': str(result),
@@ -377,22 +386,12 @@ class BarAPI(Resource):
                 'tSouthRespond': tSouthRespond,
                 'tEngineSouthRespond': tLinkEngineSouth
             }
-        else:
-            final_data = {
-                'PredictedClass': 'none',
-                'ExpertMatrix': 'none',
-                'MatchMatrix': 'none',
-                'Summary': returnDescription,
-                'Prompt': 'none',
-                'Inbound': 'none',
-                'Action': 'none',
-                'NextEscalation': 'none',
-                'tEngineRespond': tEngineRespond,
-                'tSouthRespond': tSouthRespond,
-                'tEngineSouthRespond': tLinkEngineSouth
-            }
+            return jsonify(final_data)
 
-        return jsonify(final_data)
+        return returnDescription
+
+
+
 
 
 api.add_resource(BarAPI, '/getParam', endpoint='getParam')

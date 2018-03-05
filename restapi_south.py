@@ -30,14 +30,16 @@ class BarAPI(Resource):
                     "DOWNSTREAM_MIN_CONFIG","DOWNSTREAM_MAX_CONFIG","PPOE","OPTION82","UPTIME","LINK_RETRAIN"]}
         print(payload)
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-        # r = requests.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers)
-        # r = requests.post('http://10.41.56.90:9001/rest/api/reading', json = payload, headers = headers)
         session = FuturesSession()
+        #simulate error for http
+        # api_one = session.post('http://httpstat.us/401', json=payload, headers=headers, timeout=2)
         api_one = session.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers, timeout=120)
         api_two = session.get('http://10.45.196.65/IDEAS/ideas.do?serviceID=' + serviceID)
         try:
             r = api_one.result()
             r2 = api_two.result()
+            r.raise_for_status()
+            r2.raise_for_status()
         except ConnectionError as e:
             print(e.message)
             return str(e.message)
@@ -48,18 +50,20 @@ class BarAPI(Resource):
             print(e.message)
             return str(e.message)
 
-        b = datetime.datetime.now()
-        delta = b - a
-        print delta
-        tSouthRespond = int(delta.total_seconds() * 1000)  # miliseconds
         try:
-            data = r.json()#r.content
+            data = r.json()
             data2 = r2.json()
+
+            b = datetime.datetime.now()
+            delta = b - a
+            print delta
+            tSouthRespond = int(delta.total_seconds() * 1000)  # miliseconds
             data['attributes'].append({'tSouthRespond': tSouthRespond})
             data['@api2'] = data2
             print(data)
         except ValueError:
-            data = r.content
+            # data = r.content
+            data = "South API failed recognized json data"
         return data
 
 api.add_resource(BarAPI, '/getParam', endpoint='getParam')
