@@ -10,7 +10,7 @@ api = Api(app)
 def reading():
     print 'Engine start...'
     json = request.json
-    loginid = json.get('loginid')
+    loginid = json.get('loginId')
     reqParams = json.get('reqParams')#['reqParams']
 
     output = {

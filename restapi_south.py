@@ -20,14 +20,18 @@ class BarAPI(Resource):
         json = parser.parse_args()
         serviceID = json.get('serviceID')
         # payload = {'loginId': serviceID, "reqParams": ["ADMIN_STATUS","OPER_STATUS",'ONT_TX_POWER','ONT_RX_POWER','LASTUPTIME']}
-        payload = {"loginId":serviceID,"trafficProfile":"true","lineProfile":"true",
-                   "reqParams":["ADMIN_STATUS","OPER_STATUS","OLT_RX_POWER","OLT_TX_POWER","ONT_TEMP","ONT_VOLTS",
-                    "ONT_BIAS","RANGING","CPU","MEM","TEMP","BECUP","BECDOWN","UL_RX_POWER","UL_TX_POWER","UL_BIAS",
-                    "UL_TEMP","UL_VOLTS","CRC_ERROR","BW_IN_UTIL","BW_OUT_UTIL","SERNUM","PWD","ONTID","ONU_FIRMWARE",
-                    "LASTUPTIME","LASTDOWNTIME","LASTDOWNCAUSE","ONTSTAT","ONTVER","MAINSOFTVERSION","UPSTREAM_SNR","DOWNSTREAM_SNR",
-                    "UPSTREAM_POWER","DOWNSTREAM_POWER","UPSTREAM_ATTENUATION","DOWNSTREAM_ATTENUATION","UPSTREAM_ATTAINABLERATE",
-                    "DOWNSTREAM_ATTAINABLERATE","UPSTREAM_ACTUAL_RATE","DOWNSTREAM_ACTUAL_RATE","UPSTREAM_MIN_CONFIG","DOWNSTREAM_MAX_CONFIG",
-                    "DOWNSTREAM_MIN_CONFIG","DOWNSTREAM_MAX_CONFIG","PPOE","OPTION82","UPTIME","LINK_RETRAIN"]}
+        # payload = {"loginId":serviceID,"trafficProfile":"true","lineProfile":"true",
+        #            "reqParams":["ADMIN_STATUS","OPER_STATUS","OLT_RX_POWER","OLT_TX_POWER","ONT_TEMP","ONT_VOLTS",
+        #             "ONT_BIAS","RANGING","CPU","MEM","TEMP","BECUP","BECDOWN","UL_RX_POWER","UL_TX_POWER","UL_BIAS",
+        #             "UL_TEMP","UL_VOLTS","CRC_ERROR","BW_IN_UTIL","BW_OUT_UTIL","SERNUM","PWD","ONTID","ONU_FIRMWARE",
+        #             "LASTUPTIME","LASTDOWNTIME","LASTDOWNCAUSE","ONTSTAT","ONTVER","MAINSOFTVERSION","UPSTREAM_SNR","DOWNSTREAM_SNR",
+        #             "UPSTREAM_POWER","DOWNSTREAM_POWER","UPSTREAM_ATTENUATION","DOWNSTREAM_ATTENUATION","UPSTREAM_ATTAINABLERATE",
+        #             "DOWNSTREAM_ATTAINABLERATE","UPSTREAM_ACTUAL_RATE","DOWNSTREAM_ACTUAL_RATE","UPSTREAM_MIN_CONFIG","DOWNSTREAM_MAX_CONFIG",
+        #             "DOWNSTREAM_MIN_CONFIG","DOWNSTREAM_MAX_CONFIG","PPOE","OPTION82","UPTIME","LINK_RETRAIN"]}
+        payload = {"loginId": serviceID, "trafficProfile": "true", "lineProfile": "true",
+                   "reqParams": ["OLT_RX_POWER", "OLT_TX_POWER", "UPSTREAM_SNR", "DOWNSTREAM_SNR",
+                                 "UPSTREAM_ATTENUATION", "DOWNSTREAM_ATTENUATION", "UPSTREAM_ACTUAL_RATE",
+                                 "DOWNSTREAM_ACTUAL_RATE"]}
         print(payload)
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         session = FuturesSession()
@@ -71,4 +75,4 @@ api.add_resource(BarAPI, '/getParam', endpoint='getParam')
 if __name__ == '__main__':
     app.secret_key = 'mysecret3'
     # app.run('127.0.0.1', 5001, True)
-    app.run('0.0.0.0', 5002, True, threaded=True)
+    app.run('0.0.0.0', 5003, True, threaded=True)

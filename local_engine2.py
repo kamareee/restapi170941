@@ -26,7 +26,8 @@ class BarAPI(Resource):
         json = parser.parse_args()
         a1 = datetime.datetime.now()
         try:
-            r = requests.get('http://localhost:5002/getParam', params=json)
+            r = requests.get('http://localhost:5002/getParam', params=json, timeout=120)
+            r.raise_for_status()
         except Timeout:
             print ("Timeout Error:")
             return "Timeout Error:"
@@ -56,7 +57,8 @@ class BarAPI(Resource):
             print attr
             if attr.get('tSouthRespond')!=None :
                 tSouthRespond = attr.get('tSouthRespond')
-                print tSouthRespond
+            if attr.get('tPreProc')!=None :
+                tPreProc = attr.get('tPreProc')
         AccessPort = str(r.json().get('custInfo').get('accessPort'))
         temp_prt = AccessPort.split('-')
         tprt = temp_prt[0]

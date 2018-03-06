@@ -21,6 +21,7 @@ class BarAPI(Resource):
         print a
         try:
             r = requests.get('http://localhost:5001/getParam',params=json,timeout=120)
+            r.raise_for_status()
         except Timeout:
             print ("Timeout Error:")
             return "Timeout Error:"
