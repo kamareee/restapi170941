@@ -62,9 +62,6 @@ class BarAPI(Resource):
             return data
 
         a = datetime.datetime.now()
-        # delta = a - a1;
-        # print delta
-        # tLinkEngineSouth = int(delta.total_seconds() * 1000)  # miliseconds
 
         attributes = r.json().get('attributes')
         for attr in attributes:
@@ -105,12 +102,8 @@ class BarAPI(Resource):
             olt_tx_pr = attr_rec[13]['value']
             olt_rx_pr = attr_rec[12]['value']
 
-            # UPSTREAM_ACTUAL_RATE and DOWNSTREAM_ACTUAL_RATE
-            upstream_act_rate = 10  # change later
-            downstream_act_rate = 20  # change later
-
             # Calling the second API and retrieving the data
-            rec_data = get_new_attributes(service_id, upstream_act_rate, downstream_act_rate, api2_data)
+            rec_data = get_new_attributes(service_id, api2_data)
 
             if len(traffic_rec) is 4:
                 # VLAN209
@@ -141,6 +134,26 @@ class BarAPI(Resource):
                 # VLAN500
                 vln3 = traffic_rec[2]
                 stat_vlan500 = vln3['isConfigured']
+
+            if access_type == 'FTTH':
+                configuredProfileTx = vln3.get('configuredProfileTx')
+                configuredProfileTxVal = float(configuredProfileTx.split('_')[0].split('M')[0])
+                configuredProfileRx = vln3.get('configuredProfileRx')
+                configuredProfileRxVal = float(configuredProfileRx.split('_')[0].split('M')[0])
+                radiusUploadVal = rec_data.get('radiusUpload')
+                radiusDownloadVal = rec_data.get('radiusDownload')
+                uploadSpeedProfileVal = configuredProfileTxVal/radiusUploadVal
+                downloadSpeedProfileVal = configuredProfileRxVal/radiusDownloadVal
+                if uploadSpeedProfileVal >= 1:
+                    uploadSpeedProfileStatus = 'Good'
+                else:
+                    uploadSpeedProfileStatus = 'Bad'
+
+                if downloadSpeedProfileVal >= 1:
+                    downloadSpeedProfileStatus = 'Good'
+                else:
+                    downloadSpeedProfileStatus = 'Bad'
+
 
             if access_type == 'FTTH' and (olt_tx_pr is None or olt_rx_pr is None):
                 final_data = {
@@ -176,8 +189,8 @@ class BarAPI(Resource):
                     'HSI_session': str(rec_data['hsi_session']),
                     'Frequent_disconnect': rec_data['frequent_disconnect'],
                     'Neighbouring_session': rec_data['neighbouring_session'],
-                    'Upload_speed_profile': '',
-                    'Download_speed_profile': '',
+                    'Upload_speed_profile': uploadSpeedProfileStatus,
+                    'Download_speed_profile': downloadSpeedProfileStatus,
                     'Physical_uplink_status': str(dt1),
                     'Physical_downlink_status': str(dt2),
                     'Message': str('No VLAN data'),
@@ -357,8 +370,8 @@ class BarAPI(Resource):
                     'HSI_session': str(rec_data['hsi_session']),
                     'Frequent_disconnect': rec_data['frequent_disconnect'],
                     'Neighbouring_session': rec_data['neighbouring_session'],
-                    'Upload_speed_profile': '',
-                    'Download_speed_profile': '',
+                    'Upload_speed_profile': uploadSpeedProfileStatus,
+                    'Download_speed_profile': downloadSpeedProfileStatus,
                     'Vlan_209': str(dt1),
                     'Vlan_400': str(dt2),
                     'Vlan_500': str(dt3),
@@ -484,8 +497,8 @@ class BarAPI(Resource):
                     'HSI_session': str(rec_data['hsi_session']),
                     'Frequent_disconnect': rec_data['frequent_disconnect'],
                     'Neighbouring_session': rec_data['neighbouring_session'],
-                    'Upload_speed_profile': '',
-                    'Download_speed_profile': '',
+                    'Upload_speed_profile': uploadSpeedProfileStatus,
+                    'Download_speed_profile': downloadSpeedProfileStatus,
                     'Vlan_209': str(dt1),
                     'Vlan_400': str(dt2),
                     'Vlan_500': str(dt3),

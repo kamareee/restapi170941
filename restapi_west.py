@@ -2,7 +2,6 @@
 import requests
 import datetime
 from flask import Flask, render_template, make_response
-# from flask.ext.pymongo import PyMongo
 from flask_restful import Api, Resource, reqparse
 from requests import Timeout, ConnectionError, HTTPError
 

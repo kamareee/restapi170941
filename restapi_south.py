@@ -36,8 +36,8 @@ class BarAPI(Resource):
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         session = FuturesSession()
         #simulate error for http
-        # api_one = session.post('http://httpstat.us/401', json=payload, headers=headers, timeout=2)
-        api_one = session.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers, timeout=120)
+        # api_one = session.post('http://httpstat.us/400', json=payload, headers=headers, timeout=120)
+        api_one = session.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers, timeout=10)
         api_two = session.get('http://10.45.196.65/IDEAS/ideas.do?serviceID=' + serviceID)
         try:
             r = api_one.result()

@@ -1,9 +1,7 @@
 
 
 # Function for parsing data from second API
-def get_new_attributes(serviceid, upstreamactualrate, downstreamactualrate, data):
-    # url = "http://10.45.196.65/IDEAS/ideas.do?serviceID=" + serviceid
-    # content = requests.get(url)
+def get_new_attributes(serviceid, data):
     content = data;
 
     # Device host name
@@ -25,6 +23,11 @@ def get_new_attributes(serviceid, upstreamactualrate, downstreamactualrate, data
     else:
         radius_acct_status = 'Tos'
 
+    radiusUpload = content.get('responseHeader').get('hsiService').get('radiusUpload')
+    radiusUploadVal = radiusUpload.split('M')[0]
+    radiusDownload = content.get('responseHeader').get('hsiService').get('radiusDownload')
+    radiusDownloadVal = radiusDownload.split('M')[0]
+
     # HSI session
     session_status = content.get('responseHeader').get('sessionStatus').get('state')
     if session_status.lower() == 'online':
@@ -44,38 +47,6 @@ def get_new_attributes(serviceid, upstreamactualrate, downstreamactualrate, data
     dp_denominator = float(dp_ss[1])
     neighbouring_session = round((float(dp_numerator * 100) / float(dp_denominator)), 2)
 
-    # Necessary variable for upload speed profile and download speed profile
-    upload_speed_profile = ''
-    download_speed_profile = ''
-
-    # Upload speed profile
-    service_upload_speed = content.get('responseHeader').get('serviceCategory')[0]['serviceUploadSpeed']
-    if len(service_upload_speed) > 2:
-        service_upload_speed_to_number = float(service_upload_speed[0:2])
-    else:
-        service_upload_speed_to_number = float(service_upload_speed[0])
-
-    temp_ratio = upstreamactualrate / service_upload_speed_to_number
-
-    if temp_ratio >= 1:
-        upload_speed_profile = 'Good'
-    elif temp_ratio < 1:
-        upload_speed_profile = 'Bad'
-
-    # Download speed profile
-    service_download_speed = content.get('responseHeader').get('serviceCategory')[0]['serviceDownloadSpeed']
-    if len(service_download_speed) > 2:
-        service_download_speed_to_number = float(service_download_speed[0:2])
-    else:
-        service_download_speed_to_number = float(service_download_speed[0])
-
-    temp_ratio_download = downstreamactualrate / service_download_speed_to_number
-
-    if temp_ratio_download >= 1:
-        download_speed_profile = 'Good'
-    elif temp_ratio_download < 1:
-        download_speed_profile = 'Bad'
-
     parsed_data = {
         'device_host_name': str(device_hostname),
         'hsi_billing_status': str(hsi_billing_status),
@@ -83,8 +54,8 @@ def get_new_attributes(serviceid, upstreamactualrate, downstreamactualrate, data
         'hsi_session': str(hsi_session),
         'frequent_disconnect': float(frequent_disconnect),
         'neighbouring_session': float(neighbouring_session),
-        'upload_speed_profile': str(upload_speed_profile),
-        'download_speed_profile': str(download_speed_profile)
+        'radiusUpload':float(radiusUploadVal),
+        'radiusDownload':float(radiusDownloadVal)
     }
 
     return parsed_data
