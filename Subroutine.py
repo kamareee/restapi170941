@@ -1,6 +1,9 @@
 
 
 # Function for parsing data from second API
+import re
+
+
 def get_new_attributes(serviceid, data):
     content = data;
 
@@ -24,9 +27,17 @@ def get_new_attributes(serviceid, data):
         radius_acct_status = 'Tos'
 
     radiusUpload = content.get('responseHeader').get('hsiService').get('radiusUpload')
-    radiusUploadVal = radiusUpload.split('M')[0]
+    if str(radiusUpload).__contains__('M'):
+        unit = 1000000.0;
+    elif str(radiusUpload).__contains__('K'):
+        unit = 1000.0;
+    radiusUploadVal = float(re.split('M|K',radiusUpload)[0]) * unit;#radiusUpload.split('M')[0]
     radiusDownload = content.get('responseHeader').get('hsiService').get('radiusDownload')
-    radiusDownloadVal = radiusDownload.split('M')[0]
+    if str(radiusDownload).__contains__('M'):
+        unit = 1000000.0;
+    elif str(radiusDownload).__contains__('K'):
+        unit = 1000.0;
+    radiusDownloadVal = float(re.split('M|K',radiusDownload)[0]) * unit;#radiusDownload.split('M')[0]
 
     # HSI session
     session_status = content.get('responseHeader').get('sessionStatus').get('state')

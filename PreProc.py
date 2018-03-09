@@ -14,6 +14,7 @@ import psycopg2.extras
 from psycopg2._psycopg import DatabaseError
 import sys
 import datetime
+import re
 
 from requests import Timeout, HTTPError, ConnectionError
 from Subroutine import get_new_attributes
@@ -137,9 +138,21 @@ class BarAPI(Resource):
 
             if access_type == 'FTTH':
                 configuredProfileTx = vln3.get('configuredProfileTx')
-                configuredProfileTxVal = float(configuredProfileTx.split('_')[0].split('M')[0])
+                configuredProfileTx_unit = configuredProfileTx.split('_')[0]
+                if str(configuredProfileTx_unit).__contains__('M'):
+                    unit = 1000000.0;
+                elif str(configuredProfileTx_unit).__contains__('K'):
+                    unit = 1000.0;
+                configuredProfileTxVal = float(re.split('M|K', configuredProfileTx_unit)[0]) * unit;#float(configuredProfileTx.split('_')[0].split('M')[0])
+
                 configuredProfileRx = vln3.get('configuredProfileRx')
-                configuredProfileRxVal = float(configuredProfileRx.split('_')[0].split('M')[0])
+                configuredProfileRx_unit = configuredProfileRx.split('_')[0]
+                if str(configuredProfileRx_unit).__contains__('M'):
+                    unit = 1000000.0;
+                elif str(configuredProfileRx_unit).__contains__('K'):
+                    unit = 1000.0;
+                configuredProfileRxVal = float(re.split('M|K', configuredProfileRx_unit)[0]) * unit;#float(configuredProfileRx.split('_')[0].split('M')[0])
+
                 radiusUploadVal = rec_data.get('radiusUpload')
                 radiusDownloadVal = rec_data.get('radiusDownload')
                 uploadSpeedProfileVal = configuredProfileTxVal/radiusUploadVal
