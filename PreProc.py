@@ -70,6 +70,13 @@ class BarAPI(Resource):
             if attr.get('tSouthRespond') != None:
                 tSouthRespond = attr.get('tSouthRespond')
                 print tSouthRespond
+                continue
+            if str(attr.get('name')).__eq__('UPSTREAM_ACTUAL_RATE'):
+                UPSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
+                continue
+            if str(attr.get('name')).__eq__('DOWNSTREAM_ACTUAL_RATE'):
+                DOWNSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
+                continue
 
         if returnDescription == 'Success':
             login_id = r.json().get('custInfo').get('loginId')
@@ -106,35 +113,36 @@ class BarAPI(Resource):
             # Calling the second API and retrieving the data
             rec_data = get_new_attributes(service_id, api2_data)
 
-            if len(traffic_rec) is 4:
-                # VLAN209
-                vln1 = traffic_rec[0]
-                stat_vlan209 = vln1['isConfigured']
+            if traffic_rec != None:
+                if len(traffic_rec) is 4:
+                    # VLAN209
+                    vln1 = traffic_rec[0]
+                    stat_vlan209 = vln1['isConfigured']
 
-                # VLAN400
-                vln2 = traffic_rec[1]
-                stat_vlan400 = vln2['isConfigured']
+                    # VLAN400
+                    vln2 = traffic_rec[1]
+                    stat_vlan400 = vln2['isConfigured']
 
-                # VLAN500
-                vln3 = traffic_rec[2]
-                stat_vlan500 = vln3['isConfigured']
+                    # VLAN500
+                    vln3 = traffic_rec[2]
+                    stat_vlan500 = vln3['isConfigured']
 
-                # VLAN600
-                vln4 = traffic_rec[3]
-                stat_vlan600 = vln4['isConfigured']
+                    # VLAN600
+                    vln4 = traffic_rec[3]
+                    stat_vlan600 = vln4['isConfigured']
 
-            elif len(traffic_rec) is 3:
-                # VLAN209
-                vln1 = traffic_rec[0]
-                stat_vlan209 = vln1['isConfigured']
+                elif len(traffic_rec) is 3:
+                    # VLAN209
+                    vln1 = traffic_rec[0]
+                    stat_vlan209 = vln1['isConfigured']
 
-                # VLAN400
-                vln2 = traffic_rec[1]
-                stat_vlan400 = vln2['isConfigured']
+                    # VLAN400
+                    vln2 = traffic_rec[1]
+                    stat_vlan400 = vln2['isConfigured']
 
-                # VLAN500
-                vln3 = traffic_rec[2]
-                stat_vlan500 = vln3['isConfigured']
+                    # VLAN500
+                    vln3 = traffic_rec[2]
+                    stat_vlan500 = vln3['isConfigured']
 
             if access_type == 'FTTH':
                 configuredProfileTx = vln3.get('configuredProfileTx')
@@ -157,6 +165,37 @@ class BarAPI(Resource):
                 radiusDownloadVal = rec_data.get('radiusDownload')
                 uploadSpeedProfileVal = configuredProfileTxVal/radiusUploadVal
                 downloadSpeedProfileVal = configuredProfileRxVal/radiusDownloadVal
+                if uploadSpeedProfileVal >= 1:
+                    uploadSpeedProfileStatus = 'Good'
+                else:
+                    uploadSpeedProfileStatus = 'Bad'
+
+                if downloadSpeedProfileVal >= 1:
+                    downloadSpeedProfileStatus = 'Good'
+                else:
+                    downloadSpeedProfileStatus = 'Bad'
+            elif access_type == 'VDSL':
+                serviceCategory = responseHeader.get("serviceCategory")
+                for service in serviceCategory:
+                    productName = service.get("productName")
+                    if str(productName).__contains__("Residential High Speed Internet"):
+                        serviceUploadSpeedValUnit = service.get("serviceUploadSpeed")
+                        if str(serviceUploadSpeedValUnit).__contains__('M'):
+                            unit = 1000000.0;
+                        elif str(serviceUploadSpeedValUnit).__contains__('K'):
+                            unit = 1000.0;
+                        serviceUploadSpeedVal = float(re.split('M|K', serviceUploadSpeedValUnit)[0]) * unit
+
+                        serviceDownloadSpeedValUnit = service.get("serviceDownloadSpeed")
+                        if str(serviceDownloadSpeedValUnit).__contains__('M'):
+                            unit = 1000000.0;
+                        elif str(serviceDownloadSpeedValUnit).__contains__('K'):
+                            unit = 1000.0;
+                        serviceDownloadSpeedVal = float(re.split('M|K', serviceDownloadSpeedValUnit)[0]) * unit
+                        break
+
+                uploadSpeedProfileVal = UPSTREAM_ACTUAL_RATE / serviceUploadSpeedVal
+                downloadSpeedProfileVal = DOWNSTREAM_ACTUAL_RATE / serviceDownloadSpeedVal
                 if uploadSpeedProfileVal >= 1:
                     uploadSpeedProfileStatus = 'Good'
                 else:
@@ -213,9 +252,9 @@ class BarAPI(Resource):
                 }
                 return jsonify(final_data)
 
-            elif access_type == 'VDSL' and len(traffic_rec) == 0:
+            elif access_type == 'VDSL' and traffic_rec == None:#len(traffic_rec) == 0:
                 upstream_attn = attr_rec[20]['value']
-                upstream_snr = attr_rec[23]['value']
+                upstream_snr = attr_rec[24]['value']
                 downstream_attn = attr_rec[5]['value']
                 downstream_snr = attr_rec[9]['value']
 
@@ -247,8 +286,8 @@ class BarAPI(Resource):
                         'HSI_session': str(rec_data['hsi_session']),
                         'Frequent_disconnect': rec_data['frequent_disconnect'],
                         'Neighbouring_session': rec_data['neighbouring_session'],
-                        'Upload_speed_profile': '',
-                        'Download_speed_profile': '',
+                        'Upload_speed_profile': uploadSpeedProfileStatus,
+                        'Download_speed_profile': downloadSpeedProfileStatus,
                         'Physical_uplink_status': str(dt1),
                         'Physical_downlink_status': str(dt2),
                         'Message': str('No VLAN data'),
