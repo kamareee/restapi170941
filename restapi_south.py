@@ -1,6 +1,11 @@
+import json
+from collections import MutableMapping
+
 import requests
 import datetime
+import ast
 
+import yaml
 from concurrent.futures import TimeoutError
 from flask import Flask, jsonify
 from flask_restful import Api, Resource, reqparse
@@ -17,8 +22,8 @@ class BarAPI(Resource):
         print a
         parser = reqparse.RequestParser()
         parser.add_argument('serviceID', type=str)
-        json = parser.parse_args()
-        serviceID = json.get('serviceID')
+        jsonParam = parser.parse_args()
+        serviceID = jsonParam.get('serviceID')
         # payload = {'loginId': serviceID, "reqParams": ["ADMIN_STATUS","OPER_STATUS",'ONT_TX_POWER','ONT_RX_POWER','LASTUPTIME']}
         # payload = {"loginId":serviceID,"trafficProfile":"true","lineProfile":"true",
         #            "reqParams":["ADMIN_STATUS","OPER_STATUS","OLT_RX_POWER","OLT_TX_POWER","ONT_TEMP","ONT_VOLTS",
@@ -55,8 +60,18 @@ class BarAPI(Resource):
             return str(e.message)
 
         try:
+            # strJson = str(json.loads(r.content))      #json.loads() is used for list-type input
+            # data = json.loads(strJson)
+
+            # dataUnicode = r.json()
+            # myJsondumps = json.dumps(dataUnicode)
+            # data = yaml.load(myJsondumps)
+
             data = r.json()
             data2 = r2.json()
+
+            # data = json.loads(str(r.json()))        #json.loads() is used for list-type input
+            # data2 = json.loads(str(r2.json()))
 
             b = datetime.datetime.now()
             delta = b - a

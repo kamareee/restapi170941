@@ -52,7 +52,9 @@ def reading():
                 :True,"isMissing":False,"isProfileTxMismatch":False,"isProfileRxMismatch":False},{"objId":"SKT_G003:FLOW-1-1-2-3-15-1-1-2:IS-NR","vlan":"600","siebelProfileTx":"10M","siebelProfileRx"
                 :"10M","configuredProfileTx":"10M_UP_IPTV","configuredProfileRx":"10M_DOWN_IPTV","isSubscribed":True,"isConfigured":True,"isMissing":False,"isProfileTxMismatch":False,"isProfileRxMismatch":False}]}
 
-    outputVDSL = {
+    outputVDSL = '{"retDesc": "Success", "attributes": [{"name": "ADMIN_STATUS", "value": "Up"}, {"name": "CPU", "value": 6}, {"name": "CRC_ERROR", "value": "NotSupport"}, {"name": "DOWNSTREAM_ACTUAL_RATE", "value": 17000}, {"name": "DOWNSTREAM_ATTAINABLERATE", "value": 30667}, {"name": "DOWNSTREAM_ATTENUATION", "value": 26}, {"name": "DOWNSTREAM_MAX_CONFIG", "value": null}, {"name": "DOWNSTREAM_MIN_CONFIG", "value": null}, {"name": "DOWNSTREAM_POWER", "value": 11.7}, {"name": "DOWNSTREAM_SNR", "value": 11.6}, {"name": "LASTDOWNTIME", "value": "NotSupport"}, {"name": "LASTUPTIME", "value": 1502105096000}, {"name": "LINK_RETRAIN", "value": 44}, {"name": "MEM", "value": 74}, {"name": "OPER_STATUS", "value": "Up"}, {"name": "OPTION82", "value": null}, {"name": "PPOE", "value": null}, {"name": "TEMP", "value": "NotSupport"}, {"name": "UPSTREAM_ACTUAL_RATE", "value": 4999}, {"name": "UPSTREAM_ATTAINABLERATE", "value": 10606}, {"name": "UPSTREAM_ATTENUATION", "value": 27.8}, {"name": "UPSTREAM_MAX_CONFIG", "value": null}, {"name": "UPSTREAM_MIN_CONFIG", "value": null}, {"name": "UPSTREAM_POWER", "value": 13.6}, {"name": "UPSTREAM_SNR", "value": 8.9}, {"name": "UPTIME", "value": "217 days, 22 hours, 50 minutes"}], "custInfo": {"src": "radius", "servicePoint": "HS1001142952", "accessPort": "SDG_V1061-2/3/11", "loginId": "sida313@unifi"}, "retCode": 0, "refId": 164746955}'
+
+    outputVDSLNonString = {
         "retCode": 0,
         "retDesc": "Success",
         "refId": 164746955,
@@ -169,11 +171,19 @@ def reading():
             }
         ]
     }
+    students = '[{' \
+               '"id":null},' \
+               '{"id":1},{"id":3' \
+               '}]'
+    students2 = '{"aid":null,"bid":1,"cid":3, "custInfo": {"src": "radius", "servicePoint": "HS1001142952", "accessPort": "SDG_V1061-2/3/11", "loginId": "sida313@unifi"}}'
 
     error = {"retCode":200,"retDesc":"Error Can't query to EMS/NE","custInfo":{"servicePoint":"HS1025171053","loginId":"afaideen80@unifi","accessPort":"SDG_G026-1/7/4.7","src":"radius"},"attributes":[]}
     # sleep(8)#in seconds
     print 'Engine finish...'
-    return jsonify(outputVDSL)
+    # return students2
+    return outputVDSL       #don't use jsonify() if input arguments already type string
+    # return jsonify(outputVDSLNonString)
+    #return jsonify(outputVDSL)      #already string type so wrongly used
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret4'
