@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/PreProc.py" line="376" />
-    <bookmark url="file://$PROJECT_DIR$/PreProc.py" line="255" />
-    <bookmark url="file://$PROJECT_DIR$/PreProc.py" line="148" />
-    <bookmark url="file://$PROJECT_DIR$/PreProc.py" line="68" />
+    <bookmark url="file://$PROJECT_DIR$/PreProc.py" line="70" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd38b183-e2a9-499c-bece-9e3d35c133c7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/PreProc.py" afterPath="$PROJECT_DIR$/PreProc.py" />
       <change beforePath="$PROJECT_DIR$/SPANMS.py" afterPath="$PROJECT_DIR$/SPANMS.py" />
       <change beforePath="$PROJECT_DIR$/restapi_south.py" afterPath="$PROJECT_DIR$/restapi_south.py" />
     </list>
@@ -28,8 +26,8 @@
       <file leaf-file-name="restapi_west.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi_west.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="737">
-              <caret line="49" column="27" lean-forward="false" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+            <state relative-caret-position="830">
+              <caret line="56" column="66" lean-forward="false" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
               <folding>
                 <element signature="e#1#16#0" expanded="true" />
               </folding>
@@ -40,8 +38,8 @@
       <file leaf-file-name="local_engine2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/local_engine2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
-              <caret line="203" column="15" lean-forward="false" selection-start-line="203" selection-start-column="15" selection-end-line="203" selection-end-column="15" />
+            <state relative-caret-position="334">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <element signature="e#7299#8908#0" expanded="false" />
@@ -53,21 +51,30 @@
       <file leaf-file-name="PreProc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PreProc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="181" column="61" lean-forward="false" selection-start-line="181" selection-start-column="61" selection-end-line="181" selection-end-column="61" />
+            <state relative-caret-position="516">
+              <caret line="163" column="38" lean-forward="false" selection-start-line="163" selection-start-column="38" selection-end-line="163" selection-end-column="38" />
               <folding>
                 <element signature="e#1#16#0" expanded="true" />
-                <element signature="e#18213#20948#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="restapi_south.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Subroutine.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Subroutine.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-360">
+              <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="restapi_south.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/restapi_south.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+            <state relative-caret-position="378">
+              <caret line="41" column="34" lean-forward="true" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -75,14 +82,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SPANMS.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SPANMS.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SPANMS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="180" column="25" lean-forward="true" selection-start-line="180" selection-start-column="25" selection-end-line="180" selection-end-column="25" />
+            <state relative-caret-position="326">
+              <caret line="179" column="4" lean-forward="false" selection-start-line="179" selection-start-column="4" selection-end-line="179" selection-end-column="4" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ssh command.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ssh command.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3400">
+              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,18 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>testdata.csv</find>
-      <find>testcat.csv</find>
-      <find>testnew</find>
-      <find>custInfo</find>
-      <find>tSouthRespond</find>
-      <find># Predicting the class</find>
-      <find>attributes</find>
-      <find>Conn to DB failed</find>
-      <find>kama</find>
-      <find>retDesc</find>
-      <find>accessport</find>
-      <find>UPSTREAM_ACTUAL_RATE</find>
       <find>final_data</find>
       <find>calculate_response_time</find>
       <find>tLinkEngineSouth</find>
@@ -128,6 +133,18 @@
       <find>'value'</find>
       <find>&quot;LASTUPTIME&quot;</find>
       <find>&quot;custInfo&quot;</find>
+      <find>loginId</find>
+      <find>attr_rec</find>
+      <find>olt_tx_pr</find>
+      <find>sida</find>
+      <find>OLT</find>
+      <find>ont_rx_pr</find>
+      <find>ONT_TX_POWER</find>
+      <find>OLT_TX_POWER</find>
+      <find>Vlan_209</find>
+      <find>stat_vlan209</find>
+      <find>traffic_rec</find>
+      <find>vln3</find>
     </findStrings>
     <replaceStrings>
       <replace>False</replace>
@@ -135,6 +152,9 @@
       <replace>content</replace>
       <replace>&quot;name&quot;</replace>
       <replace>&quot;value&quot;</replace>
+      <replace>ONT</replace>
+      <replace>trafficProfiles</replace>
+      <replace>vln500</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -165,9 +185,9 @@
         <option value="$PROJECT_DIR$/local_engine2.py" />
         <option value="$PROJECT_DIR$/restapi_west.py" />
         <option value="$PROJECT_DIR$/Subroutine.py" />
+        <option value="$PROJECT_DIR$/SPANMS.py" />
         <option value="$PROJECT_DIR$/PreProc.py" />
         <option value="$PROJECT_DIR$/restapi_south.py" />
-        <option value="$PROJECT_DIR$/SPANMS.py" />
       </list>
     </option>
   </component>
@@ -193,8 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,6 +224,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -238,7 +258,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.restapi_south">
+  <component name="RunManager" selected="Python.SPANMS">
     <configuration name="PreProc" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -338,8 +358,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.restapi_south" />
-        <item index="1" class="java.lang.String" itemvalue="Python.SPANMS" />
+        <item index="0" class="java.lang.String" itemvalue="Python.SPANMS" />
+        <item index="1" class="java.lang.String" itemvalue="Python.restapi_south" />
         <item index="2" class="java.lang.String" itemvalue="Python.PreProc" />
         <item index="3" class="java.lang.String" itemvalue="Python.local_engine2" />
         <item index="4" class="java.lang.String" itemvalue="Python.restapi_west" />
@@ -478,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520927819993</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Updated spanms stimulus">
+      <created>1520998938668</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1520998938668</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView">
@@ -497,12 +524,13 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1564482" sideWeight="0.49695587" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34422535" sideWeight="0.50475687" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847142" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23296447" sideWeight="0.49895832" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2327888" sideWeight="0.49895832" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3430572" sideWeight="0.49524313" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41073513" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3413069" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1564482" sideWeight="0.5030441" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -513,7 +541,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -590,7 +617,8 @@
     <MESSAGE value="Added Upload and Download Speed Profile" />
     <MESSAGE value="Corrected speed profile calculation." />
     <MESSAGE value="Added Upload and Download Speed Profile calculation under 'VDSL' category." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Upload and Download Speed Profile calculation under 'VDSL' category." />
+    <MESSAGE value="Updated spanms stimulus" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated spanms stimulus" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -601,9 +629,13 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="201" />
+      <option name="time" value="238" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="OLT_TX_POWER" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
@@ -618,15 +650,15 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>new_access_port[4:6]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/restapi_west.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/restapi_south.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -929,24 +961,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Subroutine.py">
+    <entry file="file://C:/Python27/Lib/site-packages/flask_restful/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1640">
-          <caret line="41" column="17" lean-forward="true" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        <state relative-caret-position="319">
+          <caret line="594" column="0" lean-forward="false" selection-start-line="594" selection-start-column="0" selection-end-line="594" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/werkzeug/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="922" column="0" lean-forward="false" selection-start-line="922" selection-start-column="0" selection-end-line="922" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ssh command.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3080">
-          <caret line="77" column="945" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="945" />
+        <state relative-caret-position="3400">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restapi_west.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="830">
+          <caret line="56" column="66" lean-forward="false" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
+          <folding>
+            <element signature="e#1#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/local_engine2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="203" column="15" lean-forward="false" selection-start-line="203" selection-start-column="15" selection-end-line="203" selection-end-column="15" />
+        <state relative-caret-position="334">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <element signature="e#7299#8908#0" expanded="false" />
@@ -954,51 +1004,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/flask_restful/__init__.py">
+    <entry file="file://$PROJECT_DIR$/SPANMS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="594" column="0" lean-forward="false" selection-start-line="594" selection-start-column="0" selection-end-line="594" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restapi_west.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="737">
-          <caret line="49" column="27" lean-forward="false" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+        <state relative-caret-position="326">
+          <caret line="179" column="4" lean-forward="false" selection-start-line="179" selection-start-column="4" selection-end-line="179" selection-end-column="4" />
           <folding>
-            <element signature="e#1#16#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PreProc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="181" column="61" lean-forward="false" selection-start-line="181" selection-start-column="61" selection-end-line="181" selection-end-column="61" />
+        <state relative-caret-position="516">
+          <caret line="163" column="38" lean-forward="false" selection-start-line="163" selection-start-column="38" selection-end-line="163" selection-end-column="38" />
           <folding>
             <element signature="e#1#16#0" expanded="true" />
-            <element signature="e#18213#20948#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Subroutine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/restapi_south.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+        <state relative-caret-position="378">
+          <caret line="41" column="34" lean-forward="true" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SPANMS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="180" column="25" lean-forward="true" selection-start-line="180" selection-start-column="25" selection-end-line="180" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>

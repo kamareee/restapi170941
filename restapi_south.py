@@ -42,7 +42,8 @@ class BarAPI(Resource):
         session = FuturesSession()
         #simulate error for http
         # api_one = session.post('http://httpstat.us/400', json=payload, headers=headers, timeout=120)
-        api_one = session.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers, timeout=10)
+        api_one = session.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers, timeout=15) #used for local test
+        # r = requests.post('http://10.41.56.90:9001/rest/api/reading', json=payload, headers=headers, timeout=120)
         api_two = session.get('http://10.45.196.65/IDEAS/ideas.do?serviceID=' + serviceID)
         try:
             r = api_one.result()
@@ -83,7 +84,7 @@ class BarAPI(Resource):
         except ValueError:
             # data = r.content
             data = "South API failed recognized json data"
-        return data
+        return jsonify(data)
 
 api.add_resource(BarAPI, '/getParam', endpoint='getParam')
 

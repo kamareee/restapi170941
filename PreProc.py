@@ -65,11 +65,13 @@ class BarAPI(Resource):
         a = datetime.datetime.now()
 
         attributes = r.json().get('attributes')
+        ONT_TX_POWER = None
+        ONT_RX_POWER = None
         for attr in attributes:
             print attr
             if attr.get('tSouthRespond') != None:
                 tSouthRespond = attr.get('tSouthRespond')
-                print tSouthRespond
+                print "tSouthRespond " + str(tSouthRespond)
                 continue
             if str(attr.get('name')).__eq__('UPSTREAM_ACTUAL_RATE'):
                 UPSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
@@ -77,6 +79,27 @@ class BarAPI(Resource):
             if str(attr.get('name')).__eq__('DOWNSTREAM_ACTUAL_RATE'):
                 DOWNSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
                 continue
+            if str(attr.get('name')).__eq__('UPSTREAM_ATTENUATION'):
+                UPSTREAM_ATTENUATION = attr.get('value')
+                continue
+            if str(attr.get('name')).__eq__('DOWNSTREAM_ATTENUATION'):
+                DOWNSTREAM_ATTENUATION = attr.get('value')
+                continue
+            if str(attr.get('name')).__eq__('UPSTREAM_SNR'):
+                UPSTREAM_SNR = attr.get('value')
+                continue
+            if str(attr.get('name')).__eq__('DOWNSTREAM_SNR'):
+                DOWNSTREAM_SNR = attr.get('value')
+                continue
+            if str(attr.get('name')).__eq__('ONT_RX_POWER'):
+                ONT_RX_POWER = attr.get('value')
+                continue
+            if str(attr.get('name')).__eq__('ONT_TX_POWER'):
+                ONT_TX_POWER = attr.get('value')
+                continue
+
+
+
 
         if returnDescription == 'Success':
             login_id = r.json().get('custInfo').get('loginId')
@@ -97,55 +120,87 @@ class BarAPI(Resource):
                 access_type = 'FTTH'
 
             # Parsing for VLAN data and attributes
-            traffic_rec = r.json().get('trafficProfiles')
+            trafficProfiles = r.json().get('trafficProfiles')
             attr_rec = r.json().get('attributes')
-
             # Declaring necessary variables for VLAN
             stat_vlan209 = ''
             stat_vlan400 = ''
             stat_vlan500 = ''
             stat_vlan600 = ''
+            if trafficProfiles != None:
+                for profile in trafficProfiles:
+                    if str(profile.get('vlan')).__eq__('209'):
+                        # VLAN209
+                        vln209 = profile
+                        stat_vlan209 = vln209['isConfigured']
+                        continue
+                    if str(profile.get('vlan')).__eq__('400'):
+                        # VLAN400
+                        vln400 = profile
+                        stat_vlan400 = vln400['isConfigured']
+                        continue
+                    if str(profile.get('vlan')).__eq__('500'):
+                        # VLAN500
+                        vln500 = profile
+                        stat_vlan500 = vln500['isConfigured']
+                        continue
+                    if str(profile.get('vlan')).__eq__('600'):
+                        # VLAN600
+                        vln600 = profile
+                        stat_vlan600 = vln600['isConfigured']
+                        continue
+            else:
+                stat_vlan209 = True
+                stat_vlan400 = True
+                stat_vlan500 = True
+                stat_vlan600 = True
 
-            # OLT_TX_POWER and OLT_RX_POWER
-            olt_tx_pr = attr_rec[13]['value']
-            olt_rx_pr = attr_rec[12]['value']
+
+            # ONT_TX_POWER and ONT_RX_POWER
+            ont_tx_pr = ONT_TX_POWER#attr_rec[13]['value']
+            ont_rx_pr = ONT_RX_POWER#attr_rec[12]['value']
 
             # Calling the second API and retrieving the data
             rec_data = get_new_attributes(service_id, api2_data)
 
-            if traffic_rec != None:
-                if len(traffic_rec) is 4:
-                    # VLAN209
-                    vln1 = traffic_rec[0]
-                    stat_vlan209 = vln1['isConfigured']
-
-                    # VLAN400
-                    vln2 = traffic_rec[1]
-                    stat_vlan400 = vln2['isConfigured']
-
-                    # VLAN500
-                    vln3 = traffic_rec[2]
-                    stat_vlan500 = vln3['isConfigured']
-
-                    # VLAN600
-                    vln4 = traffic_rec[3]
-                    stat_vlan600 = vln4['isConfigured']
-
-                elif len(traffic_rec) is 3:
-                    # VLAN209
-                    vln1 = traffic_rec[0]
-                    stat_vlan209 = vln1['isConfigured']
-
-                    # VLAN400
-                    vln2 = traffic_rec[1]
-                    stat_vlan400 = vln2['isConfigured']
-
-                    # VLAN500
-                    vln3 = traffic_rec[2]
-                    stat_vlan500 = vln3['isConfigured']
+            # if traffic_rec != None:
+            #     if len(traffic_rec) is 4:
+            #         # VLAN209
+            #         vln1 = traffic_rec[0]
+            #         stat_vlan209 = vln1['isConfigured']
+            #
+            #         # VLAN400
+            #         vln2 = traffic_rec[1]
+            #         stat_vlan400 = vln2['isConfigured']
+            #
+            #         # VLAN500
+            #         vln3 = traffic_rec[2]
+            #         stat_vlan500 = vln3['isConfigured']
+            #
+            #         # VLAN600
+            #         vln4 = traffic_rec[3]
+            #         stat_vlan600 = vln4['isConfigured']
+            #
+            #     elif len(traffic_rec) is 3:
+            #         # VLAN209
+            #         vln1 = traffic_rec[0]
+            #         stat_vlan209 = vln1['isConfigured']
+            #
+            #         # VLAN400
+            #         vln2 = traffic_rec[1]
+            #         stat_vlan400 = vln2['isConfigured']
+            #
+            #         # VLAN500
+            #         vln3 = traffic_rec[2]
+            #         stat_vlan500 = vln3['isConfigured']
+            # else:
+            #     stat_vlan209 = True
+            #     stat_vlan400 = True
+            #     stat_vlan500 = True
+            #     stat_vlan600 = True
 
             if access_type == 'FTTH':
-                configuredProfileTx = vln3.get('configuredProfileTx')
+                configuredProfileTx = vln500.get('configuredProfileTx')
                 configuredProfileTx_unit = configuredProfileTx.split('_')[0]
                 if str(configuredProfileTx_unit).__contains__('M'):
                     unit = 1000000.0;
@@ -153,7 +208,7 @@ class BarAPI(Resource):
                     unit = 1000.0;
                 configuredProfileTxVal = float(re.split('M|K', configuredProfileTx_unit)[0]) * unit;#float(configuredProfileTx.split('_')[0].split('M')[0])
 
-                configuredProfileRx = vln3.get('configuredProfileRx')
+                configuredProfileRx = vln500.get('configuredProfileRx')
                 configuredProfileRx_unit = configuredProfileRx.split('_')[0]
                 if str(configuredProfileRx_unit).__contains__('M'):
                     unit = 1000000.0;
@@ -207,7 +262,7 @@ class BarAPI(Resource):
                     downloadSpeedProfileStatus = 'Bad'
 
 
-            if access_type == 'FTTH' and (olt_tx_pr is None or olt_rx_pr is None):
+            if access_type == 'FTTH' and (ont_tx_pr is None or ont_rx_pr is None):
                 final_data = {
                     'Login_id': str(login_id),
                     'Package_name': str(package_name),
@@ -218,16 +273,16 @@ class BarAPI(Resource):
                 }
 
                 return jsonify(final_data)
-            elif access_type == 'FTTH' and len(traffic_rec) == 0:
+            elif access_type == 'FTTH' and trafficProfiles == None:
 
                 # Physical up-link status
-                if olt_tx_pr >= -28:
+                if ont_tx_pr >= -28:
                     dt1 = str('Good')
                 else:
                     dt1 = str('Bad')
 
                 # Physical down-link status
-                if olt_rx_pr >= -28:
+                if ont_rx_pr >= -28:
                     dt2 = str('Good')
                 else:
                     dt2 = str('Bad')
@@ -252,11 +307,11 @@ class BarAPI(Resource):
                 }
                 return jsonify(final_data)
 
-            elif access_type == 'VDSL' and traffic_rec == None:#len(traffic_rec) == 0:
-                upstream_attn = attr_rec[20]['value']
-                upstream_snr = attr_rec[24]['value']
-                downstream_attn = attr_rec[5]['value']
-                downstream_snr = attr_rec[9]['value']
+            elif access_type == 'VDSL' and trafficProfiles == None:#len(traffic_rec) == 0:
+                upstream_attn = UPSTREAM_ATTENUATION#attr_rec[20]['value']
+                upstream_snr = UPSTREAM_SNR#attr_rec[24]['value']
+                downstream_attn = DOWNSTREAM_ATTENUATION#attr_rec[5]['value']
+                downstream_snr = DOWNSTREAM_SNR#attr_rec[9]['value']
 
                 # Physical up-link status
                 if upstream_attn <= 20 or upstream_attn is None:
@@ -288,21 +343,25 @@ class BarAPI(Resource):
                         'Neighbouring_session': rec_data['neighbouring_session'],
                         'Upload_speed_profile': uploadSpeedProfileStatus,
                         'Download_speed_profile': downloadSpeedProfileStatus,
+                        'Vlan_209': "Enabled",
+                        'Vlan_400': "Enabled",
+                        'Vlan_500': "Enabled",
+                        'Vlan_600': "Enabled",
                         'Physical_uplink_status': str(dt1),
                         'Physical_downlink_status': str(dt2),
                         'Message': str('No VLAN data'),
                         'tPreProc': calculate_response_time(),
                         'tSouthRespond': tSouthRespond,
-                        'No_of_attributes': 9
+                        'No_of_attributes': 13#9
                     }
 
                     return jsonify(final_data)
 
-            elif access_type == 'VDSL' and len(traffic_rec) == 4:
-                upstream_attn = attr_rec[20]['value']
-                upstream_snr = attr_rec[23]['value']
-                downstream_attn = attr_rec[5]['value']
-                downstream_snr = attr_rec[9]['value']
+            elif access_type == 'VDSL' and len(trafficProfiles) == 4:
+                upstream_attn = UPSTREAM_ATTENUATION  # attr_rec[20]['value']
+                upstream_snr = UPSTREAM_SNR  # attr_rec[24]['value']
+                downstream_attn = DOWNSTREAM_ATTENUATION  # attr_rec[5]['value']
+                downstream_snr = DOWNSTREAM_SNR  # attr_rec[9]['value']
 
                 # vlan209_ccs
                 if bool(stat_vlan209):
@@ -373,7 +432,7 @@ class BarAPI(Resource):
 
                 return jsonify(final_data)
 
-            elif access_type == 'FTTH' and len(traffic_rec) == 4:
+            elif access_type == 'FTTH' and len(trafficProfiles) == 4:
 
                 # vlan209_ccs
                 if bool(stat_vlan209):
@@ -400,13 +459,13 @@ class BarAPI(Resource):
                     dt4 = str('Disabled')
 
                 # Physical up-link status
-                if olt_tx_pr >= -28:
+                if ont_tx_pr >= -28:
                     dt5 = str('Good')
                 else:
                     dt5 = str('Bad')
 
                 # Physical down-link status
-                if olt_rx_pr >= -28:
+                if ont_rx_pr >= -28:
                     dt6 = str('Good')
                 else:
                     dt6 = str('Bad')
@@ -439,11 +498,11 @@ class BarAPI(Resource):
                 return jsonify(final_data)
 
 
-            elif access_type == 'VDSL' and len(traffic_rec) == 3:
-                upstream_attn = attr_rec[20]['value']
-                upstream_snr = attr_rec[23]['value']
-                downstream_attn = attr_rec[5]['value']
-                downstream_snr = attr_rec[9]['value']
+            elif access_type == 'VDSL' and len(trafficProfiles) == 3:
+                upstream_attn = UPSTREAM_ATTENUATION  # attr_rec[20]['value']
+                upstream_snr = UPSTREAM_SNR  # attr_rec[24]['value']
+                downstream_attn = DOWNSTREAM_ATTENUATION  # attr_rec[5]['value']
+                downstream_snr = DOWNSTREAM_SNR  # attr_rec[9]['value']
 
                 # vlan209_ccs
                 if bool(stat_vlan209):
@@ -527,13 +586,13 @@ class BarAPI(Resource):
                     dt3 = str('Disabled')
 
                 # Physical uplink status
-                if olt_tx_pr >= -28:
+                if ont_tx_pr >= -28:
                     dt4 = str('Good')
                 else:
                     dt4 = str('Bad')
 
                 # Physical downlink status
-                if olt_rx_pr >= -28:
+                if ont_rx_pr >= -28:
                     dt5 = str('Good')
                 else:
                     dt5 = str('Bad')
