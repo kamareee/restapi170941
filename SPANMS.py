@@ -53,6 +53,183 @@ def reading():
                 :"10M","configuredProfileTx":"10M_UP_IPTV","configuredProfileRx":"10M_DOWN_IPTV","isSubscribed":True,"isConfigured":True,"isMissing":False,"isProfileTxMismatch":False,"isProfileRxMismatch":False}]}
 
     outputVDSL = '{"retDesc": "Success", "attributes": [{"name": "ADMIN_STATUS", "value": "Up"}, {"name": "CPU", "value": 6}, {"name": "CRC_ERROR", "value": "NotSupport"}, {"name": "DOWNSTREAM_ACTUAL_RATE", "value": 17000}, {"name": "DOWNSTREAM_ATTAINABLERATE", "value": 30667}, {"name": "DOWNSTREAM_ATTENUATION", "value": 26}, {"name": "DOWNSTREAM_MAX_CONFIG", "value": null}, {"name": "DOWNSTREAM_MIN_CONFIG", "value": null}, {"name": "DOWNSTREAM_POWER", "value": 11.7}, {"name": "DOWNSTREAM_SNR", "value": 11.6}, {"name": "LASTDOWNTIME", "value": "NotSupport"}, {"name": "LASTUPTIME", "value": 1502105096000}, {"name": "LINK_RETRAIN", "value": 44}, {"name": "MEM", "value": 74}, {"name": "OPER_STATUS", "value": "Up"}, {"name": "OPTION82", "value": null}, {"name": "PPOE", "value": null}, {"name": "TEMP", "value": "NotSupport"}, {"name": "UPSTREAM_ACTUAL_RATE", "value": 4999}, {"name": "UPSTREAM_ATTAINABLERATE", "value": 10606}, {"name": "UPSTREAM_ATTENUATION", "value": 27.8}, {"name": "UPSTREAM_MAX_CONFIG", "value": null}, {"name": "UPSTREAM_MIN_CONFIG", "value": null}, {"name": "UPSTREAM_POWER", "value": 13.6}, {"name": "UPSTREAM_SNR", "value": 8.9}, {"name": "UPTIME", "value": "217 days, 22 hours, 50 minutes"}], "custInfo": {"src": "radius", "servicePoint": "HS1001142952", "accessPort": "SDG_V1061-2/3/11", "loginId": "sida313@unifi"}, "retCode": 0, "refId": 164746955}'
+    outputVDSLOriginal = '{"retCode":0,"retDesc":"Success","refId":166441329,"custInfo":{"servicePoint":"HS1001142952","loginId":"sida313@unifi","accessPort":"SDG_V1061-2/3/11","src":"radius"},"attributes":[{"name":"ADMIN_STATUS","value":"Up"},{"name":"CPU","value":6.0},{"name":"CRC_ERROR","value":"NotSupport"},{"name":"DOWNSTREAM_ACTUAL_RATE","value":17000.0},{"name":"DOWNSTREAM_ATTAINABLERATE","value":29919.0},{"name":"DOWNSTREAM_ATTENUATION","value":25.8},{"name":"DOWNSTREAM_MAX_CONFIG","value":17000.0},{"name":"DOWNSTREAM_MIN_CONFIG","value":128.0},{"name":"DOWNSTREAM_POWER","value":11.6},{"name":"DOWNSTREAM_SNR","value":11.3},{"name":"LASTDOWNTIME","value":"NotSupport"},{"name":"LASTUPTIME","value":1502105142000},{"name":"LINK_RETRAIN","value":48},{"name":"MEM","value":74.0},{"name":"OPER_STATUS","value":"Up"},{"name":"OPTION82","value":"enable"},{"name":"PPOE","value":"enable"},{"name":"TEMP","value":"NotSupport"},{"name":"UPSTREAM_ACTUAL_RATE","value":4999.0},{"name":"UPSTREAM_ATTAINABLERATE","value":9887.0},{"name":"UPSTREAM_ATTENUATION","value":27.7},{"name":"UPSTREAM_MIN_CONFIG","value":128.0},{"name":"UPSTREAM_POWER","value":13.6},{"name":"UPSTREAM_SNR","value":8.8},{"name":"UPTIME","value":"225 days, 23 hours, 58 minutes"}],"lineProfiles":[{"siebelProfile":"UniFi Lite 10Mbps (Thank You Campaign 2017)","lineProfileTx":"ASSIA_Z_17_05_2_2.PRF","lineProfileRx":"ASSIA_Z_17_05_2_2.PRF","serviceProfileTx":"NotSupport","serviceProfileRx":"NotSupport"}],"trafficProfiles":[{"objId":"SDG_V1061-2/3/11","vlan":"209","siebelProfileTx":null,"siebelProfileRx":null,"configuredProfileTx":"n/a","configuredProfileRx":"n/a","isSubscribed":false,"isConfigured":true,"isMissing":false,"isProfileTxMismatch":false,"isProfileRxMismatch":false},{"objId":"SDG_V1061-2/3/11","vlan":"400","siebelProfileTx":"256K","siebelProfileRx":"256K","configuredProfileTx":"256K_VOBB","configuredProfileRx":"256K_VOBB","isSubscribed":true,"isConfigured":true,"isMissing":false,"isProfileTxMismatch":false,"isProfileRxMismatch":false},{"objId":"SDG_V1061-2/3/11","vlan":"500","siebelProfileTx":"5M","siebelProfileRx":"10M","configuredProfileTx":"5M","configuredProfileRx":"10M","isSubscribed":true,"isConfigured":true,"isMissing":false,"isProfileTxMismatch":false,"isProfileRxMismatch":false},{"objId":"SDG_V1061-2/3/11","vlan":"600","siebelProfileTx":"10M","siebelProfileRx":"10M","configuredProfileTx":"10M","configuredProfileRx":"10M","isSubscribed":true,"isConfigured":true,"isMissing":false,"isProfileTxMismatch":false,"isProfileRxMismatch":false}]}'
+    outputVDSLOriginalNonString = {
+                                   "retCode":0,
+                                   "retDesc":"Success",
+                                   "refId":166441329,
+                                   "custInfo":{
+                                      "servicePoint":"HS1001142952",
+                                      "loginId":"sida313@unifi",
+                                      "accessPort":"SDG_V1061-2/3/11",
+                                      "src":"radius"
+                                   },
+                                   "attributes":[
+                                      {
+                                         "name":"ADMIN_STATUS",
+                                         "value":"Up"
+                                      },
+                                      {
+                                         "name":"CPU",
+                                         "value":6.0
+                                      },
+                                      {
+                                         "name":"CRC_ERROR",
+                                         "value":"NotSupport"
+                                      },
+                                      {
+                                         "name":"DOWNSTREAM_ACTUAL_RATE",
+                                         "value":17000.0
+                                      },
+                                      {
+                                         "name":"DOWNSTREAM_ATTAINABLERATE",
+                                         "value":29919.0
+                                      },
+                                      {
+                                         "name":"DOWNSTREAM_ATTENUATION",
+                                         "value":25.8
+                                      },
+                                      {
+                                         "name":"DOWNSTREAM_MAX_CONFIG",
+                                         "value":17000.0
+                                      },
+                                      {
+                                         "name":"DOWNSTREAM_MIN_CONFIG",
+                                         "value":128.0
+                                      },
+                                      {
+                                         "name":"DOWNSTREAM_POWER",
+                                         "value":11.6
+                                      },
+                                      {
+                                         "name":"DOWNSTREAM_SNR",
+                                         "value":11.3
+                                      },
+                                      {
+                                         "name":"LASTDOWNTIME",
+                                         "value":"NotSupport"
+                                      },
+                                      {
+                                         "name":"LASTUPTIME",
+                                         "value":1502105142000
+                                      },
+                                      {
+                                         "name":"LINK_RETRAIN",
+                                         "value":48
+                                      },
+                                      {
+                                         "name":"MEM",
+                                         "value":74.0
+                                      },
+                                      {
+                                         "name":"OPER_STATUS",
+                                         "value":"Up"
+                                      },
+                                      {
+                                         "name":"OPTION82",
+                                         "value":"enable"
+                                      },
+                                      {
+                                         "name":"PPOE",
+                                         "value":"enable"
+                                      },
+                                      {
+                                         "name":"TEMP",
+                                         "value":"NotSupport"
+                                      },
+                                      {
+                                         "name":"UPSTREAM_ACTUAL_RATE",
+                                         "value":4999.0
+                                      },
+                                      {
+                                         "name":"UPSTREAM_ATTAINABLERATE",
+                                         "value":9887.0
+                                      },
+                                      {
+                                         "name":"UPSTREAM_ATTENUATION",
+                                         "value":27.7
+                                      },
+                                      {
+                                         "name":"UPSTREAM_MIN_CONFIG",
+                                         "value":128.0
+                                      },
+                                      {
+                                         "name":"UPSTREAM_POWER",
+                                         "value":13.6
+                                      },
+                                      {
+                                         "name":"UPSTREAM_SNR",
+                                         "value":8.8
+                                      },
+                                      {
+                                         "name":"UPTIME",
+                                         "value":"225 days, 23 hours, 58 minutes"
+                                      }
+                                   ],
+                                   "lineProfiles":[
+                                      {
+                                         "siebelProfile":"UniFi Lite 10Mbps (Thank You Campaign 2017)",
+                                         "lineProfileTx":"ASSIA_Z_17_05_2_2.PRF",
+                                         "lineProfileRx":"ASSIA_Z_17_05_2_2.PRF",
+                                         "serviceProfileTx":"NotSupport",
+                                         "serviceProfileRx":"NotSupport"
+                                      }
+                                   ],
+                                   "trafficProfiles":[
+                                      {
+                                         "objId":"SDG_V1061-2/3/11",
+                                         "vlan":"209",
+                                         "siebelProfileTx":None,
+                                         "siebelProfileRx":None,
+                                         "configuredProfileTx":"n/a",
+                                         "configuredProfileRx":"n/a",
+                                         "isSubscribed":False,
+                                         "isConfigured":True,
+                                         "isMissing":False,
+                                         "isProfileTxMismatch":False,
+                                         "isProfileRxMismatch":False
+                                      },
+                                      {
+                                         "objId":"SDG_V1061-2/3/11",
+                                         "vlan":"400",
+                                         "siebelProfileTx":"256K",
+                                         "siebelProfileRx":"256K",
+                                         "configuredProfileTx":"256K_VOBB",
+                                         "configuredProfileRx":"256K_VOBB",
+                                         "isSubscribed":True,
+                                         "isConfigured":True,
+                                         "isMissing":False,
+                                         "isProfileTxMismatch":False,
+                                         "isProfileRxMismatch":False
+                                      },
+                                      {
+                                         "objId":"SDG_V1061-2/3/11",
+                                         "vlan":"500",
+                                         "siebelProfileTx":"5M",
+                                         "siebelProfileRx":"10M",
+                                         "configuredProfileTx":"5M",
+                                         "configuredProfileRx":"10M",
+                                         "isSubscribed":True,
+                                         "isConfigured":True,
+                                         "isMissing":False,
+                                         "isProfileTxMismatch":False,
+                                         "isProfileRxMismatch":False
+                                      },
+                                      {
+                                         "objId":"SDG_V1061-2/3/11",
+                                         "vlan":"600",
+                                         "siebelProfileTx":"10M",
+                                         "siebelProfileRx":"10M",
+                                         "configuredProfileTx":"10M",
+                                         "configuredProfileRx":"10M",
+                                         "isSubscribed":True,
+                                         "isConfigured":True,
+                                         "isMissing":False,
+                                         "isProfileTxMismatch":False,
+                                         "isProfileRxMismatch":False
+                                      }
+                                   ]
+                                }
 
     outputVDSLNonString = {
         "retCode": 0,
@@ -181,7 +358,7 @@ def reading():
     # sleep(8)#in seconds
     print 'Engine finish...'
     # return students2
-    return outputVDSL       #don't use jsonify() if input arguments already type string
+    return outputVDSLOriginal       #don't use jsonify() if input arguments already type string
     # return jsonify(outputFTTH)
     # return jsonify(outputVDSLNonString)
     #return jsonify(outputVDSL)      #already string type so wrongly used

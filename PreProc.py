@@ -100,6 +100,8 @@ class BarAPI(Resource):
 
 
         if returnDescription == 'Success':
+            # Calling the second API and retrieving the data
+            rec_data = get_new_attributes(service_id, api2_data)
             login_id = r.json().get('custInfo').get('loginId')
             access_port = str(r.json().get('custInfo').get('accessPort'))
             # Package name and Access type
@@ -158,8 +160,7 @@ class BarAPI(Resource):
             ont_tx_pr = ONT_TX_POWER#attr_rec[13]['value']
             ont_rx_pr = ONT_RX_POWER#attr_rec[12]['value']
 
-            # Calling the second API and retrieving the data
-            rec_data = get_new_attributes(service_id, api2_data)
+
 
             if access_type == 'FTTH':
                 configuredProfileTx = vln500.get('configuredProfileTx')
@@ -233,10 +234,9 @@ class BarAPI(Resource):
                         'Vlan_600': "Enabled",
                         'Physical_uplink_status': str(dt1),
                         'Physical_downlink_status': str(dt2),
-                        'Message': str('No VLAN data'),
+                        'Message': "13 attributes",
                         'tPreProc': calculate_response_time(),
-                        'tSouthRespond': tSouthRespond,
-                        'No_of_variable': 13#9
+                        'tSouthRespond': tSouthRespond
                     }
                     return jsonify(final_data)
                 elif len(trafficProfiles) == 4:
@@ -296,10 +296,9 @@ class BarAPI(Resource):
                         'Vlan_600': str(dt4),
                         'Physical_uplink_status': str(dt5),
                         'Physical_downlink_status': str(dt6),
-                        'Message': str('OK'),
+                        'Message': "13 attributes",
                         'tPreProc': calculate_response_time(),
-                        'tSouthRespond': tSouthRespond,
-                        'No_of_attributes': 13
+                        'tSouthRespond': tSouthRespond
                     }
 
                     return jsonify(final_data)
@@ -352,10 +351,9 @@ class BarAPI(Resource):
                         'Vlan_500': str(dt3),
                         'Physical_uplink_status': str(dt4),
                         'Physical_downlink_status': str(dt5),
-                        'Message': str('OK'),
+                        'Message': "13 attributes",
                         'tPreProc': calculate_response_time(),
-                        'tSouthRespond': tSouthRespond,
-                        'No_of_attributes': 12
+                        'tSouthRespond': tSouthRespond
                     }
 
                     return jsonify(final_data)
@@ -433,10 +431,9 @@ class BarAPI(Resource):
                             'Vlan_600': "Enabled",
                             'Physical_uplink_status': str(dt1),
                             'Physical_downlink_status': str(dt2),
-                            'Message': str('No VLAN data'),
+                            'Message': "13 attributes",
                             'tPreProc': calculate_response_time(),
-                            'tSouthRespond': tSouthRespond,
-                            'No_of_attributes': 13  # 9
+                            'tSouthRespond': tSouthRespond
                         }
 
                         return jsonify(final_data)
@@ -508,10 +505,9 @@ class BarAPI(Resource):
                         'Vlan_600': str(dt4),
                         'Physical_uplink_status': str(dt5),
                         'Physical_downlink_status': str(dt6),
-                        'Message': str('OK'),
+                        'Message': "13 attributes",
                         'tPreProc': calculate_response_time(),
-                        'tSouthRespond': tSouthRespond,
-                        'No_of_attributes': 13
+                        'tSouthRespond': tSouthRespond
                     }
 
                     return jsonify(final_data)
@@ -569,15 +565,15 @@ class BarAPI(Resource):
                         'Neighbouring_session': rec_data['neighbouring_session'],
                         'Upload_speed_profile': uploadSpeedProfileStatus,
                         'Download_speed_profile': downloadSpeedProfileStatus,
-                        'Vlan_209': str(dt1),
-                        'Vlan_400': str(dt2),
-                        'Vlan_500': str(dt3),
+                        'Vlan_209': "Enabled",
+                        'Vlan_400': "Enabled",
+                        'Vlan_500': "Enabled",
+                        'Vlan_600': "Enabled",
                         'Physical_uplink_status': str(dt4),
                         'Physical_downlink_status': str(dt5),
-                        'Message': str('No VLAN600 data'),
+                        'Message': "13 attributes",
                         'tPreProc': calculate_response_time(),
-                        'tSouthRespond': tSouthRespond,
-                        'No_of_attributes': 12
+                        'tSouthRespond': tSouthRespond
                     }
 
                     return jsonify(final_data)
