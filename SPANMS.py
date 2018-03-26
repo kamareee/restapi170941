@@ -16,7 +16,7 @@ def reading():
     output = {
         'loginid': loginid,
         'retCode': 0,
-        'retDesc': 'Success',
+        'retDesc': 'Failed',
         'refid': 12345,
         'custAccessPort': {
             'accessPort': 'CBJ_G001-1/2/3.3',
@@ -357,8 +357,9 @@ def reading():
     error = {"retCode":200,"retDesc":"Error Can't query to EMS/NE","custInfo":{"servicePoint":"HS1025171053","loginId":loginid,"accessPort":"SDG_G026-1/7/4.7","src":"radius"},"attributes":[]}
     # sleep(8)#in seconds
     print 'Engine finish...'
+    return jsonify(output)
     # return students2
-    return outputVDSLOriginal       #don't use jsonify() if input arguments already type string
+    # return outputVDSLOriginal       #don't use jsonify() if input arguments already type string
     # return jsonify(outputFTTH)
     # return jsonify(outputVDSLNonString)
     #return jsonify(outputVDSL)      #already string type so wrongly used

@@ -195,6 +195,7 @@ class BarAPI(Resource):
 
                 if (ont_tx_pr is None or ont_rx_pr is None):
                     final_data = {
+                        'Return_description': 'Success',
                         'Login_id': str(login_id),
                         'Package_name': str(package_name),
                         'Access_type': str(access_type),
@@ -217,6 +218,7 @@ class BarAPI(Resource):
                     else:
                         dt2 = str('Bad')
                     final_data = {
+                        'Return_description': 'Success',
                         'Login_id': str(login_id),
                         'Package_name': str(package_name),
                         'Access_type': str(access_type),
@@ -279,6 +281,7 @@ class BarAPI(Resource):
 
                     # Final data to send to ML API (local_engine2)
                     final_data = {
+                        'Return_description': 'Success',
                         'Login_id': str(login_id),
                         'Package_name': str(package_name),
                         'Access_type': str(access_type),
@@ -335,6 +338,7 @@ class BarAPI(Resource):
 
                     # Final data to send to ML API (local_engine2)
                     final_data = {
+                        'Return_description': 'Success',
                         'Login_id': str(login_id),
                         'Package_name': str(package_name),
                         'Access_type': str(access_type),
@@ -414,6 +418,7 @@ class BarAPI(Resource):
                         dt2 = str('Bad')
                         # Final data to send to ML API (local_engine2)
                         final_data = {
+                            'Return_description': 'Success',
                             'Login_id': str(login_id),
                             'Package_name': str(package_name),
                             'Access_type': str(access_type),
@@ -488,6 +493,7 @@ class BarAPI(Resource):
 
                     # Final data to send to ML API (local_engine2)
                     final_data = {
+                        'Return_description': 'Success',
                         'Login_id': str(login_id),
                         'Package_name': str(package_name),
                         'Access_type': str(access_type),
@@ -554,6 +560,7 @@ class BarAPI(Resource):
                         dt5 = str('Bad')
                     # Final data to send to ML API (local_engine2)
                     final_data = {
+                        'Return_description': 'Success',
                         'Login_id': str(login_id),
                         'Package_name': str(package_name),
                         'Access_type': str(access_type),
@@ -577,15 +584,12 @@ class BarAPI(Resource):
                     }
 
                     return jsonify(final_data)
-
-
-
-
         # If SPANMS return is unsuccessful this part of the code will execute
         else:
             tPreProc = calculate_response_time()
             data = r.json()
             data['attributes'].append({u'tPreProc': tPreProc})
+            data['Return_description'] = 'Failed'
             return jsonify(data)
 
 
