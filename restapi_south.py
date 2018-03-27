@@ -34,7 +34,7 @@ class BarAPI(Resource):
         #             "DOWNSTREAM_ATTAINABLERATE","UPSTREAM_ACTUAL_RATE","DOWNSTREAM_ACTUAL_RATE","UPSTREAM_MIN_CONFIG","DOWNSTREAM_MAX_CONFIG",
         #             "DOWNSTREAM_MIN_CONFIG","DOWNSTREAM_MAX_CONFIG","PPOE","OPTION82","UPTIME","LINK_RETRAIN"]}
         payload = {"loginId": serviceID, "trafficProfile": "true", "lineProfile": "true",
-                   "reqParams": ["OLT_RX_POWER", "OLT_TX_POWER", "UPSTREAM_SNR", "DOWNSTREAM_SNR",
+                   "reqParams": ["ONT_RX_POWER", "ONT_TX_POWER", "UPSTREAM_SNR", "DOWNSTREAM_SNR",
                                  "UPSTREAM_ATTENUATION", "DOWNSTREAM_ATTENUATION", "UPSTREAM_ACTUAL_RATE",
                                  "DOWNSTREAM_ACTUAL_RATE"]}
         print(payload)

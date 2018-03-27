@@ -123,10 +123,10 @@ class BarAPI(Resource):
             trafficProfiles = r.json().get('trafficProfiles')
             attr_rec = r.json().get('attributes')
             # Declaring necessary variables for VLAN
-            vlan209_isConfigured = ''
-            vlan400_isConfigured = ''
-            vlan500_isConfigured = ''
-            vlan600_isConfigured = ''
+            vlan209_isConfigured = None
+            vlan400_isConfigured = None
+            vlan500_isConfigured = None
+            vlan600_isConfigured = None
             if trafficProfiles != None:
                 for profile in trafficProfiles:
                     if str(profile.get('vlan')).__eq__('209'):
@@ -149,18 +149,21 @@ class BarAPI(Resource):
                         vln600 = profile
                         vlan600_isConfigured = vln600['isConfigured']
                         continue
-            else:
-                vlan209_isConfigured = True
-                vlan400_isConfigured = True
-                vlan500_isConfigured = True
-                vlan600_isConfigured = True
+            # else:
+            #     vlan209_isConfigured = True
+            #     vlan400_isConfigured = True
+            #     vlan500_isConfigured = True
+            #     vlan600_isConfigured = True
 
 
             # ONT_TX_POWER and ONT_RX_POWER
             ont_tx_pr = ONT_TX_POWER#attr_rec[13]['value']
             ont_rx_pr = ONT_RX_POWER#attr_rec[12]['value']
 
-
+            dt1 = "";
+            dt2 = "";
+            dt3 = "";
+            dt4 = "";
 
             if access_type == 'FTTH':
                 configuredProfileTx = vln500.get('configuredProfileTx')
@@ -206,17 +209,53 @@ class BarAPI(Resource):
                     return jsonify(final_data)
                 elif trafficProfiles == None:
 
+                    # vlan209_ccs
+                    if vlan209_isConfigured != None:
+                        if bool(vlan209_isConfigured):
+                            dt1 = str('Enabled')
+                        else:
+                            dt1 = str('Disabled')
+                    else:
+                        dt1 = "Enabled"
+
+                    # vlan400_vobb
+                    if vlan400_isConfigured != None:
+                        if bool(vlan400_isConfigured):
+                            dt2 = str('Enabled')
+                        else:
+                            dt2 = str('Disabled')
+                    else:
+                        dt2 = "Enabled"
+
+                    # vlan500_hsi
+                    if vlan500_isConfigured != None:
+                        if bool(vlan500_isConfigured):
+                            dt3 = str('Enabled')
+                        else:
+                            dt3 = str('Disabled')
+                    else:
+                        dt3 = "Enabled"
+
+                    # vlan600_hsi
+                    if vlan600_isConfigured != None:
+                        if bool(vlan600_isConfigured):
+                            dt4 = str('Enabled')
+                        else:
+                            dt4 = str('Disabled')
+                    else:
+                        dt4 = "Enabled"
+
                     # Physical up-link status
                     if ont_tx_pr >= -28:
-                        dt1 = str('Good')
+                        dt5 = str('Good')
                     else:
-                        dt1 = str('Bad')
+                        dt5 = str('Bad')
 
                     # Physical down-link status
                     if ont_rx_pr >= -28:
-                        dt2 = str('Good')
+                        dt6 = str('Good')
                     else:
-                        dt2 = str('Bad')
+                        dt6 = str('Bad')
                     final_data = {
                         'Return_description': 'Success',
                         'Login_id': str(login_id),
@@ -230,12 +269,12 @@ class BarAPI(Resource):
                         'Neighbouring_session': rec_data['neighbouring_session'],
                         'Upload_speed_profile': uploadSpeedProfileStatus,
                         'Download_speed_profile': downloadSpeedProfileStatus,
-                        'Vlan_209': "Enabled",
-                        'Vlan_400': "Enabled",
-                        'Vlan_500': "Enabled",
-                        'Vlan_600': "Enabled",
-                        'Physical_uplink_status': str(dt1),
-                        'Physical_downlink_status': str(dt2),
+                        'Vlan_209': dt1,
+                        'Vlan_400': dt2,
+                        'Vlan_500': dt3,
+                        'Vlan_600': dt4,
+                        'Physical_uplink_status': dt5,
+                        'Physical_downlink_status': dt6,
                         'Message': "13 attributes",
                         'tPreProc': calculate_response_time(),
                         'tSouthRespond': tSouthRespond
@@ -293,48 +332,66 @@ class BarAPI(Resource):
                         'Neighbouring_session': rec_data['neighbouring_session'],
                         'Upload_speed_profile': uploadSpeedProfileStatus,
                         'Download_speed_profile': downloadSpeedProfileStatus,
-                        'Vlan_209': str(dt1),
-                        'Vlan_400': str(dt2),
-                        'Vlan_500': str(dt3),
-                        'Vlan_600': str(dt4),
-                        'Physical_uplink_status': str(dt5),
-                        'Physical_downlink_status': str(dt6),
+                        'Vlan_209': dt1,
+                        'Vlan_400': dt2,
+                        'Vlan_500': dt3,
+                        'Vlan_600': dt4,
+                        'Physical_uplink_status': dt5,
+                        'Physical_downlink_status': dt6,
                         'Message': "13 attributes",
                         'tPreProc': calculate_response_time(),
                         'tSouthRespond': tSouthRespond
                     }
 
                     return jsonify(final_data)
-                elif len(trafficProfiles)==3:
+                elif len(trafficProfiles) < 4:
                     # vlan209_ccs
-                    if bool(vlan209_isConfigured):
-                        dt1 = str('Enabled')
+                    if vlan209_isConfigured != None:
+                        if bool(vlan209_isConfigured):
+                            dt1 = str('Enabled')
+                        else:
+                            dt1 = str('Disabled')
                     else:
-                        dt1 = str('Disabled')
+                        dt1 = "Enabled"
 
                     # vlan400_vobb
-                    if bool(vlan400_isConfigured):
-                        dt2 = str('Enabled')
+                    if vlan400_isConfigured != None:
+                        if bool(vlan400_isConfigured):
+                            dt2 = str('Enabled')
+                        else:
+                            dt2 = str('Disabled')
                     else:
-                        dt2 = str('Disabled')
+                        dt2 = "Enabled"
 
                     # vlan500_hsi
-                    if bool(vlan500_isConfigured):
-                        dt3 = str('Enabled')
+                    if vlan500_isConfigured != None:
+                        if bool(vlan500_isConfigured):
+                            dt3 = str('Enabled')
+                        else:
+                            dt3 = str('Disabled')
                     else:
-                        dt3 = str('Disabled')
+                        dt3 = "Enabled"
+
+                    # vlan600_hsi
+                    if vlan600_isConfigured != None:
+                        if bool(vlan600_isConfigured):
+                            dt4 = str('Enabled')
+                        else:
+                            dt4 = str('Disabled')
+                    else:
+                        dt4 = "Enabled"
 
                     # Physical uplink status
                     if ont_tx_pr >= -28:
-                        dt4 = str('Good')
-                    else:
-                        dt4 = str('Bad')
-
-                    # Physical downlink status
-                    if ont_rx_pr >= -28:
                         dt5 = str('Good')
                     else:
                         dt5 = str('Bad')
+
+                    # Physical downlink status
+                    if ont_rx_pr >= -28:
+                        dt6 = str('Good')
+                    else:
+                        dt6 = str('Bad')
 
                     # Final data to send to ML API (local_engine2)
                     final_data = {
@@ -350,11 +407,12 @@ class BarAPI(Resource):
                         'Neighbouring_session': rec_data['neighbouring_session'],
                         'Upload_speed_profile': uploadSpeedProfileStatus,
                         'Download_speed_profile': downloadSpeedProfileStatus,
-                        'Vlan_209': str(dt1),
-                        'Vlan_400': str(dt2),
-                        'Vlan_500': str(dt3),
-                        'Physical_uplink_status': str(dt4),
-                        'Physical_downlink_status': str(dt5),
+                        'Vlan_209': dt1,
+                        'Vlan_400': dt2,
+                        'Vlan_500': dt3,
+                        'Vlan_600': dt4,
+                        'Physical_uplink_status': dt5,
+                        'Physical_downlink_status': dt6,
                         'Message': "13 attributes",
                         'tPreProc': calculate_response_time(),
                         'tSouthRespond': tSouthRespond
@@ -399,23 +457,59 @@ class BarAPI(Resource):
                     downstream_attn = DOWNSTREAM_ATTENUATION  # attr_rec[5]['value']
                     downstream_snr = DOWNSTREAM_SNR  # attr_rec[9]['value']
 
+                    # vlan209_ccs
+                    if vlan209_isConfigured != None:
+                        if bool(vlan209_isConfigured):
+                            dt1 = str('Enabled')
+                        else:
+                            dt1 = str('Disabled')
+                    else:
+                        dt1 = "Enabled"
+
+                    # vlan400_vobb
+                    if vlan400_isConfigured != None:
+                        if bool(vlan400_isConfigured):
+                            dt2 = str('Enabled')
+                        else:
+                            dt2 = str('Disabled')
+                    else:
+                        dt2 = "Enabled"
+
+                    # vlan500_hsi
+                    if vlan500_isConfigured != None:
+                        if bool(vlan500_isConfigured):
+                            dt3 = str('Enabled')
+                        else:
+                            dt3 = str('Disabled')
+                    else:
+                        dt3 = "Enabled"
+
+                    # vlan600_hsi
+                    if vlan600_isConfigured != None:
+                        if bool(vlan600_isConfigured):
+                            dt4 = str('Enabled')
+                        else:
+                            dt4 = str('Disabled')
+                    else:
+                        dt4 = "Enabled"
+
                     # Physical up-link status
                     if upstream_attn <= 20 or upstream_attn is None:
                         if upstream_snr >= 8 or upstream_snr is None:
-                            dt1 = str('Good')
+                            dt5 = str('Good')
                         else:
-                            dt1 = str('Bad')
+                            dt5 = str('Bad')
                     else:
-                        dt1 = str('Bad')
+                        dt5 = str('Bad')
 
                     # Physical down-link status
                     if downstream_attn <= 20 or downstream_attn is None:
                         if downstream_snr >= 8 or downstream_snr is None:
-                            dt2 = str('Good')
+                            dt6 = str('Good')
                         else:
-                            dt2 = str('Bad')
+                            dt6 = str('Bad')
                     else:
-                        dt2 = str('Bad')
+                        dt6 = str('Bad')
                         # Final data to send to ML API (local_engine2)
                         final_data = {
                             'Return_description': 'Success',
@@ -430,12 +524,12 @@ class BarAPI(Resource):
                             'Neighbouring_session': rec_data['neighbouring_session'],
                             'Upload_speed_profile': uploadSpeedProfileStatus,
                             'Download_speed_profile': downloadSpeedProfileStatus,
-                            'Vlan_209': "Enabled",
-                            'Vlan_400': "Enabled",
-                            'Vlan_500': "Enabled",
-                            'Vlan_600': "Enabled",
-                            'Physical_uplink_status': str(dt1),
-                            'Physical_downlink_status': str(dt2),
+                            'Vlan_209': dt1,
+                            'Vlan_400': dt2,
+                            'Vlan_500': dt3,
+                            'Vlan_600': dt4,
+                            'Physical_uplink_status': dt5,
+                            'Physical_downlink_status': dt6,
                             'Message': "13 attributes",
                             'tPreProc': calculate_response_time(),
                             'tSouthRespond': tSouthRespond
@@ -505,59 +599,77 @@ class BarAPI(Resource):
                         'Neighbouring_session': rec_data['neighbouring_session'],
                         'Upload_speed_profile': uploadSpeedProfileStatus,
                         'Download_speed_profile': downloadSpeedProfileStatus,
-                        'Vlan_209': str(dt1),
-                        'Vlan_400': str(dt2),
-                        'Vlan_500': str(dt3),
-                        'Vlan_600': str(dt4),
-                        'Physical_uplink_status': str(dt5),
-                        'Physical_downlink_status': str(dt6),
+                        'Vlan_209': dt1,
+                        'Vlan_400': dt2,
+                        'Vlan_500': dt3,
+                        'Vlan_600': dt4,
+                        'Physical_uplink_status': dt5,
+                        'Physical_downlink_status': dt6,
                         'Message': "13 attributes",
                         'tPreProc': calculate_response_time(),
                         'tSouthRespond': tSouthRespond
                     }
 
                     return jsonify(final_data)
-                elif len(trafficProfiles) == 3:
+                elif len(trafficProfiles) < 4:
                     upstream_attn = UPSTREAM_ATTENUATION  # attr_rec[20]['value']
                     upstream_snr = UPSTREAM_SNR  # attr_rec[24]['value']
                     downstream_attn = DOWNSTREAM_ATTENUATION  # attr_rec[5]['value']
                     downstream_snr = DOWNSTREAM_SNR  # attr_rec[9]['value']
 
                     # vlan209_ccs
-                    if bool(vlan209_isConfigured):
-                        dt1 = str('Enabled')
+                    if vlan209_isConfigured != None:
+                        if bool(vlan209_isConfigured):
+                            dt1 = str('Enabled')
+                        else:
+                            dt1 = str('Disabled')
                     else:
-                        dt1 = str('Disabled')
+                        dt1 = "Enabled"
 
                     # vlan400_vobb
-                    if bool(vlan400_isConfigured):
-                        dt2 = str('Enabled')
+                    if vlan400_isConfigured != None:
+                        if bool(vlan400_isConfigured):
+                            dt2 = str('Enabled')
+                        else:
+                            dt2 = str('Disabled')
                     else:
-                        dt2 = str('Disabled')
+                        dt2 = "Enabled"
 
                     # vlan500_hsi
-                    if bool(vlan500_isConfigured):
-                        dt3 = str('Enabled')
+                    if vlan500_isConfigured != None:
+                        if bool(vlan500_isConfigured):
+                            dt3 = str('Enabled')
+                        else:
+                            dt3 = str('Disabled')
                     else:
-                        dt3 = str('Disabled')
+                        dt3 = "Enabled"
+
+                    # vlan600_hsi
+                    if vlan600_isConfigured != None:
+                        if bool(vlan600_isConfigured):
+                            dt4 = str('Enabled')
+                        else:
+                            dt4 = str('Disabled')
+                    else:
+                        dt4 = "Enabled"
 
                     # Physical up-link status
                     if upstream_attn <= 20 or upstream_attn is None:
                         if upstream_snr >= 8 or upstream_snr is None:
-                            dt4 = str('Good')
-                        else:
-                            dt4 = str('Bad')
-                    else:
-                        dt4 = str('Bad')
-
-                    # Physical down-link status
-                    if downstream_attn <= 20 or downstream_attn is None:
-                        if downstream_snr >= 8 or downstream_snr is None:
                             dt5 = str('Good')
                         else:
                             dt5 = str('Bad')
                     else:
                         dt5 = str('Bad')
+
+                    # Physical down-link status
+                    if downstream_attn <= 20 or downstream_attn is None:
+                        if downstream_snr >= 8 or downstream_snr is None:
+                            dt6 = str('Good')
+                        else:
+                            dt6 = str('Bad')
+                    else:
+                        dt6 = str('Bad')
                     # Final data to send to ML API (local_engine2)
                     final_data = {
                         'Return_description': 'Success',
@@ -572,12 +684,12 @@ class BarAPI(Resource):
                         'Neighbouring_session': rec_data['neighbouring_session'],
                         'Upload_speed_profile': uploadSpeedProfileStatus,
                         'Download_speed_profile': downloadSpeedProfileStatus,
-                        'Vlan_209': "Enabled",
-                        'Vlan_400': "Enabled",
-                        'Vlan_500': "Enabled",
-                        'Vlan_600': "Enabled",
-                        'Physical_uplink_status': str(dt4),
-                        'Physical_downlink_status': str(dt5),
+                        'Vlan_209': dt1,
+                        'Vlan_400': dt2,
+                        'Vlan_500': dt3,
+                        'Vlan_600': dt4,
+                        'Physical_uplink_status': dt5,
+                        'Physical_downlink_status': dt6,
                         'Message': "13 attributes",
                         'tPreProc': calculate_response_time(),
                         'tSouthRespond': tSouthRespond
@@ -588,8 +700,9 @@ class BarAPI(Resource):
         else:
             tPreProc = calculate_response_time()
             data = r.json()
-            data['attributes'].append({u'tPreProc': tPreProc})
+            data['attributes'].append({'tPreProc': tPreProc})
             data['Return_description'] = 'Failed'
+            data['Message'] = r.json().get('retDesc')
             return jsonify(data)
 
 
