@@ -6,15 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd38b183-e2a9-499c-bece-9e3d35c133c7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/knn_function.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/min_max.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/training_data.csv" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/restapi170941.iml" afterPath="$PROJECT_DIR$/.idea/restapi170941.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/local_engine2.py" afterPath="$PROJECT_DIR$/local_engine2.py" />
+      <change beforePath="$PROJECT_DIR$/PreProc.py" afterPath="$PROJECT_DIR$/PreProc.py" />
+      <change beforePath="$PROJECT_DIR$/SPANMS.py" afterPath="$PROJECT_DIR$/SPANMS.py" />
+      <change beforePath="$PROJECT_DIR$/restapi_south.py" afterPath="$PROJECT_DIR$/restapi_south.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="local_engine2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="local_engine2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/local_engine2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2432">
-              <caret line="131" column="39" lean-forward="false" selection-start-line="131" selection-start-column="39" selection-end-line="131" selection-end-column="39" />
+            <state relative-caret-position="3528">
+              <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
               <folding>
                 <element signature="e#173#188#0" expanded="true" />
                 <marker date="1521795457858" expanded="true" signature="8897:8950" ph="SELECT * FRO... advisory_output" />
@@ -43,10 +38,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="PreProc.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PreProc.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="973">
+              <caret line="352" column="45" lean-forward="true" selection-start-line="352" selection-start-column="45" selection-end-line="352" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="knn_function.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/knn_function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4720">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -190,12 +195,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../DevelopmentRepo/knnengine_v1.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../restapi170941" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -491,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521532653311</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added modified ML engine (KNN) for mixed (categorical &amp; numerical) data. Added necessary subroutine file for ML engine. Added new mixed training set and min_max set for ML engine.">
+      <created>1522026151428</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1522026151428</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -508,12 +520,12 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34422535" sideWeight="0.50475687" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34375" sideWeight="0.50475687" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3630682" sideWeight="0.49895832" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847142" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3430572" sideWeight="0.49524313" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16094421" sideWeight="0.49695587" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17542918" sideWeight="0.49695587" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -611,7 +623,8 @@
     <MESSAGE value="Added Upload and Download Speed Profile calculation under 'VDSL' category." />
     <MESSAGE value="Updated spanms stimulus" />
     <MESSAGE value="Optimised data extraction at pre-processing stage." />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimised data extraction at pre-processing stage." />
+    <MESSAGE value="Added modified ML engine (KNN) for mixed (categorical &amp; numerical) data. Added necessary subroutine file for ML engine. Added new mixed training set and min_max set for ML engine." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added modified ML engine (KNN) for mixed (categorical &amp; numerical) data. Added necessary subroutine file for ML engine. Added new mixed training set and min_max set for ML engine." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -939,9 +952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2548">
           <caret line="56" column="66" lean-forward="false" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
-          <folding>
-            <element signature="e#1#16#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -951,7 +961,6 @@
           <caret line="350" column="21" lean-forward="false" selection-start-line="350" selection-start-column="21" selection-end-line="350" selection-end-column="21" />
           <folding>
             <element signature="e#0#22#0" expanded="false" />
-            <element signature="e#17561#20550#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -960,25 +969,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1617">
           <caret line="45" column="134" lean-forward="false" selection-start-line="45" selection-start-column="134" selection-end-line="45" selection-end-column="134" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PreProc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="352" column="57" lean-forward="false" selection-start-line="352" selection-start-column="57" selection-end-line="352" selection-end-column="57" />
-          <folding>
-            <element signature="e#1#16#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/knn_function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4720">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -988,13 +984,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/local_engine2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2432">
-          <caret line="131" column="39" lean-forward="false" selection-start-line="131" selection-start-column="39" selection-end-line="131" selection-end-column="39" />
+        <state relative-caret-position="3528">
+          <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
           <folding>
             <element signature="e#173#188#0" expanded="true" />
             <marker date="1521795457858" expanded="true" signature="8897:8950" ph="SELECT * FRO... advisory_output" />
             <marker date="1521795457858" expanded="true" signature="9412:10084" ph="INSERT INTO missing_value... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PreProc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="973">
+          <caret line="352" column="45" lean-forward="true" selection-start-line="352" selection-start-column="45" selection-end-line="352" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
