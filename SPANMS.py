@@ -348,6 +348,39 @@ def reading():
             }
         ]
     }
+    outputFTTHNoTrafficProfile = {
+           "retCode":0,
+           "retDesc":"Success",
+           "refId":167734886,
+           "custInfo":{
+              "servicePoint":"HS1002818571",
+              "loginId":"zizigreen84@unifi",
+              "accessPort":"TDI_G007-1/5/3.24",
+              "src":"radius"
+           },
+           "attributes":[
+              {
+                 "name":"ONT_RX_POWER",
+                 "value":-20.75
+              },
+              {
+                 "name":"ONT_TX_POWER",
+                 "value":2.68
+              }
+           ],
+           "lineProfiles":[
+              {
+                 "siebelProfile":"VIP 10",
+                 "lineProfileTx":"n/a",
+                 "lineProfileRx":"n/a",
+                 "serviceProfileTx":"NotSupport",
+                 "serviceProfileRx":"NotSupport"
+              }
+           ],
+           "trafficProfiles":[
+
+           ]
+        }
     students = '[{' \
                '"id":null},' \
                '{"id":1},{"id":3' \
@@ -361,10 +394,11 @@ def reading():
     # return students2
     # return outputVDSLOriginal       #don't use jsonify() if input arguments already type string
     # return jsonify(outputVDSLOriginalNonString)
+    return jsonify(outputFTTHNoTrafficProfile)
     # return jsonify(outputFTTH)
     # return jsonify(outputVDSLNonString)
     #return jsonify(outputVDSL)      #already string type so wrongly used
-    return jsonify(error)
+    # return jsonify(error)
 
 
 if __name__ == '__main__':

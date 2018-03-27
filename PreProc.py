@@ -127,6 +127,10 @@ class BarAPI(Resource):
             vlan400_isConfigured = None
             vlan500_isConfigured = None
             vlan600_isConfigured = None
+            vln209 = None
+            vln400 = None
+            vln500 = None
+            vln600 = None
             if trafficProfiles != None:
                 for profile in trafficProfiles:
                     if str(profile.get('vlan')).__eq__('209'):
@@ -166,35 +170,39 @@ class BarAPI(Resource):
             dt4 = "";
 
             if access_type == 'FTTH':
-                configuredProfileTx = vln500.get('configuredProfileTx')
-                configuredProfileTx_unit = configuredProfileTx.split('_')[0]
-                if str(configuredProfileTx_unit).__contains__('M'):
-                    unit = 1000000.0;
-                elif str(configuredProfileTx_unit).__contains__('K'):
-                    unit = 1000.0;
-                configuredProfileTxVal = float(re.split('M|K', configuredProfileTx_unit)[0]) * unit;#float(configuredProfileTx.split('_')[0].split('M')[0])
+                if vln500 != None:
+                    configuredProfileTx = vln500.get('configuredProfileTx')
+                    configuredProfileTx_unit = configuredProfileTx.split('_')[0]
+                    if str(configuredProfileTx_unit).__contains__('M'):
+                        unit = 1000000.0;
+                    elif str(configuredProfileTx_unit).__contains__('K'):
+                        unit = 1000.0;
+                    configuredProfileTxVal = float(re.split('M|K', configuredProfileTx_unit)[0]) * unit;#float(configuredProfileTx.split('_')[0].split('M')[0])
 
-                configuredProfileRx = vln500.get('configuredProfileRx')
-                configuredProfileRx_unit = configuredProfileRx.split('_')[0]
-                if str(configuredProfileRx_unit).__contains__('M'):
-                    unit = 1000000.0;
-                elif str(configuredProfileRx_unit).__contains__('K'):
-                    unit = 1000.0;
-                configuredProfileRxVal = float(re.split('M|K', configuredProfileRx_unit)[0]) * unit;#float(configuredProfileRx.split('_')[0].split('M')[0])
+                    configuredProfileRx = vln500.get('configuredProfileRx')
+                    configuredProfileRx_unit = configuredProfileRx.split('_')[0]
+                    if str(configuredProfileRx_unit).__contains__('M'):
+                        unit = 1000000.0;
+                    elif str(configuredProfileRx_unit).__contains__('K'):
+                        unit = 1000.0;
+                    configuredProfileRxVal = float(re.split('M|K', configuredProfileRx_unit)[0]) * unit;#float(configuredProfileRx.split('_')[0].split('M')[0])
 
-                radiusUploadVal = rec_data.get('radiusUpload')
-                radiusDownloadVal = rec_data.get('radiusDownload')
-                uploadSpeedProfileVal = configuredProfileTxVal/radiusUploadVal
-                downloadSpeedProfileVal = configuredProfileRxVal/radiusDownloadVal
-                if uploadSpeedProfileVal >= 1:
+                    radiusUploadVal = rec_data.get('radiusUpload')
+                    radiusDownloadVal = rec_data.get('radiusDownload')
+                    uploadSpeedProfileVal = configuredProfileTxVal/radiusUploadVal
+                    downloadSpeedProfileVal = configuredProfileRxVal/radiusDownloadVal
+                    if uploadSpeedProfileVal >= 1:
+                        uploadSpeedProfileStatus = 'Good'
+                    else:
+                        uploadSpeedProfileStatus = 'Bad'
+
+                    if downloadSpeedProfileVal >= 1:
+                        downloadSpeedProfileStatus = 'Good'
+                    else:
+                        downloadSpeedProfileStatus = 'Bad'
+                else:
                     uploadSpeedProfileStatus = 'Good'
-                else:
-                    uploadSpeedProfileStatus = 'Bad'
-
-                if downloadSpeedProfileVal >= 1:
                     downloadSpeedProfileStatus = 'Good'
-                else:
-                    downloadSpeedProfileStatus = 'Bad'
 
                 if (ont_tx_pr is None or ont_rx_pr is None):
                     final_data = {
@@ -207,80 +215,8 @@ class BarAPI(Resource):
                         'tSouthRespond': tSouthRespond,
                     }
                     return jsonify(final_data)
-                elif trafficProfiles == None:
 
-                    # vlan209_ccs
-                    if vlan209_isConfigured != None:
-                        if bool(vlan209_isConfigured):
-                            dt1 = str('Enabled')
-                        else:
-                            dt1 = str('Disabled')
-                    else:
-                        dt1 = "Enabled"
-
-                    # vlan400_vobb
-                    if vlan400_isConfigured != None:
-                        if bool(vlan400_isConfigured):
-                            dt2 = str('Enabled')
-                        else:
-                            dt2 = str('Disabled')
-                    else:
-                        dt2 = "Enabled"
-
-                    # vlan500_hsi
-                    if vlan500_isConfigured != None:
-                        if bool(vlan500_isConfigured):
-                            dt3 = str('Enabled')
-                        else:
-                            dt3 = str('Disabled')
-                    else:
-                        dt3 = "Enabled"
-
-                    # vlan600_hsi
-                    if vlan600_isConfigured != None:
-                        if bool(vlan600_isConfigured):
-                            dt4 = str('Enabled')
-                        else:
-                            dt4 = str('Disabled')
-                    else:
-                        dt4 = "Enabled"
-
-                    # Physical up-link status
-                    if ont_tx_pr >= -28:
-                        dt5 = str('Good')
-                    else:
-                        dt5 = str('Bad')
-
-                    # Physical down-link status
-                    if ont_rx_pr >= -28:
-                        dt6 = str('Good')
-                    else:
-                        dt6 = str('Bad')
-                    final_data = {
-                        'Return_description': 'Success',
-                        'Login_id': str(login_id),
-                        'Package_name': str(package_name),
-                        'Access_type': str(access_type),
-                        'Device_host_name': str(rec_data['device_host_name']),
-                        'HSI_billing_status': str(rec_data['hsi_billing_status']),
-                        'Radius_account_status': str(rec_data['radius_account_status']),
-                        'HSI_session': str(rec_data['hsi_session']),
-                        'Frequent_disconnect': rec_data['frequent_disconnect'],
-                        'Neighbouring_session': rec_data['neighbouring_session'],
-                        'Upload_speed_profile': uploadSpeedProfileStatus,
-                        'Download_speed_profile': downloadSpeedProfileStatus,
-                        'Vlan_209': dt1,
-                        'Vlan_400': dt2,
-                        'Vlan_500': dt3,
-                        'Vlan_600': dt4,
-                        'Physical_uplink_status': dt5,
-                        'Physical_downlink_status': dt6,
-                        'Message': "13 attributes",
-                        'tPreProc': calculate_response_time(),
-                        'tSouthRespond': tSouthRespond
-                    }
-                    return jsonify(final_data)
-                elif len(trafficProfiles) == 4:
+                elif (trafficProfiles != None and len(trafficProfiles) == 4):
 
                     # vlan209_ccs
                     if bool(vlan209_isConfigured):
@@ -344,7 +280,7 @@ class BarAPI(Resource):
                     }
 
                     return jsonify(final_data)
-                elif len(trafficProfiles) < 4:
+                elif trafficProfiles == None or len(trafficProfiles) < 4:
                     # vlan209_ccs
                     if vlan209_isConfigured != None:
                         if bool(vlan209_isConfigured):
