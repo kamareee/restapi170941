@@ -33,7 +33,7 @@ class BarAPI(Resource):
         json = parser.parse_args()
         # a1 = datetime.datetime.now()
         try:
-            r = requests.get('http://localhost:5003/getParam', params=json, timeout=120)
+            r = requests.get('http://localhost:5004/getParam', params=json, timeout=120)
             r.raise_for_status()
         except Timeout:
             print ("Timeout Error:")
@@ -53,16 +53,27 @@ class BarAPI(Resource):
             print("tPreProc %d ms" %time)
             return time  # milliseconds
 
+        a = datetime.datetime.now()
         try:
             api2_data = r.json().get('@api2')
             responseHeader = api2_data.get('responseHeader')
             returnDescription = r.json().get('retDesc')
             service_id = json.get('serviceID')
         except :
-            data = r.content
-            return data
-
-        a = datetime.datetime.now()
+            tPreProc = calculate_response_time()
+            content = r.content
+            if content.__contains__('HTTPError'):
+                code = content.split(" ")[1]
+            else:
+                code = None
+            data = {
+                'Return_description': 'Failed',
+                'Message': r.content,
+                'Return_code': code,
+            }
+            return jsonify(data)
+            # data = r.content
+            # return data
 
         attributes = r.json().get('attributes')
         ONT_TX_POWER = None
@@ -170,36 +181,42 @@ class BarAPI(Resource):
             dt4 = "";
 
             if access_type == 'FTTH':
-                if vln500 != None:
+                if vln500 != None :
                     configuredProfileTx = vln500.get('configuredProfileTx')
-                    configuredProfileTx_unit = configuredProfileTx.split('_')[0]
-                    if str(configuredProfileTx_unit).__contains__('M'):
-                        unit = 1000000.0;
-                    elif str(configuredProfileTx_unit).__contains__('K'):
-                        unit = 1000.0;
-                    configuredProfileTxVal = float(re.split('M|K', configuredProfileTx_unit)[0]) * unit;#float(configuredProfileTx.split('_')[0].split('M')[0])
+                    if configuredProfileTx != None:
+                        configuredProfileTx_unit = configuredProfileTx.split('_')[0]
+                        if str(configuredProfileTx_unit).__contains__('M'):
+                            unit = 1000000.0;
+                        elif str(configuredProfileTx_unit).__contains__('K'):
+                            unit = 1000.0;
+                        configuredProfileTxVal = float(re.split('M|K', configuredProfileTx_unit)[0]) * unit;#float(configuredProfileTx.split('_')[0].split('M')[0])
+                        radiusUploadVal = rec_data.get('radiusUpload')
+                        uploadSpeedProfileVal = configuredProfileTxVal / radiusUploadVal
+                        if uploadSpeedProfileVal >= 1:
+                            uploadSpeedProfileStatus = 'Good'
+                        else:
+                            uploadSpeedProfileStatus = 'Bad'
+                    else:
+                        uploadSpeedProfileStatus = 'Good'
 
                     configuredProfileRx = vln500.get('configuredProfileRx')
-                    configuredProfileRx_unit = configuredProfileRx.split('_')[0]
-                    if str(configuredProfileRx_unit).__contains__('M'):
-                        unit = 1000000.0;
-                    elif str(configuredProfileRx_unit).__contains__('K'):
-                        unit = 1000.0;
-                    configuredProfileRxVal = float(re.split('M|K', configuredProfileRx_unit)[0]) * unit;#float(configuredProfileRx.split('_')[0].split('M')[0])
+                    if configuredProfileRx != None:
+                        configuredProfileRx_unit = configuredProfileRx.split('_')[0]
+                        if str(configuredProfileRx_unit).__contains__('M'):
+                            unit = 1000000.0;
+                        elif str(configuredProfileRx_unit).__contains__('K'):
+                            unit = 1000.0;
+                        configuredProfileRxVal = float(re.split('M|K', configuredProfileRx_unit)[0]) * unit;#float(configuredProfileRx.split('_')[0].split('M')[0])
+                        radiusDownloadVal = rec_data.get('radiusDownload')
+                        downloadSpeedProfileVal = configuredProfileRxVal / radiusDownloadVal
 
-                    radiusUploadVal = rec_data.get('radiusUpload')
-                    radiusDownloadVal = rec_data.get('radiusDownload')
-                    uploadSpeedProfileVal = configuredProfileTxVal/radiusUploadVal
-                    downloadSpeedProfileVal = configuredProfileRxVal/radiusDownloadVal
-                    if uploadSpeedProfileVal >= 1:
-                        uploadSpeedProfileStatus = 'Good'
+                        if downloadSpeedProfileVal >= 1:
+                            downloadSpeedProfileStatus = 'Good'
+                        else:
+                            downloadSpeedProfileStatus = 'Bad'
                     else:
-                        uploadSpeedProfileStatus = 'Bad'
-
-                    if downloadSpeedProfileVal >= 1:
                         downloadSpeedProfileStatus = 'Good'
-                    else:
-                        downloadSpeedProfileStatus = 'Bad'
+
                 else:
                     uploadSpeedProfileStatus = 'Good'
                     downloadSpeedProfileStatus = 'Good'
@@ -216,71 +233,8 @@ class BarAPI(Resource):
                     }
                     return jsonify(final_data)
 
-                elif (trafficProfiles != None and len(trafficProfiles) == 4):
+                elif (trafficProfiles != None and len(trafficProfiles) > 0):
 
-                    # vlan209_ccs
-                    if bool(vlan209_isConfigured):
-                        dt1 = str('Enabled')
-                    else:
-                        dt1 = str('Disabled')
-
-                    # vlan400_vobb
-                    if bool(vlan400_isConfigured):
-                        dt2 = str('Enabled')
-                    else:
-                        dt2 = str('Disabled')
-
-                    # vlan500_hsi
-                    if bool(vlan500_isConfigured):
-                        dt3 = str('Enabled')
-                    else:
-                        dt3 = str('Disabled')
-
-                    # vlan600_iptv
-                    if bool(vlan600_isConfigured):
-                        dt4 = str('Enabled')
-                    else:
-                        dt4 = str('Disabled')
-
-                    # Physical up-link status
-                    if ont_tx_pr >= -28:
-                        dt5 = str('Good')
-                    else:
-                        dt5 = str('Bad')
-
-                    # Physical down-link status
-                    if ont_rx_pr >= -28:
-                        dt6 = str('Good')
-                    else:
-                        dt6 = str('Bad')
-
-                    # Final data to send to ML API (local_engine2)
-                    final_data = {
-                        'Return_description': 'Success',
-                        'Login_id': str(login_id),
-                        'Package_name': str(package_name),
-                        'Access_type': str(access_type),
-                        'Device_host_name': str(rec_data['device_host_name']),
-                        'HSI_billing_status': str(rec_data['hsi_billing_status']),
-                        'Radius_account_status': str(rec_data['radius_account_status']),
-                        'HSI_session': str(rec_data['hsi_session']),
-                        'Frequent_disconnect': rec_data['frequent_disconnect'],
-                        'Neighbouring_session': rec_data['neighbouring_session'],
-                        'Upload_speed_profile': uploadSpeedProfileStatus,
-                        'Download_speed_profile': downloadSpeedProfileStatus,
-                        'Vlan_209': dt1,
-                        'Vlan_400': dt2,
-                        'Vlan_500': dt3,
-                        'Vlan_600': dt4,
-                        'Physical_uplink_status': dt5,
-                        'Physical_downlink_status': dt6,
-                        'Message': "13 attributes",
-                        'tPreProc': calculate_response_time(),
-                        'tSouthRespond': tSouthRespond
-                    }
-
-                    return jsonify(final_data)
-                elif trafficProfiles == None or len(trafficProfiles) < 4:
                     # vlan209_ccs
                     if vlan209_isConfigured != None:
                         if bool(vlan209_isConfigured):
@@ -353,8 +307,11 @@ class BarAPI(Resource):
                         'tPreProc': calculate_response_time(),
                         'tSouthRespond': tSouthRespond
                     }
+                    print "FTTH"
+                    print final_data
 
                     return jsonify(final_data)
+
             elif access_type == 'VDSL':
                 serviceCategory = responseHeader.get("serviceCategory") #responseHeader is from 2nd api
                 for service in serviceCategory:

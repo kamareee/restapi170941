@@ -41,9 +41,9 @@ class BarAPI(Resource):
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         session = FuturesSession()
 
-        # api_one = session.post('http://httpstat.us/400', json=payload, headers=headers, timeout=120)  #simulate error for http
+        # api_one = session.post('http://httpstat.us/402', json=payload, headers=headers, timeout=120)  #simulate error for http
         api_one = session.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers, timeout=120) #used for local test
-        # r = requests.post('http://10.41.56.90:9001/rest/api/reading', json=payload, headers=headers, timeout=120) #actual deployment
+        # api_one = session.post('http://10.41.56.90:9001/rest/api/reading', json=payload, headers=headers, timeout=120) #actual deployment
         api_two = session.get('http://10.45.196.65/IDEAS/ideas.do?serviceID=' + serviceID)
         try:
             r = api_one.result()
@@ -51,23 +51,16 @@ class BarAPI(Resource):
             r.raise_for_status()
             r2.raise_for_status()
         except ConnectionError as e:
-            print(e.message)
-            return str(e.message)
+            print('ConnectionError ' + str(e.message))
+            return str('ConnectionError ' + str(e.message))
         except Timeout as e:
-            print(e.message)
-            return str(e.message)
+            print('Timeout '+ str(e.message))
+            return str('Timeout '+ str(e.message))
         except HTTPError as e:
-            print(e.message)
-            return str(e.message)
+            print('HTTPError '+e.message)
+            return str('HTTPError '+e.message)
 
         try:
-            # strJson = str(json.loads(r.content))      #json.loads() is used for list-type input
-            # data = json.loads(strJson)
-
-            # dataUnicode = r.json()
-            # myJsondumps = json.dumps(dataUnicode)
-            # data = yaml.load(myJsondumps)
-
             data = r.json()
             data2 = r2.json()
 
@@ -84,6 +77,7 @@ class BarAPI(Resource):
         except ValueError:
             # data = r.content
             data = "South API failed recognized json data"
+            print data
         return jsonify(data)
 
 api.add_resource(BarAPI, '/getParam', endpoint='getParam')
@@ -91,4 +85,4 @@ api.add_resource(BarAPI, '/getParam', endpoint='getParam')
 if __name__ == '__main__':
     app.secret_key = 'mysecret3'
     # app.run('127.0.0.1', 5001, True)
-    app.run('0.0.0.0', 5003, True, threaded=True)
+    app.run('0.0.0.0', 5004, True, threaded=True)

@@ -381,11 +381,8 @@ def reading():
 
            ]
         }
-    students = '[{' \
-               '"id":null},' \
-               '{"id":1},{"id":3' \
-               '}]'
-    students2 = '{"aid":null,"bid":1,"cid":3, "custInfo": {"src": "radius", "servicePoint": "HS1001142952", "accessPort": "SDG_V1061-2/3/11", "loginId": "sida313@unifi"}}'
+
+    outAswadiUnifi = '{"retCode":0,"retDesc":"Success","refId":168146011,"custInfo":{"servicePoint":"HS1030462045","loginId":"aswadiunifi@unifi","accessPort":"JLT_G005-1/8/1.16","src":"radius"},"attributes":[{"name":"ONT_RX_POWER","value":-18.116},{"name":"ONT_TX_POWER","value":3.0}],"lineProfiles":[{"siebelProfile":"UniFi Advance 30Mbps - Bonanza Campaign","lineProfileTx":"n/a","lineProfileRx":"n/a","serviceProfileTx":"NotSupport","serviceProfileRx":"NotSupport"}],"trafficProfiles":[{"objId":"JLT_G005:VOIP-1-1-8-1-16-1:IS-NR","vlan":"400","siebelProfileTx":"256K","siebelProfileRx":"256K","configuredProfileTx":"256K_UP","configuredProfileRx":"256K_DOWN","isSubscribed":true,"isConfigured":true,"isMissing":false,"isProfileTxMismatch":false,"isProfileRxMismatch":false},{"objId":null,"vlan":"500","siebelProfileTx":"11M","siebelProfileRx":"35M","configuredProfileTx":null,"configuredProfileRx":null,"isSubscribed":true,"isConfigured":false,"isMissing":true,"isProfileTxMismatch":false,"isProfileRxMismatch":false},{"objId":null,"vlan":"600","siebelProfileTx":"10M","siebelProfileRx":"10M","configuredProfileTx":null,"configuredProfileRx":null,"isSubscribed":true,"isConfigured":false,"isMissing":true,"isProfileTxMismatch":false,"isProfileRxMismatch":false},{"objId":"JLT_G005:FLOW-1-1-8-1-16-1-2-1:OOS-AU","vlan":"621","siebelProfileTx":null,"siebelProfileRx":null,"configuredProfileTx":"10M_UP","configuredProfileRx":"10M_DOWN","isSubscribed":false,"isConfigured":true,"isMissing":false,"isProfileTxMismatch":false,"isProfileRxMismatch":false},{"objId":"JLT_G005:FLOW-1-1-8-1-16-1-2-5:OOS-AU","vlan":"821","siebelProfileTx":null,"siebelProfileRx":null,"configuredProfileTx":"128K_UP","configuredProfileRx":"128K_DOWN","isSubscribed":false,"isConfigured":true,"isMissing":false,"isProfileTxMismatch":false,"isProfileRxMismatch":false},{"objId":"JLT_G005:FLOW-1-1-8-1-16-1-2-3:OOS-AU","vlan":"823","siebelProfileTx":null,"siebelProfileRx":null,"configuredProfileTx":"50M_UP_IPTV","configuredProfileRx":"50M_DOWN_IPTV","isSubscribed":false,"isConfigured":true,"isMissing":false,"isProfileTxMismatch":false,"isProfileRxMismatch":false}]}'
 
     error = {"retCode":200,"retDesc":"Error Can't query to EMS/NE","custInfo":{"servicePoint":"HS1025171053","loginId":loginid,"accessPort":"SDG_G026-1/7/4.7","src":"radius"},"attributes":[]}
     # sleep(8)#in seconds
@@ -393,8 +390,9 @@ def reading():
     # return jsonify(output)
     # return students2
     # return outputVDSLOriginal       #don't use jsonify() if input arguments already type string
+    return outAswadiUnifi
     # return jsonify(outputVDSLOriginalNonString)
-    return jsonify(outputFTTHNoTrafficProfile)
+    # return jsonify(outputFTTHNoTrafficProfile)
     # return jsonify(outputFTTH)
     # return jsonify(outputVDSLNonString)
     #return jsonify(outputVDSL)      #already string type so wrongly used

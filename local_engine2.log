@@ -349,3 +349,369 @@ Expert Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
 Matched Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
 Process finished
 ------------------------
+Process started at: 2018-03-29 08:03:30.624000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process started at: 2018-03-29 08:04:27.388000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process started at: 2018-03-29 08:08:20.839000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:10:22.188000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:10:41.959000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:12:13.441000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:12:27.990000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:14:33.168000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:14:59.670000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:15:31.722000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:19:32.790000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"South API failed recognized json data"\n', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:20:21.050000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"South API failed recognized json data"\n', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:23:00.030000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"South API failed recognized json data"\n', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:27:59.227000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"South API failed recognized json data"\n', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:28:23.209000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"South API failed recognized json data"\n', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:30:17.118000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'retDesc': u"Error Can't query to EMS/NE", u'retCode': 200, u'Return_description': u'Failed', u'@api2': {u'responseHeader': {u'serviceCategory': [{u'serviceUploadSpeed': u'21M', u'serviceDownloadSpeed': u'55M', u'serviceID': u'afaideen80@unifi', u'serviceStatus': u'Active', u'productName': u'Residential High Speed Internet'}, {u'serviceUploadSpeed': u'10M', u'serviceDownloadSpeed': u'10M', u'serviceID': u'afaideen80@iptv', u'serviceStatus': u'Active', u'productName': u'HyppTV Residential'}, {u'serviceUploadSpeed': u'256K', u'serviceDownloadSpeed': u'256K', u'serviceID': u'60389585845', u'serviceStatus': u'Active', u'productName': u'Residential Voice'}], u'hsiService': {u'radiusLastModifyDate': u'24-JUL-17', u'radiusStatus': u'Active', u'radiusDownload': u'50M', u'radiusSpeedString': u'1BB50VIP20', u'radiusUpload': u'20M'}, u'neighbouringSessions': {u'dpSessions': u'3 / 5', u'fdc': u'SDG_C129', u'fdcSessions': u'121 / 185', u'dp': u'SDG_C129_DP0047'}, u'frequentDisconnect': {u'dayDetail': {}, u'weekCount': u'0', u'dayCount': u'0', u'weekDetail': {}}, u'inventoryStatus': {u'radiusEquipID': u'SDG_G026-1-7-4', u'graniteEquipID': u'SDG_G026-1-7-4', u'mismatch': u'No'}, u'responseTime': u'2.00', u'transactionID': u'1522283420', u'installationAddress': {u'city': u'43300 SERI KEMBANGAN SELANGOR', u'street': u'PERMAI 13B TAMAN LESTARI PERMAI', u'unit': u'No. 8 -'}, u'customerDetail': {u'packageName': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'customerName': u'AIZULFAIDEEN BIN HAMIM'}, u'sessionStatus': {u'macAddress': u'd4:6e:0e:80:f9:cd', u'state': u'Online', u'since': u'16-MAR-2018 02:03:18', u'portInfo': u'SDG_G026-1-7-4', u'rgType': u'RG5 : TPLINK AC1200'}}}, u'attributes': [{u'tSouthRespond': 1933}, {u'tPreProc': 1}], u'Message': u"Error Can't query to EMS/NE", u'custInfo': {u'src': u'radius', u'servicePoint': u'HS1025171053', u'accessPort': u'SDG_G026-1/7/4.7', u'loginId': u'afaideen80@unifi'}}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:30:56.616000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'retDesc': u"Error Can't query to EMS/NE", u'retCode': 200, u'Return_description': u'Failed', u'@api2': {u'responseHeader': {u'serviceCategory': [{u'serviceUploadSpeed': u'21M', u'serviceDownloadSpeed': u'55M', u'serviceID': u'afaideen80@unifi', u'serviceStatus': u'Active', u'productName': u'Residential High Speed Internet'}, {u'serviceUploadSpeed': u'10M', u'serviceDownloadSpeed': u'10M', u'serviceID': u'afaideen80@iptv', u'serviceStatus': u'Active', u'productName': u'HyppTV Residential'}, {u'serviceUploadSpeed': u'256K', u'serviceDownloadSpeed': u'256K', u'serviceID': u'60389585845', u'serviceStatus': u'Active', u'productName': u'Residential Voice'}], u'hsiService': {u'radiusLastModifyDate': u'24-JUL-17', u'radiusStatus': u'Active', u'radiusDownload': u'50M', u'radiusSpeedString': u'1BB50VIP20', u'radiusUpload': u'20M'}, u'neighbouringSessions': {u'dpSessions': u'3 / 5', u'fdc': u'SDG_C129', u'fdcSessions': u'121 / 185', u'dp': u'SDG_C129_DP0047'}, u'frequentDisconnect': {u'dayDetail': {}, u'weekCount': u'0', u'dayCount': u'0', u'weekDetail': {}}, u'inventoryStatus': {u'radiusEquipID': u'SDG_G026-1-7-4', u'graniteEquipID': u'SDG_G026-1-7-4', u'mismatch': u'No'}, u'responseTime': u'2.00', u'transactionID': u'1522283459', u'installationAddress': {u'city': u'43300 SERI KEMBANGAN SELANGOR', u'street': u'PERMAI 13B TAMAN LESTARI PERMAI', u'unit': u'No. 8 -'}, u'customerDetail': {u'packageName': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'customerName': u'AIZULFAIDEEN BIN HAMIM'}, u'sessionStatus': {u'macAddress': u'd4:6e:0e:80:f9:cd', u'state': u'Online', u'since': u'16-MAR-2018 02:03:18', u'portInfo': u'SDG_G026-1-7-4', u'rgType': u'RG5 : TPLINK AC1200'}}}, u'attributes': [{u'tSouthRespond': 1802}, {u'tPreProc': 1}], u'Message': u"Error Can't query to EMS/NE", u'custInfo': {u'src': u'radius', u'servicePoint': u'HS1025171053', u'accessPort': u'SDG_G026-1/7/4.7', u'loginId': u'afaideen80@unifi'}}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:31:30.398000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'retDesc': u"Error Can't query to EMS/NE", u'retCode': 200, u'Return_description': u'Failed', u'@api2': {u'responseHeader': {u'serviceCategory': [{u'serviceUploadSpeed': u'21M', u'serviceDownloadSpeed': u'55M', u'serviceID': u'afaideen80@unifi', u'serviceStatus': u'Active', u'productName': u'Residential High Speed Internet'}, {u'serviceUploadSpeed': u'10M', u'serviceDownloadSpeed': u'10M', u'serviceID': u'afaideen80@iptv', u'serviceStatus': u'Active', u'productName': u'HyppTV Residential'}, {u'serviceUploadSpeed': u'256K', u'serviceDownloadSpeed': u'256K', u'serviceID': u'60389585845', u'serviceStatus': u'Active', u'productName': u'Residential Voice'}], u'hsiService': {u'radiusLastModifyDate': u'24-JUL-17', u'radiusStatus': u'Active', u'radiusDownload': u'50M', u'radiusSpeedString': u'1BB50VIP20', u'radiusUpload': u'20M'}, u'neighbouringSessions': {u'dpSessions': u'3 / 5', u'fdc': u'SDG_C129', u'fdcSessions': u'121 / 185', u'dp': u'SDG_C129_DP0047'}, u'frequentDisconnect': {u'dayDetail': {}, u'weekCount': u'0', u'dayCount': u'0', u'weekDetail': {}}, u'inventoryStatus': {u'radiusEquipID': u'SDG_G026-1-7-4', u'graniteEquipID': u'SDG_G026-1-7-4', u'mismatch': u'No'}, u'responseTime': u'2.00', u'transactionID': u'1522283493', u'installationAddress': {u'city': u'43300 SERI KEMBANGAN SELANGOR', u'street': u'PERMAI 13B TAMAN LESTARI PERMAI', u'unit': u'No. 8 -'}, u'customerDetail': {u'packageName': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'customerName': u'AIZULFAIDEEN BIN HAMIM'}, u'sessionStatus': {u'macAddress': u'd4:6e:0e:80:f9:cd', u'state': u'Online', u'since': u'16-MAR-2018 02:03:18', u'portInfo': u'SDG_G026-1-7-4', u'rgType': u'RG5 : TPLINK AC1200'}}}, u'attributes': [{u'tSouthRespond': 1876}, {u'tPreProc': 0}], u'Message': u"Error Can't query to EMS/NE", u'custInfo': {u'src': u'radius', u'servicePoint': u'HS1025171053', u'accessPort': u'SDG_G026-1/7/4.7', u'loginId': u'afaideen80@unifi'}}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:35:42.891000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"HTTPConnectionPool(host=\'localhost\', port=9001): Max retries exceeded with url: /rest/api/reading (Caused by NewConnectionError(\'<urllib3.connection.HTTPConnection object at 0x06B3D630>: Failed to establish a new connection: [Errno 10061] No connection could be made because the target machine actively refused it\',))"\n', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:37:24.716000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"400 Client Error: Bad Request for url: http://httpstat.us/400"\n', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:38:12.657000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"401 Client Error: Unauthorized for url: http://httpstat.us/401"\n', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:39:30.267000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"401 Client Error: Unauthorized for url: http://httpstat.us/401"\n', u'Return_code': 400, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:40:44.420000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:43:27.554000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"401 Client Error: Unauthorized for url: http://httpstat.us/401"\n', u'Return_code': u'"401', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:44:45.169000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:46:09.660000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"500 Server Error: Internal Server Error for url: http://httpstat.us/500"\n', u'Return_code': u'"500', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:48:10.262000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:49:18.428000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:50:07.140000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"HTTPError 500 Server Error: Internal Server Error for url: http://httpstat.us/500"\n', u'Return_code': u'"HTTPError', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:50:56.943000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"HTTPError 500 Server Error: Internal Server Error for url: http://httpstat.us/500"\n', u'Return_code': u'500', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:51:19.871000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"HTTPError 500 Server Error: Internal Server Error for url: http://httpstat.us/500"\n', u'Return_code': u'500', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:52:58.315000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"HTTPError 402 Client Error: Payment Required for url: http://httpstat.us/402"\n', u'Return_code': u'402', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:55:27.013000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"HTTPConnectionPool(host=\'localhost\', port=9001): Max retries exceeded with url: /rest/api/reading (Caused by NewConnectionError(\'<urllib3.connection.HTTPConnection object at 0x06D51890>: Failed to establish a new connection: [Errno 10061] No connection could be made because the target machine actively refused it\',))"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 08:58:57.688000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 60.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Bad', u'Bad', u'Bad', u'Bad']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0], 'result': '5f'}
+Predicted class by KNN: 5f
+Neighbours: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Bad', 'physical_uplink_status': u'Bad', 'neighbouring_sessions': 60.0, 'access_type': u'VDSL', 'upload_speed_profile': u'Bad', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Bad', 'login': u'sida313@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SDZ', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).2) to check on physical/cable connection between all CPE.CSP to1) indentified customer actual issue.2) check Physical Parameter & current Internet Session.If Physical Parameter NOT meet threshold : Kindly create CTT & CTT  Activity.If Physical Parameter meet threshold : Advice customer to do the IEMT Performance Test.',)", 'symptom': "('Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).',)", 'summary': "('HSI Session ONLINE.Speed Profile Mismatch.Physical Parameter NOT meet threshold.',)"}
+Expert Matrix: 1-1-1-0.0-60.0-1-1-1-1-2-2-2-2
+Matched Matrix: 1-1-1-0.0-60.0-1-1-1-1-2-2-2-2
+Process finished
+------------------------
+Process started at: 2018-03-29 09:00:07.056000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 09:02:13.646000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process started at: 2018-03-29 09:03:17.951000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process started at: 2018-03-29 09:04:14.908000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process started at: 2018-03-29 09:04:44.784000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process started at: 2018-03-29 09:05:46
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process started at: 2018-03-29 09:06:34.895000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"Timeout HTTPConnectionPool(host=\'localhost\', port=9001): Read timed out. (read timeout=2)"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 09:07:09.217000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"Timeout HTTPConnectionPool(host=\'localhost\', port=9001): Read timed out. (read timeout=2)"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 09:11:43.490000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"ConnectionError HTTPConnectionPool(host=\'localhost\', port=9001): Max retries exceeded with url: /rest/api/reading (Caused by NewConnectionError(\'<urllib3.connection.HTTPConnection object at 0x0688F870>: Failed to establish a new connection: [Errno 10061] No connection could be made because the target machine actively refused it\',))"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 09:13:25.139000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"Timeout HTTPConnectionPool(host=\'localhost\', port=9001): Read timed out. (read timeout=2)"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 09:14:07.722000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 09:16:29.966000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"South API failed recognized json data"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 09:17:20.580000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"South API failed recognized json data"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 09:17:50.021000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"South API failed recognized json data"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 09:18:44.445000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 60.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Bad', u'Bad', u'Bad', u'Bad']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0], 'result': '5f'}
+Predicted class by KNN: 5f
+Neighbours: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Bad', 'physical_uplink_status': u'Bad', 'neighbouring_sessions': 60.0, 'access_type': u'VDSL', 'upload_speed_profile': u'Bad', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Bad', 'login': u'sida313@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SDZ', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).2) to check on physical/cable connection between all CPE.CSP to1) indentified customer actual issue.2) check Physical Parameter & current Internet Session.If Physical Parameter NOT meet threshold : Kindly create CTT & CTT  Activity.If Physical Parameter meet threshold : Advice customer to do the IEMT Performance Test.',)", 'symptom': "('Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).',)", 'summary': "('HSI Session ONLINE.Speed Profile Mismatch.Physical Parameter NOT meet threshold.',)"}
+Expert Matrix: 1-1-1-0.0-60.0-1-1-1-1-2-2-2-2
+Matched Matrix: 1-1-1-0.0-60.0-1-1-1-1-2-2-2-2
+Process finished
+------------------------
+Process started at: 2018-03-29 10:16:54.967000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process started at: 2018-03-29 10:17:52.278000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 40.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Bad', u'Bad', u'Bad', u'Bad']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 40.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 3.0, 40.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0], 'result': '5f'}
+Predicted class by KNN: 5f
+Neighbours: [1.0, 1.0, 1.0, 3.0, 40.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Bad', 'physical_uplink_status': u'Bad', 'neighbouring_sessions': 40.0, 'access_type': u'VDSL', 'upload_speed_profile': u'Bad', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Bad', 'login': u'sida313@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SDZ', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).2) to check on physical/cable connection between all CPE.CSP to1) indentified customer actual issue.2) check Physical Parameter & current Internet Session.If Physical Parameter NOT meet threshold : Kindly create CTT & CTT  Activity.If Physical Parameter meet threshold : Advice customer to do the IEMT Performance Test.',)", 'symptom': "('Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).',)", 'summary': "('HSI Session ONLINE.Speed Profile Mismatch.Physical Parameter NOT meet threshold.',)"}
+Expert Matrix: 1-1-1-0.0-40.0-1-1-1-1-2-2-2-2
+Matched Matrix: 1-1-1-3.0-40.0-1-1-1-1-2-2-2-2
+Process finished
+------------------------
+Process started at: 2018-03-29 12:05:29.933000
+Parsed json: {'serviceID': 'sida313@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 61.33, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Bad', u'Good', u'Bad', u'Bad']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 61.33, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 59.62, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0], 'result': '5i'}
+Predicted class by KNN: 5i
+Neighbours: [1.0, 1.0, 1.0, 0.0, 59.62, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Bad', 'neighbouring_sessions': 61.33, 'access_type': u'VDSL', 'upload_speed_profile': u'Bad', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_V1061', 'physical_downlink_status': u'Bad', 'login': u'sida313@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SDZ', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).2) to check on physical/cable connection between all CPE.CSP to1) indentified customer actual issue.2) check Physical Parameter & current Internet Session.If Physical Parameter NOT meet threshold : Kindly create CTT & CTT  Activity.If Physical Parameter meet threshold : Advice customer to do the IEMT Performance Test.',)", 'symptom': "('Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).',)", 'summary': "('HSI Session ONLINE.Upload Speed Profile Mismatch.Physical  Parameter NOT meet threshold.',)"}
+Expert Matrix: 1-1-1-0.0-61.33-1-1-1-1-2-1-2-2
+Matched Matrix: 1-1-1-0.0-59.62-1-1-1-1-2-1-2-2
+Process finished
+------------------------
+Process started at: 2018-03-29 13:28:21.054000
+Parsed json: {'serviceID': 'sida313@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 60.67, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Bad', u'Good', u'Bad', u'Bad']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 60.67, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 59.62, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0], 'result': '5i'}
+Predicted class by KNN: 5i
+Neighbours: [1.0, 1.0, 1.0, 0.0, 59.62, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Bad', 'neighbouring_sessions': 60.67, 'access_type': u'VDSL', 'upload_speed_profile': u'Bad', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_V1061', 'physical_downlink_status': u'Bad', 'login': u'sida313@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SDZ', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).2) to check on physical/cable connection between all CPE.CSP to1) indentified customer actual issue.2) check Physical Parameter & current Internet Session.If Physical Parameter NOT meet threshold : Kindly create CTT & CTT  Activity.If Physical Parameter meet threshold : Advice customer to do the IEMT Performance Test.',)", 'symptom': "('Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).',)", 'summary': "('HSI Session ONLINE.Upload Speed Profile Mismatch.Physical  Parameter NOT meet threshold.',)"}
+Expert Matrix: 1-1-1-0.0-60.67-1-1-1-1-2-1-2-2
+Matched Matrix: 1-1-1-0.0-59.62-1-1-1-1-2-1-2-2
+Process finished
+------------------------
+Process started at: 2018-03-29 13:29:07.471000
+Parsed json: {'serviceID': 'sida313@unifi'}
+Content from HTTP response: {u'Message': u'"ConnectionError HTTPConnectionPool(host=\'localhost\', port=9001): Max retries exceeded with url: /rest/api/reading (Caused by NewConnectionError(\'<urllib3.connection.HTTPConnection object at 0x06D86810>: Failed to establish a new connection: [Errno 10061] No connection could be made because the target machine actively refused it\',))"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-03-29 14:46:02.409000
+Parsed json: {'serviceID': 'sida313@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 14:46:31.379000
+Parsed json: {'serviceID': 'sida313@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 15:00:24.154000
+Parsed json: {'serviceID': 'sida313@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 15:01:12.747000
+Parsed json: {'serviceID': 'sida313@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 15:04:38.770000
+Parsed json: {'serviceID': 'sida313@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 60.0, u'Enabled', u'Disabled', u'Enabled', u'Disabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 2.0, 60.0, 1.0, 2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0], 'result': '3b'}
+Predicted class by KNN: 3b
+Neighbours: [1.0, 1.0, 1.0, 2.0, 60.0, 1.0, 2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance 30Mbps - Bonanza Campaign', 'radius_acct_status': u'Active', 'vlan_600': u'Disabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 60.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_V1061', 'physical_downlink_status': u'Good', 'login': u'aswadiunifi@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Disabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'CC - Backend', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).CSP to1) check current VLAN 500 Profile & Internet Session.If VLAN 500 Disable & Internet Session offline : Kindly create SR and assign to Backend.If VLAN 500 Enable & Internet Session offline : Check with Expert again.Backend:Call HBC to configure VLAN.If the problem persist create CTT to HBC/ SDZ if required (Suspected CPE or need HBC for further investigation - based on consult call) ',)", 'symptom': "('Symptom:No internet connection.',)", 'summary': "('HSI Session ONLINEVLAN 500(HSI) & 600(IPTV) Disable.Physical Parameter meet threshold',)"}
+Expert Matrix: 1-1-1-0.0-60.0-1-2-1-2-1-1-1-1
+Matched Matrix: 1-1-1-2.0-60.0-1-2-1-2-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-03-29 15:24:21.868000
+Parsed json: {'serviceID': 'sida313@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 60.67, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 60.67, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 60.67, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 60.67, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 60.67, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_V1061', 'physical_downlink_status': u'Good', 'login': u'sida313@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'next_action_update': "('Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.',)", 'symptom': "('Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).',)", 'summary': "('HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.',)"}
+Expert Matrix: 1-1-1-0.0-60.67-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-60.67-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-03-29 15:25:50.681000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 40.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 40.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'next_action_update': "('Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.',)", 'symptom': "('Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).',)", 'summary': "('HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.',)"}
+Expert Matrix: 1-1-1-0.0-40.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-40.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-03-29 15:27:24.747000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 40.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 40.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'next_action_update': "('Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.',)", 'symptom': "('Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).',)", 'summary': "('HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.',)"}
+Expert Matrix: 1-1-1-0.0-40.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-40.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-03-29 15:31:01.304000
+Parsed json: {'serviceID': 'aswadiunifi@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 80.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 80.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'JLT_G005', 'physical_downlink_status': u'Good', 'login': u'aswadiunifi@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'next_action_update': "('Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.',)", 'symptom': "('Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).',)", 'summary': "('HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.',)"}
+Expert Matrix: 1-1-1-0.0-80.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-80.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-03-29 15:31:31.791000
+Parsed json: {'serviceID': 'aswadiunifi@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 80.0, u'Enabled', u'Disabled', u'Enabled', u'Disabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0], 'result': '3b'}
+Predicted class by KNN: 3b
+Neighbours: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance 30Mbps - Bonanza Campaign', 'radius_acct_status': u'Active', 'vlan_600': u'Disabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 80.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'JLT_G005', 'physical_downlink_status': u'Good', 'login': u'aswadiunifi@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Disabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'CC - Backend', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).CSP to1) check current VLAN 500 Profile & Internet Session.If VLAN 500 Disable & Internet Session offline : Kindly create SR and assign to Backend.If VLAN 500 Enable & Internet Session offline : Check with Expert again.Backend:Call HBC to configure VLAN.If the problem persist create CTT to HBC/ SDZ if required (Suspected CPE or need HBC for further investigation - based on consult call) ',)", 'symptom': "('Symptom:No internet connection.',)", 'summary': "('HSI Session ONLINEVLAN 500(HSI) & 600(IPTV) Disable.Physical Parameter meet threshold',)"}
+Expert Matrix: 1-1-1-0.0-80.0-1-2-1-2-1-1-1-1
+Matched Matrix: 1-1-1-0.0-80.0-1-2-1-2-1-1-1-1
+Process finished
+------------------------

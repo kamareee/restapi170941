@@ -22,17 +22,19 @@ class BarAPI(Resource):
             r = requests.get('http://localhost:5001/getParam',params=json,timeout=120)
             r.raise_for_status()
         except Timeout:
-            print ("Timeout Error:")
-            return "Timeout Error:"
+            print ("WBI:Timeout Error:")
+            return "WBI:Timeout Error:"
         except HTTPError:
-            print ("HTTPError Error:")
-            return "HTTPError Error:"
+            print ("WBI:HTTPError Error:")
+            return "WBI:HTTPError Error:"
         except ConnectionError:
-            print ("ConnectionError Error:")
-            return "ConnectionError Error:"
+            print ("WBI:ConnectionError Error:")
+            return "WBI:ConnectionError Error:"
 
-        if r.content.__contains__("Error"):
+        Return_description = r.json().get('Return_description')
+        if str(Return_description).__eq__('Failed'):
             return r.content
+
 
         try:
             predictedClass = r.json().get('PredictedClass')
@@ -57,10 +59,16 @@ class BarAPI(Resource):
         t1Respond = int(delta.total_seconds() * 1000) #miliseconds
         # return parser.parse_args()
         return make_response(render_template('testxml.xml', summary=advisory_summary, predictedclass=predictedClass,
-                                             action=advisory_action, tRespond=t1Respond,tEngineSouthRespond=tEngine_South_Respond,tEngineRespond=t2Respond,tSouthRespond=tSouth_Respond,
+                                             action=advisory_action, tRespond=t1Respond,
+                                             tEngineRespond=t2Respond,
                                              prompt=advisory_prompt, inbound=advisory_inbound,
                                              nextescalation=advisory_escalation,
                                              expertmtx=expertmatrix, matchmtx=matchedmatrix), 200, headers)
+        # return make_response(render_template('testxml.xml', summary=advisory_summary, predictedclass=predictedClass,
+        #                                      action=advisory_action, tRespond=t1Respond,tEngineSouthRespond=tEngine_South_Respond,tEngineRespond=t2Respond,tSouthRespond=tSouth_Respond,
+        #                                      prompt=advisory_prompt, inbound=advisory_inbound,
+        #                                      nextescalation=advisory_escalation,
+        #                                      expertmtx=expertmatrix, matchmtx=matchedmatrix), 200, headers)
 
 
 api.add_resource(BarAPI, '/expert.do', endpoint='expert.do')
