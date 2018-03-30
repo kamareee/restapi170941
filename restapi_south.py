@@ -42,8 +42,8 @@ class BarAPI(Resource):
         session = FuturesSession()
 
         # api_one = session.post('http://httpstat.us/402', json=payload, headers=headers, timeout=120)  #simulate error for http
-        api_one = session.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers, timeout=120) #used for local test
-        # api_one = session.post('http://10.41.56.90:9001/rest/api/reading', json=payload, headers=headers, timeout=120) #actual deployment
+        # api_one = session.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers, timeout=120) #used for local test
+        api_one = session.post('http://10.41.56.90:9001/rest/api/reading', json=payload, headers=headers, timeout=120) #actual deployment
         api_two = session.get('http://10.45.196.65/IDEAS/ideas.do?serviceID=' + serviceID)
         try:
             r = api_one.result()

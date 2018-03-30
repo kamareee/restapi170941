@@ -715,3 +715,175 @@ Expert Matrix: 1-1-1-0.0-80.0-1-2-1-2-1-1-1-1
 Matched Matrix: 1-1-1-0.0-80.0-1-2-1-2-1-1-1-1
 Process finished
 ------------------------
+Process started at: 2018-03-29 16:06:24.255000
+Parsed json: {'serviceID': 'aswadiunifi@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 16:27:31.346000
+Parsed json: {'serviceID': 'aswadiunifi@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 16:36:22.369000
+Parsed json: {'serviceID': 'aswadiunifi@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-29 16:40:54.042000
+Parsed json: {'serviceID': 'aswadiunifi@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 80.0, u'Enabled', u'Disabled', u'Enabled', u'Disabled', u'Bad', u'Bad', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 2.0, 1.0, 2.0, 2.0, 2.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 1.0, 1.0], 'result': '12a'}
+Predicted class by KNN: 12a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance 30Mbps - Bonanza Campaign', 'radius_acct_status': u'Active', 'vlan_600': u'Disabled', 'download_speed_profile': u'Bad', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 80.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Bad', 'frequent_disconnection': 0.0, 'device_host_name': u'JLT_G005', 'physical_downlink_status': u'Good', 'login': u'aswadiunifi@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Disabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'CC - Backend', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).CSP to1) check current Speed ProfileIf Speed Profile Mismatch : Kindly create SR and assign to Backend.If Speed Profile Corrected : Advice customer to do the IEMT Performance Test.Backend:Call HBC to configure Speed Profile.If the problem persist create CTT to HBC/ SDZ if required (Suspected CPE or need HBC for further investigation - based on consult call) ',)", 'symptom': "('Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).',)", 'summary': "('HSI Session ONLINE.Speed Profile Mismatch.Physical Parameter meet threshold.',)"}
+Expert Matrix: 1-1-1-0.0-80.0-1-2-1-2-2-2-1-1
+Matched Matrix: 1-1-1-0.0-80.0-1-1-1-1-2-2-1-1
+Process finished
+------------------------
+Process started at: 2018-03-29 16:42:45.710000
+Parsed json: {'serviceID': 'aswadiunifi@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 80.0, u'Enabled', u'Disabled', u'Enabled', u'Disabled', u'Bad', u'Bad', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 2.0, 1.0, 2.0, 2.0, 2.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 1.0, 1.0], 'result': '12a'}
+Predicted class by KNN: 12a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance 30Mbps - Bonanza Campaign', 'radius_acct_status': u'Active', 'vlan_600': u'Disabled', 'download_speed_profile': u'Bad', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 80.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Bad', 'frequent_disconnection': 0.0, 'device_host_name': u'JLT_G005', 'physical_downlink_status': u'Good', 'login': u'aswadiunifi@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Disabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'CC - Backend', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).CSP to1) check current Speed ProfileIf Speed Profile Mismatch : Kindly create SR and assign to Backend.If Speed Profile Corrected : Advice customer to do the IEMT Performance Test.Backend:Call HBC to configure Speed Profile.If the problem persist create CTT to HBC/ SDZ if required (Suspected CPE or need HBC for further investigation - based on consult call) ',)", 'symptom': "('Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).',)", 'summary': "('HSI Session ONLINE.Speed Profile Mismatch.Physical Parameter meet threshold.',)"}
+Expert Matrix: 1-1-1-0.0-80.0-1-2-1-2-2-2-1-1
+Matched Matrix: 1-1-1-0.0-80.0-1-1-1-1-2-2-1-1
+Process finished
+------------------------
+Process started at: 2018-03-29 16:43:14.223000
+Parsed json: {'serviceID': 'aswadiunifi@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 80.0, u'Enabled', u'Disabled', u'Enabled', u'Disabled', u'Bad', u'Bad', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 2.0, 1.0, 2.0, 2.0, 2.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 1.0, 1.0], 'result': '12a'}
+Predicted class by KNN: 12a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance 30Mbps - Bonanza Campaign', 'radius_acct_status': u'Active', 'vlan_600': u'Disabled', 'download_speed_profile': u'Bad', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 80.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Bad', 'frequent_disconnection': 0.0, 'device_host_name': u'JLT_G005', 'physical_downlink_status': u'Good', 'login': u'aswadiunifi@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Disabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'CC - Backend', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).CSP to1) check current Speed ProfileIf Speed Profile Mismatch : Kindly create SR and assign to Backend.If Speed Profile Corrected : Advice customer to do the IEMT Performance Test.Backend:Call HBC to configure Speed Profile.If the problem persist create CTT to HBC/ SDZ if required (Suspected CPE or need HBC for further investigation - based on consult call) ',)", 'symptom': "('Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).',)", 'summary': "('HSI Session ONLINE.Speed Profile Mismatch.Physical Parameter meet threshold.',)"}
+Expert Matrix: 1-1-1-0.0-80.0-1-2-1-2-2-2-1-1
+Matched Matrix: 1-1-1-0.0-80.0-1-1-1-1-2-2-1-1
+Process finished
+------------------------
+Process started at: 2018-03-30 09:28:20.754000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 60.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 60.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'next_action_update': "('Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.',)", 'symptom': "('Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).',)", 'summary': "('HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.',)"}
+Expert Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-03-30 09:32:44.811000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 60.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 60.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'next_action_update': "('Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.',)", 'symptom': "('Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).',)", 'summary': "('HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.',)"}
+Expert Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-03-30 09:33:56.888000
+Parsed json: {'serviceID': 'aswadiunifi@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 80.0, u'Enabled', u'Disabled', u'Enabled', u'Disabled', u'Bad', u'Bad', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 2.0, 1.0, 2.0, 2.0, 2.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 1.0, 1.0], 'result': '12a'}
+Predicted class by KNN: 12a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance 30Mbps - Bonanza Campaign', 'radius_acct_status': u'Active', 'vlan_600': u'Disabled', 'download_speed_profile': u'Bad', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 80.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Bad', 'frequent_disconnection': 0.0, 'device_host_name': u'JLT_G005', 'physical_downlink_status': u'Good', 'login': u'aswadiunifi@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Disabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'CC - Backend', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).CSP to1) check current Speed ProfileIf Speed Profile Mismatch : Kindly create SR and assign to Backend.If Speed Profile Corrected : Advice customer to do the IEMT Performance Test.Backend:Call HBC to configure Speed Profile.If the problem persist create CTT to HBC/ SDZ if required (Suspected CPE or need HBC for further investigation - based on consult call) ',)", 'symptom': "('Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).',)", 'summary': "('HSI Session ONLINE.Speed Profile Mismatch.Physical Parameter meet threshold.',)"}
+Expert Matrix: 1-1-1-0.0-80.0-1-2-1-2-2-2-1-1
+Matched Matrix: 1-1-1-0.0-80.0-1-1-1-1-2-2-1-1
+Process finished
+------------------------
+Process started at: 2018-03-30 09:36:07.424000
+Parsed json: {'serviceID': 'aswadiunifi@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 80.0, u'Enabled', u'Disabled', u'Enabled', u'Disabled', u'Bad', u'Bad', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 2.0, 1.0, 2.0, 2.0, 2.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 1.0, 1.0], 'result': '12a'}
+Predicted class by KNN: 12a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance 30Mbps - Bonanza Campaign', 'radius_acct_status': u'Active', 'vlan_600': u'Disabled', 'download_speed_profile': u'Bad', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 80.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Bad', 'frequent_disconnection': 0.0, 'device_host_name': u'JLT_G005', 'physical_downlink_status': u'Good', 'login': u'aswadiunifi@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Disabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'CC - Backend', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).CSP to1) check current Speed ProfileIf Speed Profile Mismatch : Kindly create SR and assign to Backend.If Speed Profile Corrected : Advice customer to do the IEMT Performance Test.Backend:Call HBC to configure Speed Profile.If the problem persist create CTT to HBC/ SDZ if required (Suspected CPE or need HBC for further investigation - based on consult call) ',)", 'symptom': "('Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).',)", 'summary': "('HSI Session ONLINE.Speed Profile Mismatch.Physical Parameter meet threshold.',)"}
+Expert Matrix: 1-1-1-0.0-80.0-1-2-1-2-2-2-1-1
+Matched Matrix: 1-1-1-0.0-80.0-1-1-1-1-2-2-1-1
+Process finished
+------------------------
+Process started at: 2018-03-30 09:42:20.253000
+Parsed json: {'serviceID': 'sida313@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 61.33, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Bad', u'Good', u'Bad', u'Bad']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 61.33, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 59.62, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0], 'result': '5i'}
+Predicted class by KNN: 5i
+Neighbours: [1.0, 1.0, 1.0, 0.0, 59.62, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Bad', 'neighbouring_sessions': 61.33, 'access_type': u'VDSL', 'upload_speed_profile': u'Bad', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_V1061', 'physical_downlink_status': u'Bad', 'login': u'sida313@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SDZ', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).2) to check on physical/cable connection between all CPE.CSP to1) indentified customer actual issue.2) check Physical Parameter & current Internet Session.If Physical Parameter NOT meet threshold : Kindly create CTT & CTT  Activity.If Physical Parameter meet threshold : Advice customer to do the IEMT Performance Test.',)", 'symptom': "('Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).',)", 'summary': "('HSI Session ONLINE.Upload Speed Profile Mismatch.Physical  Parameter NOT meet threshold.',)"}
+Expert Matrix: 1-1-1-0.0-61.33-1-1-1-1-2-1-2-2
+Matched Matrix: 1-1-1-0.0-59.62-1-1-1-1-2-1-2-2
+Process finished
+------------------------
+Process started at: 2018-03-30 09:44:21.809000
+Parsed json: {'serviceID': 'sida313@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 61.33, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Bad', u'Good', u'Bad', u'Bad']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 61.33, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 59.62, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0], 'result': '5i'}
+Predicted class by KNN: 5i
+Neighbours: [1.0, 1.0, 1.0, 0.0, 59.62, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Bad', 'neighbouring_sessions': 61.33, 'access_type': u'VDSL', 'upload_speed_profile': u'Bad', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_V1061', 'physical_downlink_status': u'Bad', 'login': u'sida313@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SDZ', 'next_action_update': "('Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).2) to check on physical/cable connection between all CPE.CSP to1) indentified customer actual issue.2) check Physical Parameter & current Internet Session.If Physical Parameter NOT meet threshold : Kindly create CTT & CTT  Activity.If Physical Parameter meet threshold : Advice customer to do the IEMT Performance Test.',)", 'symptom': "('Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).',)", 'summary': "('HSI Session ONLINE.Upload Speed Profile Mismatch.Physical  Parameter NOT meet threshold.',)"}
+Expert Matrix: 1-1-1-0.0-61.33-1-1-1-1-2-1-2-2
+Matched Matrix: 1-1-1-0.0-59.62-1-1-1-1-2-1-2-2
+Process finished
+------------------------
+Process started at: 2018-03-30 09:52:35.726000
+Parsed json: {'serviceID': 'zizigreen84@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 80.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'VIP 10', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 80.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'TDI_G007', 'physical_downlink_status': u'Good', 'login': u'zizigreen84@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'next_action_update': "('Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.',)", 'symptom': "('Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).',)", 'summary': "('HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.',)"}
+Expert Matrix: 1-1-1-0.0-80.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-80.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-03-30 09:57:24.342000
+Parsed json: {'serviceID': 'zizigreen84@unifi'}
+Process finished
+------------------------
+Process started at: 2018-03-30 10:02:36.804000
+Parsed json: {'serviceID': 'zizigreen84@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 80.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'VIP 10', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 80.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'TDI_G007', 'physical_downlink_status': u'Good', 'login': u'zizigreen84@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'next_action_update': "('Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.',)", 'symptom': "('Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).',)", 'summary': "('HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.',)"}
+Expert Matrix: 1-1-1-0.0-80.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-80.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-03-30 10:04:35.706000
+Parsed json: {'serviceID': 'zizigreen84@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 80.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 80.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'VIP 10', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 80.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'TDI_G007', 'physical_downlink_status': u'Good', 'login': u'zizigreen84@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'Message': 'All database query executed successfully.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'next_action_update': "('Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.',)", 'symptom': "('Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).',)", 'summary': "('HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.',)"}
+Expert Matrix: 1-1-1-0.0-80.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-80.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
