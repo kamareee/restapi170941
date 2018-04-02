@@ -75,39 +75,8 @@ class BarAPI(Resource):
             # data = r.content
             # return data
 
-        attributes = r.json().get('attributes')
-        ONT_TX_POWER = None
-        ONT_RX_POWER = None
-        for attr in attributes:
-            print attr
-            if attr.get('tSouthRespond') != None:
-                tSouthRespond = attr.get('tSouthRespond')
-                print "tSouthRespond " + str(tSouthRespond)
-                continue
-            if str(attr.get('name')).__eq__('UPSTREAM_ACTUAL_RATE'):
-                UPSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
-                continue
-            if str(attr.get('name')).__eq__('DOWNSTREAM_ACTUAL_RATE'):
-                DOWNSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
-                continue
-            if str(attr.get('name')).__eq__('UPSTREAM_ATTENUATION'):
-                UPSTREAM_ATTENUATION = attr.get('value')
-                continue
-            if str(attr.get('name')).__eq__('DOWNSTREAM_ATTENUATION'):
-                DOWNSTREAM_ATTENUATION = attr.get('value')
-                continue
-            if str(attr.get('name')).__eq__('UPSTREAM_SNR'):
-                UPSTREAM_SNR = attr.get('value')
-                continue
-            if str(attr.get('name')).__eq__('DOWNSTREAM_SNR'):
-                DOWNSTREAM_SNR = attr.get('value')
-                continue
-            if str(attr.get('name')).__eq__('ONT_RX_POWER'):
-                ONT_RX_POWER = attr.get('value')
-                continue
-            if str(attr.get('name')).__eq__('ONT_TX_POWER'):
-                ONT_TX_POWER = attr.get('value')
-                continue
+
+
 
 
         if returnDescription == 'Success':
@@ -146,12 +115,69 @@ class BarAPI(Resource):
             vln400 = None
             vln500 = None
             vln600 = None
-            Vlan_209 = "";
-            Vlan_400 = "";
-            Vlan_500 = "";
-            Vlan_600 = "";
+            Vlan_209 = ""
+            Vlan_400 = ""
+            Vlan_500 = ""
+            Vlan_600 = ""
+            siebelProfileTx = None
+            siebelProfileRx = None
+            isProfileTxMismatch = False
+            isProfileRxMismatch = False
             uploadSpeedProfileStatus = 'Good'
             downloadSpeedProfileStatus = 'Good'
+
+            attributes = r.json().get('attributes')
+            ONT_TX_POWER = None
+            ONT_RX_POWER = None
+            if attributes != None:
+                for attr in attributes:
+                    print attr
+                    if attr.get('tSouthRespond') != None:
+                        tSouthRespond = attr.get('tSouthRespond')
+                        print "tSouthRespond " + str(tSouthRespond)
+                        continue
+                    if str(attr.get('name')).__eq__('UPSTREAM_ACTUAL_RATE'):
+                        UPSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
+                        continue
+                    if str(attr.get('name')).__eq__('DOWNSTREAM_ACTUAL_RATE'):
+                        DOWNSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
+                        continue
+                    if str(attr.get('name')).__eq__('UPSTREAM_ATTENUATION'):
+                        UPSTREAM_ATTENUATION = attr.get('value')
+                        continue
+                    if str(attr.get('name')).__eq__('DOWNSTREAM_ATTENUATION'):
+                        DOWNSTREAM_ATTENUATION = attr.get('value')
+                        continue
+                    if str(attr.get('name')).__eq__('UPSTREAM_SNR'):
+                        UPSTREAM_SNR = attr.get('value')
+                        continue
+                    if str(attr.get('name')).__eq__('DOWNSTREAM_SNR'):
+                        DOWNSTREAM_SNR = attr.get('value')
+                        continue
+                    if str(attr.get('name')).__eq__('ONT_RX_POWER'):
+                        ONT_RX_POWER = attr.get('value')
+                        continue
+                    if str(attr.get('name')).__eq__('ONT_TX_POWER'):
+                        ONT_TX_POWER = attr.get('value')
+                        continue
+            else:
+                if access_type.__eq__('FTTH'):
+                    msg = 'Next Best Action (NBA)'
+                else:
+                    msg = 'One or more attributes value missing.'
+
+                final_data = {
+                    'Return_description': 'Failed',
+                    'Login_id': str(login_id),
+                    'Package_name': str(package_name),
+                    'Access_type': str(access_type),
+                    'Message': msg,
+                    'Return_code': 400,
+                    'tPreProc': calculate_response_time(),
+                    'tSouthRespond': tSouthRespond,
+                }
+                return jsonify(final_data)
+
 
             if trafficProfiles != None:
                 for profile in trafficProfiles:
@@ -166,12 +192,49 @@ class BarAPI(Resource):
                         vln400 = profile
                         vlan400_isConfigured = vln400['isConfigured']
                         vlan400_isMissing = vln400['isMissing']
+
+
+
                         continue
                     if str(profile.get('vlan')).__eq__('500'):
                         # VLAN500
                         vln500 = profile
                         vlan500_isConfigured = vln500['isConfigured']
                         vlan500_isMissing = vln500['isMissing']
+                        isProfileTxMismatch = vln500['isProfileTxMismatch']
+                        isProfileRxMismatch = vln500['isProfileRxMismatch']
+
+                        siebelProfileTx = vln500['siebelProfileTx']
+                        if siebelProfileTx != None:
+                            if str(siebelProfileTx).__contains__('M'):
+                                unit = 1000000.0;
+                            elif str(siebelProfileTx).__contains__('K'):
+                                unit = 1000.0;
+                            siebelProfileTxVal = float(re.split('M|K', siebelProfileTx)[0]) * unit;
+
+                        configuredProfileTx = vln500['configuredProfileTx']
+                        if configuredProfileTx != None:
+                            if str(configuredProfileTx).__contains__('M'):
+                                unit = 1000000.0;
+                            elif str(configuredProfileTx).__contains__('K'):
+                                unit = 1000.0;
+                            configuredProfileTxVal = float(re.split('M|K', configuredProfileTx)[0]) * unit;
+
+                        siebelProfileRx = vln500['siebelProfileRx']
+                        if siebelProfileRx != None:
+                            if str(siebelProfileRx).__contains__('M'):
+                                unit = 1000000.0;
+                            elif str(siebelProfileRx).__contains__('K'):
+                                unit = 1000.0;
+                            siebelProfileRxVal = float(re.split('M|K', siebelProfileRx)[0]) * unit;
+
+                        configuredProfileRx = vln500['configuredProfileRx']
+                        if configuredProfileRx != None:
+                            if str(configuredProfileRx).__contains__('M'):
+                                unit = 1000000.0;
+                            elif str(configuredProfileRx).__contains__('K'):
+                                unit = 1000.0;
+                            configuredProfileRxVal = float(re.split('M|K', configuredProfileRx)[0]) * unit;
                         continue
                     if str(profile.get('vlan')).__eq__('600'):
                         # VLAN600
@@ -236,67 +299,71 @@ class BarAPI(Resource):
             print "Vlan_600: " + Vlan_600
 
             if access_type == 'FTTH':
-                # ONT_TX_POWER and ONT_RX_POWER
-                ont_tx_pr = ONT_TX_POWER  # attr_rec[13]['value']
-                ont_rx_pr = ONT_RX_POWER  # attr_rec[12]['value']
-                if vln500 != None :
-                    configuredProfileTx = vln500.get('configuredProfileTx')
+
+                # Decide Upload and Download Speed Profile
+                if vln500 != None and Vlan_500.__eq__('Enabled') :
+                    # configuredProfileTx = vln500.get('configuredProfileTx')
                     if configuredProfileTx != None:
                         print "Calculating configuredProfileTx..."
-                        configuredProfileTx_unit = configuredProfileTx.split('_')[0]
-                        if str(configuredProfileTx_unit).__contains__('M'):
-                            unit = 1000000.0;
-                        elif str(configuredProfileTx_unit).__contains__('K'):
-                            unit = 1000.0;
-                        configuredProfileTxVal = float(re.split('M|K', configuredProfileTx_unit)[0]) * unit;#float(configuredProfileTx.split('_')[0].split('M')[0])
-                        radiusUploadVal = rec_data.get('radiusUpload')
-                        uploadSpeedProfileVal = configuredProfileTxVal / radiusUploadVal
+                        if isProfileTxMismatch == False:
+                            radiusUploadVal = rec_data.get('radiusUpload')
+                            uploadSpeedProfileVal = configuredProfileTxVal / radiusUploadVal
+                        else:
+                            uploadSpeedProfileVal = siebelProfileTxVal / configuredProfileTxVal
                         if uploadSpeedProfileVal >= 1:
                             uploadSpeedProfileStatus = 'Good'
                         else:
                             uploadSpeedProfileStatus = 'Bad'
 
 
-
-                    configuredProfileRx = vln500.get('configuredProfileRx')
+                    # configuredProfileRx = vln500.get('configuredProfileRx')
                     if configuredProfileRx != None:
                         print "Calculating configuredProfileRx..."
-                        configuredProfileRx_unit = configuredProfileRx.split('_')[0]
-                        if str(configuredProfileRx_unit).__contains__('M'):
-                            unit = 1000000.0;
-                        elif str(configuredProfileRx_unit).__contains__('K'):
-                            unit = 1000.0;
-                        configuredProfileRxVal = float(re.split('M|K', configuredProfileRx_unit)[0]) * unit;#float(configuredProfileRx.split('_')[0].split('M')[0])
-                        radiusDownloadVal = rec_data.get('radiusDownload')
-                        downloadSpeedProfileVal = configuredProfileRxVal / radiusDownloadVal
+                        if isProfileRxMismatch == False:
+                            radiusDownloadVal = rec_data.get('radiusDownload')
+                            downloadSpeedProfileVal = configuredProfileRxVal / radiusDownloadVal
+
+                        else:
+                            downloadSpeedProfileVal = siebelProfileRxVal / configuredProfileRxVal
 
                         if downloadSpeedProfileVal >= 1:
                             downloadSpeedProfileStatus = 'Good'
                         else:
                             downloadSpeedProfileStatus = 'Bad'
+                elif vln500 != None and Vlan_500.__eq__('Disabled') :
+                    uploadSpeedProfileStatus = 'Bad'
+                    downloadSpeedProfileStatus = 'Bad'
 
-                # Physical uplink status
-                if ont_tx_pr >= -28:
-                    dt5 = str('Good')
+                #Decide Physical Uplink and Downlink Status
+                # ONT_TX_POWER and ONT_RX_POWER
+                # ont_tx_pr = ONT_TX_POWER
+                ont_rx_pr = ONT_RX_POWER
+                if ont_rx_pr != None:
+                    # Physical uplink status
+                    if ont_rx_pr >= -28:
+                        Physical_uplink_status = str('Good')
+                    else:
+                        Physical_uplink_status = str('Bad')
+
+                    # Physical downlink status
+                    if ont_rx_pr >= -28:
+                        Physical_downlink_status = str('Good')
+                    else:
+                        Physical_downlink_status = str('Bad')
+
                 else:
-                    dt5 = str('Bad')
-
-                # Physical downlink status
-                if ont_rx_pr >= -28:
-                    dt6 = str('Good')
-                else:
-                    dt6 = str('Bad')
-
-                if (ont_tx_pr is None or ont_rx_pr is None):
+                    msg = 'One or more attributes value missing.'
                     final_data = {
-                        'Return_description': 'Success',
+                        'Return_description': 'Failed',
                         'Login_id': str(login_id),
                         'Package_name': str(package_name),
                         'Access_type': str(access_type),
-                        'Message': str('Missing physical uplink or downlink data'),
+                        'Message': msg,
+                        'Return_code': 400,
                         'tPreProc': calculate_response_time(),
                         'tSouthRespond': tSouthRespond,
                     }
+
                     return jsonify(final_data)
 
 
@@ -340,22 +407,48 @@ class BarAPI(Resource):
                 downstream_snr = DOWNSTREAM_SNR  # attr_rec[9]['value']
 
                 # Physical up-link status
-                if upstream_attn <= 20 or upstream_attn is None:
-                    if upstream_snr >= 8 or upstream_snr is None:
-                        dt5 = str('Good')
+                if upstream_attn != None and upstream_snr !=None:
+                    if upstream_attn <= 20 and upstream_snr >= 8:
+                        Physical_uplink_status = 'Good'
                     else:
-                        dt5 = str('Bad')
+                        Physical_uplink_status = 'Bad'
+                elif upstream_attn != None or upstream_snr !=None:
+                    if upstream_snr !=None:
+                        if upstream_snr >= 8:
+                            Physical_uplink_status = 'Good'
+                        else:
+                            Physical_uplink_status = 'Bad'
+                    elif upstream_attn != None:
+                        if upstream_attn <= 20:
+                            Physical_uplink_status = 'Good'
+                        else:
+                            Physical_uplink_status = 'Bad'
+
                 else:
-                    dt5 = str('Bad')
+                    Physical_uplink_status = 'Bad'
 
                 # Physical down-link status
-                if downstream_attn <= 20 or downstream_attn is None:
-                    if downstream_snr >= 8 or downstream_snr is None:
-                        dt6 = str('Good')
+                if downstream_attn != None and downstream_snr !=None:
+                    if downstream_attn <= 20 and downstream_snr >= 8:
+                        Physical_downlink_status = 'Good'
                     else:
-                        dt6 = str('Bad')
+                        Physical_downlink_status = 'Bad'
+                elif downstream_attn != None or downstream_snr !=None:
+                    if downstream_snr !=None:
+                        if downstream_snr >= 8:
+                            Physical_downlink_status = 'Good'
+                        else:
+                            Physical_downlink_status = 'Bad'
+                    elif downstream_attn != None:
+                        if downstream_attn <= 20:
+                            Physical_downlink_status = 'Good'
+                        else:
+                            Physical_downlink_status = 'Bad'
+
                 else:
-                    dt6 = str('Bad')
+                    Physical_downlink_status = 'Bad'
+
+
 
             # Final data to send to ML API (local_engine2)
             final_data = {
@@ -375,8 +468,8 @@ class BarAPI(Resource):
                 'Vlan_400': Vlan_400,
                 'Vlan_500': Vlan_500,
                 'Vlan_600': Vlan_600,
-                'Physical_uplink_status': dt5,
-                'Physical_downlink_status': dt6,
+                'Physical_uplink_status': Physical_uplink_status,
+                'Physical_downlink_status': Physical_downlink_status,
                 'Message': "13 attributes",
                 'tPreProc': calculate_response_time(),
                 'tSouthRespond': tSouthRespond
@@ -384,6 +477,8 @@ class BarAPI(Resource):
 
             print 'Upload_speed_profile: ' + uploadSpeedProfileStatus
             print 'Download_speed_profile: ' + downloadSpeedProfileStatus
+            print 'Physical_uplink_status:' + Physical_uplink_status
+            print 'Physical_downlink_status:' + Physical_downlink_status
             print final_data
 
             return jsonify(final_data)
