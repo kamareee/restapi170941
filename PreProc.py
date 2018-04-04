@@ -294,8 +294,8 @@ class BarAPI(Resource):
 
             radiusUpload = responseHeader.get('hsiService').get('radiusUpload')
             radiusDownload = responseHeader.get('hsiService').get('radiusDownload')
-            ont_rx_pr = ONT_RX_POWER
-            if radiusDownload==None or radiusUpload==None or ont_rx_pr==None:
+
+            if radiusDownload==None or radiusUpload==None:
                 msg = 'One or more attributes value missing.'
                 final_data = {
                     'Return_description': 'Failed',
@@ -352,18 +352,36 @@ class BarAPI(Resource):
 
                 #Decide Physical Uplink and Downlink Status
                 # ONT_TX_POWER and ONT_RX_POWER
+                # ont_tx_pr = ONT_TX_POWER
+                ont_rx_pr = ONT_RX_POWER
+                if ont_rx_pr != None:
+                    # Physical uplink status
+                    if ont_rx_pr >= -28:
+                        Physical_uplink_status = str('Good')
+                    else:
+                        Physical_uplink_status = str('Bad')
 
-                # Physical uplink status
-                if ont_rx_pr >= -28:
-                    Physical_uplink_status = str('Good')
-                else:
-                    Physical_uplink_status = str('Bad')
+                    # Physical downlink status
+                    if ont_rx_pr >= -28:
+                        Physical_downlink_status = str('Good')
+                    else:
+                        Physical_downlink_status = str('Bad')
 
-                # Physical downlink status
-                if ont_rx_pr >= -28:
-                    Physical_downlink_status = str('Good')
                 else:
-                    Physical_downlink_status = str('Bad')
+                    msg = 'One or more attributes value missing.'
+                    final_data = {
+                        'Return_description': 'Failed',
+                        'Login_id': str(login_id),
+                        'Package_name': str(package_name),
+                        'Access_type': str(access_type),
+                        'Message': msg,
+                        'Return_code': 400,
+                        'tPreProc': calculate_response_time(),
+                        'tSouthRespond': tSouthRespond,
+                    }
+
+                    return jsonify(final_data)
+
 
             elif access_type == 'VDSL':
                 serviceCategory = responseHeader.get("serviceCategory") #responseHeader is from 2nd api
