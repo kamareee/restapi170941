@@ -75,13 +75,8 @@ class BarAPI(Resource):
             # data = r.content
             # return data
 
-
-
-
-
         if returnDescription == 'Success':
-            # Calling the second API and retrieving the data
-            rec_data = get_new_attributes(service_id, api2_data)
+
             login_id = r.json().get('custInfo').get('loginId')
             access_port = str(r.json().get('custInfo').get('accessPort'))
             # Package name and Access type
@@ -161,10 +156,10 @@ class BarAPI(Resource):
                         ONT_TX_POWER = attr.get('value')
                         continue
             else:
-                if access_type.__eq__('FTTH'):
-                    msg = 'Next Best Action (NBA)'
-                else:
-                    msg = 'One or more attributes value missing.'
+                # if access_type.__eq__('FTTH'):
+                msg = 'Next Best Action (NBA)'
+                # else:
+                #     msg = 'One or more attributes value missing.'
 
                 final_data = {
                     'Return_description': 'Failed',
@@ -192,9 +187,6 @@ class BarAPI(Resource):
                         vln400 = profile
                         vlan400_isConfigured = vln400['isConfigured']
                         vlan400_isMissing = vln400['isMissing']
-
-
-
                         continue
                     if str(profile.get('vlan')).__eq__('500'):
                         # VLAN500
@@ -297,6 +289,30 @@ class BarAPI(Resource):
             print "Vlan_400: " + Vlan_400
             print "Vlan_500: " + Vlan_500
             print "Vlan_600: " + Vlan_600
+            radiusUpload = None
+            radiusDownload = None
+
+            radiusUpload = responseHeader.get('hsiService').get('radiusUpload')
+            radiusDownload = responseHeader.get('hsiService').get('radiusDownload')
+            ont_rx_pr = ONT_RX_POWER
+            if radiusDownload==None or radiusUpload==None or ont_rx_pr==None:
+                msg = 'One or more attributes value missing.'
+                final_data = {
+                    'Return_description': 'Failed',
+                    'Login_id': str(login_id),
+                    'Package_name': str(package_name),
+                    'Access_type': str(access_type),
+                    'Message': msg,
+                    'Return_code': 400,
+                    'tPreProc': calculate_response_time(),
+                    'tSouthRespond': tSouthRespond,
+                }
+
+                return jsonify(final_data)
+
+
+            # Calling the second API and retrieving the data
+            rec_data = get_new_attributes(service_id, api2_data)
 
             if access_type == 'FTTH':
 
@@ -336,36 +352,18 @@ class BarAPI(Resource):
 
                 #Decide Physical Uplink and Downlink Status
                 # ONT_TX_POWER and ONT_RX_POWER
-                # ont_tx_pr = ONT_TX_POWER
-                ont_rx_pr = ONT_RX_POWER
-                if ont_rx_pr != None:
-                    # Physical uplink status
-                    if ont_rx_pr >= -28:
-                        Physical_uplink_status = str('Good')
-                    else:
-                        Physical_uplink_status = str('Bad')
 
-                    # Physical downlink status
-                    if ont_rx_pr >= -28:
-                        Physical_downlink_status = str('Good')
-                    else:
-                        Physical_downlink_status = str('Bad')
-
+                # Physical uplink status
+                if ont_rx_pr >= -28:
+                    Physical_uplink_status = str('Good')
                 else:
-                    msg = 'One or more attributes value missing.'
-                    final_data = {
-                        'Return_description': 'Failed',
-                        'Login_id': str(login_id),
-                        'Package_name': str(package_name),
-                        'Access_type': str(access_type),
-                        'Message': msg,
-                        'Return_code': 400,
-                        'tPreProc': calculate_response_time(),
-                        'tSouthRespond': tSouthRespond,
-                    }
+                    Physical_uplink_status = str('Bad')
 
-                    return jsonify(final_data)
-
+                # Physical downlink status
+                if ont_rx_pr >= -28:
+                    Physical_downlink_status = str('Good')
+                else:
+                    Physical_downlink_status = str('Bad')
 
             elif access_type == 'VDSL':
                 serviceCategory = responseHeader.get("serviceCategory") #responseHeader is from 2nd api
@@ -425,7 +423,7 @@ class BarAPI(Resource):
                             Physical_uplink_status = 'Bad'
 
                 else:
-                    Physical_uplink_status = 'Bad'
+                    Physical_uplink_status = 'Good'
 
                 # Physical down-link status
                 if downstream_attn != None and downstream_snr !=None:
@@ -446,9 +444,7 @@ class BarAPI(Resource):
                             Physical_downlink_status = 'Bad'
 
                 else:
-                    Physical_downlink_status = 'Bad'
-
-
+                    Physical_downlink_status = 'Good'
 
             # Final data to send to ML API (local_engine2)
             final_data = {
