@@ -391,10 +391,10 @@ def reading():
     # sleep(8)#in seconds
     print 'Engine finish...'
     # return jsonify(output)
-    return outputVDSLOriginalsida313       #don't use jsonify() if input arguments already type string
+    # return outputVDSLOriginalsida313       #don't use jsonify() if input arguments already type string
     # return jsonify(outputVDSLOriginalsida313NonString)
     # return outAswadiUnifi
-    # return afaideen80
+    return afaideen80
     # return jsonify(outputVDSLOriginalNonString)
     # return jsonify(outputFTTHNoTrafficProfile)
     # return jsonify(outputFTTH)
