@@ -289,11 +289,13 @@ class BarAPI(Resource):
             print "Vlan_400: " + Vlan_400
             print "Vlan_500: " + Vlan_500
             print "Vlan_600: " + Vlan_600
+
             radiusUpload = None
             radiusDownload = None
 
-            radiusUpload = responseHeader.get('hsiService').get('radiusUpload')
-            radiusDownload = responseHeader.get('hsiService').get('radiusDownload')
+            if responseHeader.get('hsiService') != None:
+                radiusUpload = responseHeader.get('hsiService').get('radiusUpload')
+                radiusDownload = responseHeader.get('hsiService').get('radiusDownload')
 
             if radiusDownload==None or radiusUpload==None:
                 msg = 'One or more attributes value missing.'

@@ -6,6 +6,7 @@
     <bookmark url="file://$PROJECT_DIR$/local_engine2.py" line="51" />
     <bookmark url="file://$PROJECT_DIR$/SPANMS.py" line="199" />
     <bookmark url="file://$PROJECT_DIR$/PreProc.py" line="168" />
+    <bookmark url="file://$PROJECT_DIR$/PreProc.py" line="59" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd38b183-e2a9-499c-bece-9e3d35c133c7" name="Default" comment="">
@@ -31,8 +32,8 @@
       <file leaf-file-name="restapi_west.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi_west.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
-              <caret line="73" column="48" lean-forward="false" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
+            <state relative-caret-position="1521">
+              <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
               <folding>
                 <element signature="e#1#16#0" expanded="true" />
               </folding>
@@ -43,8 +44,8 @@
       <file leaf-file-name="local_engine2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/local_engine2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="937">
+              <caret line="230" column="21" lean-forward="false" selection-start-line="230" selection-start-column="21" selection-end-line="230" selection-end-column="21" />
               <folding>
                 <element signature="e#173#188#0" expanded="true" />
               </folding>
@@ -52,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PreProc.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PreProc.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PreProc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="419" column="0" lean-forward="false" selection-start-line="419" selection-start-column="0" selection-end-line="419" selection-end-column="0" />
+            <state relative-caret-position="499">
+              <caret line="307" column="39" lean-forward="true" selection-start-line="307" selection-start-column="39" selection-end-line="307" selection-end-column="39" />
               <folding>
                 <element signature="e#1#16#0" expanded="true" />
               </folding>
@@ -67,8 +68,8 @@
       <file leaf-file-name="restapi_south.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi_south.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="85" column="32" lean-forward="true" selection-start-line="85" selection-start-column="32" selection-end-line="85" selection-end-column="32" />
+            <state relative-caret-position="2017">
+              <caret line="85" column="32" lean-forward="false" selection-start-line="85" selection-start-column="32" selection-end-line="85" selection-end-column="32" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -79,8 +80,8 @@
       <file leaf-file-name="SPANMS.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SPANMS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="393" column="33" lean-forward="false" selection-start-line="393" selection-start-column="33" selection-end-line="393" selection-end-column="33" />
+            <state relative-caret-position="457">
+              <caret line="393" column="88" lean-forward="true" selection-start-line="393" selection-start-column="88" selection-end-line="393" selection-end-column="88" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -91,18 +92,18 @@
       <file leaf-file-name="testxml.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/testxml.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            <state relative-caret-position="400">
+              <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ssh command.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ssh command.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ssh command.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="116" column="18" lean-forward="true" selection-start-line="116" selection-start-column="18" selection-end-line="116" selection-end-column="18" />
+            <state relative-caret-position="837">
+              <caret line="135" column="17" lean-forward="false" selection-start-line="135" selection-start-column="17" selection-end-line="135" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -201,9 +202,9 @@
         <option value="$PROJECT_DIR$/local_engine2.py" />
         <option value="$PROJECT_DIR$/ssh command.txt" />
         <option value="$PROJECT_DIR$/restapi_south.py" />
+        <option value="$PROJECT_DIR$/SPANMS.py" />
         <option value="$PROJECT_DIR$/PreProc.py" />
         <option value="$PROJECT_DIR$/templates/testxml.xml" />
-        <option value="$PROJECT_DIR$/SPANMS.py" />
       </list>
     </option>
   </component>
@@ -235,6 +236,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,7 +259,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -613,7 +614,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522825637305</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="-Updated xml template.">
+      <created>1522830697114</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1522830697114</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView">
@@ -744,7 +752,8 @@
     <MESSAGE value="-Updated Model SPANMS&#10;-Simplified and refactored code.&#10;-Corrected calculation for scenario &quot;configuredProfileTx&quot;:null and &quot;configuredProfileRx&quot;:null&#10;-Added model for case aswadiunifi@unifi&#10;-Enhanced error handling&#10;-Updated condition for scenario vlan less than 4." />
     <MESSAGE value="-Corrected scenarios base on attributes version 1-4.&#10;-Updated Model SPANMS&#10;-Simplified and refactored code.&#10;-Corrected calculation for scenario &quot;configuredProfileTx&quot;:null and &quot;configuredProfileRx&quot;:null&#10;-Added model for case aswadiunifi@unifi&#10;-Enhanced error handling&#10;-Updated condition for scenario vlan less than 4." />
     <MESSAGE value="-Updated logic of pre-proc&#10;-Corrected scenarios base on attributes version 1-4.&#10;-Updated Model SPANMS&#10;-Simplified and refactored code.&#10;-Corrected calculation for scenario &quot;configuredProfileTx&quot;:null and &quot;configuredProfileRx&quot;:null&#10;-Added model for case aswadiunifi@unifi&#10;-Enhanced error handling&#10;-Updated condition for scenario vlan less than 4." />
-    <option name="LAST_COMMIT_MESSAGE" value="-Updated logic of pre-proc&#10;-Corrected scenarios base on attributes version 1-4.&#10;-Updated Model SPANMS&#10;-Simplified and refactored code.&#10;-Corrected calculation for scenario &quot;configuredProfileTx&quot;:null and &quot;configuredProfileRx&quot;:null&#10;-Added model for case aswadiunifi@unifi&#10;-Enhanced error handling&#10;-Updated condition for scenario vlan less than 4." />
+    <MESSAGE value="-Updated xml template." />
+    <option name="LAST_COMMIT_MESSAGE" value="-Updated xml template." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -758,7 +767,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="330" />
+      <option name="time" value="334" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -1057,62 +1066,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2139">
           <caret line="58" column="13" lean-forward="false" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/testxml.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PreProc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="419" column="0" lean-forward="false" selection-start-line="419" selection-start-column="0" selection-end-line="419" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local_engine2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="e#173#188#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SPANMS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="393" column="33" lean-forward="false" selection-start-line="393" selection-start-column="33" selection-end-line="393" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restapi_south.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="85" column="32" lean-forward="true" selection-start-line="85" selection-start-column="32" selection-end-line="85" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/restapi_west.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="73" column="48" lean-forward="false" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
+        <state relative-caret-position="1521">
+          <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
           <folding>
             <element signature="e#1#16#0" expanded="true" />
           </folding>
@@ -1121,9 +1081,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ssh command.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="116" column="18" lean-forward="true" selection-start-line="116" selection-start-column="18" selection-end-line="116" selection-end-column="18" />
+        <state relative-caret-position="837">
+          <caret line="135" column="17" lean-forward="false" selection-start-line="135" selection-start-column="17" selection-end-line="135" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restapi_south.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2017">
+          <caret line="85" column="32" lean-forward="false" selection-start-line="85" selection-start-column="32" selection-end-line="85" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SPANMS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="393" column="88" lean-forward="true" selection-start-line="393" selection-start-column="88" selection-end-line="393" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/testxml.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local_engine2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="937">
+          <caret line="230" column="21" lean-forward="false" selection-start-line="230" selection-start-column="21" selection-end-line="230" selection-end-column="21" />
+          <folding>
+            <element signature="e#173#188#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PreProc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="307" column="39" lean-forward="true" selection-start-line="307" selection-start-column="39" selection-end-line="307" selection-end-column="39" />
+          <folding>
+            <element signature="e#1#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
