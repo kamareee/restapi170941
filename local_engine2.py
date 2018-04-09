@@ -207,10 +207,6 @@ class BarAPI(Resource):
         advisory_result = cur.fetchone()
 
         if advisory_result:
-            connectivity_summary = advisory_result['advisory_connectivity_summary'],
-            symptom = advisory_result['advisory_symptom'],
-            next_action_update = advisory_result['advisory_next_action_update'],
-            next_escalation = advisory_result['advisory_next_escalation']
 
             update_query = """ INSERT INTO {table} (login, created_date, access_type, device_host_name, package_name,
                       hsi_billing_status, radius_acct_status, hsi_session, frequent_disconnection, 
@@ -227,15 +223,18 @@ class BarAPI(Resource):
                                        str(data['neighbouring_sessions']), str(data['vlan_209']), str(data['vlan_400']),
                                        str(data['vlan_500']), str(data['vlan_600']), str(data['upload_speed_profile']),
                                        str(data['download_speed_profile']), str(data['physical_uplink_status']),
-                                       str(data['physical_downlink_status']), str(connectivity_summary), str(symptom),
-                                       str(next_action_update), str(next_escalation), str(advisory)))
+                                       str(data['physical_downlink_status']),
+                                       str(advisory_result['advisory_connectivity_summary']),
+                                       str(advisory_result['advisory_symptom']),
+                                       str(advisory_result['advisory_next_action_update']),
+                                       str(advisory_result['advisory_next_escalation']), str(advisory)))
 
             conn.close()
 
-            return {"summary": str(connectivity_summary),
-                    "symptom": str(symptom),
-                    "next_action_update": str(next_action_update),
-                    "next_escalation": str(next_escalation),
+            return {"summary": str(advisory_result['advisory_connectivity_summary']),
+                    "symptom": str(advisory_result['advisory_symptom']),
+                    "next_action_update": str(advisory_result['advisory_next_action_update']),
+                    "next_escalation": str(advisory_result['advisory_next_escalation']),
                     "Message": "All database query executed successfully."
                     }
 
