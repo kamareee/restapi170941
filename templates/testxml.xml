@@ -4,11 +4,11 @@
  <predictedclass>{{predictedclass}}</predictedclass>
 <expertMatrix>{{expertmtx}}</expertMatrix>
 <matrixMatched>{{matchmtx}}</matrixMatched>
-<summary>{{summary}}</summary>
-<prompt>{{prompt}}</prompt>
-<inbound>{{inbound}}</inbound>
-<nextEscalation>{{nextescalation}}</nextEscalation>
-<promptAction>{{action}}</promptAction>
+<ConnectivitySummary>{{summary}}</ConnectivitySummary>
+<Symptom>{{prompt}}</Symptom>
+
+<NextEscalation>{{nextescalation}}</NextEscalation>
+<NextAction>{{action}}</NextAction>
 </expert>
-<responseTime>Overall={{tRespond}}ms, Engine={{tEngineRespond}}ms, tLinkEngineSouthSPANMS={{tEngineSouthRespond}}ms, tLinkSouthSPANMS={{tSouthRespond}}ms </responseTime>
+<responseTime>Overall={{tRespond}}ms, Engine={{tEngineRespond}}ms</responseTime>
 </responseHeader>
