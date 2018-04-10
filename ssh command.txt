@@ -11,21 +11,33 @@ netstat -apn | grep ":5000"
 kill service, run eg, in this case PID=17484
 kill 17484
 To upload,
-pscp -pw Cy83rj@y@ restapi_south.py root@10.44.28.64:/home/user/ideas
-pscp -pw Cy83rj@y@ local_engine2.py root@10.44.28.64:/home/user/ideas
 pscp -pw Cy83rj@y@ restapi_west.py root@10.44.28.64:/home/user/ideas
+pscp -pw Cy83rj@y@ local_engine2.py root@10.44.28.64:/home/user/ideas
+pscp -pw Cy83rj@y@ PreProc.py root@10.44.28.64:/home/user/ideas
+pscp -pw Cy83rj@y@ restapi_south.py root@10.44.28.64:/home/user/ideas
+pscp -pw Cy83rj@y@ Subroutine.py root@10.44.28.64:/home/user/ideas
+pscp -pw Cy83rj@y@ knn_function.py root@10.44.28.64:/home/user/ideas
+pscp -pw Cy83rj@y@ min_max.csv root@10.44.28.64:/home/user/ideas
+pscp -pw Cy83rj@y@ training_data.csv root@10.44.28.64:/home/user/ideas
+
+
+
 pscp -pw Cy83rj@y@ testdata.csv root@10.44.28.64:/home/user/ideas
 pscp -pw Cy83rj@y@ testnew.csv root@10.44.28.64:/home/user/ideas
 then in folder templates, use this
     pscp -pw Cy83rj@y@ testxml.xml root@10.44.28.64:/home/user/ideas/templates
-scp restapi_west.py root@10.44.28.64:/home/user/ideas
+//scp restapi_west.py root@10.44.28.64:/home/user/ideas
+
+Note: To use command pscp, install putty from https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
 type screen
 
 run
-python restapi_south.py
-python local_engine2.py
+
 python restapi_west.py
+python local_engine2.py
+python PreProc.py
+python restapi_south.py
 
 ctrl+z  //suspend
 bg      //run background
@@ -36,7 +48,7 @@ disown %1
 test http://10.44.28.64:5000/expert.do?serviceID=afaideen80@unifi
 
 open file,
-vi filename
+vi restapi_south.py
 close file,
 press :, q, enter
 
