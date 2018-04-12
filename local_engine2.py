@@ -8,8 +8,7 @@ from flask import Flask, jsonify, make_response, request
 from flask_restful import Api, Resource, reqparse
 from datetime import datetime
 from knn_function import knn
-import psycopg2
-import psycopg2.extras
+import mysql.connector as mariadb
 import logging
 from logging.handlers import RotatingFileHandler
 from requests import Timeout, HTTPError, ConnectionError
@@ -197,9 +196,9 @@ class BarAPI(Resource):
 
     @classmethod
     def find_by_advisory_class(cls, advisory, data):
-        conn = psycopg2.connect(host="10.44.28.80", database="ideas_ori", user="ideas_api", password="ideas")
-        conn.set_session(autocommit=True)
-        cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+        conn = mariadb.connect(host='10.44.28.81', user='ideas_api', password='Cy83rj@y@', database='ideas')
+        conn.autocommit = True
+        cur = conn.cursor(dictionary=True)
 
         advisory_output_qry = "SELECT * FROM advisory_output WHERE advisory_class=%s"
         cur.execute(advisory_output_qry, (str(advisory),))
@@ -208,12 +207,10 @@ class BarAPI(Resource):
         if advisory_result:
 
             update_query = """ INSERT INTO {table} (login, created_date, access_type, device_host_name, package_name,
-                      hsi_billing_status, radius_acct_status, hsi_session, frequent_disconnection, 
-                      neighbouring_sessions, vlan_209_ccs, vlan400_vobb, vlan500_hsi, vlan600_iptv, 
-                      upload_speed_profile, download_speed_profile, physical_uplink_status, physical_downlink_status, 
-                      advisory_connectivity_summary, advisory_symptom, advisory_next_action_update, 
-                      advisory_next_escalation, advisory_class) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,
-                      %s,%s,%s,%s,%s,%s,%s)""".format(table=cls.TABLE_NAME)
+                  hsi_billing_status, radius_acct_status, hsi_session, frequent_disconnection, neighbouring_sessions, 
+                  vlan_209_ccs, vlan400_vobb, vlan500_hsi, vlan600_iptv, upload_speed_profile, download_speed_profile, 
+                  physical_uplink_status, physical_downlink_status, advisory_class) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,
+                  %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""".format(table=cls.TABLE_NAME)
 
             cur.execute(update_query, (str(data['login']), datetime.now(), str(data['access_type']),
                                        str(data['device_host_name']), str(data['package_name']),
@@ -222,11 +219,7 @@ class BarAPI(Resource):
                                        str(data['neighbouring_sessions']), str(data['vlan_209']), str(data['vlan_400']),
                                        str(data['vlan_500']), str(data['vlan_600']), str(data['upload_speed_profile']),
                                        str(data['download_speed_profile']), str(data['physical_uplink_status']),
-                                       str(data['physical_downlink_status']),
-                                       str(advisory_result['advisory_connectivity_summary']),
-                                       str(advisory_result['advisory_symptom']),
-                                       str(advisory_result['advisory_next_action_update']),
-                                       str(advisory_result['advisory_next_escalation']), str(advisory)))
+                                       str(data['physical_downlink_status']), str(advisory)))
 
             conn.close()
 
