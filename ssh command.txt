@@ -134,3 +134,18 @@ No v600
 tyleebk2@unifi
 No v209
 aswadiunifi@unifi
+
+# Installing necessary dependency to connect with MariaDB using python
+sudo yum install python-devel
+
+sudo yum install mysql-devel
+
+sudo yum install MySQL-python
+
+sudo yum install mysql-connector-python
+
+# Updating mysql-connector-python
+
+wget http://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-2.1.4-1.el7.x86_64.rpm
+
+sudo yum install mysql-connector-python-2.1.4-1.el7.x86_64.rpm
