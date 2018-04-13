@@ -33,25 +33,26 @@ class BarAPI(Resource):
         try:
             r = requests.get('http://localhost:5002/getParam', params=json, timeout=120)
             r.raise_for_status()
+            a2 = datetime.now()
         except Timeout:
-            resp = self.calculate_response_time(a1)
+            resp = self.calculate_response_time(a2)
             app.logger.debug("Process finished")
             app.logger.info("------------------------")
             return {"Message": "Timeout Error", "Response_time": resp, "Return_code": 408}
         except HTTPError:
-            resp = self.calculate_response_time(a1)
+            resp = self.calculate_response_time(a2)
             app.logger.debug("Process finished")
             app.logger.info("------------------------")
             return {"Message": "HTTPError Error", "Response_time": resp, "Return_code": 505}
         except ConnectionError:
-            resp = self.calculate_response_time(a1)
+            resp = self.calculate_response_time(a2)
             app.logger.info("Process finished")
             app.logger.info("------------------------")
             return {"Message": "ConnectionError Error", "Response_time": resp, "Return_code": 503}
 
         if r.json().get('Return_description') == 'Failed':
             content = r.json()
-            resp = self.calculate_response_time(a1)
+            resp = self.calculate_response_time(a2)
             app.logger.debug("Content from HTTP response: %s", content)
             app.logger.info("Process finished")
             app.logger.info("------------------------")
@@ -160,7 +161,7 @@ class BarAPI(Resource):
 
             final_match_matrix = match_matrix[1:]
 
-            t_engine_respond = self.calculate_response_time(a1)
+            t_engine_respond = self.calculate_response_time(a2)
 
             app.logger.debug("Database output: %s", advisory_result)
             app.logger.debug("Expert Matrix: %s", final_exp_matrix)
@@ -180,7 +181,7 @@ class BarAPI(Resource):
                     "Return_description": 'Success'
                     }
         except Exception as err:
-            resp = self.calculate_response_time(a1)
+            resp = self.calculate_response_time(a2)
             app.logger.debug("Following database error occurred: %s", err)
             app.logger.info("------------------------")
             return {"Message": "An error occurred during database operation",
