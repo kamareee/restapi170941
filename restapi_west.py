@@ -32,10 +32,12 @@ class BarAPI(Resource):
         #     print ("WBI:ConnectionError Error:")
         #     return "WBI:ConnectionError Error:"
 
-
+        headers = {'Content-Type': 'text/xml'}
         Return_description = r.json().get('Return_description')
         if str(Return_description).__eq__('Failed'):
-            return r.content
+            # return r.content
+            print r.content
+            return make_response(render_template('error.xml', error_msg = r.content), 200, headers)
 
 
         try:
