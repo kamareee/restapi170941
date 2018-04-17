@@ -82,7 +82,7 @@ class BarAPI(Resource):
             # Package name and Access type
             temp_prt = access_port.split('-')
             new_access_port = temp_prt[0]
-            if new_access_port.__contains__('V1'):#new_access_port[4:6] == 'V1':
+            if new_access_port.__contains__('_V'):#new_access_port[4:6] == 'V1':
                 access_type = 'VDSL'
             else:
                 access_type = 'FTTH'
