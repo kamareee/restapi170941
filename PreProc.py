@@ -35,6 +35,7 @@ class BarAPI(Resource):
         try:
             r = requests.get('http://localhost:5004/getParam', params=json, timeout=120)
             r.raise_for_status()
+            a = datetime.datetime.now()
         except Timeout:
             print ("Timeout Error:")
             return "Timeout Error:"
@@ -46,21 +47,20 @@ class BarAPI(Resource):
             return "ConnectionError Error:"
 
         # Function for calculating South API response time
-        def calculate_response_time():
+        def calculate_response_time(a):
             b = datetime.datetime.now()
             delta = b - a
             time = int(delta.total_seconds() * 1000)
             print("tPreProc %d ms" %time)
             return time  # milliseconds
 
-        a = datetime.datetime.now()
         try:
             api2_data = r.json().get('@api2')
             responseHeader = api2_data.get('responseHeader')
             returnDescription = r.json().get('retDesc')
             service_id = json.get('serviceID')
         except :
-            tPreProc = calculate_response_time()
+            tPreProc = calculate_response_time(a)
             content = r.content
             if content.__contains__('HTTPError'):
                 code = content.split(" ")[1]
@@ -82,7 +82,7 @@ class BarAPI(Resource):
             # Package name and Access type
             temp_prt = access_port.split('-')
             new_access_port = temp_prt[0]
-            if new_access_port.__contains__('V1'):#new_access_port[4:6] == 'V1':
+            if new_access_port.__contains__('_V'):#new_access_port[4:6] == 'V1':
                 access_type = 'VDSL'
             else:
                 access_type = 'FTTH'
@@ -168,7 +168,7 @@ class BarAPI(Resource):
                     'Access_type': str(access_type),
                     'Message': msg,
                     'Return_code': 400,
-                    'tPreProc': calculate_response_time(),
+                    'tPreProc': calculate_response_time(a),
                     'tSouthRespond': tSouthRespond,
                 }
                 return jsonify(final_data)
@@ -306,7 +306,7 @@ class BarAPI(Resource):
                     'Access_type': str(access_type),
                     'Message': msg,
                     'Return_code': 400,
-                    'tPreProc': calculate_response_time(),
+                    'tPreProc': calculate_response_time(a),
                     'tSouthRespond': tSouthRespond,
                 }
 
@@ -378,7 +378,7 @@ class BarAPI(Resource):
                         'Access_type': str(access_type),
                         'Message': msg,
                         'Return_code': 400,
-                        'tPreProc': calculate_response_time(),
+                        'tPreProc': calculate_response_time(a),
                         'tSouthRespond': tSouthRespond,
                     }
 
@@ -487,7 +487,7 @@ class BarAPI(Resource):
                 'Physical_uplink_status': Physical_uplink_status,
                 'Physical_downlink_status': Physical_downlink_status,
                 'Message': "13 attributes",
-                'tPreProc': calculate_response_time(),
+                'tPreProc': calculate_response_time(a),
                 'tSouthRespond': tSouthRespond
             }
 
@@ -500,7 +500,7 @@ class BarAPI(Resource):
             return jsonify(final_data)
         # If SPANMS return is unsuccessful this part of the code will execute
         else:
-            tPreProc = calculate_response_time()
+            tPreProc = calculate_response_time(a)
             data = r.json()
             data['attributes'].append({'tPreProc': tPreProc})
             data['Return_description'] = 'Failed'

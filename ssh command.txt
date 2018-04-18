@@ -20,12 +20,11 @@ pscp -pw Cy83rj@y@ knn_function.py root@10.44.28.64:/home/user/ideas
 pscp -pw Cy83rj@y@ min_max.csv root@10.44.28.64:/home/user/ideas
 pscp -pw Cy83rj@y@ training_data.csv root@10.44.28.64:/home/user/ideas
 
-
-
 pscp -pw Cy83rj@y@ testdata.csv root@10.44.28.64:/home/user/ideas
 pscp -pw Cy83rj@y@ testnew.csv root@10.44.28.64:/home/user/ideas
 then in folder templates, use this
     pscp -pw Cy83rj@y@ testxml.xml root@10.44.28.64:/home/user/ideas/templates
+    pscp -pw Cy83rj@y@ error.xml root@10.44.28.64:/home/user/ideas/templates
 //scp restapi_west.py root@10.44.28.64:/home/user/ideas
 
 Note: To use command pscp, install putty from https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
@@ -134,3 +133,18 @@ No v600
 tyleebk2@unifi
 No v209
 aswadiunifi@unifi
+
+# Installing necessary dependency to connect with MariaDB using python
+sudo yum install python-devel
+
+sudo yum install mysql-devel
+
+sudo yum install MySQL-python
+
+sudo yum install mysql-connector-python
+
+# Updating mysql-connector-python
+
+wget http://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-2.1.4-1.el7.x86_64.rpm
+
+sudo yum install mysql-connector-python-2.1.4-1.el7.x86_64.rpm

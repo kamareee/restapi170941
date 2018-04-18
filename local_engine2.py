@@ -8,8 +8,7 @@ from flask import Flask, jsonify, make_response, request
 from flask_restful import Api, Resource, reqparse
 from datetime import datetime
 from knn_function import knn
-import psycopg2
-import psycopg2.extras
+import mysql.connector as mariadb
 import logging
 from logging.handlers import RotatingFileHandler
 from requests import Timeout, HTTPError, ConnectionError
@@ -34,25 +33,26 @@ class BarAPI(Resource):
         try:
             r = requests.get('http://localhost:5002/getParam', params=json, timeout=120)
             r.raise_for_status()
+            a2 = datetime.now()
         except Timeout:
-            resp = self.calculate_response_time(a1)
+            resp = self.calculate_response_time(a2)
             app.logger.debug("Process finished")
             app.logger.info("------------------------")
             return {"Message": "Timeout Error", "Response_time": resp, "Return_code": 408}
         except HTTPError:
-            resp = self.calculate_response_time(a1)
+            resp = self.calculate_response_time(a2)
             app.logger.debug("Process finished")
             app.logger.info("------------------------")
             return {"Message": "HTTPError Error", "Response_time": resp, "Return_code": 505}
         except ConnectionError:
-            resp = self.calculate_response_time(a1)
+            resp = self.calculate_response_time(a2)
             app.logger.info("Process finished")
             app.logger.info("------------------------")
             return {"Message": "ConnectionError Error", "Response_time": resp, "Return_code": 503}
 
         if r.json().get('Return_description') == 'Failed':
             content = r.json()
-            resp = self.calculate_response_time(a1)
+            resp = self.calculate_response_time(a2)
             app.logger.debug("Content from HTTP response: %s", content)
             app.logger.info("Process finished")
             app.logger.info("------------------------")
@@ -161,7 +161,7 @@ class BarAPI(Resource):
 
             final_match_matrix = match_matrix[1:]
 
-            t_engine_respond = self.calculate_response_time(a1)
+            t_engine_respond = self.calculate_response_time(a2)
 
             app.logger.debug("Database output: %s", advisory_result)
             app.logger.debug("Expert Matrix: %s", final_exp_matrix)
@@ -181,7 +181,7 @@ class BarAPI(Resource):
                     "Return_description": 'Success'
                     }
         except Exception as err:
-            resp = self.calculate_response_time(a1)
+            resp = self.calculate_response_time(a2)
             app.logger.debug("Following database error occurred: %s", err)
             app.logger.info("------------------------")
             return {"Message": "An error occurred during database operation",
@@ -197,9 +197,9 @@ class BarAPI(Resource):
 
     @classmethod
     def find_by_advisory_class(cls, advisory, data):
-        conn = psycopg2.connect(host="10.44.28.80", database="ideas_ori", user="ideas_api", password="ideas")
-        conn.set_session(autocommit=True)
-        cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+        conn = mariadb.connect(host='10.44.28.81', user='ideas_api', password='Cy83rj@y@', database='ideas')
+        conn.autocommit = True
+        cur = conn.cursor(dictionary=True)
 
         advisory_output_qry = "SELECT * FROM advisory_output WHERE advisory_class=%s"
         cur.execute(advisory_output_qry, (str(advisory),))
@@ -208,12 +208,10 @@ class BarAPI(Resource):
         if advisory_result:
 
             update_query = """ INSERT INTO {table} (login, created_date, access_type, device_host_name, package_name,
-                      hsi_billing_status, radius_acct_status, hsi_session, frequent_disconnection, 
-                      neighbouring_sessions, vlan_209_ccs, vlan400_vobb, vlan500_hsi, vlan600_iptv, 
-                      upload_speed_profile, download_speed_profile, physical_uplink_status, physical_downlink_status, 
-                      advisory_connectivity_summary, advisory_symptom, advisory_next_action_update, 
-                      advisory_next_escalation, advisory_class) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,
-                      %s,%s,%s,%s,%s,%s,%s)""".format(table=cls.TABLE_NAME)
+                  hsi_billing_status, radius_acct_status, hsi_session, frequent_disconnection, neighbouring_sessions, 
+                  vlan_209_ccs, vlan400_vobb, vlan500_hsi, vlan600_iptv, upload_speed_profile, download_speed_profile, 
+                  physical_uplink_status, physical_downlink_status, advisory_class) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,
+                  %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""".format(table=cls.TABLE_NAME)
 
             cur.execute(update_query, (str(data['login']), datetime.now(), str(data['access_type']),
                                        str(data['device_host_name']), str(data['package_name']),
@@ -222,11 +220,7 @@ class BarAPI(Resource):
                                        str(data['neighbouring_sessions']), str(data['vlan_209']), str(data['vlan_400']),
                                        str(data['vlan_500']), str(data['vlan_600']), str(data['upload_speed_profile']),
                                        str(data['download_speed_profile']), str(data['physical_uplink_status']),
-                                       str(data['physical_downlink_status']),
-                                       str(advisory_result['advisory_connectivity_summary']),
-                                       str(advisory_result['advisory_symptom']),
-                                       str(advisory_result['advisory_next_action_update']),
-                                       str(advisory_result['advisory_next_escalation']), str(advisory)))
+                                       str(data['physical_downlink_status']), str(advisory)))
 
             conn.close()
 

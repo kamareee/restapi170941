@@ -18,22 +18,26 @@ class BarAPI(Resource):
         # payload = {'serviceID': serviceID}
         a = datetime.datetime.now()
         print a
-        try:
-            r = requests.get('http://localhost:5001/getParam',params=json,timeout=120)
-            r.raise_for_status()
-        except Timeout:
-            print ("WBI:Timeout Error:")
-            return "WBI:Timeout Error:"
-        except HTTPError:
-            print ("WBI:HTTPError Error:")
-            return "WBI:HTTPError Error:"
-        except ConnectionError:
-            print ("WBI:ConnectionError Error:")
-            return "WBI:ConnectionError Error:"
+        r = requests.get('http://localhost:5001/getParam', params=json)
+        # try:
+        # r = requests.get('http://localhost:5001/getParam',params=json,timeout=120)
+        # r.raise_for_status()
+        # except Timeout:
+        #     print ("WBI:Timeout Error:")
+        #     return "WBI:Timeout Error:"
+        # except HTTPError:
+        #     print ("WBI:HTTPError Error:")
+        #     return "WBI:HTTPError Error:"
+        # except ConnectionError:
+        #     print ("WBI:ConnectionError Error:")
+        #     return "WBI:ConnectionError Error:"
 
+        headers = {'Content-Type': 'text/xml'}
         Return_description = r.json().get('Return_description')
         if str(Return_description).__eq__('Failed'):
-            return r.content
+            # return r.content
+            print r.content
+            return make_response(render_template('error.xml', error_msg = r.content), 200, headers)
 
 
         try:
@@ -59,8 +63,7 @@ class BarAPI(Resource):
         t1Respond = int(delta.total_seconds() * 1000) #miliseconds
         # return parser.parse_args()
         return make_response(render_template('testxml.xml', summary=advisory_summary, predictedclass=predictedClass,
-                                             action=advisory_action, tRespond=t1Respond,
-                                             tEngineRespond=t2Respond,
+                                             action=advisory_action, tRespond=t1Respond, tEngineRespond=t2Respond,
                                              prompt=advisory_prompt, inbound=advisory_inbound,
                                              nextescalation=advisory_escalation,
                                              expertmtx=expertmatrix, matchmtx=matchedmatrix), 200, headers)
