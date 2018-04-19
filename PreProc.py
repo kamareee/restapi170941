@@ -124,6 +124,9 @@ class BarAPI(Resource):
             attributes = r.json().get('attributes')
             ONT_TX_POWER = None
             ONT_RX_POWER = None
+
+            UPSTREAM_ACTUAL_RATE = None
+            DOWNSTREAM_ACTUAL_RATE = None
             if attributes != None:
                 for attr in attributes:
                     print attr
@@ -132,10 +135,12 @@ class BarAPI(Resource):
                         print "tSouthRespond " + str(tSouthRespond)
                         continue
                     if str(attr.get('name')).__eq__('UPSTREAM_ACTUAL_RATE'):
-                        UPSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
+                        if attr.get('value') != None:
+                            UPSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
                         continue
                     if str(attr.get('name')).__eq__('DOWNSTREAM_ACTUAL_RATE'):
-                        DOWNSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
+                        if attr.get('value')!=None:
+                            DOWNSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
                         continue
                     if str(attr.get('name')).__eq__('UPSTREAM_ATTENUATION'):
                         UPSTREAM_ATTENUATION = attr.get('value')
@@ -172,7 +177,6 @@ class BarAPI(Resource):
                     'tSouthRespond': tSouthRespond,
                 }
                 return jsonify(final_data)
-
 
             if trafficProfiles != None:
                 for profile in trafficProfiles:
@@ -297,7 +301,7 @@ class BarAPI(Resource):
                 radiusUpload = responseHeader.get('hsiService').get('radiusUpload')
                 radiusDownload = responseHeader.get('hsiService').get('radiusDownload')
 
-            if radiusDownload==None or radiusUpload==None:
+            if radiusDownload==None or radiusUpload==None or UPSTREAM_ACTUAL_RATE==None or DOWNSTREAM_ACTUAL_RATE==None:
                 msg = 'One or more attributes value missing.'
                 final_data = {
                     'Return_description': 'Failed',

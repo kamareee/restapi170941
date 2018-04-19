@@ -1143,3 +1143,86 @@ Expert Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
 Matched Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
 Process finished
 ------------------------
+Process started at: 2018-04-18 11:14:20.229000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"ConnectionError HTTPConnectionPool(host=\'localhost\', port=9001): Max retries exceeded with url: /rest/api/reading (Caused by NewConnectionError(\'<urllib3.connection.HTTPConnection object at 0x06B1BAF0>: Failed to establish a new connection: [Errno 10061] No connection could be made because the target machine actively refused it\',))"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-04-18 11:17:11.120000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"Timeout HTTPConnectionPool(host=\'localhost\', port=9001): Read timed out. (read timeout=12)"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-04-18 11:29:45.220000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"South API failed recognized json data"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-04-18 11:32:52.972000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"ConnectionError HTTPConnectionPool(host=\'localhost\', port=9001): Max retries exceeded with url: /rest/api/reading (Caused by NewConnectionError(\'<urllib3.connection.HTTPConnection object at 0x06BC4090>: Failed to establish a new connection: [Errno 10061] No connection could be made because the target machine actively refused it\',))"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-04-18 11:34:36.008000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"Timeout HTTPConnectionPool(host=\'localhost\', port=9001): Read timed out. (read timeout=12)"\n', u'Return_code': None, u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-04-18 12:11:16.628000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"HTTPError 400 Client Error: Bad Request for url: http://httpstat.us/400"\n', u'Return_code': u'400', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-04-18 15:12:55.380000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Message': u'"HTTPError 400 Client Error: Bad Request for url: http://httpstat.us/400"\n', u'Return_code': u'400', u'Return_description': u'Failed'}
+Process finished
+------------------------
+Process started at: 2018-04-19 10:18:33.224000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Offline', 1.0, 40.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 2.0, 1.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 2.0, 1.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '2a'}
+Predicted class by KNN: 2a
+Neighbours: [1.0, 1.0, 2.0, 1.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Offline', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 40.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 1.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'inbound': 'Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).2) to check on physical/cable connection between all CPE.CSP to1) indentified customer actual issue.2) do RG configuration(if required).3) proceed with cannot login troubleshooting.4) check current Internet Session.5) alert TL or RTA to confirm on the Neighbouring Session NOT meet thresholdIf Internet Session OFFLINE :For SME / Business / Ent Segment Kindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'prompt': 'Symptom:No internet connection.', 'Message': 'All database query executed successfully.', 'summary': 'HSI Session OFFLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.'}
+Expert Matrix: 1-1-2-1.0-40.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-2-1.0-40.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-04-19 10:31:52.044000
+Parsed json: {'serviceID': 'kwong4564@unifi'}
+Process started at: 2018-04-19 10:33:40.537000
+Parsed json: {'serviceID': 'kwong4564@unifi'}
+Process started at: 2018-04-19 10:36:22.530000
+Parsed json: {'serviceID': 'kwong4564@unifi'}
+Process started at: 2018-04-19 10:38:47.288000
+Parsed json: {'serviceID': 'kwong4564@unifi'}
+Process started at: 2018-04-19 10:41:25.443000
+Parsed json: {'serviceID': 'kwong4564@unifi'}
+Process finished
+------------------------
+Process started at: 2018-04-19 10:45:50.741000
+Parsed json: {'serviceID': 'kwong4564@unifi'}
+Content from HTTP response: {u'Login_id': u'kwong4564@unifi', u'tPreProc': 4, u'Package_name': u'UniFi Advance 30Mbps + Ruby (MU 2017 Campaign)', u'Return_description': u'Failed', u'Return_code': 400, u'Access_type': u'VDSL', u'tSouthRespond': 2693, u'Message': u'One or more attributes value missing.'}
+Process finished
+------------------------
+Process started at: 2018-04-19 10:46:10.725000
+Parsed json: {'serviceID': 'kwong4564@unifi'}
+Content from HTTP response: {u'Login_id': u'kwong4564@unifi', u'tPreProc': 5025, u'Package_name': u'UniFi Advance 30Mbps + Ruby (MU 2017 Campaign)', u'Return_description': u'Failed', u'Return_code': 400, u'Access_type': u'VDSL', u'tSouthRespond': 2606, u'Message': u'One or more attributes value missing.'}
+Process finished
+------------------------
+Process started at: 2018-04-19 10:48:14.955000
+Parsed json: {'serviceID': 'kwong4564@unifi'}
+Process finished
+------------------------
+Process started at: 2018-04-19 10:48:40.176000
+Parsed json: {'serviceID': 'kwong4564@unifi'}
+Process finished
+------------------------
+Process started at: 2018-04-19 10:50:34.073000
+Parsed json: {'serviceID': 'kwong4564@unifi'}
+Content from HTTP response: {u'Login_id': u'kwong4564@unifi', u'tPreProc': 4589, u'Package_name': u'UniFi Advance 30Mbps + Ruby (MU 2017 Campaign)', u'Return_description': u'Failed', u'Return_code': 400, u'Access_type': u'VDSL', u'tSouthRespond': 20237, u'Message': u'One or more attributes value missing.'}
+Process finished
+------------------------

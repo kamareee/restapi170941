@@ -35,17 +35,17 @@ class BarAPI(Resource):
             r.raise_for_status()
             a2 = datetime.now()
         except Timeout:
-            resp = self.calculate_response_time(a2)
+            resp = self.calculate_response_time(datetime.now())
             app.logger.debug("Process finished")
             app.logger.info("------------------------")
             return {"Message": "Timeout Error", "Response_time": resp, "Return_code": 408}
         except HTTPError:
-            resp = self.calculate_response_time(a2)
+            resp = self.calculate_response_time(datetime.now())
             app.logger.debug("Process finished")
             app.logger.info("------------------------")
             return {"Message": "HTTPError Error", "Response_time": resp, "Return_code": 505}
         except ConnectionError:
-            resp = self.calculate_response_time(a2)
+            resp = self.calculate_response_time(datetime.now())
             app.logger.info("Process finished")
             app.logger.info("------------------------")
             return {"Message": "ConnectionError Error", "Response_time": resp, "Return_code": 503}
