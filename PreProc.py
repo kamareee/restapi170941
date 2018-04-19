@@ -125,8 +125,8 @@ class BarAPI(Resource):
             ONT_TX_POWER = None
             ONT_RX_POWER = None
 
-            UPSTREAM_ACTUAL_RATE = None
-            DOWNSTREAM_ACTUAL_RATE = None
+
+
             if attributes != None:
                 for attr in attributes:
                     print attr
@@ -137,10 +137,14 @@ class BarAPI(Resource):
                     if str(attr.get('name')).__eq__('UPSTREAM_ACTUAL_RATE'):
                         if attr.get('value') != None:
                             UPSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
+                        else:
+                            UPSTREAM_ACTUAL_RATE = None
                         continue
                     if str(attr.get('name')).__eq__('DOWNSTREAM_ACTUAL_RATE'):
                         if attr.get('value')!=None:
                             DOWNSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
+                        else:
+                            DOWNSTREAM_ACTUAL_RATE = None
                         continue
                     if str(attr.get('name')).__eq__('UPSTREAM_ATTENUATION'):
                         UPSTREAM_ATTENUATION = attr.get('value')
@@ -301,7 +305,7 @@ class BarAPI(Resource):
                 radiusUpload = responseHeader.get('hsiService').get('radiusUpload')
                 radiusDownload = responseHeader.get('hsiService').get('radiusDownload')
 
-            if radiusDownload==None or radiusUpload==None or UPSTREAM_ACTUAL_RATE==None or DOWNSTREAM_ACTUAL_RATE==None:
+            if radiusDownload==None or radiusUpload==None or (access_type == 'VDSL' and (UPSTREAM_ACTUAL_RATE==None or DOWNSTREAM_ACTUAL_RATE==None)):
                 msg = 'One or more attributes value missing.'
                 final_data = {
                     'Return_description': 'Failed',

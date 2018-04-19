@@ -483,8 +483,8 @@ def reading():
     # return outputVDSLOriginalsida313       #don't use jsonify() if input arguments already type string
     # return jsonify(outputVDSLOriginalsida313NonString)
     # return outAswadiUnifi
-    # return afaideen80
-    return jsonify(kwong4564)
+    return afaideen80
+    # return jsonify(kwong4564)
     # return jsonify(outputVDSLOriginalNonString)
     # return jsonify(outputFTTHNoTrafficProfile)
     # return jsonify(outputFTTH)

@@ -5,19 +5,14 @@
     <bookmark url="file://$PROJECT_DIR$/local_engine2.py" line="100" />
     <bookmark url="file://$PROJECT_DIR$/local_engine2.py" line="51" />
     <bookmark url="file://$PROJECT_DIR$/SPANMS.py" line="199" />
-    <bookmark url="file://$PROJECT_DIR$/PreProc.py" line="173" />
+    <bookmark url="file://$PROJECT_DIR$/PreProc.py" line="177" />
     <bookmark url="file://$PROJECT_DIR$/PreProc.py" line="59" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd38b183-e2a9-499c-bece-9e3d35c133c7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/restapi170941.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/restapi170941.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PreProc.py" beforeDir="false" afterPath="$PROJECT_DIR$/PreProc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SPANMS.py" beforeDir="false" afterPath="$PROJECT_DIR$/SPANMS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local_engine2.log" beforeDir="false" afterPath="$PROJECT_DIR$/local_engine2.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local_engine2.py" beforeDir="false" afterPath="$PROJECT_DIR$/local_engine2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restapi_south.py" beforeDir="false" afterPath="$PROJECT_DIR$/restapi_south.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssh command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ssh command.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ssh command.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ssh command.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ssh command.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="26" column="76" lean-forward="true" selection-start-line="26" selection-start-column="76" selection-end-line="26" selection-end-column="76" />
+            <state relative-caret-position="253">
+              <caret line="105" column="13" lean-forward="true" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -62,8 +57,8 @@
       <file leaf-file-name="restapi_west.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi_west.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="66" column="84" lean-forward="true" selection-start-line="66" selection-start-column="84" selection-end-line="66" selection-end-column="84" />
+            <state relative-caret-position="309">
+              <caret line="47" column="54" lean-forward="true" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
               <folding>
                 <element signature="e#1#16#0" expanded="true" />
               </folding>
@@ -71,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="local_engine2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="local_engine2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/local_engine2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="43" column="48" lean-forward="true" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
+            <state relative-caret-position="-728">
+              <caret line="69" column="118" selection-start-line="69" selection-start-column="118" selection-end-line="69" selection-end-column="118" />
               <folding>
                 <element signature="e#172#187#0" expanded="true" />
               </folding>
@@ -86,11 +81,12 @@
       <file leaf-file-name="PreProc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PreProc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="304" column="61" lean-forward="true" selection-start-line="304" selection-start-column="61" selection-end-line="304" selection-end-column="61" />
+            <state relative-caret-position="139">
+              <caret line="324" selection-start-line="324" selection-end-line="324" />
               <folding>
                 <element signature="e#1#16#0" expanded="true" />
                 <element signature="e#6456#9763#0" />
+                <element signature="e#13162#16306#0" />
               </folding>
             </state>
           </provider>
@@ -111,8 +107,8 @@
       <file leaf-file-name="SPANMS.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SPANMS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="486" column="26" lean-forward="true" selection-start-line="486" selection-start-column="26" selection-end-line="486" selection-end-column="26" />
+            <state relative-caret-position="315">
+              <caret line="487" column="19" lean-forward="true" selection-start-line="487" selection-start-column="19" selection-end-line="487" selection-end-column="19" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -213,10 +209,10 @@
         <option value="$PROJECT_DIR$/templates/error.xml" />
         <option value="$PROJECT_DIR$/restapi_west.py" />
         <option value="$PROJECT_DIR$/restapi_south.py" />
-        <option value="$PROJECT_DIR$/SPANMS.py" />
         <option value="$PROJECT_DIR$/local_engine2.py" />
-        <option value="$PROJECT_DIR$/PreProc.py" />
         <option value="$PROJECT_DIR$/ssh command.txt" />
+        <option value="$PROJECT_DIR$/PreProc.py" />
+        <option value="$PROJECT_DIR$/SPANMS.py" />
       </list>
     </option>
   </component>
@@ -766,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523953886730</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Minor update for case kwong4564@unifi">
+      <created>1524106753379</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1524106753379</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
@@ -786,10 +789,10 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50396407" side_tool="true" weight="0.3185531" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32847142" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49603593" visible="true" weight="0.31778425" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32905483" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49603593" weight="0.31778425" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32798833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49524313" weight="0.27696794" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49524313" visible="true" weight="0.27696794" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33965015" />
       <window_info id="Favorites" order="2" sideWeight="0.5030441" side_tool="true" weight="0.1564482" />
       <window_info anchor="bottom" id="Salesforce" order="12" />
@@ -873,7 +876,6 @@
     <ignored-roots>
       <path value="C:/../DevelopmentRepo/knnengine_v1.2" />
     </ignored-roots>
-    <MESSAGE value="Added respond time" />
     <MESSAGE value="Updated doc" />
     <MESSAGE value="Implement asyncronous method when make request." />
     <MESSAGE value="Updated error handling." />
@@ -898,7 +900,8 @@
     <MESSAGE value="Change method of identifying access port type." />
     <MESSAGE value="Update xml in accordance to OVAL requirement." />
     <MESSAGE value="added error.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="added error.xml" />
+    <MESSAGE value="Minor update for case kwong4564@unifi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor update for case kwong4564@unifi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -912,7 +915,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="340" />
+      <option name="time" value="344" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -1219,16 +1222,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SPANMS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="486" column="26" lean-forward="true" selection-start-line="486" selection-start-column="26" selection-end-line="486" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/site-packages/flask_restful/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
@@ -1236,41 +1229,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ssh command.txt">
+    <entry file="file://$PROJECT_DIR$/local_engine2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="26" column="76" lean-forward="true" selection-start-line="26" selection-start-column="76" selection-end-line="26" selection-end-column="76" />
+        <state relative-caret-position="-728">
+          <caret line="69" column="118" selection-start-line="69" selection-start-column="118" selection-end-line="69" selection-end-column="118" />
+          <folding>
+            <element signature="e#172#187#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/restapi_west.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="66" column="84" lean-forward="true" selection-start-line="66" selection-start-column="84" selection-end-line="66" selection-end-column="84" />
+        <state relative-caret-position="309">
+          <caret line="47" column="54" lean-forward="true" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
           <folding>
             <element signature="e#1#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SPANMS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="487" column="19" lean-forward="true" selection-start-line="487" selection-start-column="19" selection-end-line="487" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PreProc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="304" column="61" lean-forward="true" selection-start-line="304" selection-start-column="61" selection-end-line="304" selection-end-column="61" />
+        <state relative-caret-position="139">
+          <caret line="324" selection-start-line="324" selection-end-line="324" />
           <folding>
             <element signature="e#1#16#0" expanded="true" />
             <element signature="e#6456#9763#0" />
+            <element signature="e#13162#16306#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local_engine2.py">
+    <entry file="file://$PROJECT_DIR$/ssh command.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="43" column="48" lean-forward="true" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
-          <folding>
-            <element signature="e#172#187#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="253">
+          <caret line="105" column="13" lean-forward="true" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
         </state>
       </provider>
     </entry>
