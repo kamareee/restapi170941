@@ -476,6 +476,122 @@ def reading():
                     }
                   ]
                 }
+    venicefun1117 = {
+                        "attributes": [
+                            {
+                              "name": "DOWNSTREAM_ACTUAL_RATE",
+                              "value": 43998.0
+                            },
+                            {
+                              "name": "DOWNSTREAM_ATTENUATION",
+                              "value": 11.6
+                            },
+                            {
+                              "name": "DOWNSTREAM_SNR",
+                              "value": 22.1
+                            },
+                            {
+                              "name": "UPSTREAM_ACTUAL_RATE",
+                              "value": 10000.0
+                            },
+                            {
+                              "name": "UPSTREAM_ATTENUATION",
+                              "value": 6.1
+                            },
+                            {
+                              "name": "UPSTREAM_SNR",
+                              "value": 23.1
+                            },
+                            {
+                              "tSouthRespond": 7603
+                            }
+                          ],
+                          "custInfo": {
+                            "accessPort": "MDH_V1022-2/8/6",
+                            "loginId": "venicefun1117@unifi",
+                            "servicePoint": "HS1003637118",
+                            "src": "radius"
+                          },
+                          "lineProfiles": [
+                            {
+                              "lineProfileRx": "ASSIA_Z_44_10_2_2.PRF",
+                              "lineProfileTx": "ASSIA_Z_44_10_2_2.PRF",
+                              "serviceProfileRx": "NotSupport",
+                              "serviceProfileTx": "NotSupport",
+                              "siebelProfile": "UniFi 30 Mbps"
+                            }
+                          ],
+                          "refId": 172532423,
+                          "retCode": 0,
+                          "retDesc": "Success",
+                          "trafficProfiles": [
+                            {
+                              "configuredProfileRx": "n/a",
+                              "configuredProfileTx": "n/a",
+                              "isConfigured": True,
+                              "isMissing": False,
+                              "isProfileRxMismatch": False,
+                              "isProfileTxMismatch": False,
+                              "isSubscribed": False,
+                              "objId": "MDH_V1022-2/8/6",
+                              "siebelProfileRx": None,
+                              "siebelProfileTx": None,
+                              "vlan": "1"
+                            },
+                            {
+                              "configuredProfileRx": "n/a",
+                              "configuredProfileTx": "n/a",
+                              "isConfigured": True,
+                              "isMissing": False,
+                              "isProfileRxMismatch": False,
+                              "isProfileTxMismatch": False,
+                              "isSubscribed": False,
+                              "objId": "MDH_V1022-2/8/6",
+                              "siebelProfileRx": None,
+                              "siebelProfileTx": None,
+                              "vlan": "209"
+                            },
+                            {
+                              "configuredProfileRx": "n/a",
+                              "configuredProfileTx": "n/a",
+                              "isConfigured": True,
+                              "isMissing": False,
+                              "isProfileRxMismatch": True,
+                              "isProfileTxMismatch": True,
+                              "isSubscribed": True,
+                              "objId": "MDH_V1022-2/8/6",
+                              "siebelProfileRx": "256K",
+                              "siebelProfileTx": "256K",
+                              "vlan": "400"
+                            },
+                            {
+                              "configuredProfileRx": "n/a",
+                              "configuredProfileTx": "n/a",
+                              "isConfigured": True,
+                              "isMissing": False,
+                              "isProfileRxMismatch": True,
+                              "isProfileTxMismatch": True,
+                              "isSubscribed": True,
+                              "objId": "MDH_V1022-2/8/6",
+                              "siebelProfileRx": "35M",
+                              "siebelProfileTx": "11M",
+                              "vlan": "500"
+                            },
+                            {
+                              "configuredProfileRx": "10M",
+                              "configuredProfileTx": "10M",
+                              "isConfigured": True,
+                              "isMissing": False,
+                              "isProfileRxMismatch": False,
+                              "isProfileTxMismatch": False,
+                              "isSubscribed": True,
+                              "objId": "MDH_V1022-2/8/6",
+                              "siebelProfileRx": "10M",
+                              "siebelProfileTx": "10M",
+                              "vlan": "600"
+                            }
+                          ]
+                    }
     error = {"retCode":200,"retDesc":"Error Can't query to EMS/NE","custInfo":{"servicePoint":"HS1025171053","loginId":loginid,"accessPort":"SDG_G026-1/7/4.7","src":"radius"},"attributes":[]}
     # sleep(15)#in seconds
     print 'Engine finish...'
@@ -484,6 +600,7 @@ def reading():
     # return jsonify(outputVDSLOriginalsida313NonString)
     # return outAswadiUnifi
     return afaideen80
+    # return jsonify(venicefun1117)
     # return jsonify(kwong4564)
     # return jsonify(outputVDSLOriginalNonString)
     # return jsonify(outputFTTHNoTrafficProfile)

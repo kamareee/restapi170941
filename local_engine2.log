@@ -1226,3 +1226,121 @@ Parsed json: {'serviceID': 'kwong4564@unifi'}
 Content from HTTP response: {u'Login_id': u'kwong4564@unifi', u'tPreProc': 4589, u'Package_name': u'UniFi Advance 30Mbps + Ruby (MU 2017 Campaign)', u'Return_description': u'Failed', u'Return_code': 400, u'Access_type': u'VDSL', u'tSouthRespond': 20237, u'Message': u'One or more attributes value missing.'}
 Process finished
 ------------------------
+Process started at: 2018-04-19 11:05:41.784000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 3, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 400, u'Access_type': u'FTTH', u'tSouthRespond': 3978, u'Message': u'One or more attributes value missing.'}
+Process finished
+------------------------
+Process started at: 2018-04-19 11:06:24.717000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 3, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 400, u'Access_type': u'FTTH', u'tSouthRespond': 5345, u'Message': u'One or more attributes value missing.'}
+Process finished
+------------------------
+Process started at: 2018-04-19 11:09:46.024000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-04-19 11:11:45.097000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Process finished
+------------------------
+Process started at: 2018-04-19 11:14:17.134000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Offline', 1.0, 40.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 2.0, 1.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 2.0, 1.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '2a'}
+Predicted class by KNN: 2a
+Neighbours: [1.0, 1.0, 2.0, 1.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Offline', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 40.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 1.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'inbound': 'Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).2) to check on physical/cable connection between all CPE.CSP to1) indentified customer actual issue.2) do RG configuration(if required).3) proceed with cannot login troubleshooting.4) check current Internet Session.5) alert TL or RTA to confirm on the Neighbouring Session NOT meet thresholdIf Internet Session OFFLINE :For SME / Business / Ent Segment Kindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'prompt': 'Symptom:No internet connection.', 'Message': 'All database query executed successfully.', 'summary': 'HSI Session OFFLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.'}
+Expert Matrix: 1-1-2-1.0-40.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-2-1.0-40.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-04-19 11:14:51.345000
+Parsed json: {'serviceID': 'kwong4564@unifi'}
+Data parsed from South API response: [u'Tos', u'Tos', u'Offline', 0.0, 45.45, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [0.0, 0.0, 2.0, 0.0, 45.45, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 2.0, 0.0, 45.45, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '2a'}
+Predicted class by KNN: 2a
+Neighbours: [1.0, 1.0, 2.0, 0.0, 45.45, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Offline', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Tos', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 45.45, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Tos', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'inbound': 'Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).2) to check on physical/cable connection between all CPE.CSP to1) indentified customer actual issue.2) do RG configuration(if required).3) proceed with cannot login troubleshooting.4) check current Internet Session.5) alert TL or RTA to confirm on the Neighbouring Session NOT meet thresholdIf Internet Session OFFLINE :For SME / Business / Ent Segment Kindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'prompt': 'Symptom:No internet connection.', 'Message': 'All database query executed successfully.', 'summary': 'HSI Session OFFLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.'}
+Expert Matrix: 0-0-2-0.0-45.45-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-2-0.0-45.45-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-04-19 11:15:40.159000
+Parsed json: {'serviceID': 'kwong4564@unifi'}
+Content from HTTP response: {u'Login_id': u'kwong4564@unifi', u'tPreProc': 5912, u'Package_name': u'UniFi Advance 30Mbps + Ruby (MU 2017 Campaign)', u'Return_description': u'Failed', u'Return_code': 400, u'Access_type': u'VDSL', u'tSouthRespond': 3940, u'Message': u'One or more attributes value missing.'}
+Process finished
+------------------------
+Process started at: 2018-04-19 11:20:07.337000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'kwong4564@unifi', u'tPreProc': 2, u'Package_name': u'UniFi Advance 30Mbps + Ruby (MU 2017 Campaign)', u'Return_description': u'Failed', u'Return_code': 400, u'Access_type': u'VDSL', u'tSouthRespond': 2895, u'Message': u'One or more attributes value missing.'}
+Process finished
+------------------------
+Process started at: 2018-04-19 11:21:17.166000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'kwong4564@unifi', u'tPreProc': 28779, u'Package_name': u'UniFi Advance 30Mbps + Ruby (MU 2017 Campaign)', u'Return_description': u'Failed', u'Return_code': 400, u'Access_type': u'VDSL', u'tSouthRespond': 2535, u'Message': u'One or more attributes value missing.'}
+Process finished
+------------------------
+Process started at: 2018-04-19 11:22:02.894000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Offline', 1.0, 40.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 2.0, 1.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 2.0, 1.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '2a'}
+Predicted class by KNN: 2a
+Neighbours: [1.0, 1.0, 2.0, 1.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Offline', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 40.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 1.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'inbound': 'Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).2) to check on physical/cable connection between all CPE.CSP to1) indentified customer actual issue.2) do RG configuration(if required).3) proceed with cannot login troubleshooting.4) check current Internet Session.5) alert TL or RTA to confirm on the Neighbouring Session NOT meet thresholdIf Internet Session OFFLINE :For SME / Business / Ent Segment Kindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'prompt': 'Symptom:No internet connection.', 'Message': 'All database query executed successfully.', 'summary': 'HSI Session OFFLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.'}
+Expert Matrix: 1-1-2-1.0-40.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-2-1.0-40.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-04-19 14:08:34.351000
+Parsed json: {'serviceID': 'venicefun1117@unifi'}
+Process finished
+------------------------
+Process started at: 2018-04-19 14:11:05.062000
+Parsed json: {'serviceID': 'venicefun1117@unifi'}
+Process finished
+------------------------
+Process started at: 2018-04-19 14:14:02.280000
+Parsed json: {'serviceID': 'venicefun1117@unifi'}
+Process finished
+------------------------
+Process started at: 2018-04-19 14:15:49.700000
+Parsed json: {'serviceID': 'venicefun1117@unifi'}
+Process finished
+------------------------
+Process started at: 2018-04-19 14:17:43.787000
+Parsed json: {'serviceID': 'venicefun1117@unifi'}
+Process finished
+------------------------
+Process started at: 2018-04-19 14:20:06.845000
+Parsed json: {'serviceID': 'venicefun1117@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 65.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Bad', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 65.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 64.76, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0], 'result': '12c'}
+Predicted class by KNN: 12c
+Neighbours: [1.0, 1.0, 1.0, 0.0, 64.76, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi 30 Mbps', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 65.0, 'access_type': u'VDSL', 'upload_speed_profile': u'Bad', 'frequent_disconnection': 0.0, 'device_host_name': u'MDH_V1022', 'physical_downlink_status': u'Good', 'login': u'venicefun1117@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'inbound': 'Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).CSP to1) check current Speed ProfileIf Speed Profile Mismatch : Kindly create SR and assign to Backend.If Speed Profile Corrected : Advice customer to do the IEMT Performance Test.Backend:Call HBC to configure Speed Profile.If the problem persist create CTT to HBC/ SDZ if required (Suspected CPE or need HBC for further investigation - based on consult call) ', 'next_escalation': 'CC - Backend', 'prompt': 'Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).', 'Message': 'All database query executed successfully.', 'summary': 'HSI Session ONLINE.Upload Speed Profile Mismatch.Physical Parameter meet threshold.'}
+Expert Matrix: 1-1-1-0.0-65.0-1-1-1-1-2-1-1-1
+Matched Matrix: 1-1-1-0.0-64.76-1-1-1-1-2-1-1-1
+Process finished
+------------------------
+Process started at: 2018-04-19 14:21:46.857000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Offline', 1.0, 40.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 2.0, 1.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 2.0, 1.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '2a'}
+Predicted class by KNN: 2a
+Neighbours: [1.0, 1.0, 2.0, 1.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Offline', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 40.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 1.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'inbound': 'Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).2) to check on physical/cable connection between all CPE.CSP to1) indentified customer actual issue.2) do RG configuration(if required).3) proceed with cannot login troubleshooting.4) check current Internet Session.5) alert TL or RTA to confirm on the Neighbouring Session NOT meet thresholdIf Internet Session OFFLINE :For SME / Business / Ent Segment Kindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'prompt': 'Symptom:No internet connection.', 'Message': 'All database query executed successfully.', 'summary': 'HSI Session OFFLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.'}
+Expert Matrix: 1-1-2-1.0-40.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-2-1.0-40.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------

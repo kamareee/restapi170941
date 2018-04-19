@@ -213,7 +213,8 @@ class BarAPI(Resource):
                             siebelProfileTxVal = float(re.split('M|K', siebelProfileTx)[0]) * unit;
 
                         configuredProfileTx = vln500['configuredProfileTx']
-                        if configuredProfileTx != None:
+                        val = str(configuredProfileTx).__contains__('n/a')
+                        if configuredProfileTx != None and not(val) :
                             if str(configuredProfileTx).__contains__('M'):
                                 unit = 1000000.0;
                             elif str(configuredProfileTx).__contains__('K'):
@@ -229,7 +230,8 @@ class BarAPI(Resource):
                             siebelProfileRxVal = float(re.split('M|K', siebelProfileRx)[0]) * unit;
 
                         configuredProfileRx = vln500['configuredProfileRx']
-                        if configuredProfileRx != None:
+                        val = str(configuredProfileRx).__contains__('n/a')
+                        if configuredProfileRx != None and not(val):
                             if str(configuredProfileRx).__contains__('M'):
                                 unit = 1000000.0;
                             elif str(configuredProfileRx).__contains__('K'):
