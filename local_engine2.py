@@ -173,8 +173,9 @@ class BarAPI(Resource):
                     "ExpertMatrix": str(final_exp_matrix),
                     "MatchMatrix": str(final_match_matrix),
                     "Summary": str(advisory_result['summary']),
-                    "Prompt": str(advisory_result['symptom']),
-                    "Action": str(advisory_result['next_action_update']),
+                    "Prompt": str(advisory_result['prompt']),
+                    "Inbound": str(advisory_result['inbound']),
+                    "Action": None,
                     "NextEscalation": str(advisory_result['next_escalation']),
                     "tEngineRespond": t_engine_respond,
                     "Return_code": 200,
@@ -225,8 +226,8 @@ class BarAPI(Resource):
             conn.close()
 
             return {"summary": str(advisory_result['advisory_connectivity_summary']),
-                    "symptom": str(advisory_result['advisory_symptom']),
-                    "next_action_update": str(advisory_result['advisory_next_action_update']),
+                    "prompt": str(advisory_result['prompt']),
+                    "inbound": str(advisory_result['inbound']),
                     "next_escalation": str(advisory_result['advisory_next_escalation']),
                     "Message": "All database query executed successfully."
                     }
