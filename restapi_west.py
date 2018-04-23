@@ -1,6 +1,7 @@
 
 import requests
 import datetime
+import json
 from flask import Flask, render_template, make_response
 from flask_restful import Api, Resource, reqparse
 from requests import Timeout, ConnectionError, HTTPError
@@ -18,26 +19,33 @@ class BarAPI(Resource):
         # payload = {'serviceID': serviceID}
         a = datetime.datetime.now()
         print a
-        r = requests.get('http://localhost:5001/getParam', params=json)
-        # try:
-        # r = requests.get('http://localhost:5001/getParam',params=json,timeout=120)
-        # r.raise_for_status()
-        # except Timeout:
-        #     print ("WBI:Timeout Error:")
-        #     return "WBI:Timeout Error:"
-        # except HTTPError:
-        #     print ("WBI:HTTPError Error:")
-        #     return "WBI:HTTPError Error:"
-        # except ConnectionError:
-        #     print ("WBI:ConnectionError Error:")
-        #     return "WBI:ConnectionError Error:"
+        # r = requests.get('http://localhost:5001/getParam', params=json)
+        try:
+            r = requests.get('http://localhost:5001/getParam',params=json,timeout=140)
+            r.raise_for_status()
+        except Timeout:
+            print ("WBI:Timeout Error:")
+            return "WBI:Timeout Error:"
+        except HTTPError:
+            print ("WBI:HTTPError Error:")
+            return "WBI:HTTPError Error:"
+        except ConnectionError:
+            print ("WBI:ConnectionError Error:")
+            return "WBI:ConnectionError Error:"
 
         headers = {'Content-Type': 'text/xml'}
         Return_description = r.json().get('Return_description')
+
         if str(Return_description).__eq__('Failed'):
             # return r.content
             print r.content
-            return make_response(render_template('error.xml', error_msg = r.content), 200, headers)
+            msg = r.json().get('Message')
+            code = r.json().get('Return_code')
+            tSouth_Respond = r.json().get('tSouthRespond')
+            if code == 40000:
+                return make_response(render_template('error40000.xml'), 200, headers)
+            else:
+                return make_response(render_template('error.xml', msg = msg, error_msg = r.content), 200, headers)
 
 
         try:

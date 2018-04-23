@@ -56,10 +56,13 @@ class BarAPI(Resource):
             app.logger.debug("Content from HTTP response: %s", content)
             app.logger.info("Process finished")
             app.logger.info("------------------------")
-            return {"Return_code": 400,
+            Return_code = content['Return_code']
+            return {"Return_code": Return_code,#400,
                     "Message": content['Message'],
                     "Return_description": content['Return_description'],
-                    "Response_time": resp}
+                    "Response_time": resp,
+                    "tSouthRespond":content['tSouthRespond'],
+                    }
 
         # Declaring necessary variables
         training_data_filename = 'training_data.csv'

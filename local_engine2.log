@@ -1344,3 +1344,101 @@ Expert Matrix: 1-1-2-1.0-40.0-1-1-1-1-1-1-1-1
 Matched Matrix: 1-1-2-1.0-40.0-1-1-1-1-1-1-1-1
 Process finished
 ------------------------
+Process started at: 2018-04-23 08:49:25.354000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 2, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 400, u'Access_type': u'FTTH', u'tSouthRespond': 2092, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 11:42:41.800000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 4, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 3586, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 11:45:13.609000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 4, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2009, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 11:47:52.245000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 8, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 1938, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 12:02:03.759000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 2, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2167, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 12:02:31.170000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 5, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 5007, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 12:07:02.407000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 2, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2027, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 12:08:19.091000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 3, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2009, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 12:09:19.921000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 6, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 4849, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 12:10:22.832000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 3, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2907, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 12:11:29.815000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 4, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2683, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 12:16:14.030000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 3, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2772, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 12:18:15.480000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 8, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2999, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 12:19:22.309000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 6, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2317, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 12:20:18.917000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 60.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 60.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'inbound': 'Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'prompt': 'Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).', 'Message': 'All database query executed successfully.', 'summary': 'HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.'}
+Expert Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-04-23 12:22:40.735000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 6, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 1904, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 13:37:53.755000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 1, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 27564, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-23 13:39:13.961000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 2, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2203, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------

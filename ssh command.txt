@@ -25,6 +25,7 @@ pscp -pw Cy83rj@y@ testnew.csv root@10.44.28.64:/home/user/ideas
 then in folder templates, use this
     pscp -pw Cy83rj@y@ testxml.xml root@10.44.28.64:/home/user/ideas/templates
     pscp -pw Cy83rj@y@ error.xml root@10.44.28.64:/home/user/ideas/templates
+    pscp -pw Cy83rj@y@ error40000.xml root@10.44.28.64:/home/user/ideas/templates
 //scp restapi_west.py root@10.44.28.64:/home/user/ideas
 
 Note: To use command pscp, install putty from https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html

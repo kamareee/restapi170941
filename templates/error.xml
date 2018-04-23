@@ -1,6 +1,6 @@
 <responseHeader>
 <expertInfo>
- <summary> No mapping available </summary >
+ <summary> {{msg}} </summary >
  <nextBestAction> No mapping available </nextBestAction>
  <actionTaken> None </actionTaken>
 </expertInfo>

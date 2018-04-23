@@ -181,7 +181,7 @@ class BarAPI(Resource):
                     'Package_name': str(package_name),
                     'Access_type': str(access_type),
                     'Message': msg,
-                    'Return_code': 400,
+                    'Return_code': 40000,
                     'tPreProc': calculate_response_time(a),
                     'tSouthRespond': tSouthRespond,
                 }
