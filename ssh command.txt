@@ -133,6 +133,12 @@ No v600
 tyleebk2@unifi
 No v209
 aswadiunifi@unifi
+terminated case
+kwong4564@unifi
+
+vdsl acct:
+venicefun1117@unifi
+sida313@unifi
 
 # Installing necessary dependency to connect with MariaDB using python
 sudo yum install python-devel

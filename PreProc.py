@@ -124,8 +124,12 @@ class BarAPI(Resource):
             attributes = r.json().get('attributes')
             ONT_TX_POWER = None
             ONT_RX_POWER = None
-
-
+            UPSTREAM_ACTUAL_RATE = None
+            DOWNSTREAM_ACTUAL_RATE = None
+            UPSTREAM_ATTENUATION = None
+            DOWNSTREAM_ATTENUATION = None
+            UPSTREAM_SNR = None
+            DOWNSTREAM_SNR = None
 
             if attributes != None:
                 for attr in attributes:
@@ -164,9 +168,10 @@ class BarAPI(Resource):
                     if str(attr.get('name')).__eq__('ONT_TX_POWER'):
                         ONT_TX_POWER = attr.get('value')
                         continue
-            else:
+            #else:
+            if attributes==None or (ONT_RX_POWER==None and ONT_TX_POWER==None and DOWNSTREAM_ACTUAL_RATE==None and UPSTREAM_ACTUAL_RATE==None and UPSTREAM_ATTENUATION==None and DOWNSTREAM_ATTENUATION==None and UPSTREAM_SNR==None and DOWNSTREAM_SNR==None):
                 # if access_type.__eq__('FTTH'):
-                msg = 'Next Best Action (NBA)'
+                msg = 'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'
                 # else:
                 #     msg = 'One or more attributes value missing.'
 
@@ -307,7 +312,7 @@ class BarAPI(Resource):
                 radiusUpload = responseHeader.get('hsiService').get('radiusUpload')
                 radiusDownload = responseHeader.get('hsiService').get('radiusDownload')
 
-            if radiusDownload==None or radiusUpload==None or (access_type == 'VDSL' and (UPSTREAM_ACTUAL_RATE==None or DOWNSTREAM_ACTUAL_RATE==None)):
+            if radiusDownload==None or radiusUpload==None: #or (access_type == 'VDSL' and (UPSTREAM_ACTUAL_RATE==None or DOWNSTREAM_ACTUAL_RATE==None)):
                 msg = 'One or more attributes value missing.'
                 final_data = {
                     'Return_description': 'Failed',
@@ -379,20 +384,21 @@ class BarAPI(Resource):
                     else:
                         Physical_downlink_status = str('Bad')
 
-                else:
-                    msg = 'One or more attributes value missing.'
-                    final_data = {
-                        'Return_description': 'Failed',
-                        'Login_id': str(login_id),
-                        'Package_name': str(package_name),
-                        'Access_type': str(access_type),
-                        'Message': msg,
-                        'Return_code': 400,
-                        'tPreProc': calculate_response_time(a),
-                        'tSouthRespond': tSouthRespond,
-                    }
-
-                    return jsonify(final_data)
+                # else:
+                #     # msg = 'One or more attributes value missing.'
+                #     msg = 'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'
+                #     final_data = {
+                #         'Return_description': 'Failed',
+                #         'Login_id': str(login_id),
+                #         'Package_name': str(package_name),
+                #         'Access_type': str(access_type),
+                #         'Message': msg,
+                #         'Return_code': 400,
+                #         'tPreProc': calculate_response_time(a),
+                #         'tSouthRespond': tSouthRespond,
+                #     }
+                #
+                #     return jsonify(final_data)
 
 
             elif access_type == 'VDSL':
