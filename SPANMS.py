@@ -696,6 +696,93 @@ def reading():
                             }
                           ]
                         }
+    arifendiOffline = {
+                          "attributes": [
+                            {
+                              "name": "ONT_RX_POWER",
+                              "value": None
+                            },
+                            {
+                              "name": "ONT_TX_POWER",
+                              "value": None
+                            },
+                            {
+                              "tSouthRespond": 9662
+                            }
+                          ],
+                          "custInfo": {
+                            "accessPort": "BGI_G008-0/3/4.17",
+                            "loginId": "arifendi@unifi",
+                            "servicePoint": "HS1002973248",
+                            "src": "radius"
+                          },
+                          "lineProfiles": [
+                            {
+                              "lineProfileRx": "tm_huawei_lineprofile",
+                              "lineProfileTx": "tm_huawei_lineprofile",
+                              "serviceProfileRx": "tm_huawei_serviceprofile",
+                              "serviceProfileTx": "tm_huawei_serviceprofile",
+                              "siebelProfile": "UniFi Lite 10Mbps (Thank You Campaign 2017)"
+                            }
+                          ],
+                          "refId": 173532407,
+                          "retCode": 0,
+                          "retDesc": "Success",
+                          "trafficProfiles": [
+                            {
+                              "configuredProfileRx": "512K_DOWNP04",
+                              "configuredProfileTx": "512K_UPP04",
+                              "isConfigured": True,
+                              "isMissing": False,
+                              "isProfileRxMismatch": False,
+                              "isProfileTxMismatch": False,
+                              "isSubscribed": False,
+                              "objId": "BGI_G008:BGI_G008-0/3/4.17:4,,",
+                              "siebelProfileRx": None,
+                              "siebelProfileTx": None,
+                              "vlan": "209"
+                            },
+                            {
+                              "configuredProfileRx": "256K_DOWN_VOBB",
+                              "configuredProfileTx": "256K_UP_VOBB",
+                              "isConfigured": True,
+                              "isMissing": False,
+                              "isProfileRxMismatch": False,
+                              "isProfileTxMismatch": False,
+                              "isSubscribed": True,
+                              "objId": "BGI_G008:BGI_G008-0/3/4.17:2,,",
+                              "siebelProfileRx": "256K",
+                              "siebelProfileTx": "256K",
+                              "vlan": "400"
+                            },
+                            {
+                              "configuredProfileRx": "35M_DOWN",
+                              "configuredProfileTx": "11M_UP",
+                              "isConfigured": True,
+                              "isMissing": False,
+                              "isProfileRxMismatch": False,
+                              "isProfileTxMismatch": False,
+                              "isSubscribed": True,
+                              "objId": "BGI_G008:BGI_G008-0/3/4.17:1,,",
+                              "siebelProfileRx": "35M",
+                              "siebelProfileTx": "11M",
+                              "vlan": "500"
+                            },
+                            {
+                              "configuredProfileRx": "10M_DOWN_IPTV",
+                              "configuredProfileTx": "10M_UP_IPTV",
+                              "isConfigured": True,
+                              "isMissing": False,
+                              "isProfileRxMismatch": False,
+                              "isProfileTxMismatch": False,
+                              "isSubscribed": True,
+                              "objId": "BGI_G008:BGI_G008-0/3/4.17:3,,",
+                              "siebelProfileRx": "10M",
+                              "siebelProfileTx": "10M",
+                              "vlan": "600"
+                            }
+                          ]
+                        }
     error = {"retCode":200,"retDesc":"Error Can't query to EMS/NE","custInfo":{"servicePoint":"HS1025171053","loginId":loginid,"accessPort":"SDG_G026-1/7/4.7","src":"radius"},"attributes":[]}
     # sleep(15)#in seconds
     print 'Engine finish...'
@@ -703,8 +790,9 @@ def reading():
     # return outputVDSLOriginalsida313       #don't use jsonify() if input arguments already type string
     # return jsonify(outputVDSLOriginalsida313NonString)
     # return outAswadiUnifi
-    # return afaideen80
-    return afaideen80Offline
+    return afaideen80
+    # return afaideen80Offline
+    # return jsonify(arifendiOffline)
     # return jsonify(inbatchaOffline)
     # return jsonify(venicefun1117)
     # return jsonify(kwong4564)

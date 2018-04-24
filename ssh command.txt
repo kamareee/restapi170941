@@ -26,6 +26,14 @@ then in folder templates, use this
     pscp -pw Cy83rj@y@ testxml.xml root@10.44.28.64:/home/user/ideas/templates
     pscp -pw Cy83rj@y@ error.xml root@10.44.28.64:/home/user/ideas/templates
     pscp -pw Cy83rj@y@ error40000.xml root@10.44.28.64:/home/user/ideas/templates
+    pscp -pw Cy83rj@y@ error40001.xml root@10.44.28.64:/home/user/ideas/templates
+    pscp -pw Cy83rj@y@ error40002.xml root@10.44.28.64:/home/user/ideas/templates
+    pscp -pw Cy83rj@y@ error40003.xml root@10.44.28.64:/home/user/ideas/templates
+    pscp -pw Cy83rj@y@ error40004.xml root@10.44.28.64:/home/user/ideas/templates
+    pscp -pw Cy83rj@y@ error40005.xml root@10.44.28.64:/home/user/ideas/templates
+    pscp -pw Cy83rj@y@ error40006.xml root@10.44.28.64:/home/user/ideas/templates
+    pscp -pw Cy83rj@y@ error40007.xml root@10.44.28.64:/home/user/ideas/templates
+    pscp -pw Cy83rj@y@ error40008.xml root@10.44.28.64:/home/user/ideas/templates
 //scp restapi_west.py root@10.44.28.64:/home/user/ideas
 
 Note: To use command pscp, install putty from https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html

@@ -44,6 +44,22 @@ class BarAPI(Resource):
             tSouth_Respond = r.json().get('tSouthRespond')
             if code == 40000:
                 return make_response(render_template('error40000.xml'), 200, headers)
+            elif code == 40001:
+                return make_response(render_template('error40001.xml'), 200, headers)
+            elif code == 40002:
+                return make_response(render_template('error40002.xml'), 200, headers)
+            elif code == 40003:
+                return make_response(render_template('error40003.xml'), 200, headers)
+            elif code == 40004:
+                return make_response(render_template('error40004.xml'), 200, headers)
+            elif code == 40005:
+                return make_response(render_template('error40005.xml'), 200, headers)
+            elif code == 40006:
+                return make_response(render_template('error40006.xml'), 200, headers)
+            elif code == 40007:
+                return make_response(render_template('error40007.xml'), 200, headers)
+            elif code == 40008:
+                return make_response(render_template('error40008.xml'), 200, headers)
             else:
                 return make_response(render_template('error.xml', msg = msg, error_msg = r.content), 200, headers)
 

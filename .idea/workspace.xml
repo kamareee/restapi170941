@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/SPANMS.py" line="699" />
+    <bookmark url="file://$PROJECT_DIR$/SPANMS.py" line="786" />
     <bookmark url="file://$PROJECT_DIR$/local_engine2.py" line="103" />
     <bookmark url="file://$PROJECT_DIR$/local_engine2.py" line="51" />
     <bookmark url="file://$PROJECT_DIR$/SPANMS.py" line="199" />
-    <bookmark url="file://$PROJECT_DIR$/PreProc.py" line="182" />
+    <bookmark url="file://$PROJECT_DIR$/PreProc.py" line="210" />
     <bookmark url="file://$PROJECT_DIR$/PreProc.py" line="59" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd38b183-e2a9-499c-bece-9e3d35c133c7" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/error40001.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/error40002.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/error40003.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/error40004.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/error40005.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/error40006.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/error40007.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/error40008.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PreProc.py" beforeDir="false" afterPath="$PROJECT_DIR$/PreProc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local_engine2.log" beforeDir="false" afterPath="$PROJECT_DIR$/local_engine2.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local_engine2.py" beforeDir="false" afterPath="$PROJECT_DIR$/local_engine2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPANMS.py" beforeDir="false" afterPath="$PROJECT_DIR$/SPANMS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restapi_west.py" beforeDir="false" afterPath="$PROJECT_DIR$/restapi_west.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ssh command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ssh command.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/error.xml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/error.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/error40000.xml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/error40000.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,38 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="testxml.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/testxml.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="error.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/error.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="7" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="error40000.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/error40000.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ssh command.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ssh command.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="25" column="49" lean-forward="true" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+            <state relative-caret-position="85">
+              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -70,8 +50,8 @@
       <file leaf-file-name="restapi_west.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/restapi_west.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+            <state relative-caret-position="304">
+              <caret line="50" column="31" lean-forward="true" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
               <folding>
                 <element signature="e#1#16#0" expanded="true" />
               </folding>
@@ -82,8 +62,8 @@
       <file leaf-file-name="local_engine2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/local_engine2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="62" column="39" lean-forward="true" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+            <state relative-caret-position="726">
+              <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
               <folding>
                 <element signature="e#172#187#0" expanded="true" />
               </folding>
@@ -94,8 +74,8 @@
       <file leaf-file-name="PreProc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PreProc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="331" selection-start-line="331" selection-end-line="331" />
+            <state relative-caret-position="116">
+              <caret line="181" column="124" lean-forward="true" selection-start-line="181" selection-start-column="124" selection-end-line="181" selection-end-column="124" />
               <folding>
                 <element signature="e#1#16#0" expanded="true" />
               </folding>
@@ -106,7 +86,7 @@
       <file leaf-file-name="restapi_south.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi_south.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
+            <state relative-caret-position="624">
               <caret line="74" column="33" lean-forward="true" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -118,12 +98,13 @@
       <file leaf-file-name="SPANMS.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SPANMS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="707" column="17" lean-forward="true" selection-start-line="707" selection-start-column="17" selection-end-line="707" selection-end-column="17" />
+            <state relative-caret-position="238">
+              <caret line="795" column="32" lean-forward="true" selection-start-line="795" selection-start-column="32" selection-end-line="795" selection-end-column="32" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
                 <element signature="e#591#1108#0" />
-                <element signature="e#34263#39335#0" />
+                <element signature="e#26853#30303#0" />
+                <element signature="e#30324#35836#0" />
               </folding>
             </state>
           </provider>
@@ -140,9 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>uploadSpeedProfileVal</find>
-      <find>dt3</find>
-      <find>dt2</find>
       <find>dt1</find>
       <find>dt4</find>
       <find>zizigreen84</find>
@@ -159,17 +137,20 @@
       <find>portInfo</find>
       <find>Vlan_500</find>
       <find>inbound</find>
-      <find>null</find>
       <find>val</find>
       <find>radiusDownload</find>
       <find>Next Best Action (NBA)</find>
-      <find>false</find>
-      <find>rec_data</find>
       <find>True</find>
       <find>true</find>
       <find>One or more attributes value missing</find>
       <find>ont</find>
       <find>tSouthRespond</find>
+      <find>hsi_billing_status</find>
+      <find>Active</find>
+      <find>rec_data</find>
+      <find>arifendi</find>
+      <find>null</find>
+      <find>false</find>
     </findStrings>
     <replaceStrings>
       <replace>content</replace>
@@ -190,9 +171,9 @@
       <replace>downstream_snr</replace>
       <replace>Physical_downlink_status</replace>
       <replace>calculate_response_time(a)</replace>
-      <replace>True</replace>
-      <replace>None</replace>
       <replace>true</replace>
+      <replace>None</replace>
+      <replace>True</replace>
       <replace>False</replace>
     </replaceStrings>
   </component>
@@ -222,12 +203,20 @@
         <option value="$PROJECT_DIR$/templates/testxml.xml" />
         <option value="$PROJECT_DIR$/restapi_south.py" />
         <option value="$PROJECT_DIR$/templates/error.xml" />
-        <option value="$PROJECT_DIR$/PreProc.py" />
         <option value="$PROJECT_DIR$/local_engine2.py" />
+        <option value="$PROJECT_DIR$/PreProc.py" />
+        <option value="$PROJECT_DIR$/templates/error40000.xml" />
+        <option value="$PROJECT_DIR$/templates/error40001.xml" />
+        <option value="$PROJECT_DIR$/templates/error40002.xml" />
+        <option value="$PROJECT_DIR$/templates/error40003.xml" />
+        <option value="$PROJECT_DIR$/templates/error40004.xml" />
+        <option value="$PROJECT_DIR$/templates/error40005.xml" />
+        <option value="$PROJECT_DIR$/templates/error40006.xml" />
+        <option value="$PROJECT_DIR$/templates/error40007.xml" />
+        <option value="$PROJECT_DIR$/templates/error40008.xml" />
+        <option value="$PROJECT_DIR$/restapi_west.py" />
         <option value="$PROJECT_DIR$/SPANMS.py" />
         <option value="$PROJECT_DIR$/ssh command.txt" />
-        <option value="$PROJECT_DIR$/templates/error40000.xml" />
-        <option value="$PROJECT_DIR$/restapi_west.py" />
       </list>
     </option>
   </component>
@@ -249,6 +238,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -270,7 +260,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,7 +294,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.restapi_west">
+  <component name="RunManager" selected="Python.SPANMS">
     <configuration name="PreProc" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="restapi170941" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -410,11 +399,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.restapi_west" />
         <item itemvalue="Python.SPANMS" />
         <item itemvalue="Python.restapi_south" />
         <item itemvalue="Python.PreProc" />
         <item itemvalue="Python.local_engine2" />
+        <item itemvalue="Python.restapi_west" />
       </list>
     </recent_temporary>
   </component>
@@ -694,7 +683,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524444258205</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="-Updated error handling for negative scenario cases in west api">
+      <created>1524463823850</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1524463823850</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TodoView">
@@ -710,57 +706,57 @@
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49695587" visible="true" weight="0.16050199" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49695587" visible="true" weight="0.16050199" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50396407" side_tool="true" weight="0.3185531" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32944608" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32847142" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49603593" visible="true" weight="0.31778425" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49603593" weight="0.31778425" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32798833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49524313" weight="0.27696794" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49524313" visible="true" weight="0.27696794" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33965015" />
       <window_info id="Favorites" order="2" sideWeight="0.5030441" side_tool="true" weight="0.1564482" />
+      <window_info anchor="right" id="R Packages" order="1" />
       <window_info anchor="bottom" id="Salesforce" order="12" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Commander" order="2" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" id="R Graphics" order="0" />
       <window_info anchor="bottom" id="Debug Logs" order="9" />
-      <window_info anchor="right" id="R Packages" order="1" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Execute Anonymous" order="10" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32963827" />
       <window_info anchor="right" id="Data View" order="5" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Salesforce" order="12" />
       <window_info anchor="bottom" id="Debug Logs" order="9" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32900676" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15653093" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="2" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="R Graphics" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="R Packages" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.3295711" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.41109854" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49895832" visible="true" weight="0.23329559" />
       <window_info anchor="bottom" id="Execute Anonymous" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49524313" weight="0.34314835" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50475687" side_tool="true" weight="0.34422535" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49895832" visible="true" weight="0.23329559" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Data View" order="5" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.3295711" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -801,7 +797,6 @@
     <ignored-roots>
       <path value="C:/../DevelopmentRepo/knnengine_v1.2" />
     </ignored-roots>
-    <MESSAGE value="Integrated PreProc engine to API" />
     <MESSAGE value="Added Upload and Download Speed Profile" />
     <MESSAGE value="Corrected speed profile calculation." />
     <MESSAGE value="Added Upload and Download Speed Profile calculation under 'VDSL' category." />
@@ -826,7 +821,8 @@
     <MESSAGE value="-Some correction&#10;-Minor update for case kwong4564@unifi" />
     <MESSAGE value="-Added handling error for case &quot;configuredProfileTx&quot;: &quot;n/a&quot;" />
     <MESSAGE value="-Corrected preproc response when hsi based on ftth and vdsl offline." />
-    <option name="LAST_COMMIT_MESSAGE" value="-Corrected preproc response when hsi based on ftth and vdsl offline." />
+    <MESSAGE value="-Updated error handling for negative scenario cases in west api" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Updated error handling for negative scenario cases in west api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -840,15 +836,13 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="364" />
+      <option name="time" value="365" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="OLT_TX_POWER" />
         <watch expression="ONT_RX_POWER" />
         <watch expression="ONT_TX_POWER" />
-        <watch expression="code" />
-        <watch expression="code" />
       </configuration>
     </watches-manager>
   </component>
@@ -874,68 +868,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/restapi_west.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local_engine2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <element signature="e#172#187#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SPANMS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restapi_south.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restapi_west.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local_engine2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <element signature="e#172#187#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restapi_south.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SPANMS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/local_engine2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1110,20 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Subroutine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="64" column="20" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/testxml.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/error.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1138,9 +1056,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Subroutine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/error40001.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/error40002.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/error40003.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="19" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/error40004.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/error40005.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/error40006.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/error40007.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/testxml.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SPANMS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="795" column="32" lean-forward="true" selection-start-line="795" selection-start-column="32" selection-end-line="795" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#591#1108#0" />
+            <element signature="e#26853#30303#0" />
+            <element signature="e#30324#35836#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/restapi_south.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
+        <state relative-caret-position="624">
           <caret line="74" column="33" lean-forward="true" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -1148,22 +1142,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SPANMS.py">
+    <entry file="file://$PROJECT_DIR$/local_engine2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="707" column="17" lean-forward="true" selection-start-line="707" selection-start-column="17" selection-end-line="707" selection-end-column="17" />
+        <state relative-caret-position="726">
+          <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <element signature="e#591#1108#0" />
-            <element signature="e#34263#39335#0" />
+            <element signature="e#172#187#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PreProc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="331" selection-start-line="331" selection-end-line="331" />
+        <state relative-caret-position="116">
+          <caret line="181" column="124" lean-forward="true" selection-start-line="181" selection-start-column="124" selection-end-line="181" selection-end-column="124" />
           <folding>
             <element signature="e#1#16#0" expanded="true" />
           </folding>
@@ -1172,32 +1164,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ssh command.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="25" column="49" lean-forward="true" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+        <state relative-caret-position="85">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/error40008.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/error40000.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local_engine2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="62" column="39" lean-forward="true" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
-          <folding>
-            <element signature="e#172#187#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/restapi_west.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+        <state relative-caret-position="304">
+          <caret line="50" column="31" lean-forward="true" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
           <folding>
             <element signature="e#1#16#0" expanded="true" />
           </folding>

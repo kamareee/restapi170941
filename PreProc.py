@@ -168,12 +168,40 @@ class BarAPI(Resource):
                     if str(attr.get('name')).__eq__('ONT_TX_POWER'):
                         ONT_TX_POWER = attr.get('value')
                         continue
-            #else:
+            # Calling the second API and retrieving the data
+            rec_data = get_new_attributes(service_id, api2_data)
+            hsi_session = rec_data.get('hsi_session')
+            radius_account_status = rec_data.get('radius_account_status')
+            hsi_billing_status = rec_data.get('hsi_billing_status')
             if attributes==None or (ONT_RX_POWER==None and ONT_TX_POWER==None and DOWNSTREAM_ACTUAL_RATE==None and UPSTREAM_ACTUAL_RATE==None and UPSTREAM_ATTENUATION==None and DOWNSTREAM_ATTENUATION==None and UPSTREAM_SNR==None and DOWNSTREAM_SNR==None):
-                # if access_type.__eq__('FTTH'):
-                msg = 'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'
-                # else:
-                #     msg = 'One or more attributes value missing.'
+
+                if hsi_session.__eq__('Offline') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
+                    msg = 'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'
+                    Return_code = 40000
+                elif hsi_session.__eq__('Captive') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
+                    msg = "Captive IP. Wrong HSI username or password. Potentially caller's having line disconnection issue"
+                    Return_code = 40001
+                elif hsi_session.__eq__('Offline') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Active'):
+                    msg = "Account Active but NOT match with radius profile. Session Offline.  Potentially caller's having line disconnection issue"
+                    Return_code = 40002
+                elif hsi_session.__eq__('Offline') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS - Potentially caller's having line disconnection issue"
+                    Return_code = 40003
+                elif hsi_session.__eq__('Captive') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS. Captive IP.  Potentially caller's having line disconnection issue"
+                    Return_code = 40004
+                elif hsi_session.__eq__('Offline') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS. Captive IP.  Potentially caller's having line disconnection issue"
+                    Return_code = 40005
+                elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS but Radius session online - Potentially caller's having line disconnection issue or Session Hang"
+                    Return_code = 40006
+                elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Active'):
+                    msg = "Account Active but Radius session inactive - potentially system issue.  Profile Not updated or Session Hang"
+                    Return_code = 40007
+                elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
+                    msg = "Session ONLINE but unable to detect physical condition"
+                    Return_code = 40008
 
                 final_data = {
                     'Return_description': 'Failed',
@@ -181,7 +209,7 @@ class BarAPI(Resource):
                     'Package_name': str(package_name),
                     'Access_type': str(access_type),
                     'Message': msg,
-                    'Return_code': 40000,
+                    'Return_code': Return_code,
                     'tPreProc': calculate_response_time(a),
                     'tSouthRespond': tSouthRespond,
                 }
@@ -327,10 +355,6 @@ class BarAPI(Resource):
 
                 return jsonify(final_data)
 
-
-            # Calling the second API and retrieving the data
-            rec_data = get_new_attributes(service_id, api2_data)
-
             if access_type == 'FTTH':
 
                 # Decide Upload and Download Speed Profile
@@ -383,23 +407,6 @@ class BarAPI(Resource):
                         Physical_downlink_status = str('Good')
                     else:
                         Physical_downlink_status = str('Bad')
-
-                # else:
-                #     # msg = 'One or more attributes value missing.'
-                #     msg = 'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'
-                #     final_data = {
-                #         'Return_description': 'Failed',
-                #         'Login_id': str(login_id),
-                #         'Package_name': str(package_name),
-                #         'Access_type': str(access_type),
-                #         'Message': msg,
-                #         'Return_code': 400,
-                #         'tPreProc': calculate_response_time(a),
-                #         'tSouthRespond': tSouthRespond,
-                #     }
-                #
-                #     return jsonify(final_data)
-
 
             elif access_type == 'VDSL':
                 serviceCategory = responseHeader.get("serviceCategory") #responseHeader is from 2nd api

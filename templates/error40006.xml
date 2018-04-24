@@ -1,0 +1,14 @@
+<responseHeader>
+<expertInfo>
+ <summary>
+     Account TOS but Radius session online - Potentially caller's having line disconnection issue or Session Hang
+ </summary >
+<prompt>Symptom: HSI Down. Account Suspended.</prompt>
+ <nextBestAction>
+     Inbound: Advice customer to pay bill or Escalate to Billing team
+ </nextBestAction>
+ <actionTaken> None </actionTaken>
+ <nextEscalation>CC</nextEscalation>
+</expertInfo>
+
+</responseHeader>

@@ -1,0 +1,14 @@
+<responseHeader>
+<expertInfo>
+ <summary>
+     Account Active but Radius session inactive - potentially system issue.  Profile Not updated or Session Hang
+ </summary >
+<prompt>Symptom: HSI Down. Inactive Profile (system issue).</prompt>
+ <nextBestAction>
+     Inbound: Lodge IRIS/Report to SPANMS.  Need to follow up with customer after 24 hours
+ </nextBestAction>
+ <actionTaken> None </actionTaken>
+ <nextEscalation>CC - IRIS</nextEscalation>
+</expertInfo>
+
+</responseHeader>

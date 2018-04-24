@@ -1,0 +1,14 @@
+<responseHeader>
+<expertInfo>
+ <summary>
+     Account TOS - Potentially caller's having line disconnection issue
+ </summary >
+<prompt>Symptom: HSI Down. Account Suspended.</prompt>
+ <nextBestAction>
+     Inbound: Advice customer to pay bill or Escalate to Billing team
+ </nextBestAction>
+ <actionTaken> None </actionTaken>
+ <nextEscalation>CC</nextEscalation>
+</expertInfo>
+
+</responseHeader>

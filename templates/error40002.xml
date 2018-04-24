@@ -1,0 +1,14 @@
+<responseHeader>
+<expertInfo>
+ <summary>
+     Account Active but NOT match with radius profile. Session Offline.  Potentially caller's having line disconnection issue
+ </summary >
+<prompt>Symptom: HSI down.  Inactive profile (system issue).</prompt>
+ <nextBestAction>
+     Inbound: Lodge IRIS / Report to SPANMS.  Need to follow up with customer after 24 hours
+ </nextBestAction>
+ <actionTaken> None </actionTaken>
+ <nextEscalation>CC - IRIS</nextEscalation>
+</expertInfo>
+
+</responseHeader>
