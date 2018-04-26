@@ -62,6 +62,8 @@ class BarAPI(Resource):
                 return make_response(render_template('error40008.xml'), 200, headers)
             elif code == 40009:
                 return make_response(render_template('error40009b.xml'), 200, headers)
+            elif code == 40010:
+                return make_response(render_template('error40010.xml'), 200, headers)
             else:
                 return make_response(render_template('error.xml', msg = msg, error_msg = r.content), 200, headers)
 

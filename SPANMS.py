@@ -859,15 +859,15 @@ def reading():
 
                 }
     error = {"retCode":200,"retDesc":"Error Can't query to EMS/NE","custInfo":{"servicePoint":"HS1025171053","loginId":loginid,"accessPort":"SDG_G026-1/7/4.7","src":"radius"},"attributes":[]}
-    # sleep(15)#in seconds
+    sleep(15)#in seconds
     print 'Engine finish...'
     # return jsonify(output)
     # return outputVDSLOriginalsida313       #don't use jsonify() if input arguments already type string
-    # return jsonify(outputVDSLOriginalsida313NonString)
+    return jsonify(outputVDSLOriginalsida313NonString)
     # return outAswadiUnifi
     # return afaideen80
     # return afaideen80Offline
-    return jsonify(arifendiOffline)
+    # return jsonify(arifendiOffline)
     # return jsonify(ummatic)   #case captive tos tos
     # return jsonify(inbatchaOffline)
     # return jsonify(venicefun1117)

@@ -31,6 +31,8 @@ class BarAPI(Resource):
         parser = reqparse.RequestParser()
         parser.add_argument('serviceID', type=str)
         json = parser.parse_args()
+        Return_code = None
+        tSouthRespond = 0
         # a1 = datetime.datetime.now()
         try:
             r = requests.get('http://localhost:5004/getParam', params=json, timeout=120)
@@ -63,17 +65,33 @@ class BarAPI(Resource):
             tPreProc = calculate_response_time(a)
             content = r.content
             if content.__contains__('HTTPError'):
-                code = content.split(" ")[1]
+                Return_code = content.split(" ")[1]
+            elif content.__contains__('Timeout'):
+                val = content.split('#')
+                val2 = val[val.__len__() - 1].split('\n')
+                val3 = val2[0].split('"')
+                tSouthRespond = long(val3[0])
+                Return_code = None
             else:
-                code = None
+                Return_code = None
+                tSouthRespond = 0
             data = {
                 'Return_description': 'Failed',
                 'Message': r.content,
-                'Return_code': code,
+                'Return_code': Return_code,
+                'tSouthRespond': tSouthRespond
             }
             return jsonify(data)
             # data = r.content
             # return data
+        attributes = r.json().get('attributes')
+        if attributes != None:
+            for attr in attributes:
+                print attr
+                if attr.get('tSouthRespond') != None:
+                    tSouthRespond = attr.get('tSouthRespond')
+                    print "tSouthRespond " + str(tSouthRespond)
+                    continue
 
         if returnDescription == 'Success':
 
@@ -96,7 +114,7 @@ class BarAPI(Resource):
 
             # Parsing for VLAN data and attributes
             trafficProfiles = r.json().get('trafficProfiles')
-            attr_rec = r.json().get('attributes')
+            # attr_rec = r.json().get('attributes')
             # Declaring necessary variables for VLAN
             vlan209_isConfigured = None
             vlan400_isConfigured = None
@@ -173,7 +191,7 @@ class BarAPI(Resource):
             hsi_session = rec_data.get('hsi_session')
             radius_account_status = rec_data.get('radius_account_status')
             hsi_billing_status = rec_data.get('hsi_billing_status')
-            Return_code = None
+
             if attributes==None or (ONT_RX_POWER==None and ONT_TX_POWER==None and DOWNSTREAM_ACTUAL_RATE==None and UPSTREAM_ACTUAL_RATE==None and UPSTREAM_ATTENUATION==None and DOWNSTREAM_ATTENUATION==None and UPSTREAM_SNR==None and DOWNSTREAM_SNR==None):
 
                 if hsi_session.__eq__('Offline') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
@@ -539,6 +557,8 @@ class BarAPI(Resource):
             data['attributes'].append({'tPreProc': tPreProc})
             data['Return_description'] = 'Failed'
             data['Message'] = r.json().get('retDesc')
+            data['Return_code'] = Return_code
+            data['tSouthRespond'] = tSouthRespond
             return jsonify(data)
 
 
