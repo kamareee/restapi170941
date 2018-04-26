@@ -115,22 +115,22 @@ Unifi users,
 
 kwong4564@unifi - terminated
 wty5051@unifi
-cheporman88@unifi
+cheporman88@unifi   - case 4
 edros@unifi
-notebookplzthemines@unifi
+notebookplzthemines@unifi   - error can't query
 naniskitchen@unifibiz
 pedramocmd@unifibiz
 vstk_services@unifibiz
 ecosolutions@unifibiz
 auntykels1@unifi
 vstk_services@unifibiz
-samzidul1234@unifi
+samzidul1234@unifi  - api2 error
 utppk@unifibiz
 bltautopart@unifibiz
-harvestcommunity@unifibiz
+harvestcommunity@unifibiz - case 3
 syedashwinr@unifibiz
 nic7chunchang@unifi
-mrtejnarayan@unifi
+mrtejnarayan@unifi-case 3
 irwan88810@unifi
 skadijahsb@unifibiz
 asrapkhan53@unifi

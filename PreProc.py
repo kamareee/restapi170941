@@ -186,6 +186,18 @@ class BarAPI(Resource):
                     if str(attr.get('name')).__eq__('ONT_TX_POWER'):
                         ONT_TX_POWER = attr.get('value')
                         continue
+            if responseHeader.get('ideas') != None:
+                if responseHeader.get('ideas').get('error') != None:
+                    api2Error = responseHeader.get('ideas').get('error')
+                    tPreProc = calculate_response_time(a)
+                    data = r.json()
+                    data['attributes'].append({'tPreProc': tPreProc})
+                    data['Return_description'] = 'Failed'
+                    data['Message'] = api2Error#r.json().get('retDesc')
+                    data['Return_code'] = Return_code
+                    data['tSouthRespond'] = tSouthRespond
+                    return jsonify(data)
+
             # Calling the second API and retrieving the data
             rec_data = get_new_attributes(service_id, api2_data)
             hsi_session = rec_data.get('hsi_session')

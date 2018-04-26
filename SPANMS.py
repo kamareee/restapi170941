@@ -858,20 +858,93 @@ def reading():
                   ]
 
                 }
+    samzidul1234 = {
+                  "attributes": [
+                    {
+                      "name": "ONT_RX_POWER",
+                      "value": None
+                    },
+                    {
+                      "name": "ONT_TX_POWER",
+                      "value": None
+                    },
+
+                  ],
+                  "custInfo": {
+                    "accessPort": "BUK_G002-0/3/1.54",
+                    "loginId": "samzidul1234@unifi",
+                    "servicePoint": "HS1025250752",
+                    "src": "granite"
+                  },
+                  "lineProfiles": [
+                    {
+                      "lineProfileRx": None,
+                      "lineProfileTx": None,
+                      "serviceProfileRx": None,
+                      "serviceProfileTx": None,
+                      "siebelProfile": "UniFi Advance Plus 50Mbps (Thank You Campaign 2017)"
+                    }
+                  ],
+                  "refId": 174055018,
+                  "retCode": 0,
+                  "retDesc": "Success",
+                  "trafficProfiles": [
+                    {
+                      "configuredProfileRx": None,
+                      "configuredProfileTx": None,
+                      "isConfigured": False,
+                      "isMissing": True,
+                      "isProfileRxMismatch": False,
+                      "isProfileTxMismatch": False,
+                      "isSubscribed": True,
+                      "objId": None,
+                      "siebelProfileRx": "256K",
+                      "siebelProfileTx": "256K",
+                      "vlan": "400"
+                    },
+                    {
+                      "configuredProfileRx": None,
+                      "configuredProfileTx": None,
+                      "isConfigured": False,
+                      "isMissing": True,
+                      "isProfileRxMismatch": False,
+                      "isProfileTxMismatch": False,
+                      "isSubscribed": True,
+                      "objId": None,
+                      "siebelProfileRx": "55M",
+                      "siebelProfileTx": "21M",
+                      "vlan": "500"
+                    },
+                    {
+                      "configuredProfileRx": None,
+                      "configuredProfileTx": None,
+                      "isConfigured": False,
+                      "isMissing": True,
+                      "isProfileRxMismatch": False,
+                      "isProfileTxMismatch": False,
+                      "isSubscribed": True,
+                      "objId": None,
+                      "siebelProfileRx": "10M",
+                      "siebelProfileTx": "10M",
+                      "vlan": "600"
+                    }
+                  ]
+                }
     error = {"retCode":200,"retDesc":"Error Can't query to EMS/NE","custInfo":{"servicePoint":"HS1025171053","loginId":loginid,"accessPort":"SDG_G026-1/7/4.7","src":"radius"},"attributes":[]}
-    sleep(15)#in seconds
+    # sleep(15)#in seconds
     print 'Engine finish...'
     # return jsonify(output)
     # return outputVDSLOriginalsida313       #don't use jsonify() if input arguments already type string
-    return jsonify(outputVDSLOriginalsida313NonString)
+    # return jsonify(outputVDSLOriginalsida313NonString)
     # return outAswadiUnifi
     # return afaideen80
     # return afaideen80Offline
     # return jsonify(arifendiOffline)
-    # return jsonify(ummatic)   #case captive tos tos
+    return jsonify(ummatic)   #case captive tos tos
     # return jsonify(inbatchaOffline)
     # return jsonify(venicefun1117)
     # return jsonify(kwong4564)
+    # return jsonify(samzidul1234)
     # return jsonify(outputVDSLOriginalNonString)
     # return jsonify(outputFTTHNoTrafficProfile)
     # return jsonify(outputFTTH)
