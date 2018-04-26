@@ -1,0 +1,28 @@
+<responseHeader>
+<expertInfo>
+ <summary>
+     Account  Active
+HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue.
+
+ </summary >
+<prompt>
+    Symptom: Session down and unable to verify physical parameters. Suspect line or CPE issue.
+</prompt>
+ <nextBestAction>
+    Inbound:
+Advice customer
+1) to OFF and ON back all equipment. (If not using VOBB).
+2) to check on physical/cable connection between all CPE.
+
+CSP to
+1) indentified customer actual issue.
+2) check Physical Parameter and current Internet Session.
+
+If Internet Session OFFLINE : Kindly create CTT and CTT  Activity.
+
+ </nextBestAction>
+ <actionTaken> None </actionTaken>
+ <nextEscalation>SDZ</nextEscalation>
+</expertInfo>
+
+</responseHeader>

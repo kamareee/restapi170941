@@ -1,6 +1,7 @@
 
 import requests
 import datetime
+import json
 from flask import Flask, render_template, make_response
 from flask_restful import Api, Resource, reqparse
 from requests import Timeout, ConnectionError, HTTPError
@@ -20,8 +21,8 @@ class BarAPI(Resource):
         print a
         r = requests.get('http://localhost:5001/getParam', params=json)
         # try:
-        # r = requests.get('http://localhost:5001/getParam',params=json,timeout=120)
-        # r.raise_for_status()
+        #     r = requests.get('http://localhost:5001/getParam',params=json,timeout=140)
+        #     r.raise_for_status()
         # except Timeout:
         #     print ("WBI:Timeout Error:")
         #     return "WBI:Timeout Error:"
@@ -34,10 +35,37 @@ class BarAPI(Resource):
 
         headers = {'Content-Type': 'text/xml'}
         Return_description = r.json().get('Return_description')
+
         if str(Return_description).__eq__('Failed'):
             # return r.content
             print r.content
-            return make_response(render_template('error.xml', error_msg = r.content), 200, headers)
+            msg = r.json().get('Message')
+            code = r.json().get('Return_code')
+            tSouth_Respond = r.json().get('tSouthRespond')
+            if code == 40000:
+                return make_response(render_template('error40000.xml'), 200, headers)
+            elif code == 40001:
+                return make_response(render_template('error40001.xml'), 200, headers)
+            elif code == 40002:
+                return make_response(render_template('error40002.xml'), 200, headers)
+            elif code == 40003:
+                return make_response(render_template('error40003.xml'), 200, headers)
+            elif code == 40004:
+                return make_response(render_template('error40004.xml'), 200, headers)
+            elif code == 40005:
+                return make_response(render_template('error40005.xml'), 200, headers)
+            elif code == 40006:
+                return make_response(render_template('error40006.xml'), 200, headers)
+            elif code == 40007:
+                return make_response(render_template('error40007.xml'), 200, headers)
+            elif code == 40008:
+                return make_response(render_template('error40008.xml'), 200, headers)
+            elif code == 40009:
+                return make_response(render_template('error40009b.xml'), 200, headers)
+            elif code == 40010:
+                return make_response(render_template('error40010.xml'), 200, headers)
+            else:
+                return make_response(render_template('error.xml', msg = msg, error_msg = r.content), 200, headers)
 
 
         try:

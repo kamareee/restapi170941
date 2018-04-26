@@ -35,17 +35,17 @@ class BarAPI(Resource):
             r.raise_for_status()
             a2 = datetime.now()
         except Timeout:
-            resp = self.calculate_response_time(a2)
+            resp = self.calculate_response_time(datetime.now())
             app.logger.debug("Process finished")
             app.logger.info("------------------------")
             return {"Message": "Timeout Error", "Response_time": resp, "Return_code": 408}
         except HTTPError:
-            resp = self.calculate_response_time(a2)
+            resp = self.calculate_response_time(datetime.now())
             app.logger.debug("Process finished")
             app.logger.info("------------------------")
             return {"Message": "HTTPError Error", "Response_time": resp, "Return_code": 505}
         except ConnectionError:
-            resp = self.calculate_response_time(a2)
+            resp = self.calculate_response_time(datetime.now())
             app.logger.info("Process finished")
             app.logger.info("------------------------")
             return {"Message": "ConnectionError Error", "Response_time": resp, "Return_code": 503}
@@ -56,10 +56,13 @@ class BarAPI(Resource):
             app.logger.debug("Content from HTTP response: %s", content)
             app.logger.info("Process finished")
             app.logger.info("------------------------")
-            return {"Return_code": 400,
+            Return_code = content['Return_code']
+            return {"Return_code": Return_code,#400,
                     "Message": content['Message'],
                     "Return_description": content['Return_description'],
-                    "Response_time": resp}
+                    "Response_time": resp,
+                    "tSouthRespond":content['tSouthRespond'],
+                    }
 
         # Declaring necessary variables
         training_data_filename = 'training_data.csv'
@@ -173,8 +176,9 @@ class BarAPI(Resource):
                     "ExpertMatrix": str(final_exp_matrix),
                     "MatchMatrix": str(final_match_matrix),
                     "Summary": str(advisory_result['summary']),
-                    "Prompt": str(advisory_result['symptom']),
-                    "Action": str(advisory_result['next_action_update']),
+                    "Prompt": str(advisory_result['prompt']),
+                    "Inbound": str(advisory_result['inbound']),
+                    "Action": None,
                     "NextEscalation": str(advisory_result['next_escalation']),
                     "tEngineRespond": t_engine_respond,
                     "Return_code": 200,
@@ -225,8 +229,8 @@ class BarAPI(Resource):
             conn.close()
 
             return {"summary": str(advisory_result['advisory_connectivity_summary']),
-                    "symptom": str(advisory_result['advisory_symptom']),
-                    "next_action_update": str(advisory_result['advisory_next_action_update']),
+                    "prompt": str(advisory_result['prompt']),
+                    "inbound": str(advisory_result['inbound']),
                     "next_escalation": str(advisory_result['advisory_next_escalation']),
                     "Message": "All database query executed successfully."
                     }

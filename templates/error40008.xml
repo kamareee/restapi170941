@@ -1,0 +1,28 @@
+<responseHeader>
+<expertInfo>
+ <summary>
+     Session ONLINE but unable to detect physical condition
+ </summary >
+<prompt>Symptom:
+Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).
+</prompt>
+ <nextBestAction>
+     Inbound:
+Advice customer
+1) to OFF and ON back all equipment. (If not using VOBB).
+
+CSP to
+1) check current Speed Profile
+If Speed Profile Mismatch : Kindly create SR and assign to Backend.
+If Speed Profile Corrected : Advice customer to do the IEMT Performance Test.
+
+Backend:
+Call HBC to configure Speed Profile.
+If the problem persist create CTT to HBC/ SDZ if required (Suspected CPE or need HBC for further investigation - based on consult call)
+
+ </nextBestAction>
+ <actionTaken> None </actionTaken>
+ <nextEscalation>CC - Backend</nextEscalation>
+</expertInfo>
+
+</responseHeader>

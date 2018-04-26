@@ -1,0 +1,24 @@
+<responseHeader>
+<expertInfo>
+ <summary> 
+ Account Active.
+HSI Session Captive IP.
+
+ </summary >
+<prompt>Symptom:
+No Internet connection.
+Using/configure wrong HSI username and password.
+</prompt>
+ <nextBestAction> 
+ Inbound: 
+Advice customer to :
+1) Configure HSI login/Password 
+CSP to
+1) Refer to CPE configuration WI
+
+ </nextBestAction>
+ <actionTaken> None </actionTaken>
+ <nextEscalation>no escalation required</nextEscalation>
+</expertInfo>
+
+</responseHeader>

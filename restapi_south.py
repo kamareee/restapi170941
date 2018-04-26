@@ -41,8 +41,8 @@ class BarAPI(Resource):
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         session = FuturesSession()
 
-        # api_one = session.post('http://httpstat.us/402', json=payload, headers=headers, timeout=120)  #simulate error for http
-        api_one = session.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers, timeout=120) #used for local test
+        # api_one = session.post('http://httpstat.us/400', json=payload, headers=headers, timeout=120)  #simulate error for http
+        api_one = session.post('http://localhost:9001/rest/api/reading', json=payload, headers=headers, timeout=10) #used for local test
         # api_one = session.post('http://10.41.56.90:9001/rest/api/reading', json=payload, headers=headers, timeout=120) #actual deployment
         api_two = session.get('http://10.45.196.65/IDEAS/ideas.do?serviceID=' + serviceID)
         try:
@@ -52,11 +52,20 @@ class BarAPI(Resource):
             r2.raise_for_status()
         except ConnectionError as e:
             print('ConnectionError ' + str(e.message))
+            b = datetime.datetime.now()
+            delta = b - a
+            tSouthRespond = int(delta.total_seconds() * 1000)  # miliseconds
             return str('ConnectionError ' + str(e.message))
         except Timeout as e:
+            b = datetime.datetime.now()
+            delta = b - a
+            tSouthRespond = int(delta.total_seconds() * 1000)  # miliseconds
             print('Timeout '+ str(e.message))
-            return str('Timeout '+ str(e.message))
+            return 'Timeout '+ str(e.message) + '#' + str(tSouthRespond)
         except HTTPError as e:
+            b = datetime.datetime.now()
+            delta = b - a
+            tSouthRespond = int(delta.total_seconds() * 1000)  # miliseconds
             print('HTTPError '+e.message)
             return str('HTTPError '+e.message)
 

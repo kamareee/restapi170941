@@ -31,6 +31,8 @@ class BarAPI(Resource):
         parser = reqparse.RequestParser()
         parser.add_argument('serviceID', type=str)
         json = parser.parse_args()
+        Return_code = None
+        tSouthRespond = 0
         # a1 = datetime.datetime.now()
         try:
             r = requests.get('http://localhost:5004/getParam', params=json, timeout=120)
@@ -63,17 +65,33 @@ class BarAPI(Resource):
             tPreProc = calculate_response_time(a)
             content = r.content
             if content.__contains__('HTTPError'):
-                code = content.split(" ")[1]
+                Return_code = content.split(" ")[1]
+            elif content.__contains__('Timeout'):
+                val = content.split('#')
+                val2 = val[val.__len__() - 1].split('\n')
+                val3 = val2[0].split('"')
+                tSouthRespond = long(val3[0])
+                Return_code = None
             else:
-                code = None
+                Return_code = None
+                tSouthRespond = 0
             data = {
                 'Return_description': 'Failed',
                 'Message': r.content,
-                'Return_code': code,
+                'Return_code': Return_code,
+                'tSouthRespond': tSouthRespond
             }
             return jsonify(data)
             # data = r.content
             # return data
+        attributes = r.json().get('attributes')
+        if attributes != None:
+            for attr in attributes:
+                print attr
+                if attr.get('tSouthRespond') != None:
+                    tSouthRespond = attr.get('tSouthRespond')
+                    print "tSouthRespond " + str(tSouthRespond)
+                    continue
 
         if returnDescription == 'Success':
 
@@ -96,7 +114,7 @@ class BarAPI(Resource):
 
             # Parsing for VLAN data and attributes
             trafficProfiles = r.json().get('trafficProfiles')
-            attr_rec = r.json().get('attributes')
+            # attr_rec = r.json().get('attributes')
             # Declaring necessary variables for VLAN
             vlan209_isConfigured = None
             vlan400_isConfigured = None
@@ -124,6 +142,13 @@ class BarAPI(Resource):
             attributes = r.json().get('attributes')
             ONT_TX_POWER = None
             ONT_RX_POWER = None
+            UPSTREAM_ACTUAL_RATE = None
+            DOWNSTREAM_ACTUAL_RATE = None
+            UPSTREAM_ATTENUATION = None
+            DOWNSTREAM_ATTENUATION = None
+            UPSTREAM_SNR = None
+            DOWNSTREAM_SNR = None
+
             if attributes != None:
                 for attr in attributes:
                     print attr
@@ -132,10 +157,16 @@ class BarAPI(Resource):
                         print "tSouthRespond " + str(tSouthRespond)
                         continue
                     if str(attr.get('name')).__eq__('UPSTREAM_ACTUAL_RATE'):
-                        UPSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
+                        if attr.get('value') != None:
+                            UPSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
+                        else:
+                            UPSTREAM_ACTUAL_RATE = None
                         continue
                     if str(attr.get('name')).__eq__('DOWNSTREAM_ACTUAL_RATE'):
-                        DOWNSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
+                        if attr.get('value')!=None:
+                            DOWNSTREAM_ACTUAL_RATE = attr.get('value') * 1000.0
+                        else:
+                            DOWNSTREAM_ACTUAL_RATE = None
                         continue
                     if str(attr.get('name')).__eq__('UPSTREAM_ATTENUATION'):
                         UPSTREAM_ATTENUATION = attr.get('value')
@@ -155,24 +186,63 @@ class BarAPI(Resource):
                     if str(attr.get('name')).__eq__('ONT_TX_POWER'):
                         ONT_TX_POWER = attr.get('value')
                         continue
-            else:
-                # if access_type.__eq__('FTTH'):
-                msg = 'Next Best Action (NBA)'
-                # else:
-                #     msg = 'One or more attributes value missing.'
+            # Calling the second API and retrieving the data
+            rec_data = get_new_attributes(service_id, api2_data)
+            hsi_session = rec_data.get('hsi_session')
+            radius_account_status = rec_data.get('radius_account_status')
+            hsi_billing_status = rec_data.get('hsi_billing_status')
 
+            if attributes==None or (ONT_RX_POWER==None and ONT_TX_POWER==None and DOWNSTREAM_ACTUAL_RATE==None and UPSTREAM_ACTUAL_RATE==None and UPSTREAM_ATTENUATION==None and DOWNSTREAM_ATTENUATION==None and UPSTREAM_SNR==None and DOWNSTREAM_SNR==None):
+
+                if hsi_session.__eq__('Offline') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
+                    msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
+                    Return_code = 40000 #9a
+                elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
+                    msg = "Session ONLINE but unable to detect physical condition"
+                    Return_code = 40008
+
+            if Return_code == None:
+                if hsi_session.__eq__('Captive') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
+                    msg = "Account Active. HSI Session Captive IP."
+                    Return_code = 40001
+                elif hsi_session.__eq__('Offline') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Active'):
+                    msg = "Account Active System Miss Match. RADIUS TOS. Internet Session Offline"
+                    Return_code = 40002
+                elif hsi_session.__eq__('Offline') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS"
+                    Return_code = 40003
+                elif hsi_session.__eq__('Captive') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS Internet Session Captive"
+                    Return_code = 40004
+                elif hsi_session.__eq__('Offline') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS System Miss Match. RADIUS active. Internet Session Offline"
+                    Return_code = 40005
+                elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS System Miss Match. RADIUS active. Internet Session Online"
+                    Return_code = 40006
+                elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Active'):
+                    msg = "Account Active System Miss Match. RADIUS TOS. Internet Session Online"
+                    Return_code = 40007
+                elif hsi_session.__eq__('Captive') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS System Miss Match. RADIUS active. Internet Session Captive"
+                    Return_code = 40010
+                elif hsi_billing_status.__eq__(''):
+                    msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
+                    Return_code = 40009 #9b
+
+
+            if Return_code != None:
                 final_data = {
                     'Return_description': 'Failed',
                     'Login_id': str(login_id),
                     'Package_name': str(package_name),
                     'Access_type': str(access_type),
                     'Message': msg,
-                    'Return_code': 400,
+                    'Return_code': Return_code,
                     'tPreProc': calculate_response_time(a),
                     'tSouthRespond': tSouthRespond,
                 }
                 return jsonify(final_data)
-
 
             if trafficProfiles != None:
                 for profile in trafficProfiles:
@@ -205,7 +275,8 @@ class BarAPI(Resource):
                             siebelProfileTxVal = float(re.split('M|K', siebelProfileTx)[0]) * unit;
 
                         configuredProfileTx = vln500['configuredProfileTx']
-                        if configuredProfileTx != None:
+                        val = str(configuredProfileTx).__contains__('n/a')
+                        if configuredProfileTx != None and not(val) :
                             if str(configuredProfileTx).__contains__('M'):
                                 unit = 1000000.0;
                             elif str(configuredProfileTx).__contains__('K'):
@@ -221,7 +292,8 @@ class BarAPI(Resource):
                             siebelProfileRxVal = float(re.split('M|K', siebelProfileRx)[0]) * unit;
 
                         configuredProfileRx = vln500['configuredProfileRx']
-                        if configuredProfileRx != None:
+                        val = str(configuredProfileRx).__contains__('n/a')
+                        if configuredProfileRx != None and not(val):
                             if str(configuredProfileRx).__contains__('M'):
                                 unit = 1000000.0;
                             elif str(configuredProfileRx).__contains__('K'):
@@ -297,7 +369,7 @@ class BarAPI(Resource):
                 radiusUpload = responseHeader.get('hsiService').get('radiusUpload')
                 radiusDownload = responseHeader.get('hsiService').get('radiusDownload')
 
-            if radiusDownload==None or radiusUpload==None:
+            if radiusDownload==None or radiusUpload==None: #or (access_type == 'VDSL' and (UPSTREAM_ACTUAL_RATE==None or DOWNSTREAM_ACTUAL_RATE==None)):
                 msg = 'One or more attributes value missing.'
                 final_data = {
                     'Return_description': 'Failed',
@@ -311,10 +383,6 @@ class BarAPI(Resource):
                 }
 
                 return jsonify(final_data)
-
-
-            # Calling the second API and retrieving the data
-            rec_data = get_new_attributes(service_id, api2_data)
 
             if access_type == 'FTTH':
 
@@ -368,22 +436,6 @@ class BarAPI(Resource):
                         Physical_downlink_status = str('Good')
                     else:
                         Physical_downlink_status = str('Bad')
-
-                else:
-                    msg = 'One or more attributes value missing.'
-                    final_data = {
-                        'Return_description': 'Failed',
-                        'Login_id': str(login_id),
-                        'Package_name': str(package_name),
-                        'Access_type': str(access_type),
-                        'Message': msg,
-                        'Return_code': 400,
-                        'tPreProc': calculate_response_time(a),
-                        'tSouthRespond': tSouthRespond,
-                    }
-
-                    return jsonify(final_data)
-
 
             elif access_type == 'VDSL':
                 serviceCategory = responseHeader.get("serviceCategory") #responseHeader is from 2nd api
@@ -505,6 +557,8 @@ class BarAPI(Resource):
             data['attributes'].append({'tPreProc': tPreProc})
             data['Return_description'] = 'Failed'
             data['Message'] = r.json().get('retDesc')
+            data['Return_code'] = Return_code
+            data['tSouthRespond'] = tSouthRespond
             return jsonify(data)
 
 

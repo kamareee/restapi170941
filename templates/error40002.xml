@@ -1,0 +1,26 @@
+<responseHeader>
+<expertInfo>
+ <summary>
+     Account Active
+System Miss Match. 
+RADIUS TOS.
+Internet Session Offline
+
+ </summary >
+<prompt>Symptom:
+No internet connection.
+</prompt>
+ <nextBestAction>
+     Inbound: 
+Lodge IRIS and create SR and assign to Backend.
+
+Backend:
+Follow-up to NOVA Helpdesk and RADIUS Team.
+Need to  follow up with customer after 24 hours
+
+ </nextBestAction>
+ <actionTaken> None </actionTaken>
+ <nextEscalation>CC - Backend</nextEscalation>
+</expertInfo>
+
+</responseHeader>
