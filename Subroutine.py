@@ -16,15 +16,19 @@ def get_new_attributes(serviceid, data):
     service_status = content.get('responseHeader').get('serviceCategory')[0]['serviceStatus']
     if service_status.lower() == 'active':
         hsi_billing_status = 'Active'
-    else:
+    elif service_status.lower() == 'tos':
         hsi_billing_status = 'Tos'
+    else:
+        hsi_billing_status = ''
 
     # Radius Account Status
     radius_status = content.get('responseHeader').get('hsiService').get('radiusStatus')
     if radius_status.lower() == 'active':
         radius_acct_status = 'Active'
-    else:
+    elif radius_status.lower() == 'tos':
         radius_acct_status = 'Tos'
+    else:
+        radius_acct_status = ''
 
     radiusUpload = content.get('responseHeader').get('hsiService').get('radiusUpload')
     if str(radiusUpload).__contains__('M'):

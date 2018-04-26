@@ -1,14 +1,26 @@
 <responseHeader>
 <expertInfo>
  <summary>
-     Account Active but Radius session inactive - potentially system issue.  Profile Not updated or Session Hang
+     Account Active
+System Miss Match.
+RADIUS TOS.
+Internet Session Online
+
  </summary >
-<prompt>Symptom: HSI Down. Inactive Profile (system issue).</prompt>
+<prompt>Symptom:
+Internet Connection Hang
+</prompt>
  <nextBestAction>
-     Inbound: Lodge IRIS/Report to SPANMS.  Need to follow up with customer after 24 hours
+     Inbound:
+Lodge IRIS and create SR and assign to Backend.
+
+Backend:
+Follow-up to NOVA Helpdesk and RADIUS Team.
+Need to  follow up with customer after 24 hours
+
  </nextBestAction>
  <actionTaken> None </actionTaken>
- <nextEscalation>CC - IRIS</nextEscalation>
+ <nextEscalation>CC - Backend</nextEscalation>
 </expertInfo>
 
 </responseHeader>

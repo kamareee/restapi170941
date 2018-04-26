@@ -19,19 +19,19 @@ class BarAPI(Resource):
         # payload = {'serviceID': serviceID}
         a = datetime.datetime.now()
         print a
-        # r = requests.get('http://localhost:5001/getParam', params=json)
-        try:
-            r = requests.get('http://localhost:5001/getParam',params=json,timeout=140)
-            r.raise_for_status()
-        except Timeout:
-            print ("WBI:Timeout Error:")
-            return "WBI:Timeout Error:"
-        except HTTPError:
-            print ("WBI:HTTPError Error:")
-            return "WBI:HTTPError Error:"
-        except ConnectionError:
-            print ("WBI:ConnectionError Error:")
-            return "WBI:ConnectionError Error:"
+        r = requests.get('http://localhost:5001/getParam', params=json)
+        # try:
+        #     r = requests.get('http://localhost:5001/getParam',params=json,timeout=140)
+        #     r.raise_for_status()
+        # except Timeout:
+        #     print ("WBI:Timeout Error:")
+        #     return "WBI:Timeout Error:"
+        # except HTTPError:
+        #     print ("WBI:HTTPError Error:")
+        #     return "WBI:HTTPError Error:"
+        # except ConnectionError:
+        #     print ("WBI:ConnectionError Error:")
+        #     return "WBI:ConnectionError Error:"
 
         headers = {'Content-Type': 'text/xml'}
         Return_description = r.json().get('Return_description')
@@ -60,6 +60,8 @@ class BarAPI(Resource):
                 return make_response(render_template('error40007.xml'), 200, headers)
             elif code == 40008:
                 return make_response(render_template('error40008.xml'), 200, headers)
+            elif code == 40009:
+                return make_response(render_template('error40009b.xml'), 200, headers)
             else:
                 return make_response(render_template('error.xml', msg = msg, error_msg = r.content), 200, headers)
 

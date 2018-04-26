@@ -1,13 +1,24 @@
 <responseHeader>
 <expertInfo>
- <summary> Captive IP. Wrong HSI username or password. Potentially caller's having line disconnection issue
+ <summary> 
+ Account Active.
+HSI Session Captive IP.
+
  </summary >
-<prompt>Symptom: HSI down. Captive VR.</prompt>
- <nextBestAction> Inbound: Guide caller's to
-Configure RG/Router login/Password - Please refer to RG configuration WIFI
+<prompt>Symptom:
+No Internet connection.
+Using/configure wrong HSI username and password.
+</prompt>
+ <nextBestAction> 
+ Inbound: 
+Advice customer to :
+1) Configure HSI login/Password 
+CSP to
+1) Refer to CPE configuration WI
+
  </nextBestAction>
  <actionTaken> None </actionTaken>
- <nextEscalation>CC</nextEscalation>
+ <nextEscalation>no escalation required</nextEscalation>
 </expertInfo>
 
 </responseHeader>

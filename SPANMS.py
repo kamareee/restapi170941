@@ -783,6 +783,81 @@ def reading():
                             }
                           ]
                         }
+    ummatic = {
+                  "attributes": [
+                    {
+                      "name": "ONT_RX_POWER",
+                      "value": -21.388
+                    },
+                    {
+                      "name": "ONT_TX_POWER",
+                      "value": 3.0
+                    },
+                    {
+                      "tSouthRespond": 20147
+                    }
+                  ],
+                  "custInfo": {
+                    "accessPort": "SPE_G002-1/7/1.22",
+                    "loginId": "ummatic@unifibiz",
+                    "servicePoint": "HS1018680634",
+                    "src": "radius"
+                  },
+                  "lineProfiles": [
+                    {
+                      "lineProfileRx": "n/a",
+                      "lineProfileTx": "n/a",
+                      "serviceProfileRx": "NotSupport",
+                      "serviceProfileTx": "NotSupport",
+                      "siebelProfile": "UniFi Biz Advance Plus 50Mbps  Free Speed Upgrade (BIP)"
+                    }
+                  ],
+                  "refId": 173788013,
+                  "retCode": 0,
+                  "retDesc": "Success",
+                  "trafficProfiles": [
+                    {
+                      "configuredProfileRx": "512K_DOWN",
+                      "configuredProfileTx": "512K_UP",
+                      "isConfigured": True,
+                      "isMissing": False,
+                      "isProfileRxMismatch": False,
+                      "isProfileTxMismatch": False,
+                      "isSubscribed": False,
+                      "objId": "SPE_G002:FLOW-1-1-7-1-22-1-1-3:IS-NR",
+                      "siebelProfileRx": None,
+                      "siebelProfileTx": None,
+                      "vlan": "209"
+                    },
+                    {
+                      "configuredProfileRx": "256K_DOWN",
+                      "configuredProfileTx": "256K_UP",
+                      "isConfigured": True,
+                      "isMissing": False,
+                      "isProfileRxMismatch": False,
+                      "isProfileTxMismatch": False,
+                      "isSubscribed": True,
+                      "objId": "SPE_G002:VOIP-1-1-7-1-22-1:IS-NR",
+                      "siebelProfileRx": "256K",
+                      "siebelProfileTx": "256K",
+                      "vlan": "400"
+                    },
+                    {
+                      "configuredProfileRx": "55M_DOWN",
+                      "configuredProfileTx": "21M_UP",
+                      "isConfigured": True,
+                      "isMissing": False,
+                      "isProfileRxMismatch": False,
+                      "isProfileTxMismatch": False,
+                      "isSubscribed": True,
+                      "objId": "SPE_G002:FLOW-1-1-7-1-22-1-1-1:IS-NR",
+                      "siebelProfileRx": "55M",
+                      "siebelProfileTx": "21M",
+                      "vlan": "500"
+                    }
+                  ]
+
+                }
     error = {"retCode":200,"retDesc":"Error Can't query to EMS/NE","custInfo":{"servicePoint":"HS1025171053","loginId":loginid,"accessPort":"SDG_G026-1/7/4.7","src":"radius"},"attributes":[]}
     # sleep(15)#in seconds
     print 'Engine finish...'
@@ -790,9 +865,10 @@ def reading():
     # return outputVDSLOriginalsida313       #don't use jsonify() if input arguments already type string
     # return jsonify(outputVDSLOriginalsida313NonString)
     # return outAswadiUnifi
-    return afaideen80
+    # return afaideen80
     # return afaideen80Offline
-    # return jsonify(arifendiOffline)
+    return jsonify(arifendiOffline)
+    # return jsonify(ummatic)   #case captive tos tos
     # return jsonify(inbatchaOffline)
     # return jsonify(venicefun1117)
     # return jsonify(kwong4564)

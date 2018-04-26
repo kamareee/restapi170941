@@ -4,15 +4,17 @@
      Account TOS
 System Miss Match.
 RADIUS active.
-Internet Session Offline
+Internet Session Captive
 
  </summary >
-<prompt>Symptom:
+<prompt>
+    Symptom:
 Account Suspended.
 No internet connection.
+
 </prompt>
  <nextBestAction>
-     Inbound:
+    Inbound:
 Advise customer to:
 1) Pay Bill
 CSP to

@@ -1,14 +1,28 @@
 <responseHeader>
 <expertInfo>
  <summary>
-     Account TOS but Radius session online - Potentially caller's having line disconnection issue or Session Hang
+     Account TOS
+System Miss Match.
+RADIUS active.
+Internet Session Online
+
+
  </summary >
-<prompt>Symptom: HSI Down. Account Suspended.</prompt>
+<prompt>Symptom:
+Account Suspended.
+Internet Connection Hang
+</prompt>
  <nextBestAction>
-     Inbound: Advice customer to pay bill or Escalate to Billing team
+     Inbound:
+Advise customer to:
+1) Pay Bill
+CSP to
+1) Escalate to Billing Team if required (Follow current process)
+
+
  </nextBestAction>
  <actionTaken> None </actionTaken>
- <nextEscalation>CC</nextEscalation>
+ <nextEscalation>CC (Billing)</nextEscalation>
 </expertInfo>
 
 </responseHeader>

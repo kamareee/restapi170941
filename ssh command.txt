@@ -34,6 +34,8 @@ then in folder templates, use this
     pscp -pw Cy83rj@y@ error40006.xml root@10.44.28.64:/home/user/ideas/templates
     pscp -pw Cy83rj@y@ error40007.xml root@10.44.28.64:/home/user/ideas/templates
     pscp -pw Cy83rj@y@ error40008.xml root@10.44.28.64:/home/user/ideas/templates
+    pscp -pw Cy83rj@y@ error40009b.xml root@10.44.28.64:/home/user/ideas/templates
+    pscp -pw Cy83rj@y@ error40010.xml root@10.44.28.64:/home/user/ideas/templates
 //scp restapi_west.py root@10.44.28.64:/home/user/ideas
 
 Note: To use command pscp, install putty from https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
@@ -144,6 +146,9 @@ No v209
 aswadiunifi@unifi
 terminated case
 kwong4564@unifi
+case 3--->rafaeico, kksangkaya
+case 4-->sommakasb, ummatic, premierproject
+case 9a-->arifendi@unifi
 
 vdsl acct:
 venicefun1117@unifi

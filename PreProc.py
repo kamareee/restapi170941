@@ -173,36 +173,47 @@ class BarAPI(Resource):
             hsi_session = rec_data.get('hsi_session')
             radius_account_status = rec_data.get('radius_account_status')
             hsi_billing_status = rec_data.get('hsi_billing_status')
+            Return_code = None
             if attributes==None or (ONT_RX_POWER==None and ONT_TX_POWER==None and DOWNSTREAM_ACTUAL_RATE==None and UPSTREAM_ACTUAL_RATE==None and UPSTREAM_ATTENUATION==None and DOWNSTREAM_ATTENUATION==None and UPSTREAM_SNR==None and DOWNSTREAM_SNR==None):
 
                 if hsi_session.__eq__('Offline') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
-                    msg = 'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'
-                    Return_code = 40000
-                elif hsi_session.__eq__('Captive') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
-                    msg = "Captive IP. Wrong HSI username or password. Potentially caller's having line disconnection issue"
-                    Return_code = 40001
-                elif hsi_session.__eq__('Offline') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Active'):
-                    msg = "Account Active but NOT match with radius profile. Session Offline.  Potentially caller's having line disconnection issue"
-                    Return_code = 40002
-                elif hsi_session.__eq__('Offline') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Tos'):
-                    msg = "Account TOS - Potentially caller's having line disconnection issue"
-                    Return_code = 40003
-                elif hsi_session.__eq__('Captive') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Tos'):
-                    msg = "Account TOS. Captive IP.  Potentially caller's having line disconnection issue"
-                    Return_code = 40004
-                elif hsi_session.__eq__('Offline') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Tos'):
-                    msg = "Account TOS. Captive IP.  Potentially caller's having line disconnection issue"
-                    Return_code = 40005
-                elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Tos'):
-                    msg = "Account TOS but Radius session online - Potentially caller's having line disconnection issue or Session Hang"
-                    Return_code = 40006
-                elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Active'):
-                    msg = "Account Active but Radius session inactive - potentially system issue.  Profile Not updated or Session Hang"
-                    Return_code = 40007
+                    msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
+                    Return_code = 40000 #9a
                 elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
                     msg = "Session ONLINE but unable to detect physical condition"
                     Return_code = 40008
 
+            if Return_code == None:
+                if hsi_session.__eq__('Captive') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
+                    msg = "Account Active. HSI Session Captive IP."
+                    Return_code = 40001
+                elif hsi_session.__eq__('Offline') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Active'):
+                    msg = "Account Active System Miss Match. RADIUS TOS. Internet Session Offline"
+                    Return_code = 40002
+                elif hsi_session.__eq__('Offline') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS"
+                    Return_code = 40003
+                elif hsi_session.__eq__('Captive') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS Internet Session Captive"
+                    Return_code = 40004
+                elif hsi_session.__eq__('Offline') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS System Miss Match. RADIUS active. Internet Session Offline"
+                    Return_code = 40005
+                elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS System Miss Match. RADIUS active. Internet Session Online"
+                    Return_code = 40006
+                elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Tos') and hsi_billing_status.__eq__('Active'):
+                    msg = "Account Active System Miss Match. RADIUS TOS. Internet Session Online"
+                    Return_code = 40007
+                elif hsi_session.__eq__('Captive') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Tos'):
+                    msg = "Account TOS System Miss Match. RADIUS active. Internet Session Captive"
+                    Return_code = 40010
+                elif hsi_billing_status.__eq__(''):
+                    msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
+                    Return_code = 40009 #9b
+
+
+            if Return_code != None:
                 final_data = {
                     'Return_description': 'Failed',
                     'Login_id': str(login_id),

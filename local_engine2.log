@@ -1442,3 +1442,136 @@ Parsed json: {'serviceID': 'afaideen80@unifi'}
 Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 2, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2203, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
 Process finished
 ------------------------
+Process started at: 2018-04-24 11:48:37.439000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 1, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40008, u'Access_type': u'FTTH', u'tSouthRespond': 6259, u'Message': u'Session ONLINE but unable to detect physical condition'}
+Process finished
+------------------------
+Process started at: 2018-04-24 11:49:41.836000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 28998, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40008, u'Access_type': u'FTTH', u'tSouthRespond': 2113, u'Message': u'Session ONLINE but unable to detect physical condition'}
+Process finished
+------------------------
+Process started at: 2018-04-24 11:55:48.927000
+Parsed json: {'serviceID': 'arifendi@unifi'}
+Content from HTTP response: {u'Login_id': u'arifendi@unifi', u'tPreProc': 3559, u'Package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 3056, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-24 11:59:32.495000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 60.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 60.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'inbound': 'Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'prompt': 'Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).', 'Message': 'All database query executed successfully.', 'summary': 'HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.'}
+Expert Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-04-24 12:13:44.018000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 60.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 60.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'inbound': 'Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'prompt': 'Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).', 'Message': 'All database query executed successfully.', 'summary': 'HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.'}
+Expert Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-04-24 12:14:20.839000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 60.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 60.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'inbound': 'Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'prompt': 'Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).', 'Message': 'All database query executed successfully.', 'summary': 'HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.'}
+Expert Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-60.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-04-24 15:02:03.844000
+Parsed json: {'serviceID': 'arifendi@unifi'}
+Content from HTTP response: {u'Login_id': u'arifendi@unifi', u'tPreProc': 2, u'Package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 8058, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-24 15:04:02.027000
+Parsed json: {'serviceID': 'arifendi@unifi'}
+Content from HTTP response: {u'Login_id': u'arifendi@unifi', u'tPreProc': 58647, u'Package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2578, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-24 15:05:17.619000
+Parsed json: {'serviceID': 'arifendi@unifi'}
+Content from HTTP response: {u'Login_id': u'arifendi@unifi', u'tPreProc': 1, u'Package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2501, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-25 15:58:44.843000
+Parsed json: {'serviceID': 'ummatic@unifibiz'}
+Data parsed from South API response: [u'Tos', u'Tos', u'Captive', 3.0, 66.67, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [0.0, 0.0, 3.0, 3.0, 66.67, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [0.0, 1.0, 3.0, 3.0, 66.67, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '6e'}
+Predicted class by KNN: 6e
+Neighbours: [0.0, 1.0, 3.0, 3.0, 66.67, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Captive', 'package_name': u'UniFi Biz Advance Plus 50Mbps  Free Speed Upgrade (BIP)', 'radius_acct_status': u'Tos', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 66.67, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 3.0, 'device_host_name': u'SPE_G002', 'physical_downlink_status': u'Good', 'login': u'ummatic@unifibiz', 'hsi_billing_status': u'Tos', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'inbound': 'Inbound:Advise customer to:1) Pay BillCSP to1) Escalate to Billing Team if required (Follow current process)', 'next_escalation': 'CC (Billing)', 'prompt': 'Symptom:Account Suspended.No internet connection.', 'Message': 'All database query executed successfully.', 'summary': 'Account TOSSystem Miss Match. RADIUS active.'}
+Expert Matrix: 0-0-3-3.0-66.67-1-1-1-1-1-1-1-1
+Matched Matrix: 0-1-3-3.0-66.67-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-04-25 16:00:40.476000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 40.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 40.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'inbound': 'Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'prompt': 'Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).', 'Message': 'All database query executed successfully.', 'summary': 'HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.'}
+Expert Matrix: 1-1-1-0.0-40.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-40.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-04-25 16:04:27.746000
+Parsed json: {'serviceID': 'afaideen80@unifi'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 0.0, 40.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Good', u'Good']
+Final test instance: [1.0, 1.0, 1.0, 0.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 0.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], 'result': '1a'}
+Predicted class by KNN: 1a
+Neighbours: [1.0, 1.0, 1.0, 0.0, 40.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Good', 'neighbouring_sessions': 40.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 0.0, 'device_host_name': u'SDG_G026', 'physical_downlink_status': u'Good', 'login': u'afaideen80@unifi', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'inbound': 'Inbound:Advice customer1) To OFF and ON back all equipment. (If not using VOBB).2) to use TM WiFi Optimizer Tools via Portal or Apps.3) to performance IEMT Test (Slow browsing/ Streaming/ Downloading).4) to check all cable connection.CSP to1) indentified customer actual issue.2) do RG configuration& WiFi Troubleshooting (if required).3) clarify with customer on WiFi SSID & Re-configure WiFi (if required).4) proceed with performance troubleshooting.The problem still persist after done troubleshooting.For SME / Business / Ent SegmentKindly create CTT & CTT  Activity.For Residential / Consumer SegmentKindly create SR and assign to Backend.Backend:For Residential / Consumer SegmentValidate current HSI session & BTU / Modem Status.If problem persist kindly create CTT & CTT  Activity.', 'next_escalation': 'SME :  SDZConsumer : CC - Backend', 'prompt': 'Symptom:Suspect WiFi Issue (connectivity / performance) or Other CPE Issue (STB/ Dect Phone).', 'Message': 'All database query executed successfully.', 'summary': 'HSI Session ONLINE.Neighbouring Sessions meet threshold.All Parameter in good condition.'}
+Expert Matrix: 1-1-1-0.0-40.0-1-1-1-1-1-1-1-1
+Matched Matrix: 1-1-1-0.0-40.0-1-1-1-1-1-1-1-1
+Process finished
+------------------------
+Process started at: 2018-04-25 16:05:02.258000
+Parsed json: {'serviceID': 'ummatic@unifibiz'}
+Content from HTTP response: {u'Login_id': u'afaideen80@unifi', u'tPreProc': 8819, u'Package_name': u'UniFi Advance Plus 50Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40004, u'Access_type': u'FTTH', u'tSouthRespond': 4919, u'Message': u"Account TOS. Captive IP.  Potentially caller's having line disconnection issue"}
+Process finished
+------------------------
+Process started at: 2018-04-25 16:06:30.368000
+Parsed json: {'serviceID': 'arifendi@unifi'}
+Content from HTTP response: {u'Login_id': u'arifendi@unifi', u'tPreProc': 10219, u'Package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 2879, u'Message': u'Next Best Action (NBA). Potentially all service down due to all cpe off or connectivity problem. Please verify with customer on cpe status'}
+Process finished
+------------------------
+Process started at: 2018-04-26 09:18:08.264000
+Parsed json: {'serviceID': 'arifendi@unifi'}
+Content from HTTP response: {u'Login_id': u'arifendi@unifi', u'tPreProc': 8375, u'Package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 1036, u'Message': u"Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."}
+Process finished
+------------------------
+Process started at: 2018-04-26 09:19:14.433000
+Parsed json: {'serviceID': 'arifendi@unifi'}
+Content from HTTP response: {u'Login_id': u'arifendi@unifi', u'tPreProc': 6585, u'Package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 1077, u'Message': u"Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."}
+Process finished
+------------------------
+Process started at: 2018-04-26 09:19:52.578000
+Parsed json: {'serviceID': 'arifendi@unifi'}
+Content from HTTP response: {u'Login_id': u'arifendi@unifi', u'tPreProc': 1341, u'Package_name': u'UniFi Lite 10Mbps (Thank You Campaign 2017)', u'Return_description': u'Failed', u'Return_code': 40000, u'Access_type': u'FTTH', u'tSouthRespond': 1062, u'Message': u"Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."}
+Process finished
+------------------------
