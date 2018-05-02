@@ -21,7 +21,11 @@ Call HBC to configure Speed Profile.
 If the problem persist create CTT to HBC/ SDZ if required (Suspected CPE or need HBC for further investigation - based on consult call)
 
  </nextBestAction>
- <actionTaken> None </actionTaken>
+ <actionTaken>
+     Reset Port + Update To Default Speed / VLAN Profile
+(If customer not using the VOBB number)
+
+ </actionTaken>
  <nextEscalation>CC - Backend</nextEscalation>
 </expertInfo>
 

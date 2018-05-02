@@ -19,7 +19,12 @@ CSP to
 If Internet Session OFFLINE : Kindly create CTT and CTT  Activity.
 
  </nextBestAction>
- <actionTaken> None </actionTaken>
+ <actionTaken>
+     Reset Port
+(If customer not using the VOBB number)
+
+
+ </actionTaken>
  <nextEscalation>SDZ</nextEscalation>
 </expertInfo>
 
