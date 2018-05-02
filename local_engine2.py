@@ -180,6 +180,7 @@ class BarAPI(Resource):
                     "Inbound": str(advisory_result['inbound']),
                     "Action": None,
                     "NextEscalation": str(advisory_result['next_escalation']),
+                    "ActionbyCSP": str(advisory_result['action_by_csp']),
                     "tEngineRespond": t_engine_respond,
                     "Return_code": 200,
                     "Return_description": 'Success'
@@ -232,6 +233,7 @@ class BarAPI(Resource):
                     "prompt": str(advisory_result['prompt']),
                     "inbound": str(advisory_result['inbound']),
                     "next_escalation": str(advisory_result['advisory_next_escalation']),
+                    "action_by_csp": str(advisory_result['action_by_csp']),
                     "Message": "All database query executed successfully."
                     }
 
