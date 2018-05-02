@@ -203,9 +203,9 @@ class BarAPI(Resource):
             hsi_session = rec_data.get('hsi_session')
             radius_account_status = rec_data.get('radius_account_status')
             hsi_billing_status = rec_data.get('hsi_billing_status')
+            frequent_disconnect = rec_data.get('frequent_disconnect')
 
             if attributes==None or (ONT_RX_POWER==None and ONT_TX_POWER==None and DOWNSTREAM_ACTUAL_RATE==None and UPSTREAM_ACTUAL_RATE==None and UPSTREAM_ATTENUATION==None and DOWNSTREAM_ATTENUATION==None and UPSTREAM_SNR==None and DOWNSTREAM_SNR==None):
-
                 if hsi_session.__eq__('Offline') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
                     msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
                     Return_code = 40000 #9a
@@ -238,6 +238,18 @@ class BarAPI(Resource):
                 elif hsi_session.__eq__('Captive') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Tos'):
                     msg = "Account TOS System Miss Match. RADIUS active. Internet Session Captive"
                     Return_code = 40010
+                elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
+                    if access_type == 'FTTH':
+                        if frequent_disconnect > 10 or ONT_RX_POWER < -28:
+                            msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
+                            Return_code = 40011 #same case 9b
+                    else:#vdsl case
+                        Physical_uplink_status = evaluate_physical_link_status(UPSTREAM_ATTENUATION, UPSTREAM_SNR)
+                        Physical_downlink_status = evaluate_physical_link_status(DOWNSTREAM_ATTENUATION, DOWNSTREAM_SNR)
+                        if frequent_disconnect > 10 or Physical_uplink_status.__eq__('Bad') or Physical_downlink_status.__eq__('Bad'):
+                            msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
+                            Return_code = 40011 #same case 9b
+
                 elif hsi_billing_status.__eq__(''):
                     msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
                     Return_code = 40009 #9b
@@ -572,6 +584,34 @@ class BarAPI(Resource):
             data['Return_code'] = Return_code
             data['tSouthRespond'] = tSouthRespond
             return jsonify(data)
+
+def evaluate_physical_link_status(ATTENUATION, SNR):
+    attn = ATTENUATION  # attr_rec[20]['value']
+    snr = SNR  # attr_rec[24]['value']
+
+    # Physical link status
+    if attn != None and snr != None:
+        if attn <= 20 and snr >= 8:
+            Physical_link_status = 'Good'
+        else:
+            Physical_link_status = 'Bad'
+    elif attn != None or snr != None:
+        if snr != None:
+            if snr >= 8:
+                Physical_link_status = 'Good'
+            else:
+                Physical_link_status = 'Bad'
+        elif attn != None:
+            if attn <= 20:
+                Physical_link_status = 'Good'
+            else:
+                Physical_link_status = 'Bad'
+
+    else:
+        Physical_link_status = 'Good'
+
+    return Physical_link_status
+
 
 
 
