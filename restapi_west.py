@@ -71,6 +71,7 @@ class BarAPI(Resource):
         try:
             predictedClass = r.json().get('PredictedClass')
             advisory_action = r.json().get('Action')
+            advisory_actionbyCSP = r.json().get('ActionbyCSP')
             advisory_summary = r.json().get('Summary')
             advisory_prompt = r.json().get('Prompt')
             advisory_inbound = r.json().get('Inbound')
@@ -91,7 +92,7 @@ class BarAPI(Resource):
         t1Respond = int(delta.total_seconds() * 1000) #miliseconds
         # return parser.parse_args()
         return make_response(render_template('testxml.xml', summary=advisory_summary, predictedclass=predictedClass,
-                                             action=advisory_action, tRespond=t1Respond, tEngineRespond=t2Respond,
+                                             action=advisory_actionbyCSP, tRespond=t1Respond, tEngineRespond=t2Respond,
                                              prompt=advisory_prompt, inbound=advisory_inbound,
                                              nextescalation=advisory_escalation,
                                              expertmtx=expertmatrix, matchmtx=matchedmatrix), 200, headers)

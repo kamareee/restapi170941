@@ -935,9 +935,9 @@ def reading():
     print 'Engine finish...'
     # return jsonify(output)
     # return outputVDSLOriginalsida313       #don't use jsonify() if input arguments already type string
-    return jsonify(outputVDSLOriginalsida313NonString)
+    # return jsonify(outputVDSLOriginalsida313NonString)
     # return outAswadiUnifi
-    # return afaideen80
+    return afaideen80
     # return afaideen80Offline
     # return jsonify(arifendiOffline)
     # return jsonify(ummatic)   #case captive tos tos
