@@ -2,7 +2,7 @@
 # Author: Mohammad Kamar Uddin
 # Version            Comments
 # 1.2             Modified to predict with 13 attributes (mixed data)
-
+import os.path
 import requests
 from flask import Flask, jsonify, make_response, request
 from flask_restful import Api, Resource, reqparse
@@ -57,6 +57,7 @@ class BarAPI(Resource):
             app.logger.info("Process finished")
             app.logger.info("------------------------")
             Return_code = content['Return_code']
+
             return {"Return_code": Return_code,#400,
                     "Message": content['Message'],
                     "Return_description": content['Return_description'],

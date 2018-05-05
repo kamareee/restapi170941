@@ -1,3 +1,4 @@
+import os
 
 import requests
 import datetime
@@ -5,6 +6,7 @@ import json
 from flask import Flask, render_template, make_response
 from flask_restful import Api, Resource, reqparse
 from requests import Timeout, ConnectionError, HTTPError
+# from datetime import datetime
 
 app = Flask(__name__)
 api = Api(app)
@@ -37,12 +39,22 @@ class BarAPI(Resource):
         Return_description = r.json().get('Return_description')
 
         if str(Return_description).__eq__('Failed'):
+
             # return r.content
             print r.content
             msg = r.json().get('Message')
             code = r.json().get('Return_code')
             tSouth_Respond = r.json().get('tSouthRespond')
-            if code == 40000:
+
+            # filename = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f') + "_error.txt"
+            # save_path = 'C:/PycharmProjects/restapi170941/log/'
+            # # directory = os.path.join(save_path, filename + ".txt")
+            # # directory = os.path.abspath(os.path.join('path', 'regionlog.txt'))
+            # file1 = open('regionlog.txt', "w")
+            # file1.write(msg)
+            # file1.close()
+
+            if code == 40000 or code == 40011:
                 return make_response(render_template('error40000.xml'), 200, headers)
             elif code == 40001:
                 return make_response(render_template('error40001.xml'), 200, headers)
@@ -60,7 +72,7 @@ class BarAPI(Resource):
                 return make_response(render_template('error40007.xml'), 200, headers)
             elif code == 40008:
                 return make_response(render_template('error40008.xml'), 200, headers)
-            elif code == 40009 or code == 40011:
+            elif code == 40009:
                 return make_response(render_template('error40009b.xml'), 200, headers)
             elif code == 40010:
                 return make_response(render_template('error40010.xml'), 200, headers)

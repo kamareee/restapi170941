@@ -242,13 +242,13 @@ class BarAPI(Resource):
                     if access_type == 'FTTH':
                         if frequent_disconnect > 10 or ONT_RX_POWER < -28:
                             msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
-                            Return_code = 40011 #same case 9b
+                            Return_code = 40011 #same case 9a
                     else:#vdsl case
                         Physical_uplink_status = evaluate_physical_link_status(UPSTREAM_ATTENUATION, UPSTREAM_SNR)
                         Physical_downlink_status = evaluate_physical_link_status(DOWNSTREAM_ATTENUATION, DOWNSTREAM_SNR)
                         if frequent_disconnect > 10 or Physical_uplink_status.__eq__('Bad') or Physical_downlink_status.__eq__('Bad'):
                             msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
-                            Return_code = 40011 #same case 9b
+                            Return_code = 40011 #same case 9a
 
                 elif hsi_billing_status.__eq__(''):
                     msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
