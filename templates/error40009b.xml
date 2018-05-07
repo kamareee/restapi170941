@@ -1,28 +1,29 @@
 <responseHeader>
 <expertInfo>
  <summary>
-     Account  Active
-HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue.
-
+Unable to check account Status, Radius session and physical condition
  </summary >
 <prompt>
-    Symptom: Session down and unable to verify physical parameters. Suspect line or CPE issue.
+    Symptom: Unable to identify  potential issue due to all information not available
 </prompt>
  <nextBestAction>
     Inbound:
-Advice customer
-1) to OFF and ON back all equipment. (If not using VOBB).
-2) to check on physical/cable connection between all CPE.
-
-CSP to
-1) identified customer actual issue.
-2) check Physical Parameter and current Internet Session.
-
-If Internet Session OFFLINE : Kindly create CTT and CTT  Activity.
+CSP to:
+1)  Identify with customer whether issue related  account, billing or technical. Proceed with manual troubleshooting.
+ 1.1) Account Issue - Lodge IRIS and create SR and assign to Backend.
+ 1.2) Billing - Escalate to Billing Team if required (Follow current process)
+ 1.3)  Technical -  if customer having problem accessing the internet, kindly create CTT and CTT  Activity.
 
  </nextBestAction>
- <actionTaken> No System Action Required </actionTaken>
- <nextEscalation>SDZ</nextEscalation>
+ <actionTaken>
+     Reset Port
+(If customer not using the VOBB number)
+ </actionTaken>
+ <nextEscalation>
+     Billing - Billing Team
+Technical Performance : CC - Backend
+Offline : SDZ
+</nextEscalation>
 </expertInfo>
 
 </responseHeader>

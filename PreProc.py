@@ -238,20 +238,20 @@ class BarAPI(Resource):
                 elif hsi_session.__eq__('Captive') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Tos'):
                     msg = "Account TOS System Miss Match. RADIUS active. Internet Session Captive"
                     Return_code = 40010
-                elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
-                    if access_type == 'FTTH':
-                        if frequent_disconnect > 10 or ONT_RX_POWER < -28:
-                            msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
-                            Return_code = 40011 #same case 9a
-                    else:#vdsl case
-                        Physical_uplink_status = evaluate_physical_link_status(UPSTREAM_ATTENUATION, UPSTREAM_SNR)
-                        Physical_downlink_status = evaluate_physical_link_status(DOWNSTREAM_ATTENUATION, DOWNSTREAM_SNR)
-                        if frequent_disconnect > 10 or Physical_uplink_status.__eq__('Bad') or Physical_downlink_status.__eq__('Bad'):
-                            msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
-                            Return_code = 40011 #same case 9a
+                # elif hsi_session.__eq__('Online') and radius_account_status.__eq__('Active') and hsi_billing_status.__eq__('Active'):
+                #     if access_type == 'FTTH':
+                #         if frequent_disconnect > 10 or ONT_RX_POWER < -28:
+                #             msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
+                #             Return_code = 40011 #same case 9a
+                #     else:#vdsl case
+                #         Physical_uplink_status = evaluate_physical_link_status(UPSTREAM_ATTENUATION, UPSTREAM_SNR)
+                #         Physical_downlink_status = evaluate_physical_link_status(DOWNSTREAM_ATTENUATION, DOWNSTREAM_SNR)
+                #         if frequent_disconnect > 10 or Physical_uplink_status.__eq__('Bad') or Physical_downlink_status.__eq__('Bad'):
+                #             msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
+                #             Return_code = 40011 #same case 9a
 
                 elif hsi_billing_status.__eq__(''):
-                    msg = "Account  Active HSI Session is OFFLINE and unable to get Physical readings suggesting that customer's CPE is offline/switched off. If customer confirms that CPEs are online, then the line is totally down - suspect a physical or CPE issue."
+                    msg = "Unable to check account Status, Radius session and physical condition"
                     Return_code = 40009 #9b
 
 
@@ -306,6 +306,8 @@ class BarAPI(Resource):
                             elif str(configuredProfileTx).__contains__('K'):
                                 unit = 1000.0;
                             configuredProfileTxVal = float(re.split('M|K', configuredProfileTx)[0]) * unit;
+                        else:
+                            configuredProfileTxVal = None
 
                         siebelProfileRx = vln500['siebelProfileRx']
                         if siebelProfileRx != None:
@@ -323,6 +325,8 @@ class BarAPI(Resource):
                             elif str(configuredProfileRx).__contains__('K'):
                                 unit = 1000.0;
                             configuredProfileRxVal = float(re.split('M|K', configuredProfileRx)[0]) * unit;
+                        else:
+                            configuredProfileRxVal = None
                         continue
                     if str(profile.get('vlan')).__eq__('600'):
                         # VLAN600
@@ -413,7 +417,7 @@ class BarAPI(Resource):
                 # Decide Upload and Download Speed Profile
                 if vln500 != None and Vlan_500.__eq__('Enabled') :
                     # configuredProfileTx = vln500.get('configuredProfileTx')
-                    if configuredProfileTx != None:
+                    if configuredProfileTx != None and configuredProfileTxVal != None:
                         print "Calculating configuredProfileTx..."
                         if isProfileTxMismatch == False:
                             radiusUploadVal = rec_data.get('radiusUpload')
@@ -427,7 +431,7 @@ class BarAPI(Resource):
 
 
                     # configuredProfileRx = vln500.get('configuredProfileRx')
-                    if configuredProfileRx != None:
+                    if configuredProfileRx != None and configuredProfileRxVal != None:
                         print "Calculating configuredProfileRx..."
                         if isProfileRxMismatch == False:
                             radiusDownloadVal = rec_data.get('radiusDownload')

@@ -930,6 +930,80 @@ def reading():
                     }
                   ]
                 }
+    alirankaam889 = {
+                        "attributes": [
+                            {
+                                "name": "ONT_RX_POWER",
+                                "value": -33.97
+                            },
+                            {
+                                "name": "ONT_TX_POWER",
+                                "value": 2.49
+                            },
+                            {
+                                "tSouthRespond": 8923
+                            }
+                        ],
+                        "custInfo": {
+                            "accessPort": "PTR_G901-1/2/1.2",
+                            "loginId": "alirankaam889@unifibiz",
+                            "servicePoint": "HS1023631384",
+                            "src": "radius"
+                        },
+                        "lineProfiles": [
+                            {
+                                "lineProfileRx": "n/a",
+                                "lineProfileTx": "n/a",
+                                "serviceProfileRx": "NotSupport",
+                                "serviceProfileTx": "NotSupport",
+                                "siebelProfile": "UniFi BIZ Pro 100Mbps + SVP70 (Q2 2016 Campaign)"
+                            }
+                        ],
+                        "refId": 176426970,
+                        "retCode": 0,
+                        "retDesc": "Success",
+                        "trafficProfiles": [
+                            {
+                                "configuredProfileRx": "512K_DOWN",
+                                "configuredProfileTx": "512K_UP",
+                                "isConfigured": True,
+                                "isMissing": False,
+                                "isProfileRxMismatch": False,
+                                "isProfileTxMismatch": False,
+                                "isSubscribed": False,
+                                "objId": "PTR_G901:PTR_G901-1/2/1.2:NA-1",
+                                "siebelProfileRx": None,
+                                "siebelProfileTx": None,
+                                "vlan": "209"
+                            },
+                            {
+                                "configuredProfileRx": "256k/512k",
+                                "configuredProfileTx": "256k/512k",
+                                "isConfigured": True,
+                                "isMissing": False,
+                                "isProfileRxMismatch": False,
+                                "isProfileTxMismatch": False,
+                                "isSubscribed": True,
+                                "objId": "PTR_G901:PTR_G901-1/2/1.2:NA-1",
+                                "siebelProfileRx": None,
+                                "siebelProfileTx": None,
+                                "vlan": "400"
+                            },
+                            {
+                                "configuredProfileRx": "n/a",
+                                "configuredProfileTx": "n/a",
+                                "isConfigured": True,
+                                "isMissing": False,
+                                "isProfileRxMismatch": True,
+                                "isProfileTxMismatch": True,
+                                "isSubscribed": True,
+                                "objId": "PTR_G901:PTR_G901-1/2/1.2:NA-1",
+                                "siebelProfileRx": "110M",
+                                "siebelProfileTx": "55M",
+                                "vlan": "500"
+                            }
+                        ]
+                    }
     error = {"retCode":200,"retDesc":"Error Can't query to EMS/NE","custInfo":{"servicePoint":"HS1025171053","loginId":loginid,"accessPort":"SDG_G026-1/7/4.7","src":"radius"},"attributes":[]}
     # sleep(15)#in seconds
     print 'Engine finish...'
@@ -937,7 +1011,8 @@ def reading():
     # return outputVDSLOriginalsida313       #don't use jsonify() if input arguments already type string
     # return jsonify(outputVDSLOriginalsida313NonString)
     # return outAswadiUnifi
-    return afaideen80
+    return jsonify(alirankaam889)
+    # return afaideen80
     # return afaideen80Offline
     # return jsonify(arifendiOffline)
     # return jsonify(ummatic)   #case captive tos tos

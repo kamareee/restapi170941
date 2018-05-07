@@ -2051,3 +2051,16 @@ Parsed json: {'serviceID': 'afaideen80@unifi'}
 Content from HTTP response: {u'Message': u'"South API failed recognized json data"\n', u'tSouthRespond': 0, u'Return_code': None, u'Return_description': u'Failed'}
 Process finished
 ------------------------
+Process started at: 2018-05-07 17:13:01.290000
+Parsed json: {'serviceID': 'alirankaam889@unifibiz'}
+Data parsed from South API response: [u'Active', u'Active', u'Online', 16.0, 60.0, u'Enabled', u'Enabled', u'Enabled', u'Enabled', u'Good', u'Good', u'Bad', u'Bad']
+Final test instance: [1.0, 1.0, 1.0, 16.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0]
+Result from KNN classifier: {'neighbours': [1.0, 1.0, 1.0, 16.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0], 'result': '5b'}
+Predicted class by KNN: 5b
+Neighbours: [1.0, 1.0, 1.0, 16.0, 60.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0]
+South API data for database insertion function: {'hsi_session': u'Online', 'package_name': u'UniFi BIZ Pro 100Mbps + SVP70 (Q2 2016 Campaign)', 'radius_acct_status': u'Active', 'vlan_600': u'Enabled', 'download_speed_profile': u'Good', 'physical_uplink_status': u'Bad', 'neighbouring_sessions': 60.0, 'access_type': u'FTTH', 'upload_speed_profile': u'Good', 'frequent_disconnection': 16.0, 'device_host_name': u'PTR_G901', 'physical_downlink_status': u'Bad', 'login': u'alirankaam889@unifibiz', 'hsi_billing_status': u'Active', 'vlan_500': u'Enabled', 'vlan_400': u'Enabled', 'vlan_209': u'Enabled'}
+Database output: {'prompt': 'Symptom:Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).', 'inbound': 'Inbound:Advice customer1) to OFF and ON back all equipment. (If not using VOBB).2) to check on physical/cable connection between all CPE.CSP to1) identified customer actual issue.2) check Physical Parameter & current Internet Session.If Physical Parameter NOT meet threshold : Kindly create CTT & CTT  Activity.If Physical Parameter meet threshold : Advice customer to do the IEMT Performance Test.', 'summary': 'Session ONLINE.Physical Parameter not meet threshold.Detected relogin counter >24 within 24 hours.', 'next_escalation': 'SDZ', 'action_by_csp': 'Reset Port (If customer not using the VOBB number)', 'Message': 'All database query executed successfully.'}
+Expert Matrix: 1-1-1-16.0-60.0-1-1-1-1-1-1-2-2
+Matched Matrix: 1-1-1-16.0-60.0-1-1-1-1-1-1-2-2
+Process finished
+------------------------
