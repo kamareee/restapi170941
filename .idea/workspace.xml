@@ -13,10 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dd38b183-e2a9-499c-bece-9e3d35c133c7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PreProc.py" beforeDir="false" afterPath="$PROJECT_DIR$/PreProc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPANMS.py" beforeDir="false" afterPath="$PROJECT_DIR$/SPANMS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local_engine2.log" beforeDir="false" afterPath="$PROJECT_DIR$/local_engine2.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/error40009b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/error40009b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssh command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ssh command.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="restapi_west.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="restapi_west.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/restapi_west.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="74" column="31" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+            <state relative-caret-position="60">
+              <caret line="63" column="85" lean-forward="true" selection-start-line="63" selection-start-column="85" selection-end-line="63" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -43,17 +40,17 @@
       <file leaf-file-name="local_engine2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/local_engine2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
+            <state relative-caret-position="400">
               <caret line="65" selection-start-line="65" selection-end-line="65" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PreProc.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PreProc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PreProc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="436" column="78" lean-forward="true" selection-start-line="436" selection-start-column="78" selection-end-line="436" selection-end-column="78" />
+            <state relative-caret-position="193">
+              <caret line="215" column="35" selection-start-line="215" selection-start-column="35" selection-end-line="215" selection-end-column="35" />
               <folding>
                 <element signature="e#1#16#0" expanded="true" />
               </folding>
@@ -64,7 +61,7 @@
       <file leaf-file-name="restapi_south.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi_south.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
+            <state relative-caret-position="1122">
               <caret line="78" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -76,7 +73,7 @@
       <file leaf-file-name="SPANMS.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SPANMS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
+            <state relative-caret-position="15844">
               <caret line="1006" selection-start-line="1006" selection-end-line="1006" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
@@ -89,17 +86,8 @@
       <file leaf-file-name="ssh command.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ssh command.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="13" column="67" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Subroutine.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Subroutine.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+            <state relative-caret-position="255">
+              <caret line="153" column="28" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -210,10 +198,10 @@
         <option value="$PROJECT_DIR$/templates/error40001.xml" />
         <option value="$PROJECT_DIR$/restapi_west.py" />
         <option value="$PROJECT_DIR$/restapi_south.py" />
-        <option value="$PROJECT_DIR$/ssh command.txt" />
         <option value="$PROJECT_DIR$/templates/error40009b.xml" />
         <option value="$PROJECT_DIR$/SPANMS.py" />
         <option value="$PROJECT_DIR$/PreProc.py" />
+        <option value="$PROJECT_DIR$/ssh command.txt" />
       </list>
     </option>
   </component>
@@ -235,6 +223,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -256,7 +245,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -704,7 +692,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524752747424</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Removed case 11. Changes on case 9b.">
+      <created>1525686316903</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1525686316904</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TodoView">
@@ -720,24 +715,24 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49695587" visible="true" weight="0.16259088" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49695587" visible="true" weight="0.16259088" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50396407" side_tool="true" weight="0.3185531" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49603593" visible="true" weight="0.31497175" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49603593" visible="true" weight="0.31497175" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3265306" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32847142" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49524313" weight="0.27683616" />
       <window_info id="Favorites" order="2" sideWeight="0.5030441" side_tool="true" weight="0.1564482" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33898306" />
+      <window_info anchor="right" id="R Packages" order="1" />
       <window_info anchor="bottom" id="Salesforce" order="12" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Debug Logs" order="9" />
       <window_info anchor="right" id="Commander" order="2" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" id="R Graphics" order="0" />
-      <window_info anchor="right" id="R Packages" order="1" />
+      <window_info anchor="bottom" id="Debug Logs" order="9" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Execute Anonymous" order="10" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -811,7 +806,6 @@
     <ignored-roots>
       <path value="C:/../DevelopmentRepo/knnengine_v1.2" />
     </ignored-roots>
-    <MESSAGE value="Added Upload and Download Speed Profile calculation under 'VDSL' category." />
     <MESSAGE value="Updated spanms stimulus" />
     <MESSAGE value="Optimised data extraction at pre-processing stage." />
     <MESSAGE value="Added new param 'Return_description'" />
@@ -836,7 +830,8 @@
     <MESSAGE value="-Updated error handling for negative scenario cases in west api" />
     <MESSAGE value="Updated -ve scenario" />
     <MESSAGE value="Updated when there is api2 error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated when there is api2 error" />
+    <MESSAGE value="Removed case 11. Changes on case 9b." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed case 11. Changes on case 9b." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1081,13 +1076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/error40001.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/error40010.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1125,7 +1113,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Subroutine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="357">
           <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
         </state>
       </provider>
@@ -1144,30 +1132,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restapi_west.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="74" column="31" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local_engine2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssh command.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="13" column="67" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SPANMS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
+        <state relative-caret-position="15844">
           <caret line="1006" selection-start-line="1006" selection-end-line="1006" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
@@ -1178,7 +1145,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/restapi_south.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
+        <state relative-caret-position="1122">
           <caret line="78" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -1186,13 +1153,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/error40001.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ssh command.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="153" column="28" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PreProc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="436" column="78" lean-forward="true" selection-start-line="436" selection-start-column="78" selection-end-line="436" selection-end-column="78" />
+        <state relative-caret-position="193">
+          <caret line="215" column="35" selection-start-line="215" selection-start-column="35" selection-end-line="215" selection-end-column="35" />
           <folding>
             <element signature="e#1#16#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local_engine2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restapi_west.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="63" column="85" lean-forward="true" selection-start-line="63" selection-start-column="85" selection-end-line="63" selection-end-column="85" />
         </state>
       </provider>
     </entry>
