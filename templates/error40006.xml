@@ -12,7 +12,7 @@ Internet Session Online
 Account Suspended.
 Internet Connection Hang
 </prompt>
- <nextBestAction>
+ <inbound>
      Inbound:
 Advise customer to:
 1) Pay Bill
@@ -20,9 +20,10 @@ CSP to
 1) Escalate to Billing Team if required (Follow current process)
 
 
- </nextBestAction>
- <actionTaken> No System Action Required </actionTaken>
- <nextEscalation>CC (Billing)</nextEscalation>
+ </inbound>
+    <nextEscalation>CC (Billing)</nextEscalation>
+ <promptAction> No System Action Required </promptAction>
+
 </expertInfo>
 
 </responseHeader>

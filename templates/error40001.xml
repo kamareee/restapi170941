@@ -9,16 +9,17 @@ HSI Session Captive IP.
 No Internet connection.
 Using/configure wrong HSI username and password.
 </prompt>
- <nextBestAction> 
+ <inbound>
  Inbound: 
 Advice customer to :
 1) Configure HSI login/Password 
 CSP to
 1) Refer to CPE configuration WI
 
- </nextBestAction>
- <actionTaken> No System Action Required </actionTaken>
- <nextEscalation>no escalation required</nextEscalation>
+ </inbound>
+  <nextEscalation>no escalation required</nextEscalation>
+ <promptAction> No System Action Required </promptAction>
+
 </expertInfo>
 
 </responseHeader>

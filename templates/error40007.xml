@@ -10,7 +10,7 @@ Internet Session Online
 <prompt>Symptom:
 Internet Connection Hang
 </prompt>
- <nextBestAction>
+ <inbound>
      Inbound:
 Lodge IRIS and create SR and assign to Backend.
 
@@ -18,9 +18,10 @@ Backend:
 Follow-up to NOVA Helpdesk and RADIUS Team.
 Need to  follow up with customer after 24 hours
 
- </nextBestAction>
- <actionTaken> No System Action Required </actionTaken>
- <nextEscalation>CC - Backend</nextEscalation>
+ </inbound>
+    <nextEscalation>CC - Backend</nextEscalation>
+ <promptAction> No System Action Required </promptAction>
+
 </expertInfo>
 
 </responseHeader>

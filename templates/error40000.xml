@@ -6,7 +6,7 @@ HSI Session is OFFLINE and unable to get Physical readings suggesting that custo
 
 </summary >
 <prompt>Symptom: Session down and unable to verify physical parameters. Suspect line or CPE issue.</prompt>
-<nextBestAction>
+<inbound>
         Inbound:
 Advice customer
 1) to OFF and ON back all equipment. (If not using VOBB).
@@ -18,14 +18,15 @@ CSP to
 
 If Internet Session OFFLINE : Kindly create CTT and CTT  Activity.
 
- </nextBestAction>
- <actionTaken>
+ </inbound>
+ <nextEscalation>SDZ</nextEscalation>
+ <promptAction>
      Reset Port
 (If customer not using the VOBB number)
 
 
- </actionTaken>
- <nextEscalation>SDZ</nextEscalation>
+ </promptAction>
+
 </expertInfo>
 
 </responseHeader>

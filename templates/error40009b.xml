@@ -6,7 +6,7 @@ Unable to check account Status, Radius session and physical condition
 <prompt>
     Symptom: Unable to identify  potential issue due to all information not available
 </prompt>
- <nextBestAction>
+ <inbound>
     Inbound:
 CSP to:
 1)  Identify with customer whether issue related  account, billing or technical. Proceed with manual troubleshooting.
@@ -14,16 +14,17 @@ CSP to:
  1.2) Billing - Escalate to Billing Team if required (Follow current process)
  1.3)  Technical -  if customer having problem accessing the internet, kindly create CTT and CTT  Activity.
 
- </nextBestAction>
- <actionTaken>
-     Reset Port
-(If customer not using the VOBB number)
- </actionTaken>
- <nextEscalation>
+ </inbound>
+     <nextEscalation>
      Billing - Billing Team
 Technical Performance : CC - Backend
 Offline : SDZ
 </nextEscalation>
+ <promptAction>
+     Reset Port
+(If customer not using the VOBB number)
+ </promptAction>
+
 </expertInfo>
 
 </responseHeader>

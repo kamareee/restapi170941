@@ -8,16 +8,25 @@ Symptom:
 Account Suspended.
 No internet connection.
 </prompt>
- <nextBestAction>
+ <inbound>
      Inbound: 
 Advise customer to:
 1) Pay Bill
 CSP to
 1) Escalate to Billing Team if required (Follow current process)
 
- </nextBestAction>
- <actionTaken> No System Action Required </actionTaken>
- <nextEscalation>CC (Billing)</nextEscalation>
+ </inbound>
+    <nextEscalation>CC (Billing)</nextEscalation>
+ <promptAction> No System Action Required </promptAction>
+
 </expertInfo>
 
 </responseHeader>
+
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Transfer-Encoding: chunked
+Server: Jetty(9.0.z-SNAPSHOT)
+
+{"retCode":200,"retDesc":"Error Can't query to EMS/NE","custInfo":{"servicePoint              ":"HS1025171053","loginId":"afaideen80@unifi","accessPort":"SDG_G026-1/7/4.7","s              rc":"radius"},"attributes":[]}[root@localhost ideas]#

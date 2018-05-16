@@ -6,7 +6,7 @@
 <prompt>Symptom:
 Internet performance degradation (Slow browsing/ Streaming/ Downloading/ Frequent Disconnection).
 </prompt>
- <nextBestAction>
+ <inbound>
      Inbound:
 Advice customer
 1) to OFF and ON back all equipment. (If not using VOBB).
@@ -20,13 +20,14 @@ Backend:
 Call HBC to configure Speed Profile.
 If the problem persist create CTT to HBC/ SDZ if required (Suspected CPE or need HBC for further investigation - based on consult call)
 
- </nextBestAction>
- <actionTaken>
+ </inbound>
+    <nextEscalation>CC - Backend</nextEscalation>
+ <promptAction>
      Reset Port + Update To Default Speed / VLAN Profile
 (If customer not using the VOBB number)
 
- </actionTaken>
- <nextEscalation>CC - Backend</nextEscalation>
+ </promptAction>
+
 </expertInfo>
 
 </responseHeader>
